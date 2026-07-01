@@ -15,7 +15,7 @@
   --color-paper-base: hsl(43, 30%, 96%);      /* Warm notebook page: #f6f3eb */
   --color-paper-dark: hsl(43, 20%, 91%);      /* Cover / desk surface: #eee8db */
   --color-paper-light: hsl(43, 35%, 98%);     /* Clean pristine pages: #faf8f5 */
-  --color-paper-ruled: hsla(208, 25%, 85%, 0.4); /* Blue graph/ruled line */
+  --color-paper-ruled: hsla(0, 0%, 45%, 0.24); /* Soft medium-grey graph/ruled line */
   --color-paper-margin: hsla(12, 55%, 72%, 0.7);  /* Red/pink margin line */
   
   /* Text & Inks */

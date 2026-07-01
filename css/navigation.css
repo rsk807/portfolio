@@ -73,6 +73,17 @@
   background: none;
 }
 
+.header-icon-link .nav-icon {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  stroke-width: 2px;
+  fill: none;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
 /* Lined/Graph Paper Toggle Switch */
 .paper-toggle-btn {
   background: none;
@@ -171,8 +182,8 @@
 }
 
 .bookmark-tab {
-  width: 32px;
-  height: 26px;
+  width: 38px;
+  height: 31px;
   background-color: var(--bookmark-color, var(--color-paper-base));
   border: 1px solid var(--border-color-ui);
   border-left: none;
@@ -191,13 +202,13 @@
 }
 
 .bookmark-tab:hover {
-  width: 40px;
+  width: 46px;
   color: var(--color-ink-primary);
   padding-left: var(--space-xs);
 }
 
 .bookmark-tab.active {
-  width: 48px;
+  width: 55px;
   color: var(--color-ink-primary);
   font-weight: var(--weight-semibold);
   box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.08);

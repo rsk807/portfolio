@@ -631,3 +631,20 @@
   padding: 0 4px;
   border-radius: 2px;
 }
+
+/* Timeline & Milestone Title Links */
+.timeline-node-title a,
+.milestone-title a {
+  color: var(--color-ink-primary) !important;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--color-ink-secondary) !important;
+  transition: var(--transition-default);
+  display: inline-block;
+}
+
+.timeline-node-title a:hover,
+.milestone-title a:hover {
+  color: var(--color-ink-primary) !important;
+  border-bottom-color: var(--color-ink-primary) !important;
+  background-color: var(--color-accent-highlighter) !important;
+}

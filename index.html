@@ -86,9 +86,9 @@
     </div>
     <div class="header-actions">
       <button class="paper-toggle-btn" id="paper-theme-toggle" title="Toggle between grid and ruled pad background">PAPER: GRID</button>
-      <a href="Sushant-Resume.pdf" class="header-icon-link" aria-label="Download Resume / CV" download>📄 CV</a>
-      <a href="https://github.com/rsk807" class="header-icon-link" target="_blank" aria-label="GitHub Profile">⚙️ GH</a>
-      <a href="https://www.linkedin.com/in/sushant-kumar-csf/" class="header-icon-link" target="_blank" aria-label="LinkedIn Profile">💼 LI</a>
+      <a href="Sushant_Resume (2).pdf" class="header-icon-link" aria-label="Download Resume / CV" download>📄 CV</a>
+      <a href="https://github.com/rsk807" class="header-icon-link" target="_blank" aria-label="GitHub Profile"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>GitHub</a>
+      <a href="https://www.linkedin.com/in/sushant-kumar-csf/" class="header-icon-link" target="_blank" aria-label="LinkedIn Profile"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>LinkedIn</a>
       <button class="mobile-menu-toggle" id="mobile-drawer-toggle" aria-label="Open Navigation Index">Index ☰</button>
     </div>
   </header>
@@ -231,6 +231,8 @@
             <div class="identity-label">Cybersecurity Engineer</div>
             <div class="identity-label">AI Systems Developer</div>
             <div class="identity-label">Digital Forensics Researcher</div>
+            <div class="identity-label">IoT Systems Engineer</div>
+            <div class="identity-label">Cloud Computing Engineer</div>
           </div>
 
           <!-- Mission Statement -->
@@ -287,7 +289,7 @@
           
           <div class="grid-12 mt-lg">
             <!-- Left Column: Portrait Photograph & Margin Ledger -->
-            <div class="col-4 engineer-photo-column" style="flex-direction: column;">
+            <div class="col-4 engineer-photo-column">
               
               <!-- Passport Photo component -->
               <div class="engineer-photo-frame">
@@ -319,6 +321,14 @@
                     <span class="quick-facts-val">9.16 / 10.0</span>
                   </li>
                   <li class="quick-facts-row">
+                    <span class="quick-facts-key">12th Percentage</span>
+                    <span class="quick-facts-val">94.6%</span>
+                  </li>
+                  <li class="quick-facts-row">
+                    <span class="quick-facts-key">10th Percentage</span>
+                    <span class="quick-facts-val">94.6%</span>
+                  </li>
+                  <li class="quick-facts-row">
                     <span class="quick-facts-key">Patent ID</span>
                     <span class="quick-facts-val">202521077464</span>
                   </li>
@@ -339,25 +349,33 @@
 
             </div>
 
-            <!-- Right Column: Narrative & Details -->
-            <div class="col-8">
+            <!-- Right Column: Narrative (Paragraphs 1-3) -->
+            <div class="col-8 engineer-intro-paragraphs">
               
               <!-- Introduction -->
-              <p style="font-size: var(--font-size-lg); line-height: var(--line-height-relaxed); color: var(--color-ink-primary); margin-bottom: var(--space-lg);">
+              <p style="font-size: var(--font-size-lg); line-height: var(--line-height-relaxed); color: var(--color-ink-primary); margin-bottom: var(--space-lg); margin-top: 0;">
                 Building and securing systems at the intersection of hardware, cloud, and machine intelligence is less about compiling code and more about understanding structural constraints. My journey in technology began with low-level microcontrollers, exploring how raw physical currents translate to functional operations. This curiosity naturally evolved into auditing architectures, mapping attack vectors, and designing secure defensive loops.
               </p>
               
               <!-- Narrative -->
-              <p>
+              <p style="margin-top: 0; margin-bottom: var(--space-lg);">
                 As a Computer Science candidate specializing in Cyber Security and Data Forensics at MIT World Peace University, I have spent the last few years auditing trust boundaries and building secure layers. My experience ranges from analyzing real-world phishing vectors and developing SQL-injection-resistant authentication filters during my internship at Ediglobe, to engineering custom local-first data leakage filters (<span class="highlight-yellow">RakshaNetra</span>) that sanitize LLM inputs on-device before they leave the gateway boundary.
               </p>
               
-              <p>
+              <p style="margin-top: 0; margin-bottom: 0;">
                 This exploration of system assurance extends to both physical hardware and published research. I engineered <span class="highlight-blue">VACARS</span>, an voice-assisted embedded AI response system utilizing a Raspberry Pi and custom visual faceplate, which culminated in a Springer Nature journal publication in <i>Cureus</i>. Additionally, my work on <i>Omniscient</i>, a digital cyber forensics framework automating social OSINT and LLM-assisted reverse engineering, resulted in a published patent (Application ID: 202521077464). Whether assembling autonomous firefighting robots or emulating emulated defensive intrusion tests, my focus remains on building deterministic, secure architectures.
               </p>
 
+            </div>
+
+            <!-- Row 2 Left Column: Spacer to maintain alignment on desktop -->
+            <div class="col-4 hide-mobile"></div>
+
+            <!-- Row 2 Right Column: Field Notes and Observations -->
+            <div class="col-8">
+              
               <!-- Field Notes: Philosophy -->
-              <div class="field-notes-box">
+              <div class="field-notes-box" style="margin-top: 0;">
                 <div class="field-notes-title">FIELD NOTES // OPERATIONAL PRINCIPLES</div>
                 <ul class="field-notes-list">
                   <li class="field-notes-item">Security is a core design constraint, never an external wrapper.</li>
@@ -436,7 +454,7 @@
               </div>
               <div class="case-meta-item">
                 <span class="case-meta-key">Source</span>
-                <span class="case-meta-val"><a href="https://github.com/rsk807" target="_blank">github.com/rsk807</a></span>
+                <span class="case-meta-val"><a href="https://github.com/rsk807/omniscient" target="_blank">Explore Omniscient</a></span>
               </div>
             </div>
 
@@ -562,7 +580,7 @@
               </div>
               <div class="case-meta-item">
                 <span class="case-meta-key">Source</span>
-                <span class="case-meta-val">Internal Implementation</span>
+                <span class="case-meta-val"><a href="https://github.com/rsk807/rakshak-pii" target="_blank">Explore RakshaNetra</a></span>
               </div>
             </div>
 
@@ -688,7 +706,7 @@
               </div>
               <div class="case-meta-item">
                 <span class="case-meta-key">Source</span>
-                <span class="case-meta-val"><a href="https://github.com/rsk807" target="_blank">github.com/rsk807</a></span>
+                <span class="case-meta-val"><a href="https://github.com/rsk807/BidForge" target="_blank">Explore BidForge</a></span>
               </div>
             </div>
 
@@ -814,7 +832,7 @@
               </div>
               <div class="case-meta-item">
                 <span class="case-meta-key">Source</span>
-                <span class="case-meta-val">Research Prototype</span>
+                <span class="case-meta-val"><a href="https://www.linkedin.com/posts/sushant-kumar-csf_innovation-ai-iot-activity-7396861971297382400-eU-C?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEwt36UBHP9xMU48Ix12BI_1ajW_kaZUZ7k" target="_blank">Explore VACARS</a></span>
               </div>
             </div>
 
@@ -941,7 +959,7 @@
               <div class="timeline-container">
                 <div class="timeline-node">
                   <div class="timeline-node-time">2026</div>
-                  <div class="timeline-node-title">AI-Powered Forensics Patent (Omniscient ID-202521077464)</div>
+                  <div class="timeline-node-title"><a href="https://www.linkedin.com/posts/sushant-kumar-csf_patent-cybersecurity-digitalforensics-activity-7431899804177289216-_JKl?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEwt36UBHP9xMU48Ix12BI_1ajW_kaZUZ7k" target="_blank">AI-Powered Forensics Patent (Omniscient ID-202521077464)</a></div>
                   <p style="font-size: var(--font-size-sm); margin-bottom: 0; color: var(--color-ink-secondary);">
                     Formulated and published system architecture for automated cyber forensics and data extraction from OSINT APIs.
                   </p>
@@ -1011,7 +1029,7 @@
               <div>
                 <span class="field-assignment-ref">Field Assignment // EDG-SEC-01</span>
                 <h3 class="field-assignment-title">Cyber Security Intern</h3>
-                <div class="field-assignment-company">Ediglobe | Pune, India (Hybrid)</div>
+                <div class="field-assignment-company">Ediglobe | Pune, India (Remote)</div>
               </div>
               <span style="font-family: var(--font-notebook); font-size: var(--font-size-xs); color: var(--color-accent-red); font-weight: bold;">MAR 2025 – MAY 2025</span>
             </div>
@@ -1144,7 +1162,7 @@
             
             <div class="milestone-catalog-row">
               <span class="milestone-meta">Patent ID: 202521077464</span>
-              <span class="milestone-title">Omniscient AI Cyber Forensics Architecture published</span>
+              <span class="milestone-title"><a href="https://www.linkedin.com/posts/sushant-kumar-csf_patent-cybersecurity-digitalforensics-activity-7431899804177289216-_JKl?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEwt36UBHP9xMU48Ix12BI_1ajW_kaZUZ7k" target="_blank" class="milestone-link">AI-Powered Forensics Patent (Omniscient ID-202521077464)</a></span>
               <span class="milestone-year">2026</span>
             </div>
 
@@ -1156,25 +1174,25 @@
 
             <div class="milestone-catalog-row">
               <span class="milestone-meta">Ignisia Hackathon</span>
-              <span class="milestone-title">2nd Place - National Level Ignisia 2026 Hackathon</span>
+              <span class="milestone-title"><a href="https://www.linkedin.com/posts/sushant-kumar-csf_hackathon-ai-startup-activity-7446916765680439296-LAry?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEwt36UBHP9xMU48Ix12BI_1ajW_kaZUZ7k" target="_blank" class="milestone-link">Ignisia 2026 — 2nd Place</a></span>
               <span class="milestone-year">2026</span>
             </div>
 
             <div class="milestone-catalog-row">
               <span class="milestone-meta">Ciphathon Hackathon</span>
-              <span class="milestone-title">5th Place - National Level Ciphathon 2026 Hackathon</span>
+              <span class="milestone-title"><a href="https://www.linkedin.com/posts/sushant-kumar-csf_cybersecurity-privacy-hackathon-activity-7444030092298625024-P_z1?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEwt36UBHP9xMU48Ix12BI_1ajW_kaZUZ7k" target="_blank" class="milestone-link">Ciphathon 2026 — 5th Place</a></span>
               <span class="milestone-year">2026</span>
             </div>
 
             <div class="milestone-catalog-row">
               <span class="milestone-meta">Oracle OCI</span>
-              <span class="milestone-title">Oracle Cloud Foundations Associate Certification</span>
+              <span class="milestone-title"><a href="https://drive.google.com/file/d/1pkR8SLwAI2GX09Ithl58wCtWJ-Nx6tRd/view?usp=drive_link" target="_blank" class="milestone-link">Oracle Cloud Foundations Associate</a></span>
               <span class="milestone-year">2026</span>
             </div>
 
             <div class="milestone-catalog-row">
               <span class="milestone-meta">Cisco Networking</span>
-              <span class="milestone-title">Cisco Endpoint Security Certification</span>
+              <span class="milestone-title"><a href="https://drive.google.com/file/d/1Y3wST1Uo54JS4_nRPSMJScBT-1gBKVHd/view?usp=drive_link" target="_blank" class="milestone-link">Cisco Endpoint Security</a></span>
               <span class="milestone-year">2026</span>
             </div>
 
@@ -1186,7 +1204,7 @@
 
             <div class="milestone-catalog-row">
               <span class="milestone-meta">DevConf 2025 Speaker</span>
-              <span class="milestone-title">Delivered session on "AI in Cybersecurity" (Threat parsing &amp; LLM exploits)</span>
+              <span class="milestone-title"><a href="https://youtu.be/rSsRnHpn0qo?si=ixs2PUd3SGGAPUR9" target="_blank" class="milestone-link">DevConf 2025 — Speaker</a></span>
               <span class="milestone-year">2025</span>
             </div>
 
@@ -1237,7 +1255,7 @@
               </li>
               <li class="contact-memo-row">
                 <span class="contact-memo-key">Log Archive</span>
-                <span class="contact-memo-val"><a href="Sushant-Resume.pdf" download>Download Resume.pdf</a></span>
+                <span class="contact-memo-val"><a href="Sushant_Resume (2).pdf" download>Download Resume.pdf</a></span>
               </li>
               <li class="contact-memo-row" style="border-bottom: none;">
                 <span class="contact-memo-key">Open To</span>
