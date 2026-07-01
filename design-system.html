@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System — An Engineer's Personal Research Notebook</title>
+  <meta name="description" content="Visual foundation, design tokens, responsive layout grid, and analog components for a research journal styled developer portfolio.">
+  
+  <!-- Core Design System -->
+  <link rel="stylesheet" href="css/design-system.css">
+  
+  <!-- Interactive Scripts -->
+  <script src="js/notebook.js" defer></script>
+  
+  <style>
+    /* Document Showcase Page Styles (Non-Component Layout Details) */
+    .showcase-intro {
+      max-width: 800px;
+      margin-bottom: var(--space-2xl);
+    }
+    
+    .color-swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: var(--space-md);
+      margin: var(--space-md) 0;
+    }
+    
+    .color-swatch {
+      border: 1px solid var(--border-color-ui);
+      border-radius: var(--radius-md);
+      padding: var(--space-sm);
+      background-color: var(--color-paper-light);
+      box-shadow: var(--shadow-flat);
+    }
+    
+    .color-swatch-box {
+      height: 64px;
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-xs);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .color-swatch-name {
+      font-family: var(--font-notebook);
+      font-size: var(--font-size-sm);
+      font-weight: var(--weight-medium);
+    }
+    
+    .color-swatch-val {
+      font-family: var(--font-mono);
+      font-size: var(--font-size-xs);
+      color: var(--color-ink-secondary);
+    }
+
+    .typography-spec {
+      border-left: 2px dashed var(--border-color-ui);
+      padding-left: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+
+    .typography-spec-label {
+      font-family: var(--font-notebook);
+      font-size: var(--font-size-xs);
+      color: var(--color-accent-blue);
+      text-transform: uppercase;
+      margin-bottom: var(--space-xs);
+    }
+
+    .typography-spec-example {
+      margin-bottom: 0;
+    }
+    
+    .component-specimen {
+      margin-bottom: var(--space-2xl);
+      padding-bottom: var(--space-xl);
+      border-bottom: 1px dashed var(--border-color-ui);
+    }
+    
+    .component-specimen-title {
+      font-family: var(--font-notebook);
+      font-size: var(--font-size-lg);
+      font-weight: var(--weight-semibold);
+      color: var(--color-ink-primary);
+      margin-bottom: var(--space-md);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .component-specimen-title::before {
+      content: '■';
+      color: var(--color-accent-red);
+      font-size: 0.8em;
+    }
+    
+    .component-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-lg);
+      align-items: flex-start;
+    }
+
+    .notebook-meta-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px double var(--color-ink-primary);
+      padding-bottom: var(--space-md);
+      margin-bottom: var(--space-2xl);
+      font-family: var(--font-notebook);
+      font-size: var(--font-size-sm);
+      color: var(--color-ink-secondary);
+    }
+
+    .meta-block span {
+      display: block;
+    }
+
+    .meta-block-label {
+      text-transform: uppercase;
+      font-size: var(--font-size-xs);
+      color: var(--color-accent-blue);
+      font-weight: var(--weight-medium);
+    }
+
+    /* Small decorations to sell the spiral log notebook */
+    .spiral-bind {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 14px;
+      width: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: var(--space-xl) 0;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .spiral-wire {
+      width: 24px;
+      height: 8px;
+      background: linear-gradient(to bottom, #dcdcdc 0%, #b5b5b5 50%, #8c8c8c 100%);
+      border-radius: 4px;
+      box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+      transform: rotate(-10deg);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Notebook Binder outer frame -->
+  <main class="notebook-binder" id="main-content">
+    
+    <!-- Decorative Book Binder Spirals on the Left -->
+    <div class="spiral-bind" aria-hidden="true">
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+      <div class="spiral-wire"></div>
+    </div>
+
+    <!-- Paper Bookmark Hanging down -->
+    <div class="bookmark-ribbon" title="Active Index Ribbon"></div>
+
+    <!-- Navigation Notebook Index Tabs (Sticks out right edge) -->
+    <nav class="notebook-tab-container" aria-label="Design System Sections">
+      <a href="#overview" class="notebook-tab active">00. OVERVIEW</a>
+      <a href="#colors" class="notebook-tab">01. COLORS</a>
+      <a href="#typography" class="notebook-tab">02. TYPOGRAPHY</a>
+      <a href="#components" class="notebook-tab">03. COMPONENTS</a>
+    </nav>
+
+    <!-- Warm Ruled Grid Notebook Page -->
+    <section class="notebook-page">
+      
+      <!-- Laboratory Entry Metainfo Header -->
+      <div class="notebook-meta-header">
+        <div class="meta-block">
+          <span class="meta-block-label">Journal Subject</span>
+          <span style="color: var(--color-ink-primary); font-weight: 500;">DESIGN SYSTEM SPECIFICATION</span>
+        </div>
+        <div class="meta-block">
+          <span class="meta-block-label">System Ref</span>
+          <span>NBOOK-V1-SPEC</span>
+        </div>
+        <div class="meta-block">
+          <span class="meta-block-label">Last Calibration</span>
+          <span>JULY 2026</span>
+        </div>
+      </div>
+
+      <!-- Main Title -->
+      <header class="showcase-intro">
+        <h1>An Engineer's Personal Research Notebook</h1>
+        <p class="mt-sm" style="font-size: var(--font-size-lg); color: var(--color-ink-secondary); line-height: var(--line-height-relaxed);">
+          Visual foundation, design tokens, and analog interface system. Every component mimics natural paper interactions, drawing instruments, and laboratory materials used in security engineering and technical research.
+        </p>
+      </header>
+
+      <!-- SECTION: OVERVIEW -->
+      <article id="overview" class="mb-3xl">
+        <header class="section-header">
+          <span>00 // Design Principles</span>
+          <span class="section-header-meta">Sheet 01</span>
+        </header>
+        
+        <div class="grid-12">
+          <div class="col-8">
+            <p>
+              This system is built around the motif of a <strong>functional physical logbook</strong>. It consciously avoids generic developer-portfolio designs, dark cyberpunk neon glowing effects, and command-line terminal scripts. Instead, it relies on strict proportions, generous whitespace, analog references, and quiet tactile feedback to establish trust and engineering authority.
+            </p>
+            <p>
+              When utilizing this design system for pages in the future, adhere strictly to the grid structure, HSL color tokens, and structural components. Always leave significant margins and let the warm grid paper frame provide consistency.
+            </p>
+          </div>
+          <div class="col-4">
+            <!-- Example of a Sticky Note Component in action -->
+            <div class="sticky-note">
+              <div class="washi-tape washi-tape-top"></div>
+              <div class="sticky-note-header">System Note</div>
+              <p style="font-size: var(--font-size-sm); margin-bottom: 0;">
+                All interactives use tactile transitions. Hovering cards lifts them slightly. Clicking elements imitates solid mechanical clicks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SECTION: COLOR SYSTEM -->
+      <article id="colors" class="mb-3xl">
+        <header class="section-header">
+          <span>01 // Warm Analog Color Palettes</span>
+          <span class="section-header-meta">Sheet 02</span>
+        </header>
+        
+        <p>Colors mimic standard notebooks, charcoal drawing pencils, blue ballpoint pens, red correction markers, and translucent highlighters. Avoid highly saturated primaries, neon highlights, and gradients.</p>
+
+        <div class="color-swatch-grid">
+          <!-- Swatch: Base Paper -->
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background-color: var(--color-paper-light);"></div>
+            <div class="color-swatch-name">Paper Light</div>
+            <div class="color-swatch-val">#faf8f5</div>
+          </div>
+          <!-- Swatch: Paper Base -->
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background-color: var(--color-paper-base);"></div>
+            <div class="color-swatch-name">Paper Base</div>
+            <div class="color-swatch-val">#f6f3eb</div>
+          </div>
+          <!-- Swatch: Surface / Dark -->
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background-color: var(--color-paper-dark);"></div>
+            <div class="color-swatch-name">Paper Cover/Desk</div>
+            <div class="color-swatch-val">#eee8db</div>
+          </div>
+          <!-- Swatch: Primary Charcoal -->
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background-color: var(--color-ink-primary);"></div>
+            <div class="color-swatch-name" style="color: var(--color-paper-light);">Charcoal Ink</div>
+            <div class="color-swatch-val">#212121</div>
+          </div>
+          <!-- Swatch: Graphite -->
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background-color: var(--color-ink-secondary);"></div>
+            <div class="color-swatch-name">Graphite Pencil</div>
+            <div class="color-swatch-val">#616161</div>
+          </div>
+          <!-- Swatch: Blue Ink -->
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background-color: var(--color-accent-blue);"></div>
+            <div class="color-swatch-name">Blue Ink (Accent)</div>
+            <div class="color-swatch-val">#2a5ca8</div>
+          </div>
+          <!-- Swatch: Red Accent -->
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background-color: var(--color-accent-red);"></div>
+            <div class="color-swatch-name">Red Pen (Accent)</div>
+            <div class="color-swatch-val">#bd2a2a</div>
+          </div>
+          <!-- Swatch: Highlighter -->
+          <div class="color-swatch">
+            <div class="color-swatch-box" style="background-color: var(--color-accent-highlighter-solid);"></div>
+            <div class="color-swatch-name">Highlighter</div>
+            <div class="color-swatch-val">#fef5cc</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SECTION: TYPOGRAPHY -->
+      <article id="typography" class="mb-3xl">
+        <header class="section-header">
+          <span>02 // Typographic Hierarchy</span>
+          <span class="section-header-meta">Sheet 03</span>
+        </header>
+        
+        <p>Three specialized fonts combine to establish a functional, clear layout hierarchy resembling hand-marked schematics and printed journal papers.</p>
+
+        <div class="grid-12 mt-lg">
+          <div class="col-6">
+            <div class="typography-spec">
+              <div class="typography-spec-label">Headings & Labels (IBM Plex Mono)</div>
+              <h2 class="typography-spec-example" style="border: none; margin: 0;">Heading 02 Sample Text</h2>
+              <p class="mt-xs text-secondary" style="font-family: var(--font-notebook); font-size: var(--font-size-sm);">IBM Plex Mono - Semibold - Tight spacing</p>
+            </div>
+          </div>
+          
+          <div class="col-6">
+            <div class="typography-spec">
+              <div class="typography-spec-label">Body Text (Inter)</div>
+              <p class="typography-spec-example">
+                This is a paragraph of standard body text. Inter provides maximum readability on the warm, ruled paper background.
+              </p>
+              <p class="mt-xs text-secondary" style="font-size: var(--font-size-sm);">Inter - Regular - 1.5 line height</p>
+            </div>
+          </div>
+          
+          <div class="col-6">
+            <div class="typography-spec">
+              <div class="typography-spec-label">Code blocks (JetBrains Mono)</div>
+              <code class="typography-spec-example" style="display: block; background: var(--color-paper-base); padding: var(--space-sm); border-radius: var(--radius-sm);">
+                def analyze_firmware(binary):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return check_entropy(binary)
+              </code>
+              <p class="mt-xs text-secondary" style="font-size: var(--font-size-sm); margin-top: var(--space-xs);">JetBrains Mono - Sharp readability</p>
+            </div>
+          </div>
+          
+          <div class="col-6">
+            <div class="typography-spec">
+              <div class="typography-spec-label">Handwritten Embellishments (Special Elite)</div>
+              <p class="typography-spec-example" style="font-family: var(--font-handwritten); font-size: var(--font-size-lg); color: var(--color-accent-blue);">
+                Manual correction made here. Note: check resistance limits!
+              </p>
+              <p class="mt-xs text-secondary" style="font-size: var(--font-size-sm);">Special Elite - Analog Ink Accent</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SECTION: COMPONENTS -->
+      <article id="components" class="mb-3xl">
+        <header class="section-header">
+          <span>03 // Component Specimen Library</span>
+          <span class="section-header-meta">Sheet 04</span>
+        </header>
+
+        <p>A library of modular, theme-consistent notebook elements built using clean markup. Copy these patterns when adding log items.</p>
+
+        <!-- Specimen: Buttons -->
+        <div class="component-specimen">
+          <div class="component-specimen-title">Tactile Buttons</div>
+          <div class="component-grid">
+            <button class="btn">Standard Button</button>
+            <button class="btn btn-primary">Primary Action</button>
+            <button class="btn btn-accent">Accent Warning</button>
+            <a href="#" class="btn">Link Style</a>
+          </div>
+        </div>
+
+        <!-- Specimen: Sticky Notes & Callouts -->
+        <div class="component-specimen">
+          <div class="component-specimen-title">Sticky Notes & Callout Panels</div>
+          <div class="grid-12">
+            <div class="col-6">
+              <div class="callout">
+                <div class="callout-title">Technical Observation</div>
+                <p style="margin: 0; font-size: var(--font-size-sm);">
+                  A blueprint standard box callout. Highlighted with a thick blue ink vertical margin. Used to summarize hardware testing parameters.
+                </p>
+              </div>
+              <div class="callout callout-alert mt-md">
+                <div class="callout-title">Critical Security Warning</div>
+                <p style="margin: 0; font-size: var(--font-size-sm);">
+                  Red margins represent critical failures, deprecated dependencies, or vulnerabilities located in standard static analyses.
+                </p>
+              </div>
+            </div>
+            
+            <div class="col-6" style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+              <div class="sticky-note" style="margin: 0;">
+                <div class="washi-tape washi-tape-top"></div>
+                <div class="sticky-note-header">Todo list</div>
+                <ul class="notebook-list notebook-list-checked" style="margin: 0; font-size: var(--font-size-sm);">
+                  <li>Measure loop current</li>
+                  <li>Rebuild IoT gateway</li>
+                  <li>Draft architecture</li>
+                </ul>
+              </div>
+              <div class="sticky-note" style="margin: 0;">
+                <div class="washi-tape washi-tape-top"></div>
+                <div class="sticky-note-header">Ref</div>
+                <p style="font-size: var(--font-size-sm); margin: 0; font-family: var(--font-handwritten); color: var(--color-accent-blue);">
+                  See Chapter 4 of the ENCODE framework guidelines for sequence mappings.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specimen: Paper Cards, Paper Clips, Washi Tape, Polaroid Frames -->
+        <div class="component-specimen">
+          <div class="component-specimen-title">Fitted Cards, Clips & Photo Frames</div>
+          <div class="grid-12">
+            <div class="col-7">
+              <div class="paper-card">
+                <div class="paper-clip"></div>
+                <h3 style="font-family: var(--font-notebook); margin-bottom: var(--space-sm);">Document Tucked in Page</h3>
+                <p style="font-size: var(--font-size-sm);">
+                  This card utilizes a `.paper-clip` to simulate a document secured to the current journal page. The clip drops a soft shadow beneath it, adding depth.
+                </p>
+                <p style="font-size: var(--font-size-sm); margin-bottom: 0;">
+                  Borders are deliberately thin and clean to support reading hierarchy.
+                </p>
+              </div>
+            </div>
+            
+            <div class="col-5">
+              <div class="image-frame">
+                <div class="washi-tape washi-tape-corner"></div>
+                <!-- Polaroid styled frame with generated schematic -->
+                <img src="assets/images/iot_schematic_sketch.png" alt="Hardware schematic circuit blueprint" style="max-height: 200px; object-fit: cover;">
+                <div class="image-frame-caption">Fig 1.2 — Prototype IoT Circuit</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specimen: Section Log Entry & Timelines -->
+        <div class="component-specimen">
+          <div class="component-specimen-title">Chronological Log Entries & Timeline Nodes</div>
+          <div class="grid-12">
+            <div class="col-7">
+              <article class="log-entry">
+                <div class="log-entry-date">July 01, 2026 @ 10:53</div>
+                <h3 class="log-entry-title">Laboratory Entry: Design System Setup</h3>
+                <div class="log-entry-meta">
+                  <span>Category: System Design</span>
+                  <span>Log: #001</span>
+                </div>
+                <p style="font-size: var(--font-size-sm);">
+                  Initiated structural styling parameters. Grid lines successfully set to blue-graph specifications. Spacing increments mapped to 8px base units. Responsive media configurations tested on mobile emulator viewports.
+                </p>
+                <div class="log-entry-footer">
+                  <span>Sign-off:</span>
+                  <span class="notebook-sign-off">Antigravity AI</span>
+                </div>
+              </article>
+            </div>
+            
+            <div class="col-5">
+              <div class="timeline-container">
+                <div class="timeline-node">
+                  <div class="timeline-node-time">2026 - Present</div>
+                  <div class="timeline-node-title">Principal Cloud Architect</div>
+                  <p style="font-size: var(--font-size-sm); margin-bottom: 0;">Researching distributed microservices and trust topologies.</p>
+                </div>
+                <div class="timeline-node">
+                  <div class="timeline-node-time">2024 - 2026</div>
+                  <div class="timeline-node-title">Security Researcher</div>
+                  <p style="font-size: var(--font-size-sm); margin-bottom: 0;">Audit of core operating systems and kernel-level drivers.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specimen: Status Badges, Labels, Tables, Lists -->
+        <div class="component-specimen">
+          <div class="component-specimen-title">Status Badges, Tables & Lists</div>
+          <div class="grid-12">
+            <div class="col-6">
+              <div style="margin-bottom: var(--space-md); display: flex; gap: var(--space-sm); flex-wrap: wrap;">
+                <span class="badge">Draft</span>
+                <span class="badge badge-success">Passed</span>
+                <span class="badge badge-warning">Testing</span>
+                <span class="badge badge-error">Failed</span>
+                <span class="badge badge-blue">Running</span>
+              </div>
+              
+              <ul class="notebook-list" style="margin-top: var(--space-md);">
+                <li>Technical documentation must utilize outline icons only.</li>
+                <li>Ensure all text contains high, accessible contrasts.</li>
+                <li>Avoid overlapping margins on smaller screens.</li>
+              </ul>
+            </div>
+            
+            <div class="col-6">
+              <table class="notebook-table">
+                <thead>
+                  <tr>
+                    <th>Test Parameter</th>
+                    <th>Measured Value</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>System Noise</td>
+                    <td>-112 dBm</td>
+                    <td><span class="badge badge-success">Passed</span></td>
+                  </tr>
+                  <tr>
+                    <td>Latency Delta</td>
+                    <td>14.2 ms</td>
+                    <td><span class="badge badge-success">Passed</span></td>
+                  </tr>
+                  <tr>
+                    <td>Input Voltage</td>
+                    <td>1.08 V</td>
+                    <td><span class="badge badge-warning">Testing</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specimen: Code blocks -->
+        <div class="component-specimen">
+          <div class="component-specimen-title">Journal Code Excerpts</div>
+          <div class="code-block">
+            <div class="code-block-header">
+              <span>analyzer.py</span>
+              <span class="tag-label">PYTHON</span>
+            </div>
+            <pre><code># Static Entropy Checker
+import math
+
+def calculate_entropy(data):
+    if not data:
+        return 0
+    entropy = 0
+    for x in range(256):
+        p_x = float(data.count(chr(x))) / len(data)
+        if p_x > 0:
+            entropy += - p_x * math.log(p_x, 2)
+    return entropy</code></pre>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- Signature Log Closing -->
+      <footer style="margin-top: var(--space-3xl); border-top: 1px dashed var(--border-color-ui); padding-top: var(--space-lg); display: flex; justify-content: space-between; font-family: var(--font-notebook); font-size: var(--font-size-xs); color: var(--color-ink-secondary);">
+        <span>JOURNAL STAMP: V1.0.0</span>
+        <span>RECORDED BY: ANTIGRAVITY</span>
+        <span>© 2026 RESEARCH LOG INC.</span>
+      </footer>
+
+    </section>
+  </main>
+
+</body>
+</html>

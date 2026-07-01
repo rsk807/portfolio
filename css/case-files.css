@@ -1,0 +1,229 @@
+/*
+ * ENGINEERING CASE FILES STYLES - "AN ENGINEER'S RESEARCH NOTEBOOK"
+ * Formats Chapter 02 project listings, blueprint sketches, and spec stacks.
+ */
+
+.case-file-block {
+  margin-top: var(--space-3xl);
+  margin-bottom: var(--space-4xl);
+  padding-bottom: var(--space-3xl);
+  border-bottom: 1.5px dashed var(--border-color-ui);
+  position: relative;
+}
+
+.case-file-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.case-file-label {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  color: var(--color-accent-red);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xxs);
+}
+
+.case-file-title {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink-primary);
+  margin-bottom: var(--space-md);
+  line-height: var(--line-height-tight);
+}
+
+/* Metadata Block */
+.case-metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-md);
+  background-color: var(--color-paper-base);
+  border: 1px solid var(--border-color-ui);
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-flat);
+  margin-bottom: var(--space-xl);
+}
+
+.case-meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-meta-key {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  color: var(--color-ink-secondary);
+  margin-bottom: var(--space-xxs);
+  font-weight: var(--weight-medium);
+}
+
+.case-meta-val {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-sm);
+  color: var(--color-ink-primary);
+  font-weight: var(--weight-bold);
+  word-break: break-word;
+}
+
+.case-meta-val a {
+  border-bottom: 1px dashed var(--color-accent-blue);
+  color: var(--color-accent-blue);
+}
+
+.case-meta-val a:hover {
+  color: var(--color-accent-red);
+  border-bottom-color: var(--color-accent-red);
+}
+
+/* Blueprint Sketch Placeholder */
+.blueprint-sketch-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: hsl(212, 45%, 16%); /* Deep blueprint blue */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 18px 18px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-lift-md);
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+  margin: var(--space-lg) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-mono);
+  text-align: center;
+  padding: var(--space-md);
+  user-select: none;
+  transition: all var(--transition-speed-normal) var(--transition-ease-analog);
+}
+
+.blueprint-sketch-placeholder:hover {
+  box-shadow: var(--shadow-lift-lg);
+  transform: translateY(-2px);
+}
+
+.blueprint-label {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.05em;
+  font-weight: var(--weight-semibold);
+}
+
+.blueprint-sublabel {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.blueprint-stamp {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-weight: var(--weight-bold);
+  font-family: var(--font-notebook);
+}
+
+/* Logging Sections */
+.case-investigation-section {
+  margin-bottom: var(--space-lg);
+}
+
+.case-investigation-title {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  color: var(--color-accent-blue);
+  margin-bottom: var(--space-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.case-investigation-title::before {
+  content: '▶';
+  font-size: 0.8em;
+  color: var(--color-accent-red);
+}
+
+.case-investigation-body {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-ink-primary);
+}
+
+/* Spec Card stacks for technologies list */
+.stack-spec-card {
+  background-color: var(--color-paper-light);
+  border: 1px solid var(--border-color-ui);
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-flat);
+  margin-bottom: var(--space-md);
+}
+
+.stack-spec-title {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  color: var(--color-accent-blue);
+  border-bottom: 1px dashed var(--border-color-ui);
+  padding-bottom: 4px;
+  margin-bottom: var(--space-sm);
+  font-weight: var(--weight-bold);
+}
+
+.stack-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stack-spec-item {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-ink-primary);
+  padding: var(--space-xxs) 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,0.02);
+}
+
+.stack-spec-item:last-child {
+  border-bottom: none;
+}
+
+.stack-spec-item-key {
+  color: var(--color-ink-secondary);
+}
+
+/* Handwritten annotation absolute positioning within Chapter 02 */
+.handwritten-annotation-ch2 {
+  font-family: var(--font-handwritten);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-blue);
+  opacity: 0.8;
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+}

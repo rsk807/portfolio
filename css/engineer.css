@@ -1,0 +1,175 @@
+/*
+ * THE ENGINEER CHAPTER STYLES - "AN ENGINEER'S RESEARCH NOTEBOOK"
+ * Coordinates layouts for Chapter 01, profile photo frames, philosophy blocks, and fact listings.
+ */
+
+/* Passport photo frame container */
+.engineer-photo-column {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: var(--space-lg);
+}
+
+.engineer-photo-frame {
+  max-width: 250px;
+  transform: rotate(-1.5deg);
+  transition: all var(--transition-speed-normal) var(--transition-ease-analog);
+  position: relative;
+  background-color: var(--color-paper-light);
+  border: 1px solid var(--border-color-ui);
+  padding: var(--space-sm) var(--space-sm) var(--space-xl) var(--space-sm);
+  box-shadow: var(--shadow-lift-md);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.engineer-photo-frame img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.engineer-photo-frame:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: var(--shadow-lift-lg);
+}
+
+.engineer-photo-caption {
+  font-family: var(--font-handwritten);
+  font-size: var(--font-size-sm);
+  color: var(--color-ink-secondary);
+  margin-top: var(--space-md);
+}
+
+/* Field Notes / Engineering Philosophy Block */
+.field-notes-box {
+  border-left: 3px double var(--color-accent-red);
+  background-color: hsla(50, 95%, 85%, 0.12); /* Extremely subtle highlighter wash */
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-lg) 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.field-notes-title {
+  font-family: var(--font-handwritten);
+  font-size: var(--font-size-lg);
+  color: var(--color-accent-red);
+  margin-bottom: var(--space-sm);
+  letter-spacing: 0.02em;
+}
+
+.field-notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.field-notes-item {
+  position: relative;
+  padding-left: var(--space-lg);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-xs);
+  color: var(--color-ink-primary);
+  line-height: var(--line-height-relaxed);
+}
+
+.field-notes-item::before {
+  content: '☞';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent-red);
+  font-size: 1.1em;
+}
+
+/* Quick Facts Margin Ledger */
+.quick-facts-ledger {
+  background-color: var(--color-paper-base);
+  border: 1px solid var(--border-color-ui);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-flat);
+  margin-top: var(--space-lg);
+}
+
+.quick-facts-title {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  color: var(--color-accent-blue);
+  border-bottom: 1.5px solid var(--color-ink-primary);
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
+  letter-spacing: 0.05em;
+  font-weight: var(--weight-bold);
+}
+
+.quick-facts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quick-facts-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--border-color-ui);
+  padding: var(--space-xs) 0;
+  font-size: var(--font-size-xs);
+  font-family: var(--font-notebook);
+  line-height: var(--line-height-tight);
+}
+
+.quick-facts-row:last-child {
+  border-bottom: none;
+}
+
+.quick-facts-key {
+  color: var(--color-ink-secondary);
+  font-weight: var(--weight-medium);
+}
+
+.quick-facts-val {
+  color: var(--color-ink-primary);
+  text-align: right;
+  max-width: 60%;
+  word-break: break-word;
+}
+
+/* Handwritten annotation absolute positioning within Chapter 01 */
+.handwritten-annotation-ch1 {
+  font-family: var(--font-handwritten);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-blue);
+  opacity: 0.8;
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Custom annotations placement */
+.annotation-ch1-stamp {
+  top: 180px;
+  left: 20px;
+  transform: rotate(-8deg);
+}
+
+/* Transitions layout note at bottom */
+.transition-log-note {
+  font-family: var(--font-handwritten);
+  font-size: var(--font-size-base);
+  color: var(--color-ink-secondary);
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  margin-top: var(--space-3xl);
+  border-top: 1px dashed var(--border-color-ui);
+}
+
+/* Mobile/Tablet overrides */
+@media (max-width: 900px) {
+  .engineer-photo-column {
+    padding-bottom: var(--space-md);
+  }
+}

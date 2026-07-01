@@ -1,0 +1,286 @@
+/*
+ * REMAINING CHAPTERS STYLES - "AN ENGINEER'S RESEARCH NOTEBOOK"
+ * Declares styles for Chapters 03 to 07.
+ */
+
+/* ==========================================
+   CHAPTER 04: PROFESSIONAL FIELD ASSIGNMENT
+   ========================================== */
+.field-assignment-card {
+  border: 1.5px solid var(--color-ink-primary);
+  background-color: var(--color-paper-light);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-lift-md);
+  position: relative;
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-lg);
+  transition: all var(--transition-speed-normal) var(--transition-ease-analog);
+}
+
+.field-assignment-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift-lg);
+}
+
+.field-assignment-header {
+  border-bottom: 2px solid var(--color-ink-primary);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: var(--font-notebook);
+}
+
+.field-assignment-ref {
+  font-size: var(--font-size-xs);
+  color: var(--color-accent-red);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+}
+
+.field-assignment-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink-primary);
+}
+
+.field-assignment-company {
+  font-size: var(--font-size-sm);
+  color: var(--color-ink-secondary);
+  margin-top: 2px;
+}
+
+.field-assignment-section {
+  margin-bottom: var(--space-md);
+}
+
+.field-assignment-sec-title {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  color: var(--color-accent-blue);
+  margin-bottom: var(--space-xxs);
+  font-weight: var(--weight-bold);
+}
+
+.field-assignment-sec-body {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-ink-primary);
+}
+
+/* ==========================================
+   CHAPTER 05: TECHNICAL REFERENCE NOTES
+   ========================================== */
+.ref-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.ref-note-card {
+  background-color: var(--color-paper-light);
+  border: 1px solid var(--border-color-ui);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-flat);
+  position: relative;
+  transition: all var(--transition-speed-normal) var(--transition-ease-analog);
+}
+
+.ref-note-card:hover {
+  transform: translateY(-2px) rotate(0.5deg);
+  box-shadow: var(--shadow-lift-md);
+  border-color: var(--color-accent-blue);
+}
+
+.ref-note-header {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-blue);
+  border-bottom: 1.5px solid var(--color-ink-primary);
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-xs);
+  font-weight: var(--weight-bold);
+}
+
+.ref-note-tech {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-ink-primary);
+  margin-bottom: var(--space-sm);
+  display: inline-block;
+  background: var(--color-paper-base);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border-color-ui);
+  width: fit-content;
+}
+
+.ref-note-body {
+  font-size: var(--font-size-xs);
+  color: var(--color-ink-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ==========================================
+   CHAPTER 06: MILESTONE CATALOG TABLES
+   ========================================== */
+.milestone-catalog-box {
+  background-color: var(--color-paper-light);
+  border: 1px solid var(--border-color-ui);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: var(--shadow-flat);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.milestone-catalog-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px dashed var(--border-color-ui);
+  gap: var(--space-md);
+}
+
+.milestone-catalog-row:last-child {
+  border-bottom: none;
+}
+
+.milestone-meta {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  color: var(--color-ink-secondary);
+  width: 25%;
+}
+
+.milestone-title {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-sm);
+  color: var(--color-ink-primary);
+  font-weight: var(--weight-semibold);
+  width: 60%;
+}
+
+.milestone-year {
+  font-family: var(--font-handwritten);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-red);
+  width: 15%;
+  text-align: right;
+}
+
+/* ==========================================
+   CHAPTER 07: CONTACT MEMO PAD
+   ========================================== */
+.contact-memo-card {
+  max-width: 480px;
+  margin: var(--space-2xl) auto;
+  background-color: var(--color-sticky-yellow);
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: var(--space-lg) var(--space-xl);
+  box-shadow: var(--shadow-lift-md);
+  transform: rotate(-1deg);
+  border-radius: var(--radius-sm);
+  position: relative;
+  transition: all var(--transition-speed-normal) var(--transition-ease-analog);
+}
+
+.contact-memo-card:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: var(--shadow-lift-lg);
+}
+
+.contact-memo-header {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-sm);
+  border-bottom: 2px solid var(--color-ink-primary);
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.contact-memo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-memo-row {
+  padding: var(--space-sm) 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(0,0,0,0.12);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-notebook);
+}
+
+.contact-memo-row:last-child {
+  border-bottom: none;
+}
+
+.contact-memo-key {
+  color: var(--color-ink-secondary);
+}
+
+.contact-memo-val {
+  color: var(--color-ink-primary);
+  font-weight: var(--weight-semibold);
+  text-align: right;
+}
+
+.contact-memo-val a {
+  border-bottom: 1px dashed var(--color-accent-blue);
+}
+
+.contact-memo-val a:hover {
+  color: var(--color-accent-red);
+  border-bottom-color: var(--color-accent-red);
+}
+
+/* Handwritten annotation absolute positioning within new chapters */
+.handwritten-annotation-ch3 {
+  font-family: var(--font-handwritten);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-blue);
+  opacity: 0.8;
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  top: 15px;
+  right: 10px;
+  transform: rotate(3deg);
+}
+
+.handwritten-annotation-ch4 {
+  font-family: var(--font-handwritten);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-blue);
+  opacity: 0.8;
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  top: 25px;
+  right: 20px;
+  transform: rotate(-2deg);
+}
+
+/* Responsive stacks */
+@media (max-width: 768px) {
+  .milestone-catalog-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+  .milestone-meta, .milestone-title, .milestone-year {
+    width: 100%;
+    text-align: left;
+  }
+}

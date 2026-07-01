@@ -1,0 +1,13 @@
+# Exclude personal portrait images
+my_image.jpg
+assets/images/my_image.jpg
+
+# Exclude branding logo assets
+*logo*
+sk_logo_reimagined.png
+sk_logo_reimagined_cropped.png
+sk_logo_*.png
+
+# Exclude temporary extraction logs and notes
+resume_text.txt
+*.log

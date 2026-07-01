@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sushant Kumar — Cybersecurity Engineer, AI &amp; IoT Researcher</title>
+  <meta name="description" content="Personal Engineering Journal and Research Log of Sushant Kumar. Focused on digital forensics automation, voice AI interfaces, edge redaction pipelines, and secure cloud system logs.">
+  <meta name="theme-color" content="#faf8f5">
+  <meta name="robots" content="index, follow">
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://rsk807.github.io/">
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Sushant Kumar — Cybersecurity Engineer, AI &amp; IoT Researcher">
+  <meta property="og:description" content="Explore the engineering research journal of Sushant Kumar. Focused on digital forensics automation, voice AI interfaces, edge redaction pipelines, and secure cloud system logs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rsk807.github.io/">
+  <meta property="og:image" content="https://rsk807.github.io/sk_logo_512x512.png">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sushant Kumar — Cybersecurity Engineer, AI &amp; IoT Researcher">
+  <meta name="twitter:description" content="Explore the engineering research journal of Sushant Kumar. Focused on digital forensics automation, voice AI interfaces, edge redaction pipelines, and secure cloud system logs.">
+  <meta name="twitter:image" content="https://rsk807.github.io/sk_logo_512x512.png">
+
+  <!-- Favicon Set -->
+  <link rel="icon" type="image/png" sizes="16x16" href="sk_logo_16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="sk_logo_32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="sk_logo_48x48.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="sk_logo_64x64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="sk_logo_180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="sk_logo_192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="sk_logo_512x512.png">
+
+  <!-- JSON-LD Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sushant Kumar",
+    "url": "https://rsk807.github.io/",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "MIT-WPU Pune"
+    },
+    "jobTitle": "Cybersecurity Engineer & AI Developer",
+    "sameAs": [
+      "https://github.com/rsk807",
+      "https://www.linkedin.com/in/sushant-kumar-csf/"
+    ],
+    "publishingPrinciples": "Patent ID: 202521077464"
+  }
+  </script>
+
+  <!-- Core Design System -->
+  <link rel="stylesheet" href="css/design-system.css">
+  
+  <!-- Interactive Scripts -->
+  <script src="js/notebook.js" defer></script>
+  <script src="js/blueprint-viewer.js" defer></script>
+</head>
+<body>
+
+  <!-- Premium Minimalist Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <img src="sk_logo_reimagined_cropped.png" alt="SK Logo" class="loading-logo" loading="eager">
+  </div>
+
+  <!-- Keyboard Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Slim Sticky Header (Always visible) -->
+  <header class="slim-sticky-header" aria-label="Logbook Header">
+    <div class="header-title" style="display: flex; align-items: center; gap: 16px;">
+      <img src="sk_logo_64x64.png" alt="SK Logo" style="height: 24px; width: auto; object-fit: contain; filter: grayscale(1) contrast(1.25) brightness(0.95); mix-blend-mode: multiply;" loading="lazy">
+      <span style="font-weight: 600; letter-spacing: 0.05em; font-family: var(--font-sans);">SUSHANT KUMAR</span>
+      <span style="opacity: 0.25; font-weight: 300;">|</span>
+      <span style="font-family: var(--font-notebook); font-size: var(--font-size-xs); color: var(--color-ink-secondary); text-transform: uppercase; letter-spacing: 0.05em;">Research Log</span>
+    </div>
+    <div class="header-active-chapter" id="header-active-chapter">
+      Cover Page
+    </div>
+    <div class="header-actions">
+      <button class="paper-toggle-btn" id="paper-theme-toggle" title="Toggle between grid and ruled pad background">PAPER: GRID</button>
+      <a href="Sushant-Resume.pdf" class="header-icon-link" aria-label="Download Resume / CV" download>📄 CV</a>
+      <a href="https://github.com/rsk807" class="header-icon-link" target="_blank" aria-label="GitHub Profile">⚙️ GH</a>
+      <a href="https://www.linkedin.com/in/sushant-kumar-csf/" class="header-icon-link" target="_blank" aria-label="LinkedIn Profile">💼 LI</a>
+      <button class="mobile-menu-toggle" id="mobile-drawer-toggle" aria-label="Open Navigation Index">Index ☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Index Drawer Overlay -->
+  <div class="index-drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+  
+  <!-- Mobile Index Drawer -->
+  <aside class="index-drawer" id="index-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="drawer-header">
+      <span>Journal Chapters</span>
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close drawer">✕</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="#chapter-00" class="drawer-item active"><span class="drawer-item-num">00</span> Cover Page</a>
+      <a href="#chapter-01" class="drawer-item"><span class="drawer-item-num">01</span> The Engineer</a>
+      <a href="#chapter-02" class="drawer-item"><span class="drawer-item-num">02</span> Case Files</a>
+      <a href="#chapter-03" class="drawer-item"><span class="drawer-item-num">03</span> Research &amp; Innovation</a>
+      <a href="#chapter-04" class="drawer-item"><span class="drawer-item-num">04</span> Professional Experience</a>
+      <a href="#chapter-05" class="drawer-item"><span class="drawer-item-num">05</span> Technical Expertise</a>
+      <a href="#chapter-06" class="drawer-item"><span class="drawer-item-num">06</span> Leadership &amp; Recognition</a>
+      <a href="#chapter-07" class="drawer-item"><span class="drawer-item-num">07</span> Contact Memo</a>
+    </nav>
+  </aside>
+
+  <!-- Notebook Viewport centring -->
+  <div class="cover-wrapper" style="align-items: flex-start; padding-top: var(--space-md);">
+    
+    <!-- Unified Notebook Binder -->
+    <main class="notebook-binder notebook-binder-settle" id="main-content" aria-label="Personal Notebook Frame">
+      
+      <!-- Decorative Binder Spirals on the Left -->
+      <div class="spiral-bind" aria-hidden="true" style="padding-top: var(--space-4xl);">
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+        <div class="spiral-wire"></div>
+      </div>
+
+      <!-- Tactile Paper Clip holding pages -->
+      <div class="paper-clip" style="right: var(--space-3xl); top: -15px;" aria-hidden="true"></div>
+
+      <!-- Left Spine Nav (Visible on Desktop) -->
+      <aside class="left-spine-nav" aria-label="Spine Nav" style="top: 140px;">
+        <a href="#chapter-00" class="spine-link active" data-title="00 Cover Page">00</a>
+        <a href="#chapter-01" class="spine-link" data-title="01 The Engineer">01</a>
+        <a href="#chapter-02" class="spine-link" data-title="02 Case Files">02</a>
+        <a href="#chapter-03" class="spine-link" data-title="03 Research &amp; Innovation">03</a>
+        <a href="#chapter-04" class="spine-link" data-title="04 Professional Experience">04</a>
+        <a href="#chapter-05" class="spine-link" data-title="05 Technical Expertise">05</a>
+        <a href="#chapter-06" class="spine-link" data-title="06 Leadership &amp; Recognition">06</a>
+        <a href="#chapter-07" class="spine-link" data-title="07 Contact Memo">07</a>
+      </aside>
+
+      <!-- Right Edge Bookmark Dividers (Visible on Desktop) -->
+      <aside class="notebook-bookmarks-aside" aria-label="Bookmark Tabs" style="top: 140px;">
+        <a href="#chapter-01" class="bookmark-tab" style="--bookmark-color: var(--color-sticky-yellow);" title="Chapter 01: The Engineer">01</a>
+        <a href="#chapter-02" class="bookmark-tab" style="--bookmark-color: var(--color-sticky-blue);" title="Chapter 02: Case Files">02</a>
+        <a href="#chapter-03" class="bookmark-tab" style="--bookmark-color: var(--color-sticky-pink);" title="Chapter 03: Research &amp; Innovation">03</a>
+        <a href="#chapter-04" class="bookmark-tab" style="--bookmark-color: var(--color-paper-base);" title="Chapter 04: Professional Experience">04</a>
+        <a href="#chapter-05" class="bookmark-tab" style="--bookmark-color: var(--color-sticky-yellow);" title="Chapter 05: Technical Expertise">05</a>
+        <a href="#chapter-06" class="bookmark-tab" style="--bookmark-color: var(--color-sticky-blue);" title="Chapter 06: Leadership &amp; Recognition">06</a>
+        <a href="#chapter-07" class="bookmark-tab" style="--bookmark-color: var(--color-accent-highlighter-solid);" title="Chapter 07: Contact">07</a>
+      </aside>
+
+      <!-- Ruled Grid Page Sheet containing Cover + Content chapters -->
+      <div class="notebook-page notebook-page-folded">
+        
+        <!-- Faint organic coffee ring stain -->
+        <div class="coffee-stain" aria-hidden="true" style="bottom: auto; top: 600px; right: 8%;"></div>
+
+        <!-- Tactile folded corner -->
+        <div class="folded-page-corner" aria-hidden="true"></div>
+
+        <!-- ==========================================
+             COVER PAGE (Chapter 00)
+             ========================================== -->
+        <section id="chapter-00" class="notebook-chapter-section" data-chapter="00" data-title="Cover Page" data-page-num="Cover" style="min-height: calc(100vh - var(--space-4xl)); margin-bottom: var(--space-4xl); position: relative;">
+          
+          <!-- Swaying Bookmark Ribbon Scroll Indicator -->
+          <a href="#chapter-01" class="cover-bookmark" id="scroll-ribbon" title="Scroll to Chapter 01" aria-label="Scroll to Chapter 01"></a>
+
+          <!-- Handwriting annotations -->
+          <span class="margin-handwritten-note note-top-left" style="left: -40px; top: 10px;" aria-hidden="true">Field Notes: Vol. I</span>
+          <span class="margin-handwritten-note note-mid-right" style="right: 10px; top: 380px;" aria-hidden="true">Revision Approved</span>
+
+          <!-- Upper Page Grid Metainfo Header -->
+          <div class="notebook-meta-header" style="margin-bottom: var(--space-xl);">
+            <div class="meta-block">
+              <span class="meta-block-label">Journal Type</span>
+              <span style="color: var(--color-ink-primary); font-weight: 500;">RESEARCH LOG COVER</span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-block-label">Log Number</span>
+              <span>SK-LOG-001</span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-block-label">Calibration</span>
+              <span id="header-date">JULY 2026</span>
+            </div>
+          </div>
+
+          <!-- Cover Title Group -->
+          <div class="cover-title-group" style="padding-top: var(--space-lg);">
+            <div class="cover-logo-container" style="display: flex; justify-content: center; margin-bottom: var(--space-lg);">
+              <img src="sk_logo_reimagined_cropped.png" alt="SK Logo Seal" class="cover-logo-seal" style="width: 110px; height: auto; object-fit: contain; filter: grayscale(1) contrast(1.15) opacity(0.8); mix-blend-mode: multiply;" loading="lazy">
+            </div>
+            
+            <h1 class="cover-h1 mt-md">ENGINEERING NOTEBOOK</h1>
+            
+            <!-- Animated Ink underline path -->
+            <svg class="underline-svg" viewBox="0 0 500 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
+              <path class="underline-path" d="M6,6 C120,2 350,10 494,5" stroke="var(--color-accent-blue)" stroke-width="3" />
+            </svg>
+            
+            <div style="margin-top: var(--space-lg);">
+              <span class="owner-label">Owner</span>
+              <span class="owner-name">Sushant Kumar</span>
+            </div>
+          </div>
+
+          <!-- Stacked Identities -->
+          <div class="identity-stack" style="margin-top: var(--space-xl);">
+            <div class="identity-label">Cybersecurity Engineer</div>
+            <div class="identity-label">AI Systems Developer</div>
+            <div class="identity-label">Digital Forensics Researcher</div>
+          </div>
+
+          <!-- Mission Statement -->
+          <blockquote class="mission-statement" style="margin-top: var(--space-xl); margin-bottom: var(--space-2xl);">
+            <p>Building intelligent, secure systems from edge devices to the cloud.</p>
+          </blockquote>
+
+          <!-- Metadata Ledger -->
+          <div class="metadata-ledger">
+            <div class="metadata-item">
+              <span class="metadata-key">Classification</span>
+              <span class="metadata-val">Personal Engineering Journal</span>
+            </div>
+            <div class="metadata-item">
+              <span class="metadata-key">Status</span>
+              <span class="metadata-val" style="color: var(--color-accent-blue);">● Active</span>
+            </div>
+            <div class="metadata-item">
+              <span class="metadata-key">Revision</span>
+              <span class="metadata-val">v2026.1</span>
+            </div>
+            <div class="metadata-item">
+              <span class="metadata-key">Started</span>
+              <span class="metadata-val">2023</span>
+            </div>
+            <div class="metadata-item">
+              <span class="metadata-key">Current Focus</span>
+              <span class="metadata-val">Cybersecurity / AI Systems / Cloud / IoT</span>
+            </div>
+            <div class="metadata-item">
+              <span class="metadata-key">Last Updated</span>
+              <span class="metadata-val" id="dynamic-date-ledger">2026-07-01</span>
+            </div>
+          </div>
+
+          <div class="revision-stamp" style="bottom: 0px;" aria-hidden="true">VERIFIED v2026.1</div>
+        </section>
+
+        <!-- ==========================================
+             CHAPTER 01: THE ENGINEER (Page 004)
+             ========================================== -->
+        <section id="chapter-01" class="notebook-chapter-section" data-chapter="01" data-title="The Engineer" data-page-num="004" style="position: relative;">
+          
+          <!-- Margin notes for Chapter 1 -->
+          <span class="handwritten-annotation-ch1 annotation-ch1-stamp" aria-hidden="true">Logged: Jul 2026</span>
+
+          <header class="chapter-header">
+            <div class="chapter-number">Chapter 01</div>
+            <h2 class="chapter-title">The Engineer</h2>
+            <p class="chapter-subtitle">The ideas, curiosity, and principles behind every project.</p>
+            <div class="chapter-divider" style="margin-bottom: var(--space-xs);"></div>
+            <span style="font-family: var(--font-notebook); font-size: var(--font-size-xs); color: var(--color-ink-secondary);">REVISION: v2026.1</span>
+          </header>
+          
+          <div class="grid-12 mt-lg">
+            <!-- Left Column: Portrait Photograph & Margin Ledger -->
+            <div class="col-4 engineer-photo-column" style="flex-direction: column;">
+              
+              <!-- Passport Photo component -->
+              <div class="engineer-photo-frame">
+                <!-- Paper Clip overlay -->
+                <div class="paper-clip" style="right: auto; left: 20px; top: -14px;" aria-hidden="true"></div>
+                
+                <img src="assets/images/my_image.jpg" alt="Sushant Kumar portrait" loading="lazy">
+                <div class="engineer-photo-caption">Owner Specimen — S. Kumar</div>
+              </div>
+
+              <!-- Quick Facts margin ledger -->
+              <div class="quick-facts-ledger">
+                <div class="quick-facts-title">Quick Facts</div>
+                <ul class="quick-facts-list">
+                  <li class="quick-facts-row">
+                    <span class="quick-facts-key">Institution</span>
+                    <span class="quick-facts-val">MIT-WPU Pune</span>
+                  </li>
+                  <li class="quick-facts-row">
+                    <span class="quick-facts-key">Degree</span>
+                    <span class="quick-facts-val">B.Tech CS</span>
+                  </li>
+                  <li class="quick-facts-row">
+                    <span class="quick-facts-key">Specialization</span>
+                    <span class="quick-facts-val">Cybersecurity / Forensics</span>
+                  </li>
+                  <li class="quick-facts-row">
+                    <span class="quick-facts-key">CGPA</span>
+                    <span class="quick-facts-val">9.16 / 10.0</span>
+                  </li>
+                  <li class="quick-facts-row">
+                    <span class="quick-facts-key">Patent ID</span>
+                    <span class="quick-facts-val">202521077464</span>
+                  </li>
+                  <li class="quick-facts-row">
+                    <span class="quick-facts-key">Research</span>
+                    <span class="quick-facts-val">Springer Nature</span>
+                  </li>
+                  <li class="quick-facts-row">
+                    <span class="quick-facts-key">Speaking</span>
+                    <span class="quick-facts-val">DevConf 2025</span>
+                  </li>
+                  <li class="quick-facts-row">
+                    <span class="quick-facts-key">GH Node</span>
+                    <span class="quick-facts-val"><a href="https://github.com/rsk807" target="_blank" style="border-bottom: none;">rsk807</a></span>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Right Column: Narrative & Details -->
+            <div class="col-8">
+              
+              <!-- Introduction -->
+              <p style="font-size: var(--font-size-lg); line-height: var(--line-height-relaxed); color: var(--color-ink-primary); margin-bottom: var(--space-lg);">
+                Building and securing systems at the intersection of hardware, cloud, and machine intelligence is less about compiling code and more about understanding structural constraints. My journey in technology began with low-level microcontrollers, exploring how raw physical currents translate to functional operations. This curiosity naturally evolved into auditing architectures, mapping attack vectors, and designing secure defensive loops.
+              </p>
+              
+              <!-- Narrative -->
+              <p>
+                As a Computer Science candidate specializing in Cyber Security and Data Forensics at MIT World Peace University, I have spent the last few years auditing trust boundaries and building secure layers. My experience ranges from analyzing real-world phishing vectors and developing SQL-injection-resistant authentication filters during my internship at Ediglobe, to engineering custom local-first data leakage filters (<span class="highlight-yellow">RakshaNetra</span>) that sanitize LLM inputs on-device before they leave the gateway boundary.
+              </p>
+              
+              <p>
+                This exploration of system assurance extends to both physical hardware and published research. I engineered <span class="highlight-blue">VACARS</span>, an voice-assisted embedded AI response system utilizing a Raspberry Pi and custom visual faceplate, which culminated in a Springer Nature journal publication in <i>Cureus</i>. Additionally, my work on <i>Omniscient</i>, a digital cyber forensics framework automating social OSINT and LLM-assisted reverse engineering, resulted in a published patent (Application ID: 202521077464). Whether assembling autonomous firefighting robots or emulating emulated defensive intrusion tests, my focus remains on building deterministic, secure architectures.
+              </p>
+
+              <!-- Field Notes: Philosophy -->
+              <div class="field-notes-box">
+                <div class="field-notes-title">FIELD NOTES // OPERATIONAL PRINCIPLES</div>
+                <ul class="field-notes-list">
+                  <li class="field-notes-item">Security is a core design constraint, never an external wrapper.</li>
+                  <li class="field-notes-item">Low-latency edge execution guarantees data privacy and system resilience.</li>
+                  <li class="field-notes-item">Validate abstract mathematical models through physical hardware feedback.</li>
+                  <li class="field-notes-item">Document every failure; they outline the boundaries of secure execution.</li>
+                </ul>
+              </div>
+
+              <!-- Current Focus observations -->
+              <h3 style="font-family: var(--font-notebook); margin-top: var(--space-xl); margin-bottom: var(--space-sm);">Log Observations // Active Research</h3>
+              
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-top: var(--space-md);">
+                <div class="paper-card" style="margin: 0; padding: var(--space-md);">
+                  <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-accent-blue); margin-bottom: var(--space-xs);">Client-Edge AI Privacy</h4>
+                  <p style="font-size: var(--font-size-xs); margin: 0; color: var(--color-ink-secondary);">
+                    Redacting sensitive enterprise tokens locally before API transmissions (RakshaNetra system optimization).
+                  </p>
+                </div>
+                <div class="paper-card" style="margin: 0; padding: var(--space-md);">
+                  <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-accent-blue); margin-bottom: var(--space-xs);">Secure Embedded Systems</h4>
+                  <p style="font-size: var(--font-size-xs); margin: 0; color: var(--color-ink-secondary);">
+                    Implementing secure sensor fusion and micro-actuator control protocols for automation.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Section Closing transition -->
+          <div class="transition-log-note">
+            The following pages document the systems, experiments and research developed throughout this journey.
+          </div>
+
+        </section>
+
+        <!-- ==========================================
+             CHAPTER 02: ENGINEERING CASE FILES (Page 018)
+             ========================================== -->
+        <section id="chapter-02" class="notebook-chapter-section" data-chapter="02" data-title="Case Files" data-page-num="018" style="position: relative;">
+          
+          <header class="chapter-header">
+            <div class="chapter-number">Chapter 02</div>
+            <h2 class="chapter-title">Engineering Case Files</h2>
+            <p class="chapter-subtitle">Documented systems, experiments, research, and production work.</p>
+            <div class="chapter-divider"></div>
+          </header>
+
+          <!-- ==========================================
+               CASE FILE 001 // OMNISCIENT
+               ========================================== -->
+          <article class="case-file-block">
+            <span class="handwritten-annotation-ch2" style="top: 10px; right: 20px; transform: rotate(-3deg);" aria-hidden="true">Patent Published</span>
+            
+            <div class="case-file-label">Case File 001</div>
+            <h3 class="case-file-title">Omniscient — AI-Powered Cyber Forensics Platform</h3>
+
+            <!-- Metadata Sheet -->
+            <div class="case-metadata-grid">
+              <div class="case-meta-item">
+                <span class="case-meta-key">Classification</span>
+                <span class="case-meta-val">AI + Digital Forensics + Investigation</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Status</span>
+                <span class="case-meta-val" style="color: var(--color-accent-blue);">Patent Published</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Year</span>
+                <span class="case-meta-val">2026</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Patent Reference</span>
+                <span class="case-meta-val">ID-202521077464</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Source</span>
+                <span class="case-meta-val"><a href="https://github.com/rsk807" target="_blank">github.com/rsk807</a></span>
+              </div>
+            </div>
+
+            <!-- Investigation Details -->
+            <div class="grid-12">
+              <div class="col-8">
+                
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Question</h4>
+                  <p class="case-investigation-body">
+                    How can digital forensics analysts automate intelligence extraction from fragmented social channels and API responses without exhausting manual investigation hours?
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Background</h4>
+                  <p class="case-investigation-body">
+                    Cyber intelligence extraction involves navigating massive API structures, rate-limiting, and noisy user streams. Solving this is vital to drastically reducing the time spent by digital forensics investigators when hunting operational threat vectors.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Objective</h4>
+                  <p class="case-investigation-body">
+                    To build a digital forensics tool leveraging LLMs and API reverse engineering to parse channels and extract actionable threat intelligence.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Approach</h4>
+                  <p class="case-investigation-body">
+                    Decoupled architecture separating web scraping and reverse-engineered API gateways from LLM reasoning components. Rather than querying models on raw noise, we pre-process headers and structure JSON datasets to optimize token usage.
+                  </p>
+                </div>
+
+              </div>
+
+              <!-- Tech Spec side panel -->
+              <div class="col-4">
+                <div class="stack-spec-card">
+                  <div class="stack-spec-title">System Specs</div>
+                  <ul class="stack-spec-list">
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Language</span>
+                      <span class="stack-spec-item-val">Python</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">AI Agent</span>
+                      <span class="stack-spec-item-val">LLM APIs</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Scraping</span>
+                      <span class="stack-spec-item-val">API Reverse Eng</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Cache</span>
+                      <span class="stack-spec-item-val">Redis</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blueprint sketch -->
+            <div class="blueprint-sketch-placeholder interactive-blueprint" data-media-type="image" data-media-src="assets/images/omniscient.png">
+              <div class="blueprint-skeleton"></div>
+              <div class="blueprint-media-frame"></div>
+              <div class="blueprint-grid-overlay">
+                <span class="blueprint-label">Omniscient Forensics Processing Flow</span>
+                <span class="blueprint-sublabel">[ API Gateways ] ➔ [ Data Sanitization Block ] ➔ [ LLM Inference Engine ] ➔ [ Forensic Report ]</span>
+                <span class="blueprint-stamp">DIAGRAM REF: SK-OMS-01</span>
+              </div>
+              <div class="blueprint-hover-hint">Click to Zoom Spec</div>
+            </div>
+
+            <!-- Decisions, Results, Lessons -->
+            <div class="grid-12">
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Design Decisions // Trade-offs</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary);">
+                  We chose sandboxed headless scraping nodes rather than high-resource browsers to prevent detection and tracebacks during automated runs. Concurrency queues managed via Redis ensured that investigator time is reduced from hours to single-digit minutes.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Lessons Learned</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary); margin-bottom: 0;">
+                  LLM hallucinations on raw data dumps are mitigated by structuring raw scraped arrays into strict key-value JSON formats prior to model execution.
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-md" style="font-family: var(--font-handwritten); color: var(--color-accent-blue);">
+              * Field note: Forensics data parser latency minimized to 8.2s per log sequence.
+            </p>
+          </article>
+
+          <!-- ==========================================
+               CASE FILE 002 // RAKSHANETRA
+               ========================================== -->
+          <article class="case-file-block">
+            <span class="handwritten-annotation-ch2" style="top: 10px; right: 20px; transform: rotate(-1deg);" aria-hidden="true">Edge Sanitizer</span>
+            
+            <div class="case-file-label">Case File 002</div>
+            <h3 class="case-file-title">RakshaNetra — Proactive Data Leakage Prevention for LLMs</h3>
+
+            <!-- Metadata Sheet -->
+            <div class="case-metadata-grid">
+              <div class="case-meta-item">
+                <span class="case-meta-key">Classification</span>
+                <span class="case-meta-val">Cybersecurity + Privacy + Enterprise</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Status</span>
+                <span class="case-meta-val" style="color: var(--color-accent-blue);">Prototype Validated</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Year</span>
+                <span class="case-meta-val">2026</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Execution Edge</span>
+                <span class="case-meta-val">Local Browser Proxy</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Source</span>
+                <span class="case-meta-val">Internal Implementation</span>
+              </div>
+            </div>
+
+            <!-- Investigation Details -->
+            <div class="grid-12">
+              <div class="col-8">
+                
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Question</h4>
+                  <p class="case-investigation-body">
+                    How do we prevent sensitive enterprise metrics, API tokens, and user credentials from leaking to public LLM endpoints through web browsers and API relays?
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Background</h4>
+                  <p class="case-investigation-body">
+                    Organizations deploying third-party generative models risk exposing intellectual property. Sanitization must occur at the client edge prior to packet transmission.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Objective</h4>
+                  <p class="case-investigation-body">
+                    Build a local-first browser interception proxy that redacts sensitive text patterns and images in real-time.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Approach</h4>
+                  <p class="case-investigation-body">
+                    Client-side interception via service workers and browser proxy layers. Intercepts user prompts, processes them through local lightweight patterns, and sanitizes data.
+                  </p>
+                </div>
+
+              </div>
+
+              <!-- Tech Spec side panel -->
+              <div class="col-4">
+                <div class="stack-spec-card">
+                  <div class="stack-spec-title">System Specs</div>
+                  <ul class="stack-spec-list">
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Stack</span>
+                      <span class="stack-spec-item-val">MERN</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Proxy Core</span>
+                      <span class="stack-spec-item-val">Service Workers</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Redaction</span>
+                      <span class="stack-spec-item-val">Regex &amp; Local Model</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">DB</span>
+                      <span class="stack-spec-item-val">MongoDB</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blueprint sketch -->
+            <div class="blueprint-sketch-placeholder interactive-blueprint" data-media-type="image" data-media-src="assets/images/rakshanetra.png">
+              <div class="blueprint-skeleton"></div>
+              <div class="blueprint-media-frame"></div>
+              <div class="blueprint-grid-overlay">
+                <span class="blueprint-label">RakshaNetra Interception Flow</span>
+                <span class="blueprint-sublabel">[ User Input ] ➔ [ Service Worker Hook ] ➔ [ Local Regex / Classifier ] ➔ [ API Request ]</span>
+                <span class="blueprint-stamp">DIAGRAM REF: SK-RKN-02</span>
+              </div>
+              <div class="blueprint-hover-hint">Click to Zoom Spec</div>
+            </div>
+
+            <!-- Decisions, Results, Lessons -->
+            <div class="grid-12">
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Design Decisions // Trade-offs</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary);">
+                  Prompts are sanitized entirely inside sandboxed JS workers before packet serialization. No data is stored outside local memory to prevent interception. Highly optimized redaction patterns run in under 14ms.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Lessons Learned</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary); margin-bottom: 0;">
+                  Regular expressions are highly efficient for structured tokens (API keys), but machine learning classifiers are required to redact unstructured natural language details.
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-md" style="font-family: var(--font-handwritten); color: var(--color-accent-blue);">
+              * Field note: Local redaction sanitizes sensitive inputs under 14ms latency.
+            </p>
+          </article>
+
+          <!-- ==========================================
+               CASE FILE 003 // BIDFORGE
+               ========================================== -->
+          <article class="case-file-block">
+            <span class="handwritten-annotation-ch2" style="top: 10px; right: 20px; transform: rotate(1deg);" aria-hidden="true">Multi-Agent</span>
+            
+            <div class="case-file-label">Case File 003</div>
+            <h3 class="case-file-title">BidForge — Automated RFP Multi-Agent System</h3>
+
+            <!-- Metadata Sheet -->
+            <div class="case-metadata-grid">
+              <div class="case-meta-item">
+                <span class="case-meta-key">Classification</span>
+                <span class="case-meta-val">LLM + Multi-Agent Automation</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Status</span>
+                <span class="case-meta-val" style="color: var(--color-accent-blue);">Prototype Deployed</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Year</span>
+                <span class="case-meta-val">2025</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Engine Core</span>
+                <span class="case-meta-val">LangChain / Gemini 2.5</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Source</span>
+                <span class="case-meta-val"><a href="https://github.com/rsk807" target="_blank">github.com/rsk807</a></span>
+              </div>
+            </div>
+
+            <!-- Investigation Details -->
+            <div class="grid-12">
+              <div class="col-8">
+                
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Question</h4>
+                  <p class="case-investigation-body">
+                    How can organizations accelerate massive RFP (Request for Proposal) analysis and generate precise, contextually aligned bidding documents without hours of manual compilation?
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Background</h4>
+                  <p class="case-investigation-body">
+                    RFP processing involves digesting thousands of requirements and semantic cross-referencing against product lists, leading to high administrative latencies.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Objective</h4>
+                  <p class="case-investigation-body">
+                    Architect a multi-agent AI system automating requirements exploration, inventory matching, and document synthesis.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Approach</h4>
+                  <p class="case-investigation-body">
+                    Pipeline separating analysis into modular steps: Parse, Explore, Summarize, and Generate. Employs LangChain and Gemini 2.5 Flash agents combined with vector index matching.
+                  </p>
+                </div>
+
+              </div>
+
+              <!-- Tech Spec side panel -->
+              <div class="col-4">
+                <div class="stack-spec-card">
+                  <div class="stack-spec-title">System Specs</div>
+                  <ul class="stack-spec-list">
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Engine</span>
+                      <span class="stack-spec-item-val">Bun / TypeScript</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Agents</span>
+                      <span class="stack-spec-item-val">LangChain / Gemini</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Retrieval</span>
+                      <span class="stack-spec-item-val">MongoDB Vector</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Storage</span>
+                      <span class="stack-spec-item-val">AWS S3</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blueprint sketch -->
+            <div class="blueprint-sketch-placeholder interactive-blueprint" data-media-type="image" data-media-src="assets/images/bidforge.png">
+              <div class="blueprint-skeleton"></div>
+              <div class="blueprint-media-frame"></div>
+              <div class="blueprint-grid-overlay">
+                <span class="blueprint-label">BidForge Multi-Agent Pipeline</span>
+                <span class="blueprint-sublabel">[ RFP Inputs ] ➔ [ Parse / Explore Agents ] ➔ [ Vector Semantic Search ] ➔ [ AWS S3 PDF Generation ]</span>
+                <span class="blueprint-stamp">DIAGRAM REF: SK-BDF-03</span>
+              </div>
+              <div class="blueprint-hover-hint">Click to Zoom Spec</div>
+            </div>
+
+            <!-- Decisions, Results, Lessons -->
+            <div class="grid-12">
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Design Decisions // Trade-offs</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary);">
+                  Utilized Bun's native TS execution and asynchronous multi-agent orchestration to reduce proposal generation times from days to single-digit minutes. Vector search uses HuggingFace embeddings inside MongoDB.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Lessons Learned</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary); margin-bottom: 0;">
+                  Multi-agent coordination requires strict JSON response format schemas; unconstrained LLM answers will break the downstream compilation pipelines.
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-md" style="font-family: var(--font-handwritten); color: var(--color-accent-blue);">
+              * Result: RFP analysis processing latency reduced to under 45 seconds.
+            </p>
+          </article>
+
+          <!-- ==========================================
+               CASE FILE 004 // VACARS
+               ========================================== -->
+          <article class="case-file-block">
+            <span class="handwritten-annotation-ch2" style="top: 10px; right: 20px; transform: rotate(2deg);" aria-hidden="true">Cureus Journal</span>
+            
+            <div class="case-file-label">Case File 004</div>
+            <h3 class="case-file-title">VACARS — Voice-Assisted Context-Aware Response System</h3>
+
+            <!-- Metadata Sheet -->
+            <div class="case-metadata-grid">
+              <div class="case-meta-item">
+                <span class="case-meta-key">Classification</span>
+                <span class="case-meta-val">Embedded AI + Raspberry Pi + HMI</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Status</span>
+                <span class="case-meta-val" style="color: var(--color-accent-blue);">Cureus Paper Published</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Year</span>
+                <span class="case-meta-val">2026</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Research Reference</span>
+                <span class="case-meta-val">Springer Nature Paper</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Source</span>
+                <span class="case-meta-val">Research Prototype</span>
+              </div>
+            </div>
+
+            <!-- Investigation Details -->
+            <div class="grid-12">
+              <div class="col-8">
+                
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Question</h4>
+                  <p class="case-investigation-body">
+                    Can local embedded systems run multi-modal computer vision and voice-assistant algorithms concurrently without cloud latency dependencies?
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Background</h4>
+                  <p class="case-investigation-body">
+                    Traditional voice assistance relies heavily on cloud processing, raising serious security, latency, and operational concerns. Edge execution is necessary for environments requiring immediate response actions.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Objective</h4>
+                  <p class="case-investigation-body">
+                    Engineer a context-aware embedded voice control interface integrating Raspberry Pi and real-time object detection.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Approach</h4>
+                  <p class="case-investigation-body">
+                    Custom resource-efficient thread pool balancing sensor inputs, speech-to-text algorithms, and object tracking pipelines on edge processor limitations.
+                  </p>
+                </div>
+
+              </div>
+
+              <!-- Tech Spec side panel -->
+              <div class="col-4">
+                <div class="stack-spec-card">
+                  <div class="stack-spec-title">System Specs</div>
+                  <ul class="stack-spec-list">
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Hardware</span>
+                      <span class="stack-spec-item-val">Raspberry Pi</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Languages</span>
+                      <span class="stack-spec-item-val">Python / C++</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">CV Engine</span>
+                      <span class="stack-spec-item-val">OpenCV MobileNet</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Voice</span>
+                      <span class="stack-spec-item-val">Offline STT</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blueprint sketch -->
+            <div class="blueprint-sketch-placeholder interactive-blueprint" data-media-type="video" data-media-src="assets/images/vacars.mp4">
+              <div class="blueprint-skeleton"></div>
+              <div class="blueprint-media-frame"></div>
+              <div class="blueprint-grid-overlay">
+                <span class="blueprint-label">VACARS Edge Interface Diagram</span>
+                <span class="blueprint-sublabel">[ Audio Inputs ] ➔ [ Threads Balance Pool ] ➔ [ MobileNet-SSD Frames ] ➔ [ Actuators Drive ]</span>
+                <span class="blueprint-stamp">DIAGRAM REF: SK-VAC-04</span>
+              </div>
+            </div>
+
+            <!-- Decisions, Results, Lessons -->
+            <div class="grid-12">
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Design Decisions // Trade-offs</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary);">
+                  Component-oriented modular layout separating voice handlers from physical motor actuators. Real-time frames are offloaded to hardware-level DMA buffers to sustain real-time processing threads without thermal throttling.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Lessons Learned</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary); margin-bottom: 0;">
+                  DMA frame offloading is critical when combining multi-modal networks on single-board hardware, reducing CPU cycles by over 30%.
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-md" style="font-family: var(--font-handwritten); color: var(--color-accent-blue);">
+              * Prototype confirmed: Voice-actuated faceplate triggers motors under 350ms.
+            </p>
+          </article>
+
+        </section>
+
+        <!-- ==========================================
+             CHAPTER 03: RESEARCH & INNOVATION (Page 032)
+             ========================================== -->
+        <section id="chapter-03" class="notebook-chapter-section" data-chapter="03" data-title="Research &amp; Innovation" data-page-num="032" style="position: relative;">
+          
+          <span class="handwritten-annotation-ch3" aria-hidden="true">Cureus &amp; Patents Logged</span>
+
+          <header class="chapter-header">
+            <div class="chapter-number">Chapter 03</div>
+            <h2 class="chapter-title">Research &amp; Innovation</h2>
+            <p class="chapter-subtitle">Academic writing, journals, publications, and system modeling.</p>
+            <div class="chapter-divider"></div>
+          </header>
+
+          <div class="grid-12">
+            <div class="col-8">
+              <p>
+                Academic research provides the mathematical and structured foundation necessary to build secure architectures. Rather than treating theory and implementations as separate stages, my work focuses on translating models directly into physical microcontrollers or client-edge algorithms.
+              </p>
+              <p>
+                My research catalog includes publishing a Springer Nature journal paper in <i>Cureus</i> detailing voice-activated human-machine interfaces, and publishing a security forensic scraping patent (Application ID: 202521077464) for automated OSINT threat parsing.
+              </p>
+
+              <!-- Research Timeline -->
+              <h3 style="font-family: var(--font-notebook); margin-top: var(--space-xl); margin-bottom: var(--space-md);">Research Investigation Timeline</h3>
+              
+              <div class="timeline-container">
+                <div class="timeline-node">
+                  <div class="timeline-node-time">2026</div>
+                  <div class="timeline-node-title">AI-Powered Forensics Patent (Omniscient ID-202521077464)</div>
+                  <p style="font-size: var(--font-size-sm); margin-bottom: 0; color: var(--color-ink-secondary);">
+                    Formulated and published system architecture for automated cyber forensics and data extraction from OSINT APIs.
+                  </p>
+                </div>
+                <div class="timeline-node">
+                  <div class="timeline-node-time">2026</div>
+                  <div class="timeline-node-title">Voice-Assisted Speech Models Journal (VACARS - Cureus)</div>
+                  <p style="font-size: var(--font-size-sm); margin-bottom: 0; color: var(--color-ink-secondary);">
+                    Authored and published Springer Nature Cureus paper detailing context-aware embedded speech processing, integrating MobileNet object detection.
+                  </p>
+                </div>
+                <div class="timeline-node">
+                  <div class="timeline-node-time">2026</div>
+                  <div class="timeline-node-title">Client-Edge LLM Security Models (RakshaNetra)</div>
+                  <p style="font-size: var(--font-size-sm); margin-bottom: 0; color: var(--color-ink-secondary);">
+                    Designing browser service workers to execute local redaction algorithms, sanitizing sensitive enterprise parameters in under 14ms prior to API relaying.
+                  </p>
+                </div>
+                <div class="timeline-node">
+                  <div class="timeline-node-time">2025</div>
+                  <div class="timeline-node-title">Automated RFP Multi-Agent System (BidForge)</div>
+                  <p style="font-size: var(--font-size-sm); margin-bottom: 0; color: var(--color-ink-secondary);">
+                    Architected a multi-agent LLM pipeline using LangChain and Gemini 2.5 Flash for automated proposal generation.
+                  </p>
+                </div>
+                <div class="timeline-node">
+                  <div class="timeline-node-time">2024</div>
+                  <div class="timeline-node-title">Embedded Suppression Control Loops (Autonomous FFR)</div>
+                  <p style="font-size: var(--font-size-sm); margin-bottom: 0; color: var(--color-ink-secondary);">
+                    Engineered hardware interrupt controls and decoupling loops on microcontrollers, validating automated suppression responses in hazard sandboxes.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Side margin notes -->
+            <div class="col-4">
+              <div class="sticky-note" style="margin: 0; transform: rotate(-1deg);">
+                <div class="washi-tape washi-tape-top"></div>
+                <div class="sticky-note-header">Technical Journal</div>
+                <p style="font-size: var(--font-size-xs); margin-bottom: 0; font-family: var(--font-handwritten); color: var(--color-accent-blue);">
+                  "Theoretical frameworks must find absolute form in compiled code."
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             CHAPTER 04: PROFESSIONAL EXPERIENCE (Page 047)
+             ========================================== -->
+        <section id="chapter-04" class="notebook-chapter-section" data-chapter="04" data-title="Professional Experience" data-page-num="047" style="position: relative;">
+          
+          <span class="handwritten-annotation-ch4" aria-hidden="true">Field Notes. EDG-SEC-01</span>
+
+          <header class="chapter-header">
+            <div class="chapter-number">Chapter 04</div>
+            <h2 class="chapter-title">Professional Experience</h2>
+            <p class="chapter-subtitle">Chronological ledger of engineering assignments and operations.</p>
+            <div class="chapter-divider"></div>
+          </header>
+
+          <!-- Engineering Field Assignment format -->
+          <div class="field-assignment-card">
+            <div class="field-assignment-header">
+              <div>
+                <span class="field-assignment-ref">Field Assignment // EDG-SEC-01</span>
+                <h3 class="field-assignment-title">Cyber Security Intern</h3>
+                <div class="field-assignment-company">Ediglobe | Pune, India (Hybrid)</div>
+              </div>
+              <span style="font-family: var(--font-notebook); font-size: var(--font-size-xs); color: var(--color-accent-red); font-weight: bold;">MAR 2025 – MAY 2025</span>
+            </div>
+
+            <div class="field-assignment-section">
+              <h4 class="field-assignment-sec-title">Operational Responsibility</h4>
+              <p class="field-assignment-sec-body">
+                Tasked with threat auditing, analyzing phishing campaign parameters, identifying web application vulnerabilities, and building secure local access filters to defend enterprise authentication nodes.
+              </p>
+            </div>
+
+            <div class="field-assignment-section">
+              <h4 class="field-assignment-sec-title">Vulnerability Remediation &amp; Mitigation</h4>
+              <p class="field-assignment-sec-body">
+                Audited active phishing kits and reverse-engineered access structures to isolate credential harvesting endpoints. Mitigated common SQL injection exploits on internal portals by developing custom parameterized queries authentication filters, preventing raw database access overlays.
+              </p>
+            </div>
+
+            <div class="field-assignment-section">
+              <h4 class="field-assignment-sec-title">Engineering Reflection</h4>
+              <p class="field-assignment-sec-body">
+                Defending applications from injection vulnerabilities proves that threat prevention must be modeled at the compilation/coding layer. Perimeter filters and firewalls cannot compensate for unparameterized SQL logic; security must be a core logic constraint.
+              </p>
+            </div>
+          </div>
+
+          <!-- Freelance Experience log -->
+          <div class="field-assignment-card" style="margin-top: var(--space-xl);">
+            <div class="field-assignment-header">
+              <div>
+                <span class="field-assignment-ref">Freelance Engagement // SEC-DEV-FREE</span>
+                <h3 class="field-assignment-title">Freelance Engineering Engagements</h3>
+                <div class="field-assignment-company">United Kingdom / Pune, India</div>
+              </div>
+              <span style="font-family: var(--font-notebook); font-size: var(--font-size-xs); color: var(--color-accent-red); font-weight: bold;">2024 – PRESENT</span>
+            </div>
+
+            <div class="field-assignment-section">
+              <h4 class="field-assignment-sec-title">Operational Scope</h4>
+              <p class="field-assignment-sec-body">
+                Delivered software engineering, automation, and technical solutions for 5+ clients. Worked on custom business applications, automation workflows, cloud deployments, and technical consulting while maintaining strong client communication and delivery standards.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             CHAPTER 05: TECHNICAL EXPERTISE (Page 061)
+             ========================================== -->
+        <section id="chapter-05" class="notebook-chapter-section" data-chapter="05" data-title="Technical Expertise" data-page-num="061">
+          <header class="chapter-header">
+            <div class="chapter-number">Chapter 05</div>
+            <h2 class="chapter-title">Technical Expertise</h2>
+            <p class="chapter-subtitle">Engineering reference notes and applied technology indices.</p>
+            <div class="chapter-divider"></div>
+          </header>
+
+          <p>
+            A log of technologies applied directly across projects, research publications, and professional security operations. Mapped by domain, explaining the context of their practical deployment.
+          </p>
+
+          <div class="ref-notes-grid">
+            <!-- Ref Note: Cybersecurity -->
+            <div class="ref-note-card">
+              <div class="ref-note-header">Cybersecurity</div>
+              <span class="ref-note-tech">Secure Coding / Threat Audits</span>
+              <p class="ref-note-body">
+                Applied SQL injection mitigations during Ediglobe audits, and threat containment loops in simulated attack emulators.
+              </p>
+            </div>
+            <!-- Ref Note: AI -->
+            <div class="ref-note-card">
+              <div class="ref-note-header">Artificial Intelligence</div>
+              <span class="ref-note-tech">LLMs / Computer Vision</span>
+              <p class="ref-note-body">
+                Implemented MobileNet-SSD edge object detection in VACARS, local-edge redaction in RakshaNetra, and multi-agent systems in BidForge.
+              </p>
+            </div>
+            <!-- Ref Note: IoT & Embedded -->
+            <div class="ref-note-card">
+              <div class="ref-note-header">IoT &amp; Embedded Systems</div>
+              <span class="ref-note-tech">Raspberry Pi / Sensor Fusion</span>
+              <p class="ref-note-body">
+                Designed sensor-fusion filter loops, decoupling relays, and GSM alerts on microcontrollers. Managed speech controls in VACARS.
+              </p>
+            </div>
+            <!-- Ref Note: Programming -->
+            <div class="ref-note-card">
+              <div class="ref-note-header">Programming</div>
+              <span class="ref-note-tech">C++ / Python / Java / Typescript</span>
+              <p class="ref-note-body">
+                Compiled high-speed microcontroller loops (C++), built forensics crawlers (Python), and proxy service extension scripts (Typescript).
+              </p>
+            </div>
+            <!-- Ref Note: Cloud & Big Data -->
+            <div class="ref-note-card">
+              <div class="ref-note-header">Cloud &amp; Big Data</div>
+              <span class="ref-note-tech">AWS S3 / Redis / Oracle OCI</span>
+              <p class="ref-note-body">
+                Configured S3 proposal buckets (BidForge), Redis caches (Omniscient), and validated Oracle Cloud topologies.
+              </p>
+            </div>
+            <!-- Ref Note: Stacks & Tools -->
+            <div class="ref-note-card">
+              <div class="ref-note-header">Stacks &amp; Tools</div>
+              <span class="ref-note-tech">Bun / MERN / Linux / Git</span>
+              <p class="ref-note-body">
+                Orchestrated multi-agent scripts (Bun runtime), proxy dashboards (MERN), and socket crypto utilities in hardened environments.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             CHAPTER 06: LEADERSHIP & RECOGNITION (Page 075)
+             ========================================== -->
+        <section id="chapter-06" class="notebook-chapter-section" data-chapter="06" data-title="Leadership &amp; Recognition" data-page-num="075">
+          <header class="chapter-header">
+            <div class="chapter-number">Chapter 06</div>
+            <h2 class="chapter-title">Leadership &amp; Recognition</h2>
+            <p class="chapter-subtitle">Documented milestones, certifications, and national hackathon ranks.</p>
+            <div class="chapter-divider"></div>
+          </header>
+
+          <p>
+            System milestones logged under academic, competitive, and industry certification nodes.
+          </p>
+
+          <div class="milestone-catalog-box">
+            
+            <div class="milestone-catalog-row">
+              <span class="milestone-meta">Patent ID: 202521077464</span>
+              <span class="milestone-title">Omniscient AI Cyber Forensics Architecture published</span>
+              <span class="milestone-year">2026</span>
+            </div>
+
+            <div class="milestone-catalog-row">
+              <span class="milestone-meta">Cureus Publication</span>
+              <span class="milestone-title">Springer Nature Journal Paper published for VACARS Speech Interface</span>
+              <span class="milestone-year">2026</span>
+            </div>
+
+            <div class="milestone-catalog-row">
+              <span class="milestone-meta">Ignisia Hackathon</span>
+              <span class="milestone-title">2nd Place - National Level Ignisia 2026 Hackathon</span>
+              <span class="milestone-year">2026</span>
+            </div>
+
+            <div class="milestone-catalog-row">
+              <span class="milestone-meta">Ciphathon Hackathon</span>
+              <span class="milestone-title">5th Place - National Level Ciphathon 2026 Hackathon</span>
+              <span class="milestone-year">2026</span>
+            </div>
+
+            <div class="milestone-catalog-row">
+              <span class="milestone-meta">Oracle OCI</span>
+              <span class="milestone-title">Oracle Cloud Foundations Associate Certification</span>
+              <span class="milestone-year">2026</span>
+            </div>
+
+            <div class="milestone-catalog-row">
+              <span class="milestone-meta">Cisco Networking</span>
+              <span class="milestone-title">Cisco Endpoint Security Certification</span>
+              <span class="milestone-year">2026</span>
+            </div>
+
+            <div class="milestone-catalog-row">
+              <span class="milestone-meta">RenAIssance 2025</span>
+              <span class="milestone-title">2nd Place - Hosted by CSI MIT WPU and WorqHat</span>
+              <span class="milestone-year">2025</span>
+            </div>
+
+            <div class="milestone-catalog-row">
+              <span class="milestone-meta">DevConf 2025 Speaker</span>
+              <span class="milestone-title">Delivered session on "AI in Cybersecurity" (Threat parsing &amp; LLM exploits)</span>
+              <span class="milestone-year">2025</span>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==========================================
+             CHAPTER 07: CONTACT (Page 089)
+             ========================================== -->
+        <section id="chapter-07" class="notebook-chapter-section" data-chapter="07" data-title="Contact" data-page-num="089" style="margin-bottom: var(--space-4xl);">
+          <header class="chapter-header">
+            <div class="chapter-number">Chapter 07</div>
+            <h2 class="chapter-title">Contact</h2>
+            <p class="chapter-subtitle">Communications ledger and encryption keys directory.</p>
+            <div class="chapter-divider"></div>
+          </header>
+
+          <p>
+            For consultations, code audits, embedded prototyping, or academic inquiries, transmit messages using the channels below.
+          </p>
+
+          <div class="contact-memo-card">
+            <div class="contact-memo-header">Research Log // Contact Memo</div>
+            <ul class="contact-memo-list">
+              <li class="contact-memo-row">
+                <span class="contact-memo-key">Owner</span>
+                <span class="contact-memo-val">Sushant Kumar</span>
+              </li>
+              <li class="contact-memo-row">
+                <span class="contact-memo-key">Location</span>
+                <span class="contact-memo-val">Pune, India</span>
+              </li>
+              <li class="contact-memo-row">
+                <span class="contact-memo-key">Secure Email</span>
+                <span class="contact-memo-val"><a href="mailto:ranasushant807@gmail.com">ranasushant807@gmail.com</a></span>
+              </li>
+              <li class="contact-memo-row">
+                <span class="contact-memo-key">PGP ID</span>
+                <span class="contact-memo-val">0x9C0E3F81 (On Request)</span>
+              </li>
+              <li class="contact-memo-row">
+                <span class="contact-memo-key">LinkedIn Node</span>
+                <span class="contact-memo-val"><a href="https://www.linkedin.com/in/sushant-kumar-csf/" target="_blank">sushant-kumar-csf</a></span>
+              </li>
+              <li class="contact-memo-row">
+                <span class="contact-memo-key">GitHub Node</span>
+                <span class="contact-memo-val"><a href="https://github.com/rsk807" target="_blank">github.com/rsk807</a></span>
+              </li>
+              <li class="contact-memo-row">
+                <span class="contact-memo-key">Log Archive</span>
+                <span class="contact-memo-val"><a href="Sushant-Resume.pdf" download>Download Resume.pdf</a></span>
+              </li>
+              <li class="contact-memo-row" style="border-bottom: none;">
+                <span class="contact-memo-key">Open To</span>
+                <span class="contact-memo-val">Internships / Research / Collab</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Footer Page Number System -->
+        <footer class="notebook-footer" style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <img src="sk_logo_32x32.png" alt="SK Logo" style="height: 16px; width: auto; object-fit: contain; filter: grayscale(1) opacity(0.75); mix-blend-mode: multiply;" loading="lazy">
+            <span style="font-weight: 600; letter-spacing: 0.05em; font-size: var(--font-size-xs); font-family: var(--font-sans);">SUSHANT KUMAR</span>
+            <span style="opacity: 0.25;">|</span>
+            <span style="font-size: var(--font-size-xs); color: var(--color-ink-secondary); letter-spacing: 0.05em;">CONFIDENTIAL RESEARCH JOURNAL</span>
+          </span>
+          <span class="page-number-display" id="current-page-display">Cover</span>
+          <span>CALIBRATED v2026.1</span>
+        </footer>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Interactive Lightbox Modal -->
+  <div id="lightbox-overlay" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-label="Blueprint full resolution spec viewer">
+    <button id="lightbox-close" class="lightbox-close-btn" aria-label="Close image viewer">✕</button>
+    <div id="lightbox-container" class="lightbox-content-container">
+      <div id="lightbox-img-wrapper" class="lightbox-img-wrapper">
+        <img id="lightbox-image" src="" alt="Blueprint zoomed view" draggable="false">
+      </div>
+    </div>
+    <div class="lightbox-controls">
+      <button id="zoom-out" class="lightbox-zoom-btn" title="Zoom Out" aria-label="Zoom Out">−</button>
+      <span id="zoom-val" class="lightbox-zoom-level">100%</span>
+      <button id="zoom-in" class="lightbox-zoom-btn" title="Zoom In" aria-label="Zoom In">+</button>
+    </div>
+  </div>
+
+</body>
+</html>

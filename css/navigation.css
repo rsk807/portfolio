@@ -1,0 +1,427 @@
+/*
+ * NOTEBOOK NAVIGATION SYSTEM - "AN ENGINEER'S RESEARCH NOTEBOOK"
+ * Declares styles for sticky header, left spine navigation, protruding bookmarks, 
+ * page numbering footer, and the mobile stacked index drawer.
+ */
+
+/* Override binder overflow to let bookmark tabs protrude outside boundaries */
+.notebook-binder {
+  overflow: visible !important;
+}
+
+/* ==========================================
+   SLIM STICKY HEADER
+   ========================================== */
+.slim-sticky-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-width: var(--page-max-width);
+  height: 48px;
+  background-color: var(--color-paper-light);
+  border-bottom: 1px solid var(--border-color-ui);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--space-md);
+  z-index: 100;
+  margin: 0 auto var(--space-md) auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.header-title {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.header-active-chapter {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  color: var(--color-accent-blue);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.header-icon-link {
+  color: var(--color-ink-secondary);
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xxs);
+  transition: var(--transition-default);
+}
+
+.header-icon-link:hover {
+  color: var(--color-accent-blue);
+  background: none;
+}
+
+/* Lined/Graph Paper Toggle Switch */
+.paper-toggle-btn {
+  background: none;
+  border: 1px dashed var(--border-color-ui);
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  padding: 2px 6px;
+  cursor: pointer;
+  color: var(--color-ink-secondary);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-default);
+}
+
+.paper-toggle-btn:hover {
+  border-color: var(--color-ink-primary);
+  color: var(--color-ink-primary);
+}
+
+/* ==========================================
+   LEFT SPINE NAVIGATION (DESKTOP)
+   ========================================== */
+.left-spine-nav {
+  position: absolute;
+  top: 100px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.spine-link {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-sm);
+  color: var(--color-ink-secondary);
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  border-bottom: none;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-default);
+}
+
+.spine-link::after {
+  content: attr(data-title);
+  position: absolute;
+  left: 32px;
+  background-color: var(--color-paper-light);
+  border: 1px solid var(--border-color-ui);
+  padding: var(--space-xxs) var(--space-sm);
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-8px);
+  pointer-events: none;
+  transition: var(--transition-default);
+  box-shadow: var(--shadow-lift-sm);
+  z-index: 100;
+}
+
+.spine-link:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.spine-link:hover, .spine-link.active {
+  color: var(--color-accent-blue);
+  font-weight: var(--weight-bold);
+}
+
+.spine-link.active::before {
+  content: '→';
+  position: absolute;
+  left: -14px;
+  color: var(--color-accent-blue);
+  font-size: 0.85em;
+}
+
+/* ==========================================
+   RIGHT EDGE BOOKMARK DIVIDERS
+   ========================================== */
+.notebook-bookmarks-aside {
+  position: absolute;
+  top: 80px;
+  right: -25px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  z-index: 5;
+}
+
+.bookmark-tab {
+  width: 32px;
+  height: 26px;
+  background-color: var(--bookmark-color, var(--color-paper-base));
+  border: 1px solid var(--border-color-ui);
+  border-left: none;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  box-shadow: 2px 1px 3px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-color-ui); /* override links */
+  transition: all var(--transition-speed-normal) var(--transition-ease-analog);
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  color: var(--color-ink-secondary);
+}
+
+.bookmark-tab:hover {
+  width: 40px;
+  color: var(--color-ink-primary);
+  padding-left: var(--space-xs);
+}
+
+.bookmark-tab.active {
+  width: 48px;
+  color: var(--color-ink-primary);
+  font-weight: var(--weight-semibold);
+  box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.08);
+  transform: translateX(2px) rotate(1deg);
+  padding-left: var(--space-xs);
+}
+
+/* ==========================================
+   SECTION CHAPTER HEADER DESIGN
+   ========================================== */
+.chapter-header {
+  margin-top: var(--space-4xl);
+  margin-bottom: var(--space-2xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px dashed var(--border-color-ui);
+}
+
+.chapter-number {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-base);
+  color: var(--color-accent-red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-xxs);
+}
+
+.chapter-title {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink-primary);
+  margin-bottom: var(--space-xs);
+  border-bottom: none; /* override default h2 border */
+}
+
+.chapter-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  color: var(--color-ink-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.chapter-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-ink-primary);
+  margin-top: var(--space-md);
+  opacity: 0.85;
+}
+
+/* ==========================================
+   PAGE NUMBER DISPLAY IN FOOTER
+   ========================================== */
+.notebook-footer {
+  margin-top: var(--space-4xl);
+  border-top: 1px dashed var(--border-color-ui);
+  padding-top: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  color: var(--color-ink-secondary);
+}
+
+.page-number-display {
+  font-family: var(--font-notebook);
+  font-weight: var(--weight-semibold);
+  color: var(--color-accent-red);
+}
+
+/* ==========================================
+   MOBILE INDEX DRAWER
+   ========================================== */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--color-ink-primary);
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+.index-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(33, 33, 33, 0.4);
+  backdrop-filter: blur(1px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-default);
+}
+
+.index-drawer-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.index-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 290px;
+  height: 100vh;
+  background-color: var(--color-paper-base);
+  border-right: 2px solid var(--color-ink-primary);
+  box-shadow: var(--shadow-lift-lg);
+  transform: translateX(-100%);
+  transition: transform var(--transition-speed-normal) var(--transition-ease-analog);
+  z-index: 1000;
+  padding: var(--space-xl) var(--space-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.index-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-lg);
+  font-weight: var(--weight-bold);
+  border-bottom: 2px solid var(--color-ink-primary);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-close-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+}
+
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  overflow-y: auto;
+}
+
+.drawer-item {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-sm);
+  padding: var(--space-sm);
+  background-color: var(--color-paper-light);
+  border: 1px solid var(--border-color-ui);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-flat);
+  color: var(--color-ink-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: var(--transition-default);
+  text-decoration: none;
+}
+
+.drawer-item:hover, .drawer-item.active {
+  border-color: var(--color-accent-blue);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lift-sm);
+  background-color: var(--color-paper-light);
+  color: var(--color-accent-blue);
+}
+
+.drawer-item-num {
+  font-weight: var(--weight-bold);
+  color: var(--color-accent-red);
+}
+
+/* ==========================================
+   PAPER THEME MODIFIERS
+   ========================================== */
+/* Ruled Paper Pattern (horizontal lines only) */
+.notebook-page.theme-ruled {
+  background-image: linear-gradient(to bottom, var(--color-paper-ruled) 1px, transparent 1px);
+  background-size: 100% 28px;
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT OVERRIDES
+   ========================================== */
+@media (max-width: 1024px) {
+  .left-spine-nav {
+    display: none;
+  }
+  
+  .notebook-bookmarks-aside {
+    right: -14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slim-sticky-header {
+    height: auto;
+    padding: var(--space-sm) var(--space-md);
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px dashed var(--border-color-ui);
+    padding-top: var(--space-xs);
+  }
+
+  .mobile-menu-toggle {
+    display: inline-block;
+  }
+
+  .notebook-bookmarks-aside {
+    display: none; /* replaced by index drawer */
+  }
+}

@@ -1,0 +1,327 @@
+/*
+ * NOTEBOOK COVER PAGE STYLES - "AN ENGINEER'S RESEARCH NOTEBOOK"
+ * Specific layout overrides and tactile details for the home page experience.
+ */
+
+/* Viewport Centering */
+.cover-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - var(--space-2xl));
+  margin: 0 auto;
+}
+
+/* Settle animation overrides */
+.notebook-binder-settle {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: notebookSettle 0.9s var(--transition-ease-analog) forwards;
+}
+
+@keyframes notebookSettle {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Clean title layout */
+.cover-title-group {
+  margin-bottom: var(--space-2xl);
+  max-width: 680px;
+}
+
+.cover-h1 {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--weight-bold);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--color-ink-primary);
+  margin-bottom: var(--space-xs);
+  position: relative;
+}
+
+/* Handwriting margin notes positioning */
+.margin-handwritten-note {
+  position: absolute;
+  font-family: var(--font-handwritten);
+  font-size: var(--font-size-base);
+  color: var(--color-accent-blue);
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 10;
+  line-height: 1.1;
+}
+
+.note-top-left {
+  top: 40px;
+  left: 30px;
+  transform: rotate(-10deg);
+}
+
+.note-mid-right {
+  top: 45%;
+  right: 40px;
+  transform: rotate(5deg);
+  color: var(--color-accent-red);
+}
+
+/* Accent Underline drawing animation */
+.underline-svg {
+  width: 100%;
+  max-width: 440px;
+  height: 10px;
+  display: block;
+  margin-top: var(--space-xs);
+}
+
+.underline-path {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  stroke-linecap: round;
+  animation: drawUnderline 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes drawUnderline {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Owner Block layout */
+.owner-block {
+  font-family: var(--font-notebook);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.owner-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  color: var(--color-accent-blue);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.owner-name {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink-primary);
+  display: inline-block;
+  margin-top: var(--space-xxs);
+}
+
+/* Identity label stacks */
+.identity-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-2xl);
+  max-width: 450px;
+}
+
+.identity-label {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-sm);
+  color: var(--color-ink-secondary);
+  border-left: 2px solid var(--color-accent-red);
+  padding-left: var(--space-sm);
+  line-height: var(--line-height-tight);
+}
+
+/* Mission statement line */
+.mission-statement {
+  font-size: var(--font-size-lg);
+  color: var(--color-ink-primary);
+  line-height: var(--line-height-relaxed);
+  max-width: 600px;
+  margin-bottom: var(--space-3xl);
+  position: relative;
+}
+
+/* Ledger Notebook Metadata Table */
+.metadata-ledger {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: var(--space-md);
+  column-gap: var(--space-2xl);
+  border-top: 1px solid var(--border-color-ui);
+  border-bottom: 1px solid var(--border-color-ui);
+  padding: var(--space-lg) 0;
+  max-width: 720px;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.metadata-key {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  color: var(--color-ink-secondary);
+  margin-bottom: var(--space-xxs);
+}
+
+.metadata-val {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-ink-primary);
+}
+
+/* Coffee Stain effect overlay */
+.coffee-stain {
+  position: absolute;
+  width: 160px;
+  height: 150px;
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  background: radial-gradient(circle, transparent 65%, rgba(130, 80, 40, 0.05) 75%, rgba(130, 80, 40, 0.08) 95%, transparent 100%);
+  bottom: 10%;
+  right: 18%;
+  transform: rotate(35deg);
+  filter: blur(1.5px);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Cutoff Folded Page Corner representation */
+.notebook-page-folded::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 32px 32px;
+  border-color: transparent transparent var(--color-paper-dark) transparent;
+  z-index: 4;
+}
+
+.folded-page-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-paper-base);
+  border-top-left-radius: 4px;
+  box-shadow: -2px -2px 3px rgba(33,33,33,0.06);
+  border-left: 1.5px solid rgba(0,0,0,0.06);
+  border-top: 1.5px solid rgba(0,0,0,0.06);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Swaying Bookmark Ribbon */
+.cover-bookmark {
+  position: absolute;
+  top: 0;
+  right: 12%;
+  width: 24px;
+  height: 200px;
+  background-color: var(--color-accent-red);
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  cursor: pointer;
+  transform-origin: top center;
+  animation: ribbonSway 8s ease-in-out infinite alternate;
+  transition: height var(--transition-speed-normal) var(--transition-ease-analog);
+}
+
+.cover-bookmark::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid var(--color-paper-light);
+}
+
+.cover-bookmark:hover {
+  height: 220px;
+  filter: brightness(1.08);
+}
+
+@keyframes ribbonSway {
+  0% { transform: rotate(-1.5deg); }
+  100% { transform: rotate(1.5deg); }
+}
+
+/* Small revision stamp */
+.revision-stamp {
+  position: absolute;
+  bottom: 40px;
+  left: calc(var(--space-4xl) + var(--space-xl) + var(--space-md));
+  border: 1.5px solid var(--color-accent-red);
+  color: var(--color-accent-red);
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  padding: var(--space-xxs) var(--space-xs);
+  border-radius: var(--radius-sm);
+  transform: rotate(-4deg);
+  opacity: 0.7;
+  text-transform: uppercase;
+  font-weight: var(--weight-bold);
+  pointer-events: none;
+}
+
+/* Hide cover scroll ribbon if reduced motion is on */
+@media (prefers-reduced-motion: reduce) {
+  .cover-bookmark {
+    animation: none;
+  }
+  .underline-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Responsive adjustments for mobile cover */
+@media (max-width: 900px) {
+  .cover-wrapper {
+    min-height: auto;
+  }
+  
+  .cover-h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .metadata-ledger {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-sm);
+  }
+  
+  .cover-bookmark {
+    right: 8%;
+    height: 140px;
+  }
+
+  .cover-bookmark:hover {
+    height: 155px;
+  }
+
+  .coffee-stain {
+    width: 100px;
+    height: 94px;
+    right: 5%;
+    bottom: 25%;
+  }
+
+  .revision-stamp {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    margin-top: var(--space-md);
+  }
+}

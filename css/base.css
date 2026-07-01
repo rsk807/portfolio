@@ -1,0 +1,301 @@
+/*
+ * BASE STYLES & RESET - "AN ENGINEER'S RESEARCH NOTEBOOK"
+ * Imports Google Fonts, sets base element overrides, and defines layout grids.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Special+Elite&display=swap');
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-ink-primary);
+  background-color: var(--color-paper-dark); /* Desk background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--space-xl) var(--space-md);
+  overflow-x: hidden;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-notebook);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink-primary);
+  line-height: var(--line-height-tight);
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+  border-bottom: 2px solid var(--color-ink-primary);
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-sm);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  font-weight: var(--weight-regular);
+  color: var(--color-ink-primary);
+}
+
+a {
+  color: var(--color-accent-blue);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--color-accent-blue);
+  transition: var(--transition-default);
+}
+
+a:hover {
+  color: var(--color-accent-red);
+  border-bottom-color: var(--color-accent-red);
+  background-color: var(--color-accent-highlighter);
+}
+
+code, kbd, pre, samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* Notebook Container (The Notebook itself) */
+.notebook-binder {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--page-max-width);
+  background: var(--color-paper-light);
+  border: 1px solid var(--border-color-ui);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lift-lg);
+  position: relative;
+  min-height: calc(100vh - var(--space-4xl));
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Notebook page setup with graph grid paper texture */
+.notebook-page {
+  flex-grow: 1;
+  background-color: var(--color-paper-light);
+  /* The Graph Grid Pattern */
+  background-image: 
+    linear-gradient(to right, var(--color-paper-ruled) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-paper-ruled) 1px, transparent 1px);
+  background-size: 28px 28px;
+  position: relative;
+  padding: var(--space-3xl) var(--space-3xl) var(--space-3xl) calc(var(--space-4xl) + var(--space-xl));
+  z-index: 1;
+}
+
+/* Notebook page margin lines (Simulating standard log book) */
+.notebook-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--space-4xl) + var(--space-xs));
+  width: 2px;
+  border-left: 1px solid var(--color-paper-margin);
+  border-right: 1px solid var(--color-paper-margin);
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Left spine shading for binder depth */
+.notebook-page::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--space-2xl);
+  background: linear-gradient(to right, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.02) 40%, transparent 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Layout Utilities (12-column grid) */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  column-gap: var(--grid-gutter);
+  row-gap: var(--space-lg);
+}
+
+/* Column span utilities */
+.col-1 { grid-column: span 1 / span 1; }
+.col-2 { grid-column: span 2 / span 2; }
+.col-3 { grid-column: span 3 / span 3; }
+.col-4 { grid-column: span 4 / span 4; }
+.col-5 { grid-column: span 5 / span 5; }
+.col-6 { grid-column: span 6 / span 6; }
+.col-7 { grid-column: span 7 / span 7; }
+.col-8 { grid-column: span 8 / span 8; }
+.col-9 { grid-column: span 9 / span 9; }
+.col-10 { grid-column: span 10 / span 10; }
+.col-11 { grid-column: span 11 / span 11; }
+.col-12 { grid-column: span 12 / span 12; }
+
+/* Helpers for centering and padding */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+
+/* Reduced Motion Settings */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Responsive Overrides */
+@media (max-width: 900px) {
+  :root {
+    --page-margin-y: var(--space-xl);
+    --page-margin-x: var(--space-md);
+  }
+  
+  body {
+    padding: var(--space-md) var(--space-xs);
+  }
+
+  .notebook-page {
+    padding: var(--space-2xl) var(--space-lg) var(--space-2xl) calc(var(--space-2xl) + var(--space-lg));
+  }
+
+  .notebook-page::before {
+    left: calc(var(--space-2xl) + var(--space-xs));
+  }
+
+  .grid-12 {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-md);
+  }
+
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, 
+  .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    grid-column: span 1 / span 1;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY & KEYBOARD FOCUS RING
+   ========================================== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-accent-blue);
+  color: var(--color-paper-light) !important;
+  padding: var(--space-xs) var(--space-md);
+  border: 1.5px solid var(--color-ink-primary);
+  border-radius: var(--radius-sm);
+  z-index: 10000;
+  font-family: var(--font-notebook);
+  font-weight: var(--weight-bold);
+  font-size: var(--font-size-sm);
+  transition: top var(--transition-speed-normal) var(--transition-ease-analog);
+  box-shadow: var(--shadow-lift-md);
+  border-bottom: 1.5px solid var(--color-ink-primary);
+}
+
+.skip-link:focus {
+  top: 15px;
+  outline: none;
+  background-color: var(--color-accent-blue);
+}
+
+:focus-visible {
+  outline: 2px dashed var(--color-accent-blue);
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   PREMIUM LOADING SCREEN
+   ========================================== */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-paper-base, #faf8f5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.6s;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-logo {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1) contrast(1.15) opacity(0.85);
+  mix-blend-mode: multiply;
+  animation: pulseOpacity 2.2s infinite ease-in-out;
+}
+
+@keyframes pulseOpacity {
+  0%, 100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+

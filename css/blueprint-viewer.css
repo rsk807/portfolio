@@ -1,0 +1,398 @@
+/*
+ * PREMIUM BLUEPRINT VISUAL FRAME & LIGHTBOX STYLES
+ * Formulates industrial glass layers, skeleton animations, and full-resolution overlays.
+ */
+
+/* Blueprint sketch placeholder modifications */
+.blueprint-sketch-placeholder.interactive-blueprint {
+  cursor: pointer;
+  background-color: hsl(212, 45%, 12%);
+  border-color: rgba(255, 255, 255, 0.1);
+  padding: 0;
+  display: block; /* override flex centering */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+.blueprint-grid-overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: var(--space-lg);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+/* Glass frame styling for real media */
+.blueprint-media-frame {
+  position: absolute;
+  top: 7.5%;
+  left: 7.5%;
+  width: 85%;
+  height: 85%;
+  z-index: 2;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: rgba(15, 27, 43, 0.45);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 12px 36px rgba(0, 0, 0, 0.4), 
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 20px rgba(0, 150, 255, 0.05);
+  transform: scale(1);
+  transition: 
+    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+    box-shadow 0.5s ease, 
+    border-color 0.5s ease;
+  will-change: transform;
+}
+
+.blueprint-sketch-placeholder.interactive-blueprint:hover .blueprint-media-frame {
+  transform: scale(1.02);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 16px 48px rgba(0, 0, 0, 0.5), 
+    0 0 30px rgba(0, 150, 255, 0.25);
+}
+
+/* Shimmering Skeleton Loader */
+.blueprint-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background: linear-gradient(
+    90deg, 
+    rgba(255, 255, 255, 0.02) 25%, 
+    rgba(255, 255, 255, 0.08) 50%, 
+    rgba(255, 255, 255, 0.02) 75%
+  );
+  background-size: 200% 100%;
+  animation: blueprintShimmer 1.5s infinite linear;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.blueprint-skeleton.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes blueprintShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Blueprint Media Elements */
+.blueprint-real-media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* displays blueprints full resolution without cutoff */
+  display: block;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity;
+}
+
+.blueprint-real-media.loaded {
+  opacity: 1;
+}
+
+/* Image loading overlay grid fadeout */
+.interactive-blueprint.media-ready .blueprint-grid-overlay {
+  opacity: 0.15; /* grid text fades into watermark back-layer */
+}
+
+/* Zoom Hint overlay */
+.blueprint-hover-hint {
+  position: absolute;
+  bottom: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  background: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 150, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 150, 255, 0.2);
+  color: #00d2ff;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: var(--space-xxs) var(--space-sm);
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.blueprint-sketch-placeholder.interactive-blueprint:hover .blueprint-hover-hint {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Floating controls inside video media frame */
+.video-overlay-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: linear-gradient(transparent, rgba(10, 25, 47, 0.85));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+}
+
+.blueprint-media-frame:hover .video-overlay-controls {
+  opacity: 1;
+}
+
+/* Video Buttons */
+.video-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, transform 0.2s;
+  outline: none;
+}
+
+.video-btn:hover {
+  color: #00d2ff;
+  transform: scale(1.1);
+}
+
+.video-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.video-progress-container {
+  flex-grow: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-progress-bar {
+  height: 100%;
+  width: 0;
+  background: #00d2ff;
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+/* Floating mute button in bottom-right */
+.mute-btn {
+  position: absolute;
+  right: var(--space-sm);
+  bottom: var(--space-sm);
+  background: rgba(10, 25, 47, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 6;
+  opacity: 0.85;
+}
+
+.mute-btn:hover {
+  background: rgba(10, 25, 47, 0.95);
+  opacity: 1;
+}
+
+/* Lightbox overlay design */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(8, 14, 24, 0.92);
+  backdrop-filter: blur(12px);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s ease, visibility 0.4s;
+  overflow: hidden;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--font-size-md);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10002;
+}
+
+.lightbox-close-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #00d2ff;
+  border-color: #00d2ff;
+  transform: rotate(90deg);
+}
+
+.lightbox-content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl);
+  outline: none;
+}
+
+.lightbox-img-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: grab;
+}
+
+.lightbox-img-wrapper:active {
+  cursor: grabbing;
+}
+
+#lightbox-image {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s;
+  will-change: transform, opacity;
+}
+
+.lightbox-overlay.active #lightbox-image {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Lightbox control panel */
+.lightbox-controls {
+  position: absolute;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: rgba(10, 25, 47, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  z-index: 10001;
+}
+
+.lightbox-zoom-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: var(--font-size-md);
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+  outline: none;
+}
+
+.lightbox-zoom-btn:hover {
+  color: #00d2ff;
+}
+
+.lightbox-zoom-level {
+  color: rgba(255, 255, 255, 0.65);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  min-width: 48px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blueprint-media-frame {
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+  }
+
+  .lightbox-content-container {
+    padding: var(--space-md);
+  }
+
+  #lightbox-image {
+    max-width: 95vw;
+    max-height: 75vh;
+  }
+
+  .lightbox-close-btn {
+    top: var(--space-md);
+    right: var(--space-md);
+    width: 38px;
+    height: 38px;
+    font-size: var(--font-size-sm);
+  }
+
+  .lightbox-controls {
+    bottom: var(--space-lg);
+  }
+}
