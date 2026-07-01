@@ -357,7 +357,9 @@ function initBeyondLightboxArrows() {
     const allMedia = [...sketches, ...sculptures];
 
     // Find current index
-    const currentSrc = image.src.replace(window.location.origin + '/', '');
+    const match = image.src.match(/field_notes\/.+/);
+    if (!match) return;
+    const currentSrc = match[0];
     const index = allMedia.indexOf(currentSrc);
     if (index === -1) return;
 
