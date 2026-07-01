@@ -1,27 +1,139 @@
 document.addEventListener('DOMContentLoaded', () => {
-  initBeyondSketches();
-  initBeyondSculptures();
-  initBeyondVideos();
+  initBeyondInteractiveAccordion();
   initBeyondLightboxArrows();
 });
 
+// Archive loaded state machine to prevent duplicate dynamic DOM injection
+const loadedArchives = {
+  'be-01': false,
+  'be-02': false,
+  'be-03': false,
+  'be-04': false
+};
+
 /**
- * Loads sketches dynamically from BEYOND_ASSETS.sketches
+ * Initializes Chapter 02 interactive accordion mechanics
  */
-function initBeyondSketches() {
+function initBeyondInteractiveAccordion() {
+  const indexRows = document.querySelectorAll('[data-archive-toggle]');
+  
+  indexRows.forEach(row => {
+    row.addEventListener('click', () => {
+      const archiveId = row.getAttribute('data-archive-toggle');
+      toggleArchive(archiveId, row);
+    });
+  });
+}
+
+/**
+ * Toggles expanding and collapsing of archives
+ * @param {string} archiveId - ID of the target archive ('be-01' to 'be-04')
+ * @param {HTMLElement} activeRow - The index row element clicked
+ */
+function toggleArchive(archiveId, activeRow) {
+  const targetSection = document.querySelector(`[data-archive-content="${archiveId}"]`);
+  if (!targetSection) return;
+
+  const isAlreadyExpanded = targetSection.classList.contains('archive-section-expanded');
+
+  // 1. Collapse any currently expanded section first
+  const currentExpandedSection = document.querySelector('.beyond-section.archive-section-expanded');
+  if (currentExpandedSection) {
+    const currentId = currentExpandedSection.getAttribute('data-archive-content');
+    collapseArchiveSection(currentId, currentExpandedSection);
+  }
+
+  // 2. Expand clicked section if it wasn't already expanded
+  if (!isAlreadyExpanded) {
+    expandArchiveSection(archiveId, targetSection, activeRow);
+  }
+}
+
+/**
+ * Collapses the specified archive section
+ */
+function collapseArchiveSection(id, sectionEl) {
+  sectionEl.classList.remove('archive-section-expanded');
+  sectionEl.classList.add('archive-section-collapsed');
+
+  // Deactivate active row in the index list
+  const indexRow = document.querySelector(`[data-archive-toggle="${id}"]`);
+  if (indexRow) {
+    indexRow.classList.remove('active');
+  }
+
+  // Cleanup dynamic elements to stop downloads/processing
+  if (id === 'be-04') {
+    destroySwordsmanVideo();
+  }
+}
+
+/**
+ * Expands the specified archive section, lazy-loading contents on demand
+ */
+function expandArchiveSection(id, sectionEl, activeRow) {
+  sectionEl.classList.remove('archive-section-collapsed');
+  sectionEl.classList.add('archive-section-expanded');
+
+  // Set active row state in index list
+  activeRow.classList.add('active');
+
+  // Trigger ephemeral red stamp animation
+  triggerStampAnimation(id);
+
+  // Lazy-load data assets on first open
+  if (id === 'be-01' && !loadedArchives['be-01']) {
+    lazyLoadSketches();
+    loadedArchives['be-01'] = true;
+  } else if (id === 'be-02' && !loadedArchives['be-02']) {
+    lazyLoadSculptures();
+    loadedArchives['be-02'] = true;
+  } else if (id === 'be-03' && !loadedArchives['be-03']) {
+    lazyLoadMusicCards();
+    loadedArchives['be-03'] = true;
+  } else if (id === 'be-04') {
+    // Re-mount the video player dynamically on every expand
+    mountSwordsmanVideo();
+  }
+
+  // Smoothly scroll to target opened section
+  setTimeout(() => {
+    sectionEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 180);
+}
+
+/**
+ * Triggers stamp animation overlay
+ */
+function triggerStampAnimation(id) {
+  const stamp = document.getElementById(`stamp-${id}`);
+  if (!stamp) return;
+
+  stamp.classList.remove('stamped');
+  void stamp.offsetWidth; // Force CSS reflow
+  stamp.classList.add('stamped');
+}
+
+/**
+ * Lazy loads sketches dynamically into container with sequential fade-slide animations
+ */
+function lazyLoadSketches() {
   const container = document.getElementById('sketches-archive-container');
   if (!container || !window.BEYOND_ASSETS || !BEYOND_ASSETS.sketches) return;
 
   BEYOND_ASSETS.sketches.forEach((filename, index) => {
     const src = `field_notes/recent_sketches/${filename}`;
     const wrapper = document.createElement('div');
-    wrapper.className = 'sketch-page-wrapper';
+    wrapper.className = 'sketch-page-wrapper fade-slide-up-in';
     
-    // Very subtle random rotation (between -2deg and +2deg)
+    // Stagger animation delays to let images slide in sequentially
+    wrapper.style.animationDelay = `${index * 0.08}s`;
+
+    // Subtle random rotation
     const angle = (Math.random() * 4 - 2).toFixed(1);
     wrapper.style.transform = `rotate(${angle}deg)`;
 
-    // Place paper clips or washi tape on selected items
+    // Attach masking tape or clips
     let attachmentHtml = '';
     if (index === 0 || index === 3) {
       attachmentHtml = `<div class="paper-clip-mini" aria-hidden="true"></div>`;
@@ -37,7 +149,6 @@ function initBeyondSketches() {
       </div>
     `;
 
-    // Click handler to launch fullscreen lightbox
     wrapper.addEventListener('click', () => {
       if (window.openLightbox) {
         window.openLightbox(src);
@@ -49,18 +160,21 @@ function initBeyondSketches() {
 }
 
 /**
- * Loads sculptures dynamically from BEYOND_ASSETS.sculptures
+ * Lazy loads clay sculptures into container with sequential fade-slide animations
  */
-function initBeyondSculptures() {
+function lazyLoadSculptures() {
   const container = document.getElementById('sculptures-container');
   if (!container || !window.BEYOND_ASSETS || !BEYOND_ASSETS.sculptures) return;
 
   BEYOND_ASSETS.sculptures.forEach((filename, index) => {
     const src = `field_notes/Sculptures_Youngerself/${filename}`;
     const wrapper = document.createElement('div');
-    wrapper.className = 'sculpture-frame-wrapper';
+    wrapper.className = 'sculpture-frame-wrapper fade-slide-up-in';
+    
+    // Stagger animation delays
+    wrapper.style.animationDelay = `${index * 0.08}s`;
 
-    // Random rotation (between -1.5deg and +1.5deg)
+    // Random rotation
     const angle = (Math.random() * 3 - 1.5).toFixed(1);
     wrapper.style.transform = `rotate(${angle}deg)`;
 
@@ -71,7 +185,6 @@ function initBeyondSculptures() {
       </div>
     `;
 
-    // Click handler to launch fullscreen lightbox
     wrapper.addEventListener('click', () => {
       if (window.openLightbox) {
         window.openLightbox(src);
@@ -83,107 +196,131 @@ function initBeyondSculptures() {
 }
 
 /**
- * Loads videos dynamically and sets up viewport visibility loops and preferences
+ * Staggers static music corner cards entrance
  */
-function initBeyondVideos() {
-  const container = document.getElementById('videos-container');
-  if (!container || !window.BEYOND_ASSETS || !BEYOND_ASSETS.videos) return;
-
-  BEYOND_ASSETS.videos.forEach((filename, index) => {
-    const src = `field_notes/Swordsman_Sushant/${filename}`;
-    const wrapper = document.createElement('div');
-    wrapper.className = 'video-frame-wrapper';
-
-    wrapper.innerHTML = `
-      <div class="blueprint-video-frame">
-        <video class="swordsman-video" src="${src}" loop muted playsinline preload="metadata" webkit-playsinline></video>
-        <div class="video-overlay-controls">
-          <button class="video-control-btn play-pause-btn" aria-label="Play/Pause">
-            <svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-          </button>
-          <button class="video-control-btn mute-btn" aria-label="Mute/Unmute">
-            <svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-          </button>
-          <button class="video-control-btn fullscreen-btn" aria-label="Toggle Fullscreen">
-            <svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
-          </button>
-        </div>
-        <div class="blueprint-frame-grid-overlay">
-          <span class="blueprint-frame-label">SWORDSMAN DRILLS // SEC-BE-04</span>
-          <span class="blueprint-stamp">DIAGRAM REF: SK-BE-04</span>
-        </div>
-      </div>
-    `;
-
-    container.appendChild(wrapper);
-
-    // Controls Logic
-    const video = wrapper.querySelector('.swordsman-video');
-    const playPauseBtn = wrapper.querySelector('.play-pause-btn');
-    const muteBtn = wrapper.querySelector('.mute-btn');
-    const fullscreenBtn = wrapper.querySelector('.fullscreen-btn');
-
-    // Retrieve user session mute preference
-    const isMuted = sessionStorage.getItem('swordsman_muted') !== 'false';
-    video.muted = isMuted;
-    updateMuteIcon(muteBtn, isMuted);
-
-    // Toggle Play/Pause on click
-    video.addEventListener('click', () => togglePlayPause(video, playPauseBtn));
-    if (playPauseBtn) {
-      playPauseBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        togglePlayPause(video, playPauseBtn);
-      });
-    }
-
-    // Toggle Mute
-    if (muteBtn) {
-      muteBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        video.muted = !video.muted;
-        sessionStorage.setItem('swordsman_muted', video.muted ? 'true' : 'false');
-        updateMuteIcon(muteBtn, video.muted);
-      });
-    }
-
-    // Fullscreen support
-    if (fullscreenBtn) {
-      fullscreenBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (video.requestFullscreen) {
-          video.requestFullscreen();
-        } else if (video.webkitRequestFullscreen) {
-          video.webkitRequestFullscreen();
-        }
-      });
-    }
-
-    // Dynamic button icon states on video events
-    video.addEventListener('play', () => {
-      playPauseBtn.innerHTML = `<svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>`;
-    });
-    video.addEventListener('pause', () => {
-      playPauseBtn.innerHTML = `<svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`;
-    });
-
-    // IntersectionObserver to control playback
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          video.play().catch(() => {
-            // Autoplay blocked fallback
-            video.muted = true;
-            video.play().catch(() => {});
-          });
-        } else {
-          video.pause();
-        }
-      });
-    }, { threshold: 0.25 });
-
-    observer.observe(video);
+function lazyLoadMusicCards() {
+  const cards = document.querySelectorAll('#section-be03 .music-card');
+  cards.forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.1}s`;
+    card.classList.add('fade-slide-up-in');
   });
+}
+
+/**
+ * Dynamically mounts/creates the Swordsman Katana video element when BE-04 expands
+ */
+function mountSwordsmanVideo() {
+  const container = document.getElementById('videos-container');
+  if (!container || !window.BEYOND_ASSETS || !BEYOND_ASSETS.videos || BEYOND_ASSETS.videos.length === 0) return;
+
+  // Clear previous content
+  container.innerHTML = '';
+
+  const filename = BEYOND_ASSETS.videos[0];
+  const src = `field_notes/Swordsman_Sushant/${filename}`;
+  const wrapper = document.createElement('div');
+  wrapper.className = 'video-frame-wrapper fade-slide-up-in';
+
+  wrapper.innerHTML = `
+    <div class="blueprint-video-frame">
+      <video class="swordsman-video" src="${src}" loop muted playsinline preload="metadata" webkit-playsinline></video>
+      <div class="video-overlay-controls">
+        <button class="video-control-btn play-pause-btn" aria-label="Play/Pause">
+          <svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        </button>
+        <button class="video-control-btn mute-btn" aria-label="Mute/Unmute">
+          <svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        </button>
+        <button class="video-control-btn fullscreen-btn" aria-label="Toggle Fullscreen">
+          <svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+        </button>
+      </div>
+      <div class="blueprint-frame-grid-overlay">
+        <span class="blueprint-frame-label">SWORDSMAN DRILLS // SEC-BE-04</span>
+        <span class="blueprint-stamp">DIAGRAM REF: SK-BE-04</span>
+      </div>
+    </div>
+  `;
+
+  container.appendChild(wrapper);
+
+  // Setup control listeners
+  const video = wrapper.querySelector('.swordsman-video');
+  const playPauseBtn = wrapper.querySelector('.play-pause-btn');
+  const muteBtn = wrapper.querySelector('.mute-btn');
+  const fullscreenBtn = wrapper.querySelector('.fullscreen-btn');
+
+  // Mute preference
+  const isMuted = sessionStorage.getItem('swordsman_muted') !== 'false';
+  video.muted = isMuted;
+  updateMuteIcon(muteBtn, isMuted);
+
+  video.addEventListener('click', () => togglePlayPause(video, playPauseBtn));
+  if (playPauseBtn) {
+    playPauseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      togglePlayPause(video, playPauseBtn);
+    });
+  }
+
+  if (muteBtn) {
+    muteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      video.muted = !video.muted;
+      sessionStorage.setItem('swordsman_muted', video.muted ? 'true' : 'false');
+      updateMuteIcon(muteBtn, video.muted);
+    });
+  }
+
+  if (fullscreenBtn) {
+    fullscreenBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      }
+    });
+  }
+
+  video.addEventListener('play', () => {
+    playPauseBtn.innerHTML = `<svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>`;
+  });
+  video.addEventListener('pause', () => {
+    playPauseBtn.innerHTML = `<svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`;
+  });
+
+  // Visbility trigger via IntersectionObserver
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        video.play().catch(() => {
+          video.muted = true;
+          video.play().catch(() => {});
+        });
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.25 });
+
+  observer.observe(video);
+}
+
+/**
+ * Destroys/clears Swordsman video player resources on collapse to save bandwidth/processing
+ */
+function destroySwordsmanVideo() {
+  const container = document.getElementById('videos-container');
+  if (!container) return;
+
+  const video = container.querySelector('.swordsman-video');
+  if (video) {
+    video.pause();
+    video.src = '';
+    video.load(); // Flush buffers
+  }
+  container.innerHTML = '';
 }
 
 function togglePlayPause(video, btn) {
@@ -238,11 +375,10 @@ function initBeyondLightboxArrows() {
 
 function resetLightboxZoom() {
   if (typeof adjustZoom === 'function') {
-    adjustZoom(0); // Trigger zoom/pan reset metrics safely
+    adjustZoom(0);
   }
   const image = document.getElementById('lightbox-image');
   if (image) {
-    // Force transform scale 1 and center alignment resets
     image.style.transform = 'scale(1) translate(0px, 0px)';
   }
 }
