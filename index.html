@@ -57,7 +57,7 @@
   </script>
 
   <!-- Core Design System -->
-  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/design-system.css?v=2026.07.02.11.27">
   
   <!-- Interactive Scripts -->
   <script src="js/notebook.js" defer></script>
@@ -74,6 +74,22 @@
 
   <!-- Keyboard Accessibility Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Left Spine Nav (Visible on Desktop) -->
+  <aside class="left-spine-nav" aria-label="Spine Nav">
+    <a href="#chapter-00" class="spine-link active" data-title="00 Cover Page">00</a>
+    <a href="#chapter-01" class="spine-link" data-title="01 The Engineer">01</a>
+    <a href="#chapter-02" class="spine-link" data-title="02 Beyond Engineering">02</a>
+    <a href="#chapter-03" class="spine-link" data-title="03 Case Files">03</a>
+    <a href="#chapter-04" class="spine-link" data-title="04 Research &amp; Innovation">04</a>
+    <a href="#chapter-05" class="spine-link" data-title="05 Professional Experience">05</a>
+    <a href="#chapter-06" class="spine-link" data-title="06 Technical Expertise">06</a>
+    <a href="#chapter-07" class="spine-link" data-title="07 Leadership &amp; Recognition">07</a>
+    <a href="#chapter-08" class="spine-link" data-title="08 Contact Memo">08</a>
+  </aside>
+
+  <!-- Right Edge Bookmark Dividers (Visible on Desktop - Generated dynamically via JS) -->
+  <aside class="notebook-bookmarks-aside" aria-label="Bookmark Tabs"></aside>
 
   <!-- Slim Sticky Header (Always visible) -->
   <header class="slim-sticky-header" aria-label="Logbook Header">
@@ -118,8 +134,10 @@
   </aside>
 
   <!-- Notebook Viewport centring -->
-  <div class="cover-wrapper" style="align-items: flex-start; padding-top: var(--space-md);">
+  <div class="cover-wrapper" style="align-items: flex-start; padding-top: var(--space-md); position: relative;">
     
+
+
     <!-- Unified Notebook Binder -->
     <main class="notebook-binder notebook-binder-settle" id="main-content" aria-label="Personal Notebook Frame">
       
@@ -150,30 +168,6 @@
       <!-- Tactile Paper Clip holding pages -->
       <div class="paper-clip" style="right: var(--space-3xl); top: -15px;" aria-hidden="true"></div>
 
-      <!-- Left Spine Nav (Visible on Desktop) -->
-      <aside class="left-spine-nav" aria-label="Spine Nav" style="top: 140px;">
-        <a href="#chapter-00" class="spine-link active" data-title="00 Cover Page">00</a>
-        <a href="#chapter-01" class="spine-link" data-title="01 The Engineer">01</a>
-        <a href="#chapter-02" class="spine-link" data-title="02 Beyond Engineering">02</a>
-        <a href="#chapter-03" class="spine-link" data-title="03 Case Files">03</a>
-        <a href="#chapter-04" class="spine-link" data-title="04 Research &amp; Innovation">04</a>
-        <a href="#chapter-05" class="spine-link" data-title="05 Professional Experience">05</a>
-        <a href="#chapter-06" class="spine-link" data-title="06 Technical Expertise">06</a>
-        <a href="#chapter-07" class="spine-link" data-title="07 Leadership &amp; Recognition">07</a>
-        <a href="#chapter-08" class="spine-link" data-title="08 Contact Memo">08</a>
-      </aside>
-
-      <!-- Right Edge Bookmark Dividers (Visible on Desktop) -->
-      <aside class="notebook-bookmarks-aside" aria-label="Bookmark Tabs" style="top: 140px;">
-        <a href="#chapter-01" class="bookmark-tab" style="--bookmark-color: var(--color-sticky-yellow);" title="Chapter 01: The Engineer">01</a>
-        <a href="#chapter-02" class="bookmark-tab" style="--bookmark-color: var(--color-sticky-pink);" title="Chapter 02: Beyond Engineering">02</a>
-        <a href="#chapter-03" class="bookmark-tab" style="--bookmark-color: var(--color-sticky-blue);" title="Chapter 03: Case Files">03</a>
-        <a href="#chapter-04" class="bookmark-tab" style="--bookmark-color: var(--color-sticky-pink);" title="Chapter 04: Research &amp; Innovation">04</a>
-        <a href="#chapter-05" class="bookmark-tab" style="--bookmark-color: var(--color-paper-base);" title="Chapter 05: Professional Experience">05</a>
-        <a href="#chapter-06" class="bookmark-tab" style="--bookmark-color: var(--color-sticky-yellow);" title="Chapter 06: Technical Expertise">06</a>
-        <a href="#chapter-07" class="bookmark-tab" style="--bookmark-color: var(--color-sticky-blue);" title="Chapter 07: Leadership &amp; Recognition">07</a>
-        <a href="#chapter-08" class="bookmark-tab" style="--bookmark-color: var(--color-accent-highlighter-solid);" title="Chapter 08: Contact">08</a>
-      </aside>
 
       <!-- Ruled Grid Page Sheet containing Cover + Content chapters -->
       <div class="notebook-page notebook-page-folded">
@@ -193,7 +187,7 @@
           <a href="#chapter-01" class="cover-bookmark" id="scroll-ribbon" title="Scroll to Chapter 01" aria-label="Scroll to Chapter 01"></a>
 
           <!-- Handwriting annotations -->
-          <span class="margin-handwritten-note note-top-left" style="left: -40px; top: 10px;" aria-hidden="true">Field Notes: Vol. I</span>
+          <span class="margin-handwritten-note note-top-left" style="left: -80px; top: -35px; transform: rotate(-8deg); opacity: 0.12; filter: blur(0.4px); mix-blend-mode: multiply;" aria-hidden="true">Field Notes: Vol. I</span>
           <span class="margin-handwritten-note note-mid-right" style="right: 10px; top: 380px;" aria-hidden="true">Revision Approved</span>
 
           <!-- Upper Page Grid Metainfo Header -->
@@ -1307,7 +1301,7 @@
 
           <div class="ref-notes-grid">
             <!-- Ref Note: Cybersecurity -->
-            <div class="ref-note-card">
+            <div class="ref-note-card" data-domain="cybersecurity">
               <div class="ref-note-header">Cybersecurity</div>
               <span class="ref-note-tech">Secure Coding / Threat Audits</span>
               <p class="ref-note-body">
@@ -1315,7 +1309,7 @@
               </p>
             </div>
             <!-- Ref Note: AI -->
-            <div class="ref-note-card">
+            <div class="ref-note-card" data-domain="ai">
               <div class="ref-note-header">Artificial Intelligence</div>
               <span class="ref-note-tech">LLMs / Computer Vision</span>
               <p class="ref-note-body">
@@ -1323,7 +1317,7 @@
               </p>
             </div>
             <!-- Ref Note: IoT & Embedded -->
-            <div class="ref-note-card">
+            <div class="ref-note-card" data-domain="iot">
               <div class="ref-note-header">IoT &amp; Embedded Systems</div>
               <span class="ref-note-tech">Raspberry Pi / Sensor Fusion</span>
               <p class="ref-note-body">
@@ -1331,7 +1325,7 @@
               </p>
             </div>
             <!-- Ref Note: Programming -->
-            <div class="ref-note-card">
+            <div class="ref-note-card" data-domain="programming">
               <div class="ref-note-header">Programming</div>
               <span class="ref-note-tech">C++ / Python / Java / Typescript</span>
               <p class="ref-note-body">
@@ -1339,7 +1333,7 @@
               </p>
             </div>
             <!-- Ref Note: Cloud & Big Data -->
-            <div class="ref-note-card">
+            <div class="ref-note-card" data-domain="cloud">
               <div class="ref-note-header">Cloud &amp; Big Data</div>
               <span class="ref-note-tech">AWS S3 / Redis / Oracle OCI</span>
               <p class="ref-note-body">
@@ -1347,7 +1341,7 @@
               </p>
             </div>
             <!-- Ref Note: Stacks & Tools -->
-            <div class="ref-note-card">
+            <div class="ref-note-card" data-domain="stacks">
               <div class="ref-note-header">Stacks &amp; Tools</div>
               <span class="ref-note-tech">Bun / MERN / Linux / Git</span>
               <p class="ref-note-body">
@@ -1429,6 +1423,7 @@
              CHAPTER 08: CONTACT (Page 099)
              ========================================== -->
         <section id="chapter-08" class="notebook-chapter-section" data-chapter="08" data-title="Contact" data-page-num="099" style="margin-bottom: var(--space-4xl);">
+
           <header class="chapter-header">
             <div class="chapter-number">Chapter 08</div>
             <h2 class="chapter-title">Contact</h2>

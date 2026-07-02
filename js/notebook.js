@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initInkUnderlines();
   initCoverPage();
   initNavigationSystem();
+  updateBookmarkTabs(0);
 });
 
 /**
@@ -170,14 +171,11 @@ function initNavigationSystem() {
           }
         });
 
-        // Update active class on right side bookmark dividers
-        bookmarkTabs.forEach(tab => {
-          if (tab.getAttribute('href') === `#${id}`) {
-            tab.classList.add('active');
-          } else {
-            tab.classList.remove('active');
-          }
-        });
+        // Update Dynamic Bookmarks based on active chapter
+        const currentChapterInt = parseInt(chapterNum, 10);
+        if (!isNaN(currentChapterInt)) {
+          updateBookmarkTabs(currentChapterInt);
+        }
 
         // Update active class on mobile drawer card links
         drawerItems.forEach(item => {
@@ -260,3 +258,61 @@ window.addEventListener('load', () => {
     loader.classList.add('fade-out');
   }
 });
+
+// Dynamic Bookmark Engine colors mapping
+const BOOKMARK_COLORS = [
+  'var(--color-sticky-yellow)', // CH 01
+  'var(--color-sticky-pink)',   // CH 02
+  'var(--color-sticky-blue)',   // CH 03
+  'var(--color-sticky-pink)',   // CH 04
+  'var(--color-paper-base)',    // CH 05
+  'var(--color-sticky-yellow)', // CH 06
+  'var(--color-sticky-blue)',   // CH 07
+  'var(--color-accent-highlighter-solid)' // CH 08
+];
+
+/**
+ * Regenerates the right edge notebook bookmark tabs programmatically.
+ * Displays only chapters whose indexes are strictly greater than the activeChapterInt.
+ * @param {number} activeChapterInt - The active chapter integer (0-8)
+ */
+function updateBookmarkTabs(activeChapterInt) {
+  const container = document.querySelector('.notebook-bookmarks-aside');
+  if (!container) return;
+
+  container.innerHTML = '';
+
+  const sections = Array.from(document.querySelectorAll('.notebook-chapter-section'))
+    .filter(sec => {
+      const ch = parseInt(sec.getAttribute('data-chapter'), 10);
+      return !isNaN(ch) && ch >= 1 && ch <= 8;
+    });
+
+  const visibleSections = sections.filter(sec => {
+    const ch = parseInt(sec.getAttribute('data-chapter'), 10);
+    return ch > activeChapterInt;
+  });
+
+  visibleSections.forEach(sec => {
+    const id = sec.getAttribute('id');
+    const chNumStr = sec.getAttribute('data-chapter');
+    const chNum = parseInt(chNumStr, 10);
+    const title = sec.getAttribute('data-title');
+    const color = BOOKMARK_COLORS[chNum - 1] || 'var(--color-sticky-yellow)';
+
+    const tab = document.createElement('a');
+    tab.href = `#${id}`;
+    tab.className = 'bookmark-tab';
+    tab.style.setProperty('--bookmark-color', color);
+    tab.title = `Chapter ${chNumStr}: ${title}`;
+    tab.textContent = chNumStr;
+
+    // Attach click smooth scroll behavior
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      sec.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    container.appendChild(tab);
+  });
+}

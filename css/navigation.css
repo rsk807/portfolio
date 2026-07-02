@@ -106,9 +106,9 @@
    LEFT SPINE NAVIGATION (DESKTOP)
    ========================================== */
 .left-spine-nav {
-  position: absolute;
-  top: 100px;
-  left: 12px;
+  position: fixed;
+  top: 140px;
+  left: calc(50% - (var(--page-max-width) / 2) + 56px);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
@@ -172,13 +172,14 @@
    RIGHT EDGE BOOKMARK DIVIDERS
    ========================================== */
 .notebook-bookmarks-aside {
-  position: absolute;
-  top: 80px;
-  right: -25px;
+  position: fixed;
+  top: 140px;
+  right: calc(50% - (var(--page-max-width) / 2) - 25px);
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
   z-index: 5;
+  pointer-events: auto;
 }
 
 .bookmark-tab {
@@ -403,13 +404,22 @@
 /* ==========================================
    RESPONSIVE LAYOUT OVERRIDES
    ========================================== */
+@media (max-width: 1240px) {
+  .left-spine-nav {
+    left: calc(var(--space-md) + 52px);
+  }
+  .notebook-bookmarks-aside {
+    right: calc(var(--space-md) - 25px);
+  }
+}
+
 @media (max-width: 1024px) {
   .left-spine-nav {
     display: none;
   }
   
   .notebook-bookmarks-aside {
-    right: -14px;
+    right: calc(var(--space-md) - 14px);
   }
 }
 
@@ -433,6 +443,6 @@
   }
 
   .notebook-bookmarks-aside {
-    display: none; /* replaced by index drawer */
+    display: none;
   }
 }

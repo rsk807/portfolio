@@ -224,10 +224,10 @@
 /* Swaying Bookmark Ribbon */
 .cover-bookmark {
   position: absolute;
-  top: 0;
+  top: calc(-1 * var(--space-3xl));
   right: 12%;
   width: 24px;
-  height: 200px;
+  height: calc(200px + var(--space-3xl));
   background-color: var(--color-accent-red);
   box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.12);
   z-index: 10;
@@ -248,7 +248,7 @@
 }
 
 .cover-bookmark:hover {
-  height: 220px;
+  height: calc(220px + var(--space-3xl));
   filter: brightness(1.08);
 }
 

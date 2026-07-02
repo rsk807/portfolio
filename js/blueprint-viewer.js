@@ -140,7 +140,7 @@ function setupVideoControls(container, video) {
   
   // Floating Sound toggle (bottom-right)
   const soundBtn = document.createElement('button');
-  soundBtn.className = 'video-btn mute-btn';
+  soundBtn.className = 'video-btn inline-mute-btn';
   soundBtn.ariaLabel = video.muted ? 'Unmute' : 'Mute';
   soundBtn.innerHTML = video.muted ? getMuteSVG() : getVolumeSVG();
   
@@ -154,9 +154,9 @@ function setupVideoControls(container, video) {
   
   HUD.appendChild(playBtn);
   HUD.appendChild(progressContainer);
+  HUD.appendChild(soundBtn);
   
   mediaFrame.appendChild(HUD);
-  mediaFrame.appendChild(soundBtn);
   
   // Fullscreen double-click hook
   video.addEventListener('dblclick', (e) => {

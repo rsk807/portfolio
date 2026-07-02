@@ -210,23 +210,16 @@
   transition: width 0.1s linear;
 }
 
-/* Floating mute button in bottom-right */
-.mute-btn {
-  position: absolute;
-  right: var(--space-sm);
-  bottom: var(--space-sm);
-  background: rgba(10, 25, 47, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+/* Mute button inline customization */
+.inline-mute-btn {
+  flex-shrink: 0;
+  min-width: 32px;
+  min-height: 32px;
   z-index: 6;
   opacity: 0.85;
 }
 
-.mute-btn:hover {
-  background: rgba(10, 25, 47, 0.95);
+.inline-mute-btn:hover {
   opacity: 1;
 }
 

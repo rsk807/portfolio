@@ -87,6 +87,7 @@
   padding: var(--space-md);
   box-shadow: var(--shadow-flat);
   position: relative;
+  overflow: hidden;
   transition: all var(--transition-speed-normal) var(--transition-ease-analog);
 }
 
@@ -123,6 +124,94 @@
   font-size: var(--font-size-xs);
   color: var(--color-ink-secondary);
   line-height: var(--line-height-relaxed);
+}
+
+/* ==========================================
+   TECH DOMAIN WATERMARKS — Blueprint Stamps
+   ========================================== */
+
+/* Base watermark pseudo-element */
+.ref-note-card[data-domain]::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 64px;
+  height: 64px;
+  opacity: 0.22;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ref-note-card[data-domain]:hover::before {
+  opacity: 0.28;
+}
+
+/* Notebook annotation label above watermark */
+.ref-note-card[data-domain]::after {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-primary);
+  opacity: 0.24;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Cybersecurity: Shield + Lock + Terminal ── */
+.ref-note-card[data-domain="cybersecurity"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23333' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M32 4L8 16v16c0 14 10.67 22 24 28 13.33-6 24-14 24-28V16L32 4z'/%3E%3Crect x='24' y='26' width='16' height='14' rx='2'/%3E%3Cpath d='M28 26v-4a4 4 0 018 0v4'/%3E%3Ccircle cx='32' cy='33' r='1.5'/%3E%3Cpath d='M32 34.5V37'/%3E%3Cpath d='M14 50l4-4M14 46h6M14 46v-4' opacity='0.6'/%3E%3Crect x='44' y='8' width='12' height='8' rx='1' opacity='0.5'/%3E%3Cpath d='M46 12h4M46 14h2' opacity='0.5'/%3E%3C/svg%3E");
+}
+.ref-note-card[data-domain="cybersecurity"]::after {
+  content: 'SYS.SEC';
+}
+
+/* ── Artificial Intelligence: Brain + Neural Nodes ── */
+.ref-note-card[data-domain="ai"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23333' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='32' cy='28' rx='16' ry='14'/%3E%3Cpath d='M24 28c0-4 3.5-8 8-8s8 4 8 8' opacity='0.6'/%3E%3Cpath d='M28 22c0 4 4 8 4 12M36 22c0 4-4 8-4 12'/%3E%3Cpath d='M20 30c4 0 8 2 12 2s8-2 12-2' opacity='0.5'/%3E%3Ccircle cx='14' cy='50' r='3'/%3E%3Ccircle cx='32' cy='54' r='3'/%3E%3Ccircle cx='50' cy='50' r='3'/%3E%3Ccircle cx='23' cy='46' r='2'/%3E%3Ccircle cx='41' cy='46' r='2'/%3E%3Cpath d='M14 50l9-4M32 54l-9-8M32 54l9-8M50 50l-9-4' opacity='0.5'/%3E%3Cpath d='M32 42v9' opacity='0.4'/%3E%3C/svg%3E");
+}
+.ref-note-card[data-domain="ai"]::after {
+  content: 'MODULE';
+}
+
+/* ── IoT & Embedded: Chip + PCB Traces + Wireless ── */
+.ref-note-card[data-domain="iot"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23333' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='18' y='18' width='28' height='28' rx='3'/%3E%3Crect x='24' y='24' width='16' height='16' rx='1' opacity='0.6'/%3E%3Cpath d='M26 18v-6M32 18v-6M38 18v-6M26 46v6M32 46v6M38 46v6M18 26h-6M18 32h-6M18 38h-6M46 26h6M46 32h6M46 38h6'/%3E%3Cpath d='M28 30h8M32 28v8' opacity='0.5'/%3E%3Cpath d='M50 10a6 6 0 010 8' opacity='0.4'/%3E%3Cpath d='M53 8a10 10 0 010 12' opacity='0.3'/%3E%3Ccircle cx='48' cy='14' r='1.5' opacity='0.5'/%3E%3C/svg%3E");
+}
+.ref-note-card[data-domain="iot"]::after {
+  content: 'NODE';
+}
+
+/* ── Programming: Code Brackets + Language Labels ── */
+.ref-note-card[data-domain="programming"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23333' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 16l-12 16 12 16M44 16l12 16-12 16'/%3E%3Cpath d='M36 10L28 54' opacity='0.5'/%3E%3Ctext x='22' y='60' font-family='monospace' font-size='6' fill='%23333' stroke='none' opacity='0.7'%3EC++%3C/text%3E%3Ctext x='36' y='60' font-family='monospace' font-size='6' fill='%23333' stroke='none' opacity='0.7'%3EPy%3C/text%3E%3Ctext x='22' y='8' font-family='monospace' font-size='5' fill='%23333' stroke='none' opacity='0.5'%3ETS%3C/text%3E%3Ctext x='38' y='8' font-family='monospace' font-size='5' fill='%23333' stroke='none' opacity='0.5'%3EJava%3C/text%3E%3C/svg%3E");
+}
+.ref-note-card[data-domain="programming"]::after {
+  content: 'STACK';
+}
+
+/* ── Cloud & Big Data: Cloud + DB Cylinder + Storage ── */
+.ref-note-card[data-domain="cloud"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23333' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 36a10 10 0 01-2-20 14 14 0 0127-4 10 10 0 014 19H16z'/%3E%3Cellipse cx='48' cy='44' rx='8' ry='3'/%3E%3Cpath d='M40 44v12'/%3E%3Cpath d='M56 44v12'/%3E%3Cellipse cx='48' cy='56' rx='8' ry='3'/%3E%3Cellipse cx='48' cy='50' rx='8' ry='3' opacity='0.4'/%3E%3Crect x='8' y='44' width='14' height='16' rx='2' opacity='0.5'/%3E%3Cpath d='M11 48h8M11 52h6M11 56h4' opacity='0.4'/%3E%3C/svg%3E");
+}
+.ref-note-card[data-domain="cloud"]::after {
+  content: 'ARCH';
+}
+
+/* ── Stacks & Tools: Terminal + Git Branch + Container ── */
+.ref-note-card[data-domain="stacks"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23333' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='6' y='10' width='32' height='24' rx='3'/%3E%3Cpath d='M12 18l5 5-5 5M20 28h8'/%3E%3Ccircle cx='50' cy='16' r='4'/%3E%3Ccircle cx='50' cy='36' r='4'/%3E%3Ccircle cx='56' cy='26' r='3' opacity='0.6'/%3E%3Cpath d='M50 20v12M53 23l3 3'/%3E%3Crect x='10' y='42' width='20' height='16' rx='2' opacity='0.5'/%3E%3Cpath d='M14 46h12M14 50h8M14 54h4' opacity='0.4'/%3E%3Cpath d='M38 48h16M38 52h12M38 56h8' opacity='0.3'/%3E%3C/svg%3E");
+}
+.ref-note-card[data-domain="stacks"]::after {
+  content: 'TECH';
 }
 
 /* ==========================================
