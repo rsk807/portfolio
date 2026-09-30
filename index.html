@@ -185,7 +185,7 @@
         <!-- ==========================================
              COVER PAGE (Chapter 00)
              ========================================== -->
-        <section id="chapter-00" class="notebook-chapter-section" data-chapter="00" data-title="Cover Page" data-page-num="Cover" style="min-height: calc(100vh - var(--space-4xl)); margin-bottom: var(--space-4xl); position: relative;">
+        <section id="chapter-00" class="notebook-chapter-section" data-chapter="00" data-title="Cover Page" data-page-num="Cover">
           
           <!-- Swaying Bookmark Ribbon Scroll Indicator -->
           <a href="#chapter-01" class="cover-bookmark" id="scroll-ribbon" title="Scroll to Chapter 01" aria-label="Scroll to Chapter 01"></a>
@@ -193,25 +193,10 @@
           <!-- Handwriting annotation in margin -->
           <span class="margin-handwritten-note note-top-left" style="left: -80px; top: -35px; transform: rotate(-8deg); opacity: 0.12; filter: blur(0.4px); mix-blend-mode: multiply;" aria-hidden="true">Field Notes: Vol. I</span>
 
-          <!-- Field Index: Notebook Reference Insert (Sticky Note) -->
-          <aside class="cover-field-index-sticky" aria-label="Field Index Reference">
-            <div class="field-index-header">FIELD INDEX</div>
-            <ol class="field-index-list">
-              <li><a href="#chapter-01"><span class="field-index-num">01</span>The Engineer</a></li>
-              <li><a href="#chapter-02"><span class="field-index-num">02</span>Beyond Engineering</a></li>
-              <li><a href="#chapter-03"><span class="field-index-num">03</span>Case Files</a></li>
-              <li><a href="#chapter-04"><span class="field-index-num">04</span>Research &amp; Innovation</a></li>
-              <li><a href="#chapter-05"><span class="field-index-num">05</span>Experience</a></li>
-              <li><a href="#chapter-06"><span class="field-index-num">06</span>Technical Expertise</a></li>
-              <li><a href="#chapter-07"><span class="field-index-num">07</span>Recognition</a></li>
-              <li><a href="#chapter-08"><span class="field-index-num">08</span>Contact Memo</a></li>
-            </ol>
-          </aside>
-
-          <!-- Cover Title Group -->
-          <div class="cover-title-group" style="padding-top: var(--space-lg);">
-            <div class="cover-logo-container" style="display: flex; justify-content: flex-start; margin-bottom: var(--space-md);">
-              <img src="sk_logo_reimagined_cropped.png" alt="SK Logo Seal" class="cover-logo-seal" style="width: 95px; height: auto; object-fit: contain; filter: grayscale(1) contrast(1.15) opacity(0.8); mix-blend-mode: multiply;" loading="lazy">
+          <!-- 1. Cover Title Group & SK Logo -->
+          <div class="cover-title-group">
+            <div class="cover-logo-container">
+              <img src="sk_logo_reimagined_cropped.png" alt="SK Logo Seal" class="cover-logo-seal" loading="lazy">
             </div>
             
             <h1 class="cover-h1">ENGINEERING NOTEBOOK</h1>
@@ -221,14 +206,15 @@
               <path class="underline-path" d="M6,6 C120,2 350,10 494,5" stroke="var(--color-accent-blue)" stroke-width="3" />
             </svg>
             
-            <div class="owner-block" style="margin-top: var(--space-md); margin-bottom: var(--space-lg);">
+            <!-- 3. Owner Block (Sushant Kumar) -->
+            <div class="owner-block">
               <span class="owner-label">Owner</span>
               <span class="owner-name">Sushant Kumar</span>
             </div>
           </div>
 
-          <!-- Identity Refinement: Under Name Display -->
-          <div class="identity-stack" style="margin-bottom: var(--space-lg);">
+          <!-- 4. Roles (Identity Stack) -->
+          <div class="identity-stack">
             <div class="identity-label">Cyber Security Engineer</div>
             <div class="identity-label">Digital Forensics Researcher</div>
             <div class="identity-label">AI Systems Developer</div>
@@ -236,27 +222,13 @@
             <div class="identity-label">Founder, TechDenLab</div>
           </div>
 
-          <!-- Mission Statement / Tagline -->
-          <blockquote class="mission-statement" style="margin-bottom: var(--space-lg); max-width: 620px;">
+          <!-- 5. Mission Statement / Tagline -->
+          <blockquote class="mission-statement">
             <p>Building secure, intelligent systems from edge devices to cloud-scale platforms.</p>
           </blockquote>
 
-          <!-- Subtle Notebook Personality: Extremely light pencil sketch -->
-          <div class="cover-pencil-sketch" aria-hidden="true">
-            <svg viewBox="0 0 140 70" width="130" height="65" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M 22,44 C 18,22 38,10 70,10 C 102,10 120,24 122,48 C 123,60 112,65 96,65 C 82,65 78,63 62,63 C 45,63 28,60 22,44 Z" stroke-width="1" />
-              <path d="M 55,24 C 76,20 106,26 114,38 C 110,50 94,53 74,53 C 62,53 56,44 55,24 Z" stroke-width="0.9" />
-              <circle cx="86" cy="37" r="4.5" stroke-width="0.75" />
-              <line x1="86" y1="30" x2="86" y2="44" stroke-width="0.6" stroke-dasharray="1,2" />
-              <line x1="79" y1="37" x2="93" y2="37" stroke-width="0.6" stroke-dasharray="1,2" />
-              <rect x="104" y="46" width="9" height="6" rx="1" stroke-width="0.8" />
-              <path d="M 30,18 C 26,22 24,28 24,34" stroke-width="0.7" stroke-dasharray="2,2" />
-            </svg>
-            <span class="pencil-sketch-note">fig. 01 — vacars prototype // edge ai</span>
-          </div>
-
-          <!-- Minimal Metadata Ledger -->
-          <div class="metadata-ledger" style="max-width: 680px;">
+          <!-- 6. Minimal Metadata Ledger -->
+          <div class="metadata-ledger">
             <div class="metadata-item">
               <span class="metadata-key">Classification</span>
               <span class="metadata-val">Personal Engineering Journal</span>
@@ -275,7 +247,17 @@
             </div>
           </div>
 
-          <!-- Naturally Positioned Logged Stamp -->
+          <!-- 7. Notebook Margin Sketches (Bottom-Left: Research Desk / Laptop, Bottom-Right: VACARS Smart Helmet) -->
+          <div class="cover-sketches-duo" aria-hidden="true">
+            <div class="cover-sketch-slot sketch-slot-left">
+              <img src="assets/images/sketch_desk_transparent.png" alt="" class="cover-sketch-img sketch-desk">
+            </div>
+            <div class="cover-sketch-slot sketch-slot-right">
+              <img src="assets/images/sketch_helmet_transparent.png" alt="" class="cover-sketch-img sketch-helmet">
+            </div>
+          </div>
+
+          <!-- 8. Naturally Positioned Logged Stamp -->
           <div class="cover-logged-stamp" aria-hidden="true">
             <span>LOGGED: 2026-07-01 // VERIFIED v2026.1</span>
           </div>

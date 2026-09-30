@@ -29,28 +29,28 @@
 
 /* Clean title layout */
 .cover-title-group {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-sm);
   max-width: 680px;
 }
 
 .cover-logo-seal {
-  width: 95px;
+  width: 85px;
   height: auto;
   object-fit: contain;
   filter: grayscale(1) contrast(1.15) opacity(0.8);
   mix-blend-mode: multiply;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-xs);
   display: block;
 }
 
 .cover-h1 {
   font-family: var(--font-notebook);
-  font-size: var(--font-size-4xl);
+  font-size: clamp(1.85rem, 3.2vw, var(--font-size-4xl));
   font-weight: var(--weight-bold);
   line-height: 1.05;
   letter-spacing: -0.03em;
   color: var(--color-ink-primary);
-  margin-bottom: var(--space-xs);
+  margin-bottom: 2px;
   position: relative;
 }
 
@@ -98,8 +98,8 @@
 /* Owner Block layout */
 .owner-block {
   font-family: var(--font-notebook);
-  margin-top: var(--space-md);
-  margin-bottom: var(--space-lg);
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 
 .owner-label {
@@ -112,19 +112,19 @@
 }
 
 .owner-name {
-  font-size: var(--font-size-2xl);
+  font-size: clamp(1.35rem, 2vw, var(--font-size-2xl));
   font-weight: var(--weight-bold);
   color: var(--color-ink-primary);
   display: inline-block;
-  margin-top: var(--space-xxs);
+  margin-top: 2px;
 }
 
 /* Identity label stacks */
 .identity-stack {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-lg);
+  gap: 3px;
+  margin-bottom: var(--space-sm);
   max-width: 460px;
 }
 
@@ -137,13 +137,33 @@
   line-height: var(--line-height-tight);
 }
 
+/* Chapter 00 Section responsive layout */
+#chapter-00 {
+  position: relative;
+  min-height: auto;
+  margin-bottom: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-height: 720px) and (min-width: 901px) {
+  #chapter-00 {
+    min-height: min(84vh, 760px);
+  }
+}
+
+/* Seamless transition into Chapter 01 */
+#chapter-01 .chapter-header {
+  margin-top: var(--space-xl);
+}
+
 /* Mission statement / Tagline line */
 .mission-statement {
-  font-size: var(--font-size-lg);
+  font-size: clamp(0.92rem, 1.15vw, var(--font-size-lg));
   color: var(--color-ink-primary);
-  line-height: var(--line-height-relaxed);
+  line-height: 1.45;
   max-width: 620px;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-sm);
   position: relative;
 }
 
@@ -151,35 +171,16 @@
   margin: 0;
 }
 
-/* Subtle Notebook Pencil Sketch: Extremely low visual weight (monochrome graphite) */
-.cover-pencil-sketch {
-  margin: var(--space-sm) 0 var(--space-md) 0;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: #444;
-  opacity: 0.38;
-  transform: rotate(-1.5deg);
-  pointer-events: none;
-}
-
-.pencil-sketch-note {
-  font-family: var(--font-handwritten);
-  font-size: 0.78rem;
-  color: #555;
-  margin-top: 2px;
-  letter-spacing: 0.02em;
-}
-
 /* Ledger Notebook Metadata Table: Minimal (Classification, Current Focus, Status, Last Updated) */
 .metadata-ledger {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: var(--space-sm);
+  row-gap: 6px;
   column-gap: var(--space-xl);
   border-top: 1px solid var(--border-color-ui);
   border-bottom: 1px solid var(--border-color-ui);
-  padding: var(--space-md) 0;
+  padding: 6px 0;
+  margin-bottom: var(--space-xs);
   max-width: 680px;
 }
 
@@ -194,7 +195,7 @@
   font-size: var(--font-size-xs);
   text-transform: uppercase;
   color: var(--color-ink-secondary);
-  margin-bottom: var(--space-xxs);
+  margin-bottom: 1px;
 }
 
 .metadata-val {
@@ -204,10 +205,60 @@
   color: var(--color-ink-primary);
 }
 
-/* Naturally Positioned Logged Stamp */
+/* 7. Notebook Margin Sketches: Authentic Transparent PNG Illustrations (Research Desk & VACARS Helmet) */
+.cover-sketches-duo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 840px;
+  margin-top: var(--space-xs);
+  margin-bottom: 2px;
+  pointer-events: none;
+}
+
+.cover-sketch-slot {
+  display: flex;
+  align-items: flex-end;
+}
+
+.sketch-slot-left {
+  justify-content: flex-start;
+  flex: 0 1 315px;
+}
+
+.sketch-slot-right {
+  justify-content: flex-end;
+  flex: 0 1 210px;
+}
+
+.cover-sketch-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.28; /* Strictly within 20–35% subtle margin illustration requirement */
+  mix-blend-mode: multiply;
+  filter: contrast(1.05);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: opacity var(--transition-speed-normal) ease;
+}
+
+.sketch-desk {
+  max-width: 315px;
+}
+
+.sketch-helmet {
+  max-width: 210px;
+}
+
+/* 8. Naturally Positioned Logged Stamp */
 .cover-logged-stamp {
   display: inline-block;
-  margin-top: var(--space-lg);
+  align-self: flex-start;
+  margin-top: var(--space-xs);
   border: 1.5px solid var(--color-accent-red);
   color: var(--color-accent-red);
   font-family: var(--font-notebook);
@@ -220,86 +271,6 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   pointer-events: none;
-}
-
-/* Field Index: Authentic Notebook Sticky-Note Reference Insert */
-.cover-field-index-sticky {
-  position: absolute;
-  top: 130px;
-  right: 40px;
-  width: 200px;
-  background-color: var(--color-sticky-yellow);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.08);
-  padding: var(--space-sm) var(--space-md);
-  transform: rotate(1.2deg);
-  font-family: var(--font-notebook);
-  z-index: 5;
-  transition: transform var(--transition-speed-fast) ease, box-shadow var(--transition-speed-fast) ease;
-}
-
-.cover-field-index-sticky:hover {
-  transform: rotate(0deg) scale(1.02);
-  box-shadow: 3px 6px 14px rgba(0, 0, 0, 0.12);
-}
-
-/* Paper clip overlay on sticky note */
-.cover-field-index-sticky::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-1deg);
-  width: 50px;
-  height: 14px;
-  background: rgba(225, 215, 195, 0.7);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
-  border-left: 2px dashed rgba(170, 160, 140, 0.5);
-  border-right: 2px dashed rgba(170, 160, 140, 0.5);
-}
-
-.field-index-header {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-ink-secondary);
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.18);
-  padding-bottom: 4px;
-  margin-bottom: var(--space-xs);
-}
-
-.field-index-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.field-index-list li {
-  margin-bottom: 3px;
-  font-size: 0.72rem;
-  line-height: 1.35;
-}
-
-.field-index-list li a {
-  color: var(--color-ink-primary);
-  text-decoration: none;
-  font-weight: var(--weight-medium);
-  transition: color var(--transition-speed-fast) ease;
-  display: block;
-}
-
-.field-index-list li a:hover {
-  color: var(--color-accent-red);
-  text-decoration: underline;
-}
-
-.field-index-num {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: var(--color-accent-blue);
-  margin-right: 4px;
 }
 
 /* Coffee Stain effect overlay */
@@ -464,19 +435,24 @@
     font-size: var(--font-size-3xl);
   }
 
-  .cover-field-index-sticky {
-    position: static;
-    margin: var(--space-md) 0 var(--space-lg) 0;
-    width: 100%;
-    max-width: 240px;
-    transform: rotate(-0.5deg);
-  }
-
   .metadata-ledger {
     grid-template-columns: 1fr;
     row-gap: var(--space-sm);
   }
-  
+
+  .cover-sketches-duo {
+    max-width: 100%;
+    gap: var(--space-md);
+  }
+
+  .sketch-slot-left {
+    flex: 1 1 55%;
+  }
+
+  .sketch-slot-right {
+    flex: 1 1 45%;
+  }
+
   .cover-bookmark,
   .chapter-return-ribbon {
     right: 8%;
@@ -493,5 +469,19 @@
     height: 94px;
     right: 5%;
     bottom: 25%;
+  }
+}
+
+@media (max-width: 520px) {
+  .cover-sketches-duo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .sketch-slot-left,
+  .sketch-slot-right {
+    flex: 0 0 auto;
+    max-width: 260px;
   }
 }
