@@ -358,30 +358,6 @@
   }
 }
 
-/* Specimen tag below photo in col-4 */
-.photo-specimen-meta {
-  width: 100%;
-  max-width: 250px;
-  background: var(--color-paper-base);
-  border: 1px dashed var(--border-color-ui);
-  border-radius: var(--radius-sm);
-  padding: var(--space-xs) var(--space-sm);
-  font-family: var(--font-notebook);
-  font-size: var(--font-size-xs);
-  color: var(--color-ink-secondary);
-  line-height: 1.5;
-  margin-top: var(--space-xs);
-}
-
-.photo-specimen-tag {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--color-accent-red);
-  font-weight: bold;
-  display: block;
-  letter-spacing: 0.06em;
-}
-
 /* Transitions layout note at bottom */
 .transition-log-note {
   font-family: var(--font-handwritten);
