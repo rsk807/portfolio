@@ -193,73 +193,128 @@
           <!-- Handwriting annotation in margin -->
           <span class="margin-handwritten-note note-top-left" style="left: -80px; top: -35px; transform: rotate(-8deg); opacity: 0.12; filter: blur(0.4px); mix-blend-mode: multiply;" aria-hidden="true">Field Notes: Vol. I</span>
 
-          <!-- 1. Cover Title Group & SK Logo -->
-          <div class="cover-title-group">
-            <div class="cover-logo-container">
-              <img src="sk_logo_reimagined_cropped.png" alt="SK Logo Seal" class="cover-logo-seal" loading="lazy">
-            </div>
+          <!-- Upper Quadrants: Identity (Left) & Helmet Sketch (Right) -->
+          <div class="cover-top-quadrants">
             
-            <h1 class="cover-h1">ENGINEERING NOTEBOOK</h1>
+            <!-- Upper-Left: SK Logo, Title, Subtitle, Owner, Roles, Tagline -->
+            <div class="cover-upper-left">
+              <!-- SK Logo -->
+              <div class="cover-logo-container">
+                <img src="sk_logo_reimagined_cropped.png" alt="SK Logo Seal" class="cover-logo-seal" loading="lazy">
+              </div>
+              
+              <!-- Title: ENGINEERING DOSSIER -->
+              <h1 class="cover-h1">
+                <span class="title-eng">ENGINEERING</span> <span class="title-dossier">DOSSIER</span>
+              </h1>
+              
+              <!-- Subtitle Bar -->
+              <div class="cover-subtitle-bar">
+                <span>RESEARCH</span>
+                <span class="sub-sep">×</span>
+                <span>SYSTEMS</span>
+                <span class="sub-sep">×</span>
+                <span>PRODUCTS</span>
+                <span class="sub-sep">×</span>
+                <span>INNOVATION</span>
+              </div>
+
+              <!-- Owner Block -->
+              <div class="owner-block">
+                <span class="owner-label">OWNER</span>
+                <span class="owner-name">Sushant Kumar</span>
+              </div>
+
+              <!-- Professional Identity Stack -->
+              <div class="identity-stack">
+                <div class="identity-label">Cyber Security Engineer</div>
+                <div class="identity-label">Digital Forensics Researcher</div>
+                <div class="identity-label">AI Systems Developer</div>
+                <div class="identity-label">Cloud Infrastructure Engineer</div>
+                <div class="identity-label">Founder, TechDenLab</div>
+              </div>
+
+              <!-- Handwritten Tagline with red stroke -->
+              <div class="cover-tagline-container">
+                <p class="cover-tagline-text">Building secure, intelligent systems from edge devices to cloud-scale platforms.</p>
+                <svg class="red-line-svg" width="460" height="7" viewBox="0 0 460 7" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M2,4 C120,1 320,6 456,3" stroke="var(--color-accent-red)" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Upper-Right Quadrant: VACARS Smart Helmet Sketch & Handwritten Annotation -->
+            <div class="cover-upper-right">
+              <div class="helmet-quadrant-wrapper">
+                <img src="assets/images/sketch_helmet_transparent.png" alt="Smart Helmet Engineering Sketch" class="cover-sketch-helmet" loading="lazy">
+                
+                <div class="helmet-annotation-callout">
+                  <svg class="curved-arrow-helmet" width="40" height="24" viewBox="0 0 40 24" fill="none" aria-hidden="true">
+                    <path d="M34,18 C26,4 14,4 4,9" stroke="#222" stroke-width="1.3" stroke-linecap="round"/>
+                    <path d="M11,4 L4,9 L10,14" stroke="#222" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <div class="callout-notes">
+                    <span>Smart</span>
+                    <span>Secure</span>
+                    <span>Connected</span>
+                    <span>Intelligent</span>
+                    <svg class="callout-red-underline" width="62" height="6" viewBox="0 0 62 6" fill="none" aria-hidden="true">
+                      <path d="M2,4 C20,1 44,5 60,2" stroke="var(--color-accent-red)" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Quadrants: Laptop Desk Sketch (Left) & Quote Section (Right) -->
+          <div class="cover-bottom-quadrants">
             
-            <!-- Animated Ink underline path -->
-            <svg class="underline-svg" viewBox="0 0 500 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
-              <path class="underline-path" d="M6,6 C120,2 350,10 494,5" stroke="var(--color-accent-blue)" stroke-width="3" />
-            </svg>
-            
-            <!-- 3. Owner Block (Sushant Kumar) -->
-            <div class="owner-block">
-              <span class="owner-label">Owner</span>
-              <span class="owner-name">Sushant Kumar</span>
-            </div>
-          </div>
+            <!-- Lower-Left: Handwritten Note, Laptop Sketch & Logged Stamp -->
+            <div class="cover-lower-left">
+              <div class="laptop-quadrant-wrapper">
+                
+                <div class="laptop-annotation-callout">
+                  <div class="callout-notes notes-rot-neg">
+                    <span>Research</span>
+                    <span>Build</span>
+                    <span>Document</span>
+                    <span>Repeat</span>
+                    <svg class="callout-red-underline" width="52" height="6" viewBox="0 0 52 6" fill="none" aria-hidden="true">
+                      <path d="M2,4 C16,1 38,5 50,2" stroke="var(--color-accent-red)" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <svg class="curved-arrow-laptop" width="36" height="24" viewBox="0 0 36 24" fill="none" aria-hidden="true">
+                    <path d="M4,4 C14,4 24,8 30,18" stroke="#222" stroke-width="1.3" stroke-linecap="round"/>
+                    <path d="M22,17 L30,18 L29,10" stroke="#222" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
 
-          <!-- 4. Roles (Identity Stack) -->
-          <div class="identity-stack">
-            <div class="identity-label">Cyber Security Engineer</div>
-            <div class="identity-label">Digital Forensics Researcher</div>
-            <div class="identity-label">AI Systems Developer</div>
-            <div class="identity-label">Cloud Infrastructure Engineer</div>
-            <div class="identity-label">Founder, TechDenLab</div>
-          </div>
+                <img src="assets/images/sketch_desk_transparent.png" alt="Engineering Desk Sketch" class="cover-sketch-laptop" loading="lazy">
+              </div>
 
-          <!-- 5. Mission Statement / Tagline -->
-          <blockquote class="mission-statement">
-            <p>Building secure, intelligent systems from edge devices to cloud-scale platforms.</p>
-          </blockquote>
+              <!-- Logged Stamp (Bottom-Left) -->
+              <div class="cover-logged-stamp" aria-hidden="true">
+                <span>LOGGED: 2026-07-01 // VERIFIED V2026.1</span>
+              </div>
+            </div>
 
-          <!-- 6. Minimal Metadata Ledger -->
-          <div class="metadata-ledger">
-            <div class="metadata-item">
-              <span class="metadata-key">Classification</span>
-              <span class="metadata-val">Personal Engineering Journal</span>
+            <!-- Lower-Right: Quote Section -->
+            <div class="cover-lower-right">
+              <div class="cover-quote-container">
+                <span class="cover-quote-mark" aria-hidden="true">“</span>
+                <blockquote class="cover-quote-text">
+                  Turning Ideas into<br>
+                  Secure, Scalable and<br>
+                  Meaningful Systems.
+                  <svg class="quote-red-underline" width="145" height="7" viewBox="0 0 145 7" fill="none" aria-hidden="true">
+                    <path d="M2,4 C42,1 98,6 142,2" stroke="var(--color-accent-red)" stroke-width="2.2" stroke-linecap="round"/>
+                  </svg>
+                </blockquote>
+              </div>
             </div>
-            <div class="metadata-item">
-              <span class="metadata-key">Current Focus</span>
-              <span class="metadata-val">Cyber Security • AI Systems • Cloud Infrastructure</span>
-            </div>
-            <div class="metadata-item">
-              <span class="metadata-key">Status</span>
-              <span class="metadata-val" style="color: var(--color-accent-blue);">● Active</span>
-            </div>
-            <div class="metadata-item">
-              <span class="metadata-key">Last Updated</span>
-              <span class="metadata-val" id="dynamic-date-ledger">2026-07-01</span>
-            </div>
-          </div>
 
-          <!-- 7. Notebook Margin Sketches (Bottom-Left: Research Desk / Laptop, Bottom-Right: VACARS Smart Helmet) -->
-          <div class="cover-sketches-duo" aria-hidden="true">
-            <div class="cover-sketch-slot sketch-slot-left">
-              <img src="assets/images/sketch_desk_transparent.png" alt="" class="cover-sketch-img sketch-desk">
-            </div>
-            <div class="cover-sketch-slot sketch-slot-right">
-              <img src="assets/images/sketch_helmet_transparent.png" alt="" class="cover-sketch-img sketch-helmet">
-            </div>
-          </div>
-
-          <!-- 8. Naturally Positioned Logged Stamp -->
-          <div class="cover-logged-stamp" aria-hidden="true">
-            <span>LOGGED: 2026-07-01 // VERIFIED v2026.1</span>
           </div>
 
         </section>

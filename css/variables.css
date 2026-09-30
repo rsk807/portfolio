@@ -45,6 +45,7 @@
   --font-mono: 'JetBrains Mono', monospace;
   --font-notebook: 'IBM Plex Mono', monospace;
   --font-handwritten: 'Special Elite', cursive, monospace;
+  --font-script: 'Caveat', 'Special Elite', cursive, sans-serif;
 
   /* Font Weights */
   --weight-regular: 400;
