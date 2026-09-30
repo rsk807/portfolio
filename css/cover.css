@@ -85,7 +85,7 @@
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  margin-bottom: 6px;
+  margin-bottom: 28px; /* 24-32px spacing */
   position: relative;
 }
 
@@ -105,7 +105,7 @@
   border-top: 1.5px solid var(--color-accent-red);
   border-bottom: 1.5px solid var(--color-accent-red);
   padding: 3px 0;
-  margin-bottom: var(--space-sm);
+  margin-bottom: 36px; /* 32-40px spacing */
   font-family: var(--font-mono);
   font-size: 0.68rem;
   font-weight: 600;
@@ -124,7 +124,7 @@
 /* Owner Block layout */
 .owner-block {
   font-family: var(--font-notebook);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 20px;
 }
 
 .owner-label {
@@ -134,7 +134,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   display: block;
-  margin-bottom: 2px;
+  margin-bottom: 10px; /* 8-12px spacing */
 }
 
 .owner-name {
@@ -149,7 +149,7 @@
   display: flex;
   flex-direction: column;
   gap: 3px;
-  margin-bottom: var(--space-sm);
+  margin-bottom: 22px;
   border-left: 2px solid var(--color-accent-red);
   padding-left: 10px;
   max-width: 460px;
@@ -213,6 +213,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  padding-top: 50px; /* Shift helmet 50px lower to provide clear breathing room beneath bookmark ribbon */
 }
 
 .helmet-quadrant-wrapper {
@@ -355,20 +356,20 @@
 
 .cover-quote-mark {
   font-family: Georgia, serif;
-  font-size: 2.2rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: var(--color-accent-red);
   line-height: 0.9;
-  margin-top: -2px;
+  margin-top: -1px;
 }
 
 .cover-quote-text {
   font-family: var(--font-script);
-  font-size: clamp(1.15rem, 1.35vw, 1.4rem);
+  font-size: clamp(1.02rem, 1.18vw, 1.25rem);
   font-weight: 500;
   font-style: italic;
   color: #1a1a1a;
-  line-height: 1.35;
+  line-height: 1.32;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -551,6 +552,7 @@
   .cover-upper-right {
     justify-content: flex-start;
     margin-top: var(--space-xs);
+    padding-top: 0;
   }
 
   .helmet-annotation-callout {
