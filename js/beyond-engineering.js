@@ -376,6 +376,10 @@ function initBeyondLightboxArrows() {
 }
 
 function resetLightboxZoom() {
+  if (typeof window.resetViewerZoom === 'function') {
+    window.resetViewerZoom();
+    return;
+  }
   if (typeof adjustZoom === 'function') {
     adjustZoom(0);
   }

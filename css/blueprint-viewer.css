@@ -282,6 +282,7 @@
   justify-content: center;
   padding: var(--space-2xl);
   outline: none;
+  overflow: hidden;
 }
 
 .lightbox-img-wrapper {
@@ -291,6 +292,7 @@
   justify-content: center;
   user-select: none;
   cursor: grab;
+  touch-action: none;
 }
 
 .lightbox-img-wrapper:active {
@@ -298,20 +300,22 @@
 }
 
 #lightbox-image {
-  max-width: 90vw;
-  max-height: 80vh;
-  object-fit: contain;
   border-radius: 4px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transform: scale(0.95);
   opacity: 0;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
   will-change: transform, opacity;
+  transform-origin: center center;
+  image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .lightbox-overlay.active #lightbox-image {
-  transform: scale(1);
   opacity: 1;
 }
 
@@ -323,40 +327,79 @@
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: var(--space-md);
-  background: rgba(10, 25, 47, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: var(--space-xs) var(--space-md);
+  gap: 6px;
+  background: rgba(10, 25, 47, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 6px 12px;
   border-radius: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
   z-index: 10001;
+  max-width: 95vw;
 }
 
-.lightbox-zoom-btn {
+.lightbox-zoom-btn,
+.lightbox-ctrl-btn {
   background: none;
-  border: none;
-  color: white;
-  font-size: var(--font-size-md);
-  width: 32px;
+  border: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: 12px;
+  padding: 4px 8px;
+  min-width: 32px;
   height: 32px;
+  border-radius: 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.2s;
+  transition: all 0.2s ease;
   outline: none;
+  user-select: none;
+  white-space: nowrap;
 }
 
-.lightbox-zoom-btn:hover {
+.lightbox-zoom-btn:hover,
+.lightbox-ctrl-btn:hover {
   color: #00d2ff;
+  border-color: rgba(0, 210, 255, 0.35);
+  background: rgba(0, 210, 255, 0.08);
+}
+
+.lightbox-zoom-btn:focus-visible,
+.lightbox-ctrl-btn:focus-visible {
+  outline: 2px dashed #00d2ff;
+  outline-offset: 2px;
+}
+
+.lightbox-ctrl-btn.active {
+  color: #00d2ff;
+  background: rgba(0, 210, 255, 0.18);
+  border-color: rgba(0, 210, 255, 0.5);
+  font-weight: 700;
+}
+
+.lightbox-ctrl-btn svg {
+  display: block;
+  pointer-events: none;
+}
+
+.lightbox-divider {
+  width: 1px;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 0.18);
+  margin: 0 2px;
+  flex-shrink: 0;
 }
 
 .lightbox-zoom-level {
-  color: rgba(255, 255, 255, 0.65);
-  font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
-  min-width: 48px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: 11px;
+  min-width: 44px;
   text-align: center;
+  user-select: none;
 }
 
 /* Responsive adjustments */
@@ -372,11 +415,6 @@
     padding: var(--space-md);
   }
 
-  #lightbox-image {
-    max-width: 95vw;
-    max-height: 75vh;
-  }
-
   .lightbox-close-btn {
     top: var(--space-md);
     right: var(--space-md);
@@ -386,6 +424,33 @@
   }
 
   .lightbox-controls {
-    bottom: var(--space-lg);
+    bottom: var(--space-md);
+    gap: 3px;
+    padding: 4px 6px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .lightbox-controls::-webkit-scrollbar {
+    display: none;
+  }
+
+  .lightbox-zoom-btn,
+  .lightbox-ctrl-btn {
+    font-size: 11px;
+    padding: 2px 6px;
+    min-width: 28px;
+    height: 28px;
+  }
+
+  .lightbox-zoom-level {
+    font-size: 10px;
+    min-width: 34px;
+  }
+
+  .lightbox-divider {
+    height: 14px;
+    margin: 0 1px;
   }
 }
