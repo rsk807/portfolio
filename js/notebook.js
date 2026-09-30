@@ -48,6 +48,18 @@ function initCoverPage() {
       }
     });
   }
+
+  // Chapter 08 Return Ribbon scrolling back to Chapter 01
+  const returnRibbon = document.getElementById('return-ribbon');
+  if (returnRibbon) {
+    returnRibbon.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById('chapter-01');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
 }
 
 /**
