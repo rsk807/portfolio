@@ -185,7 +185,7 @@
         <!-- ==========================================
              COVER PAGE (Chapter 00)
              ========================================== -->
-        <section id="chapter-00" class="notebook-chapter-section" data-chapter="00" data-title="Cover Page" data-page-num="Cover" style="min-height: calc(100vh - var(--space-4xl)); margin-bottom: var(--space-4xl); position: relative;">
+        <section id="chapter-00" class="notebook-chapter-section" data-chapter="00" data-title="Cover Page" data-page-num="Cover" style="margin-bottom: var(--space-3xl); position: relative;">
           
           <!-- Swaying Bookmark Ribbon Scroll Indicator -->
           <a href="#chapter-01" class="cover-bookmark" id="scroll-ribbon" title="Scroll to Chapter 01" aria-label="Scroll to Chapter 01"></a>
@@ -195,55 +195,54 @@
           <span class="margin-handwritten-note note-mid-right" style="right: 10px; top: 380px;" aria-hidden="true">Revision Approved</span>
 
           <!-- Upper Page Grid Metainfo Header -->
-          <div class="notebook-meta-header" style="margin-bottom: var(--space-xl);">
+          <div class="notebook-meta-header">
             <div class="meta-block">
               <span class="meta-block-label">Journal Type</span>
-              <span style="color: var(--color-ink-primary); font-weight: 500;">RESEARCH LOG COVER</span>
+              <span class="meta-block-val">RESEARCH LOG COVER</span>
             </div>
             <div class="meta-block">
               <span class="meta-block-label">Log Number</span>
-              <span>SK-LOG-001</span>
+              <span class="meta-block-val">SK-LOG-001</span>
             </div>
             <div class="meta-block">
               <span class="meta-block-label">Calibration</span>
-              <span id="header-date">JULY 2026</span>
+              <span class="meta-block-val" id="header-date">JULY 2026</span>
             </div>
           </div>
 
-          <!-- Cover Title Group -->
-          <div class="cover-title-group" style="padding-top: var(--space-lg);">
-            <div class="cover-logo-container" style="display: flex; justify-content: center; margin-bottom: var(--space-lg);">
-              <img src="sk_logo_reimagined_cropped.png" alt="SK Logo Seal" class="cover-logo-seal" style="width: 110px; height: auto; object-fit: contain; filter: grayscale(1) contrast(1.15) opacity(0.8); mix-blend-mode: multiply;" loading="lazy">
-            </div>
-            
-            <h1 class="cover-h1 mt-md">ENGINEERING NOTEBOOK</h1>
+          <!-- Cover Title & Monogram Layout -->
+          <div class="cover-title-group">
+            <img src="sk_logo_reimagined_cropped.png" alt="SK Logo Seal" class="cover-logo-seal" loading="lazy">
+            <h1 class="cover-h1">ENGINEERING NOTEBOOK</h1>
             
             <!-- Animated Ink underline path -->
             <svg class="underline-svg" viewBox="0 0 500 12" fill="none" preserveAspectRatio="none" aria-hidden="true">
               <path class="underline-path" d="M6,6 C120,2 350,10 494,5" stroke="var(--color-accent-blue)" stroke-width="3" />
             </svg>
             
-            <div style="margin-top: var(--space-lg);">
+            <div class="cover-owner-row">
               <span class="owner-label">Owner</span>
               <span class="owner-name">Sushant Kumar</span>
             </div>
           </div>
 
-          <!-- Stacked Identities -->
-          <div class="identity-stack" style="margin-top: var(--space-xl);">
-            <div class="identity-label">Cybersecurity Engineer</div>
-            <div class="identity-label">AI Systems Developer</div>
-            <div class="identity-label">Digital Forensics Researcher</div>
-            <div class="identity-label">IoT Systems Engineer</div>
-            <div class="identity-label">Cloud Computing Engineer</div>
+          <!-- Identity Section: Clean, scannable technical badges -->
+          <div class="cover-identity-cluster">
+            <span class="cover-identity-pill">Cyber Security Engineer</span>
+            <span class="cover-identity-pill">Digital Forensics Researcher</span>
+            <span class="cover-identity-pill">AI Systems Developer</span>
+            <span class="cover-identity-pill">Cloud Infrastructure Engineer</span>
+            <span class="cover-identity-pill">Founder, TechDenLab</span>
           </div>
 
-          <!-- Mission Statement -->
-          <blockquote class="mission-statement" style="margin-top: var(--space-xl); margin-bottom: var(--space-2xl);">
-            <p>Building intelligent, secure systems from edge devices to the cloud.</p>
-          </blockquote>
+          <!-- Tagline Block: Single concise line -->
+          <div class="cover-tagline-wrap">
+            <blockquote class="cover-tagline">
+              Building secure, intelligent systems from edge devices to cloud-scale platforms.
+            </blockquote>
+          </div>
 
-          <!-- Metadata Ledger -->
+          <!-- Metadata Ledger: 5 fields strictly as requested -->
           <div class="metadata-ledger">
             <div class="metadata-item">
               <span class="metadata-key">Classification</span>
@@ -254,16 +253,12 @@
               <span class="metadata-val" style="color: var(--color-accent-blue);">● Active</span>
             </div>
             <div class="metadata-item">
-              <span class="metadata-key">Revision</span>
-              <span class="metadata-val">v2026.1</span>
-            </div>
-            <div class="metadata-item">
-              <span class="metadata-key">Started</span>
+              <span class="metadata-key">Created</span>
               <span class="metadata-val">2023</span>
             </div>
             <div class="metadata-item">
               <span class="metadata-key">Current Focus</span>
-              <span class="metadata-val">Cybersecurity / AI Systems / Cloud / IoT</span>
+              <span class="metadata-val">Cybersecurity • AI Systems • Cloud • Forensics</span>
             </div>
             <div class="metadata-item">
               <span class="metadata-key">Last Updated</span>
@@ -271,7 +266,139 @@
             </div>
           </div>
 
-          <div class="revision-stamp" style="bottom: 0px;" aria-hidden="true">VERIFIED v2026.1</div>
+          <!-- Research Personality Elements: Technical Notebook Schematics -->
+          <div class="cover-sketches-container">
+            <div class="cover-sketches-header">
+              <span class="cover-sketches-label">ARCHIVAL FIELD SCHEMATICS // REF-SK-001</span>
+              <span class="cover-sketches-sub">EDGE AI &bull; HARDWARE &bull; SECURITY MESH</span>
+            </div>
+            
+            <div class="cover-sketches-grid">
+              <!-- Sketch 01: Smart Helmet (VACARS) -->
+              <div class="cover-sketch-card">
+                <div class="sketch-meta-top">
+                  <span class="sketch-fig-num">[FIG. 01 // VACARS]</span>
+                  <span class="sketch-archival-tag">PATENT &bull; SPRINGER</span>
+                </div>
+                <svg viewBox="0 0 160 76" class="sketch-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <!-- Helmet Outer Shell -->
+                  <path d="M 28,48 C 24,22 48,10 85,10 C 122,10 144,28 146,54 C 147,68 134,74 114,74 C 98,74 92,72 74,72 C 54,72 35,68 28,48 Z" stroke-width="1.2" opacity="0.85" />
+                  <!-- Visor -->
+                  <path d="M 68,26 C 94,22 128,28 138,42 C 132,56 112,60 88,60 C 74,60 68,50 68,26 Z" stroke-width="1.1" opacity="0.9" fill="rgba(0,0,0,0.02)" />
+                  <!-- HUD Reticle -->
+                  <circle cx="102" cy="42" r="5" stroke-width="0.9" stroke="var(--color-accent-blue)" opacity="0.9" />
+                  <line x1="102" y1="34" x2="102" y2="39" stroke="var(--color-accent-blue)" stroke-width="0.8" />
+                  <line x1="102" y1="45" x2="102" y2="50" stroke="var(--color-accent-blue)" stroke-width="0.8" />
+                  <line x1="94" y1="42" x2="99" y2="42" stroke="var(--color-accent-blue)" stroke-width="0.8" />
+                  <line x1="105" y1="42" x2="110" y2="42" stroke="var(--color-accent-blue)" stroke-width="0.8" />
+                  <!-- Edge Sensor Pod -->
+                  <rect x="126" y="52" width="12" height="7" rx="1.5" stroke-width="1" stroke="var(--color-accent-red)" opacity="0.9" />
+                  <circle cx="132" cy="55.5" r="1.8" stroke="var(--color-accent-red)" stroke-width="0.8" />
+                  <!-- Wireless pulses -->
+                  <path d="M 38,20 C 33,24 30,30 30,38" stroke-width="0.9" stroke-dasharray="2,2" opacity="0.5" />
+                  <path d="M 46,14 C 36,20 33,28 33,40" stroke-width="0.9" stroke-dasharray="2,2" opacity="0.35" />
+                </svg>
+                <div class="sketch-meta-bottom">
+                  <div class="sketch-title">Smart Helmet System</div>
+                  <div class="sketch-annotations">
+                    <span>&bull; IoT</span>
+                    <span>&bull; Computer Vision</span>
+                    <span>&bull; Edge AI</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sketch 02: Research Desk / Workstation -->
+              <div class="cover-sketch-card">
+                <div class="sketch-meta-top">
+                  <span class="sketch-fig-num">[FIG. 02 // LAB BENCH]</span>
+                  <span class="sketch-archival-tag">DEV &bull; EXPERIMENTS</span>
+                </div>
+                <svg viewBox="0 0 160 76" class="sketch-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <!-- Laptop Display -->
+                  <rect x="34" y="12" width="92" height="48" rx="2" stroke-width="1.2" opacity="0.85" />
+                  <!-- Screen Bezel -->
+                  <rect x="38" y="16" width="84" height="40" rx="1" stroke-width="0.8" opacity="0.45" fill="rgba(0,0,0,0.02)" />
+                  <!-- Terminal Prompt -->
+                  <path d="M 44,26 L 49,30 L 44,34" stroke-width="1" stroke="var(--color-accent-blue)" />
+                  <line x1="52" y1="34" x2="62" y2="34" stroke-width="1" stroke="var(--color-accent-blue)" />
+                  <!-- Flow Blocks -->
+                  <rect x="74" y="22" width="18" height="10" rx="1" stroke-width="0.8" stroke-dasharray="2,1" opacity="0.75" />
+                  <line x1="92" y1="27" x2="98" y2="27" stroke-width="0.8" opacity="0.6" />
+                  <rect x="98" y="22" width="16" height="10" rx="1" stroke-width="0.8" opacity="0.75" />
+                  <rect x="74" y="38" width="40" height="12" rx="1" stroke-width="0.8" stroke-dasharray="1,1" opacity="0.6" />
+                  <!-- Keyboard Base -->
+                  <polygon points="26,60 134,60 144,72 16,72" stroke-width="1.2" opacity="0.85" />
+                  <!-- Trackpad -->
+                  <rect x="70" y="63" width="20" height="5" rx="1" stroke-width="0.8" opacity="0.6" />
+                  <!-- Research Stylus -->
+                  <line x1="138" y1="70" x2="152" y2="44" stroke-width="1.1" stroke="var(--color-ink-secondary)" opacity="0.7" />
+                  <polygon points="152,44 153,40 149,42" fill="currentColor" opacity="0.7" />
+                </svg>
+                <div class="sketch-meta-bottom">
+                  <div class="sketch-title">Research Desk</div>
+                  <div class="sketch-annotations">
+                    <span>&bull; Research</span>
+                    <span>&bull; Build</span>
+                    <span>&bull; Document</span>
+                    <span>&bull; Repeat</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sketch 03: Minimal Network Graph -->
+              <div class="cover-sketch-card">
+                <div class="sketch-meta-top">
+                  <span class="sketch-fig-num">[FIG. 03 // ARCHITECTURE]</span>
+                  <span class="sketch-archival-tag">TOPOLOGY &bull; NODES</span>
+                </div>
+                <svg viewBox="0 0 160 76" class="sketch-svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <!-- Network Vectors -->
+                  <line x1="30" y1="24" x2="80" y2="40" stroke-width="0.9" stroke-dasharray="3,2" opacity="0.6" />
+                  <line x1="130" y1="24" x2="80" y2="40" stroke-width="1.1" opacity="0.7" />
+                  <line x1="36" y1="62" x2="80" y2="40" stroke-width="0.9" stroke-dasharray="2,2" opacity="0.6" />
+                  <line x1="124" y1="62" x2="80" y2="40" stroke-width="1.1" opacity="0.7" />
+                  <line x1="30" y1="24" x2="36" y2="62" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.4" />
+                  <line x1="130" y1="24" x2="124" y2="62" stroke-width="0.8" opacity="0.4" />
+                  <!-- Center Shield Node -->
+                  <circle cx="80" cy="40" r="9" stroke-width="1.3" stroke="var(--color-accent-blue)" fill="var(--color-paper-light)" />
+                  <path d="M 77,38 L 80,35 L 83,38 L 83,42 C 83,44 80,45.5 80,45.5 C 80,45.5 77,44 77,42 Z" stroke-width="0.8" stroke="var(--color-accent-blue)" fill="rgba(31,111,235,0.08)" />
+                  <!-- Peripheral Nodes -->
+                  <circle cx="30" cy="24" r="5" stroke-width="1" fill="var(--color-paper-light)" opacity="0.9" />
+                  <circle cx="30" cy="24" r="1.8" fill="currentColor" opacity="0.7" />
+                  <circle cx="130" cy="24" r="5" stroke-width="1" fill="var(--color-paper-light)" opacity="0.9" />
+                  <circle cx="130" cy="24" r="1.8" fill="currentColor" opacity="0.7" />
+                  <circle cx="36" cy="62" r="5" stroke-width="1" stroke="var(--color-accent-red)" fill="var(--color-paper-light)" />
+                  <rect x="34" y="60" width="4" height="4" stroke-width="0.7" stroke="var(--color-accent-red)" />
+                  <circle cx="124" cy="62" r="5" stroke-width="1" fill="var(--color-paper-light)" opacity="0.9" />
+                  <path d="M 121.5,62 L 126.5,62 M 124,59.5 L 124,64.5" stroke-width="0.8" opacity="0.8" />
+                </svg>
+                <div class="sketch-meta-bottom">
+                  <div class="sketch-title">Security &amp; Forensics Mesh</div>
+                  <div class="sketch-annotations">
+                    <span>&bull; Cyber Security</span>
+                    <span>&bull; Digital Forensics</span>
+                    <span>&bull; AI Systems</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Version & Logged Archival Footer Grouping -->
+          <div class="cover-footer-group">
+            <div class="cover-stamp-cluster">
+              <span class="cover-stamp-verified">VERIFIED // v2026.1</span>
+              <span class="cover-stamp-logged">LOGGED: 2026-07-01 &bull; PUNE, MH, INDIA</span>
+              <span class="cover-stamp-dossier">DOSSIER REF: SK-ARCHIVE-001</span>
+            </div>
+            
+            <a href="#chapter-01" class="cover-scroll-indicator" title="Proceed to Chapter 01">
+              <span>PROCEED TO CH. 01</span>
+              <span class="cover-scroll-arrow" aria-hidden="true">&darr;</span>
+            </a>
+          </div>
+
         </section>
 
         <!-- ==========================================
