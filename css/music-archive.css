@@ -33,26 +33,6 @@
   box-shadow: 4px 4px 0px var(--color-accent-blue, hsl(214, 60%, 42%));
 }
 
-/* Notebook Corner Label */
-.music-archive-deck::before {
-  content: 'ARCHIVE // REC-03';
-  position: absolute;
-  top: 6px;
-  right: -28px;
-  transform: rotate(45deg);
-  background-color: var(--color-sticky-yellow, hsl(50, 95%, 88%));
-  color: var(--color-ink-primary, #212121);
-  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
-  font-size: 8px;
-  font-weight: var(--weight-bold, 700);
-  letter-spacing: 0.08em;
-  padding: 2px 30px;
-  border: 1px dashed var(--border-color-ui, hsl(0, 0%, 75%));
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  pointer-events: none;
-  z-index: 5;
-}
-
 /* ==========================================================================
    2. TECHNICAL HEADER BAR
    ========================================================================== */
@@ -142,7 +122,7 @@
 
 .archive-deck-body {
   display: grid;
-  grid-template-columns: minmax(260px, 320px) 1fr;
+  grid-template-columns: minmax(280px, 42%) 1fr;
   gap: var(--space-xl, 2rem);
   align-items: center;
   margin-bottom: var(--space-lg, 1.5rem);
@@ -163,8 +143,8 @@
 
 .cd-turntable-chassis {
   position: relative;
-  width: clamp(210px, 28vw, 270px);
-  height: clamp(210px, 28vw, 270px);
+  width: clamp(260px, 34vw, 320px);
+  height: clamp(260px, 34vw, 320px);
   background: radial-gradient(circle at center, #eee8db 0%, #ded7c6 65%, #c8c0ae 100%);
   border: var(--border-width-thick, 2px) solid var(--color-ink-primary, #212121);
   border-radius: 50%;
@@ -197,12 +177,12 @@
 
 .cd-disc {
   position: relative;
-  width: 90%;
-  height: 90%;
+  width: 92%;
+  height: 92%;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 
-    0 8px 20px rgba(0, 0, 0, 0.22), 
+    0 8px 22px rgba(0, 0, 0, 0.24), 
     0 2px 6px rgba(0, 0, 0, 0.14),
     inset 0 0 0 1px rgba(255, 255, 255, 0.6);
   display: flex;
@@ -274,8 +254,8 @@
 /* Metallic Inner Ring with Technical Etched Markings */
 .cd-inner-mirror {
   position: absolute;
-  width: 60%;
-  height: 60%;
+  width: 66%;
+  height: 66%;
   border-radius: 50%;
   border: 1px dashed rgba(0, 0, 0, 0.25);
   background: radial-gradient(circle at center, #ece6d8 35%, #cfc7b7 100%);
@@ -299,22 +279,22 @@
 }
 
 .cd-etching-top {
-  top: 5px;
+  top: 4px;
 }
 
 .cd-etching-bottom {
-  bottom: 5px;
+  bottom: 4px;
 }
 
-/* Center Label Artwork (Displays Track Thumbnail) */
+/* Center Label Artwork (Displays Track Thumbnail - 60% of CD diameter) */
 .cd-artwork-hub {
   position: relative;
-  width: 44%;
-  height: 44%;
+  width: 60%;
+  height: 60%;
   border-radius: 50%;
   overflow: hidden;
-  border: 1.5px solid var(--color-ink-primary, #212121);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+  border: 2px solid var(--color-ink-primary, #212121);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   background-color: var(--color-paper-dark, #eee8db);
   z-index: 4;
 }
@@ -333,30 +313,30 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.15) 100%);
+  background: radial-gradient(circle at center, transparent 45%, rgba(0, 0, 0, 0.18) 100%);
   pointer-events: none;
 }
 
 /* Clear Spindle Clamp Ring & Center Hole */
 .cd-clamp-ring {
   position: absolute;
-  width: 22%;
-  height: 22%;
+  width: 20%;
+  height: 20%;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  background: rgba(255, 255, 255, 0.25);
+  border: 1.5px solid rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.3);
   pointer-events: none;
   z-index: 5;
 }
 
 .cd-spindle-hole {
   position: absolute;
-  width: 14%;
-  height: 14%;
+  width: 13%;
+  height: 13%;
   border-radius: 50%;
   background-color: var(--color-paper-dark, #eee8db);
   border: 1.5px solid var(--color-ink-primary, #212121);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.55);
   pointer-events: none;
   z-index: 6;
 }
@@ -368,18 +348,18 @@
 .cd-laser-arm {
   position: absolute;
   top: 10px;
-  right: -8px;
-  width: 80px;
-  height: 120px;
+  right: -4px;
+  width: 90px;
+  height: 135px;
   pointer-events: none;
   z-index: 4;
-  transform-origin: 70px 15px;
+  transform-origin: 78px 16px;
   transform: rotate(0deg);
   transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .cd-laser-arm.is-active {
-  transform: rotate(26deg);
+  transform: rotate(24deg);
 }
 
 .laser-arm-pivot {
@@ -399,7 +379,7 @@
   top: 20px;
   right: 13px;
   width: 4px;
-  height: 75px;
+  height: 85px;
   background: linear-gradient(90deg, #aaa 0%, #444 100%);
   border-radius: 2px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -432,6 +412,7 @@
   background-color: var(--color-accent-red, #d32f2f);
   box-shadow: 0 0 6px var(--color-accent-red, #d32f2f);
 }
+
 
 /* ==========================================================================
    4. METADATA & CONTROLS CONSOLE
@@ -809,7 +790,7 @@
 /* Tablet (max-width: 900px) */
 @media (max-width: 900px) {
   .archive-deck-body {
-    grid-template-columns: minmax(220px, 260px) 1fr;
+    grid-template-columns: minmax(250px, 38%) 1fr;
     gap: var(--space-md, 1rem);
   }
 
@@ -834,8 +815,8 @@
   }
 
   .cd-turntable-chassis {
-    width: clamp(190px, 58vw, 240px);
-    height: clamp(190px, 58vw, 240px);
+    width: clamp(230px, 68vw, 290px);
+    height: clamp(230px, 68vw, 290px);
     margin: 0 auto;
   }
 
