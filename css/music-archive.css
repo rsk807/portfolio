@@ -1,0 +1,879 @@
+/*
+ * MUSIC ARCHIVE CD PLAYER COMPONENT - "AN ENGINEER'S RESEARCH NOTEBOOK"
+ * Section: BE-03 Audio Archive
+ * Theme: Archived Engineering Media Disc, Analog Oscilloscope, Notebook System-Log.
+ * Strictly preserves the warm notebook palette, typewriter borders, and typography tokens.
+ */
+
+/* ==========================================================================
+   1. MAIN ARCHIVE DECK CHASSIS
+   ========================================================================== */
+
+.music-archive-deck {
+  position: relative;
+  background-color: var(--color-paper-light, #faf8f5);
+  background-image: 
+    linear-gradient(var(--color-paper-ruled, hsla(0, 0%, 45%, 0.24)) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-paper-ruled, hsla(0, 0%, 45%, 0.24)) 1px, transparent 1px);
+  background-size: 16px 16px;
+  border: var(--border-width-thick, 2px) solid var(--color-ink-primary, #212121);
+  border-radius: var(--radius-md, 4px);
+  box-shadow: 3px 3px 0px var(--color-ink-primary, #212121);
+  padding: var(--space-lg, 1.5rem);
+  margin-top: var(--space-lg, 1.5rem);
+  margin-bottom: var(--space-xl, 2rem);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  transition: box-shadow var(--transition-speed-normal, 0.3s) ease;
+}
+
+.music-archive-deck:focus-within {
+  box-shadow: 4px 4px 0px var(--color-accent-blue, hsl(214, 60%, 42%));
+}
+
+/* Notebook Corner Label */
+.music-archive-deck::before {
+  content: 'ARCHIVE // REC-03';
+  position: absolute;
+  top: 6px;
+  right: -28px;
+  transform: rotate(45deg);
+  background-color: var(--color-sticky-yellow, hsl(50, 95%, 88%));
+  color: var(--color-ink-primary, #212121);
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: 8px;
+  font-weight: var(--weight-bold, 700);
+  letter-spacing: 0.08em;
+  padding: 2px 30px;
+  border: 1px dashed var(--border-color-ui, hsl(0, 0%, 75%));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ==========================================================================
+   2. TECHNICAL HEADER BAR
+   ========================================================================== */
+
+.archive-deck-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm, 0.5rem);
+  padding-bottom: var(--space-sm, 0.5rem);
+  margin-bottom: var(--space-md, 1rem);
+  border-bottom: 1.5px solid var(--border-color-ui, hsl(0, 0%, 75%));
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+}
+
+.deck-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm, 0.5rem);
+  flex-wrap: wrap;
+}
+
+.deck-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: var(--weight-bold, 700);
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  background-color: var(--color-paper-base, #f6f3eb);
+  color: var(--color-ink-primary, #212121);
+  border: 1px solid var(--color-ink-primary, #212121);
+  border-radius: 2px;
+}
+
+.deck-matrix-code {
+  font-size: 11px;
+  color: var(--color-ink-secondary, #616161);
+  letter-spacing: 0.05em;
+}
+
+.deck-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.deck-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--color-ink-secondary, #616161);
+  letter-spacing: 0.04em;
+  background-color: var(--color-paper-base, #f6f3eb);
+  padding: 2px 8px;
+  border: 1px solid var(--border-color-ui, hsl(0, 0%, 75%));
+  border-radius: 2px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-ink-disabled, hsl(0, 0%, 65%));
+  transition: background-color var(--transition-speed-fast, 0.15s) ease;
+}
+
+.deck-status-indicator.is-playing .status-dot {
+  background-color: var(--color-text-success, hsl(120, 35%, 25%));
+  box-shadow: 0 0 6px hsla(120, 50%, 50%, 0.6);
+  animation: pulseStatus 2s infinite ease-in-out;
+}
+
+.deck-status-indicator.is-paused .status-dot {
+  background-color: var(--color-text-warning, hsl(38, 50%, 25%));
+}
+
+@keyframes pulseStatus {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* ==========================================================================
+   3. MAIN PLAYER BODY: CD STAGE & METADATA CONSOLE
+   ========================================================================== */
+
+.archive-deck-body {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) 1fr;
+  gap: var(--space-xl, 2rem);
+  align-items: center;
+  margin-bottom: var(--space-lg, 1.5rem);
+}
+
+/* --------------------------------------------------------------------------
+   3A. CD STAGE & TURNTABLE CHASSIS
+   -------------------------------------------------------------------------- */
+
+.cd-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md, 1rem);
+  box-sizing: border-box;
+}
+
+.cd-turntable-chassis {
+  position: relative;
+  width: clamp(210px, 28vw, 270px);
+  height: clamp(210px, 28vw, 270px);
+  background: radial-gradient(circle at center, #eee8db 0%, #ded7c6 65%, #c8c0ae 100%);
+  border: var(--border-width-thick, 2px) solid var(--color-ink-primary, #212121);
+  border-radius: 50%;
+  box-shadow: 
+    inset 0 4px 12px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.1),
+    2px 2px 0px var(--color-ink-primary, #212121);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+/* Center Spindle Well */
+.cd-turntable-chassis::after {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #555 0%, #151515 80%);
+  border: 1.5px solid var(--color-ink-primary, #212121);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   3B. THE PHYSICAL CD DISC (ARCHIVED ENGINEERING MEDIA DISC)
+   -------------------------------------------------------------------------- */
+
+.cd-disc {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.22), 
+    0 2px 6px rgba(0, 0, 0, 0.14),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d6d0c4;
+  overflow: hidden;
+  z-index: 2;
+  cursor: pointer;
+
+  /* Hardware-accelerated smooth rotation animation */
+  animation: cdSpin 8s linear infinite;
+  animation-play-state: paused;
+  will-change: transform;
+  transform: rotate(0deg);
+}
+
+.cd-disc.is-playing {
+  animation-play-state: running;
+}
+
+@keyframes cdSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Concentric Polycarbonate Grooves Ring */
+.cd-grooves-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.04) 0px,
+    rgba(0, 0, 0, 0.04) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle Reflective Optical Effect (Analog Spectral Diffraction Gradient) */
+.cd-disc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 45deg,
+    rgba(255, 255, 255, 0.32) 0deg,
+    rgba(255, 210, 200, 0.15) 40deg,
+    rgba(255, 255, 200, 0.16) 80deg,
+    rgba(200, 255, 210, 0.15) 120deg,
+    rgba(190, 230, 255, 0.25) 160deg,
+    rgba(230, 200, 255, 0.15) 210deg,
+    rgba(255, 200, 230, 0.16) 260deg,
+    rgba(255, 255, 255, 0.32) 360deg
+  );
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Metallic Inner Ring with Technical Etched Markings */
+.cd-inner-mirror {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 0, 0, 0.25);
+  background: radial-gradient(circle at center, #ece6d8 35%, #cfc7b7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.cd-etching {
+  position: absolute;
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: 7px;
+  font-weight: var(--weight-bold, 700);
+  color: var(--color-ink-secondary, #616161);
+  opacity: 0.6;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.cd-etching-top {
+  top: 5px;
+}
+
+.cd-etching-bottom {
+  bottom: 5px;
+}
+
+/* Center Label Artwork (Displays Track Thumbnail) */
+.cd-artwork-hub {
+  position: relative;
+  width: 44%;
+  height: 44%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid var(--color-ink-primary, #212121);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-paper-dark, #eee8db);
+  z-index: 4;
+}
+
+.cd-artwork-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  filter: contrast(1.05) brightness(0.98);
+  transition: opacity var(--transition-speed-fast, 0.15s) ease;
+}
+
+.cd-artwork-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.15) 100%);
+  pointer-events: none;
+}
+
+/* Clear Spindle Clamp Ring & Center Hole */
+.cd-clamp-ring {
+  position: absolute;
+  width: 22%;
+  height: 22%;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.cd-spindle-hole {
+  position: absolute;
+  width: 14%;
+  height: 14%;
+  border-radius: 50%;
+  background-color: var(--color-paper-dark, #eee8db);
+  border: 1.5px solid var(--color-ink-primary, #212121);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* --------------------------------------------------------------------------
+   3C. OPTICAL LASER PICK-UP ARM (ANALOG MECHANICAL DETAIL)
+   -------------------------------------------------------------------------- */
+
+.cd-laser-arm {
+  position: absolute;
+  top: 10px;
+  right: -8px;
+  width: 80px;
+  height: 120px;
+  pointer-events: none;
+  z-index: 4;
+  transform-origin: 70px 15px;
+  transform: rotate(0deg);
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.cd-laser-arm.is-active {
+  transform: rotate(26deg);
+}
+
+.laser-arm-pivot {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #777 0%, #222 100%);
+  border: 1.5px solid var(--color-ink-primary, #212121);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.laser-arm-rod {
+  position: absolute;
+  top: 20px;
+  right: 13px;
+  width: 4px;
+  height: 75px;
+  background: linear-gradient(90deg, #aaa 0%, #444 100%);
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.laser-head {
+  position: absolute;
+  bottom: 12px;
+  right: 7px;
+  width: 16px;
+  height: 22px;
+  background: #2a2a2a;
+  border: 1px solid var(--color-ink-primary, #212121);
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.laser-lens {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-accent-blue, #1976d2);
+  box-shadow: 0 0 4px var(--color-accent-blue, #1976d2);
+}
+
+.cd-laser-arm.is-active .laser-lens {
+  background-color: var(--color-accent-red, #d32f2f);
+  box-shadow: 0 0 6px var(--color-accent-red, #d32f2f);
+}
+
+/* ==========================================================================
+   4. METADATA & CONTROLS CONSOLE
+   ========================================================================== */
+
+.archive-deck-console {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md, 1rem);
+  background-color: var(--color-paper-light, #faf8f5);
+  border: 1px solid var(--border-color-ui, hsl(0, 0%, 75%));
+  border-radius: var(--radius-sm, 2px);
+  padding: var(--space-md, 1rem);
+  box-shadow: var(--shadow-flat, 0 1px 2px rgba(0, 0, 0, 0.04));
+}
+
+/* --------------------------------------------------------------------------
+   4A. TRACK IDENTIFICATION PANEL (Name, Artist, Track Number, Status, Time)
+   -------------------------------------------------------------------------- */
+
+.track-ident-panel {
+  border-bottom: 1px dashed var(--border-color-ui, hsl(0, 0%, 75%));
+  padding-bottom: var(--space-sm, 0.5rem);
+}
+
+.track-ident-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xxs, 2px);
+}
+
+.track-catalog-id {
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: var(--weight-bold, 700);
+  color: var(--color-accent-blue, hsl(214, 60%, 42%));
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.track-counter {
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: var(--weight-semibold, 600);
+  color: var(--color-ink-secondary, #616161);
+  letter-spacing: 0.05em;
+}
+
+.track-title-block {
+  margin: var(--space-xs, 4px) 0;
+}
+
+.track-title-heading {
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: var(--font-size-lg, 1.125rem);
+  font-weight: var(--weight-bold, 700);
+  color: var(--color-ink-primary, #212121);
+  line-height: var(--line-height-tight, 1.2);
+  margin: 0;
+  word-break: break-word;
+}
+
+.track-artist-heading {
+  font-family: var(--font-sans, sans-serif);
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: var(--weight-medium, 500);
+  color: var(--color-ink-secondary, #616161);
+  margin-top: 2px;
+}
+
+.track-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-xs, 4px);
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: 11px;
+}
+
+.track-status-pill {
+  color: var(--color-ink-secondary, #616161);
+  letter-spacing: 0.05em;
+}
+
+.track-status-pill strong {
+  color: var(--color-ink-primary, #212121);
+}
+
+.track-time-readout {
+  font-weight: var(--weight-bold, 700);
+  color: var(--color-ink-primary, #212121);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   4B. MONOCHROME OSCILLOSCOPE VISUALIZER (Hidden when paused)
+   -------------------------------------------------------------------------- */
+
+.archive-oscilloscope-container {
+  display: none;
+  background-color: var(--color-paper-base, #f6f3eb);
+  border: 1px solid var(--border-color-ui, hsl(0, 0%, 75%));
+  border-radius: var(--radius-sm, 2px);
+  padding: 6px 10px;
+  box-sizing: border-box;
+}
+
+.archive-oscilloscope-container.is-active {
+  display: block;
+}
+
+.oscilloscope-label {
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: 9px;
+  font-weight: var(--weight-bold, 700);
+  color: var(--color-ink-secondary, #616161);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.archive-oscilloscope-canvas {
+  width: 100%;
+  height: 38px;
+  display: block;
+  background-color: transparent;
+  image-rendering: pixelated;
+}
+
+/* --------------------------------------------------------------------------
+   4C. ARCHIVE-STYLE PROGRESS BAR: [ ███████████░░░░░░░░░ ]
+   -------------------------------------------------------------------------- */
+
+.archive-progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background-color: var(--color-paper-base, #f6f3eb);
+  border: 1px solid var(--border-color-ui, hsl(0, 0%, 75%));
+  border-radius: var(--radius-sm, 2px);
+  padding: 8px 12px;
+}
+
+.progress-bar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: 10px;
+  color: var(--color-ink-secondary, #616161);
+  letter-spacing: 0.05em;
+}
+
+.archive-block-meter-interactive {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: 13px;
+  font-weight: var(--weight-bold, 700);
+  color: var(--color-ink-primary, #212121);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  padding: 2px 0;
+  border-radius: 2px;
+  outline: none;
+}
+
+.archive-block-meter-interactive:focus-visible {
+  outline: 2px dashed var(--color-accent-blue, hsl(214, 60%, 42%));
+  outline-offset: 2px;
+}
+
+.meter-bracket {
+  color: var(--color-ink-secondary, #616161);
+  font-weight: var(--weight-bold, 700);
+}
+
+.meter-blocks {
+  margin: 0 4px;
+  white-space: nowrap;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-primary, #212121);
+}
+
+/* --------------------------------------------------------------------------
+   4D. CONTROLS ROW: NAVIGATION + PLAY/PAUSE + FAVORITE (♡ Favorite)
+   -------------------------------------------------------------------------- */
+
+.archive-deck-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm, 0.5rem);
+}
+
+.playback-btn-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs, 0.25rem);
+}
+
+.archive-ctrl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: var(--weight-bold, 700);
+  padding: 6px 14px;
+  min-height: 36px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ctrl-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.play-pause-main {
+  min-width: 90px;
+}
+
+/* Favorite Button (♡ Favorite - LocalStorage only, no backend, no count) */
+.favorite-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-paper-light, #faf8f5);
+  color: var(--color-ink-primary, #212121);
+  border-color: var(--color-ink-primary, #212121);
+  transition: transform var(--transition-speed-fast, 0.15s) ease, 
+              background-color var(--transition-speed-fast, 0.15s) ease,
+              color var(--transition-speed-fast, 0.15s) ease;
+}
+
+.fav-heart-icon {
+  font-size: 14px;
+  line-height: 1;
+  color: var(--color-ink-secondary, #616161);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s ease;
+}
+
+.favorite-btn:hover .fav-heart-icon {
+  color: var(--color-accent-red, hsl(354, 70%, 46%));
+  transform: scale(1.15);
+}
+
+.favorite-btn.is-favorited {
+  border-color: var(--color-accent-red, hsl(354, 70%, 46%));
+  background-color: hsl(354, 70%, 97%);
+  color: var(--color-accent-red, hsl(354, 70%, 46%));
+}
+
+.favorite-btn.is-favorited .fav-heart-icon {
+  color: var(--color-accent-red, hsl(354, 70%, 46%));
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   5. ARCHIVE PLAYLIST DRAWER (ARCHIVE INDEX)
+   ========================================================================== */
+
+.archive-tracklist-drawer {
+  border-top: 1.5px solid var(--border-color-ui, hsl(0, 0%, 75%));
+  padding-top: var(--space-md, 1rem);
+  margin-top: var(--space-md, 1rem);
+}
+
+.tracklist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xs, 0.25rem);
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: 11px;
+}
+
+.tracklist-title {
+  font-weight: var(--weight-bold, 700);
+  color: var(--color-ink-primary, #212121);
+  letter-spacing: 0.06em;
+}
+
+.tracklist-hint {
+  color: var(--color-ink-secondary, #616161);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.archive-tracklist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.tracklist-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background-color: var(--color-paper-light, #faf8f5);
+  border: 1px solid var(--border-color-ui, hsl(0, 0%, 75%));
+  border-radius: var(--radius-sm, 2px);
+  cursor: pointer;
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: 11px;
+  color: var(--color-ink-primary, #212121);
+  text-align: left;
+  transition: all var(--transition-speed-fast, 0.15s) ease;
+  user-select: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tracklist-item:hover {
+  background-color: var(--color-paper-base, #f6f3eb);
+  border-color: var(--color-ink-primary, #212121);
+  transform: translateX(2px);
+}
+
+.tracklist-item:focus-visible {
+  outline: 2px dashed var(--color-accent-blue, hsl(214, 60%, 42%));
+  outline-offset: 1px;
+}
+
+.tracklist-item.is-active {
+  background-color: var(--color-paper-base, #f6f3eb);
+  border: 1px solid var(--color-accent-blue, hsl(214, 60%, 42%));
+  border-left: 3px solid var(--color-accent-blue, hsl(214, 60%, 42%));
+  font-weight: var(--weight-bold, 700);
+}
+
+.track-index-label {
+  color: var(--color-ink-secondary, #616161);
+  font-size: 11px;
+  font-weight: var(--weight-bold, 700);
+  flex-shrink: 0;
+}
+
+.tracklist-item.is-active .track-index-label {
+  color: var(--color-accent-blue, hsl(214, 60%, 42%));
+}
+
+.track-name-text {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-play-indicator {
+  font-size: 10px;
+  color: var(--color-accent-blue, hsl(214, 60%, 42%));
+  flex-shrink: 0;
+  display: none;
+}
+
+.tracklist-item.is-active .track-play-indicator {
+  display: inline;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN & ACCESSIBILITY
+   ========================================================================== */
+
+/* Tablet (max-width: 900px) */
+@media (max-width: 900px) {
+  .archive-deck-body {
+    grid-template-columns: minmax(220px, 260px) 1fr;
+    gap: var(--space-md, 1rem);
+  }
+
+  .archive-tracklist-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .music-archive-deck {
+    padding: var(--space-md, 1rem);
+  }
+
+  .archive-deck-body {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg, 1.5rem);
+  }
+
+  .cd-stage {
+    padding: var(--space-xs, 0.25rem);
+  }
+
+  .cd-turntable-chassis {
+    width: clamp(190px, 58vw, 240px);
+    height: clamp(190px, 58vw, 240px);
+    margin: 0 auto;
+  }
+
+  .archive-deck-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .playback-btn-group {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 1fr;
+    width: 100%;
+  }
+
+  .favorite-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .archive-block-meter-interactive {
+    font-size: 11px;
+  }
+
+  .deck-header-left, .deck-header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Print or Reduced Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .cd-disc {
+    animation: none !important;
+  }
+  .cd-laser-arm {
+    transition: none !important;
+  }
+  .deck-status-indicator.is-playing .status-dot {
+    animation: none !important;
+  }
+}

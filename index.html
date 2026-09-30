@@ -58,12 +58,14 @@
 
   <!-- Core Design System -->
   <link rel="stylesheet" href="css/design-system.css?v=2026.07.02.11.27">
+  <link rel="stylesheet" href="css/music-archive.css">
   
   <!-- Interactive Scripts -->
   <script src="js/notebook.js" defer></script>
   <script src="js/blueprint-viewer.js" defer></script>
   <script src="js/beyond-assets.js" defer></script>
   <script src="js/beyond-engineering.js" defer></script>
+  <script src="js/music-archive.js" defer></script>
 </head>
 <body>
 
@@ -528,60 +530,162 @@
                 </div>
                 <div class="beyond-section-header">
                   <span class="beyond-section-code">BE-03</span>
-                  <h3 class="beyond-section-title">Music Corner</h3>
+                  <h3 class="beyond-section-title">BE-03 // AUDIO ARCHIVE</h3>
                 </div>
                 
                 <p class="beyond-section-intro">
-                  Music develops rhythm, patience and consistency. Practicing acoustic instruments and breath modulation strengthens patterns recognition and timing loops.
+                  10 Recorded Sessions
                 </p>
 
-                <!-- 3 Notebook Cards -->
-                <div class="music-cards-grid">
+                <!-- Music Archive CD Player Component -->
+                <div class="music-archive-deck" id="music-archive-player" role="region" aria-label="Music Archive CD Player">
                   
-                  <!-- CARD 01: VOCALS -->
-                  <div class="music-card">
-                    <div class="blueprint-icon-container">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px;">
-                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
-                        <path d="M19 10v1a7 7 0 0 1-14 0v-1"></path>
-                        <line x1="12" y1="19" x2="12" y2="22"></line>
-                      </svg>
+                  <!-- Top Technical Header Bar -->
+                  <div class="archive-deck-header">
+                    <div class="deck-header-left">
+                      <span class="deck-badge">OPTICAL DECK // MK-III</span>
+                      <span class="deck-matrix-code">PCM 44.1kHz / 16-BIT ARCHIVE</span>
                     </div>
-                    <h4 class="music-card-title">Vocals</h4>
-                    <p class="music-card-desc">Classical training and vocal performance, exercising breath control and pitch precision.</p>
-                    <span class="music-card-stamp">SYS-LOG // BE-03-A</span>
+                    <div class="deck-header-right">
+                      <span class="deck-status-indicator" id="archive-status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text" id="archive-status-text">STATUS: READY</span>
+                      </span>
+                    </div>
                   </div>
 
-                  <!-- CARD 02: GUITAR -->
-                  <div class="music-card">
-                    <div class="blueprint-icon-container">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px;">
-                        <path d="M9 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
-                        <path d="M9 12V2h4v10"></path>
-                        <path d="m14 5 5 1.5"></path>
-                        <path d="M9 15h9"></path>
-                      </svg>
+                  <!-- Main Player Body: CD Presentation & Metadata Console -->
+                  <div class="archive-deck-body">
+                    
+                    <!-- CD Turntable Stage (Large compact CD in the center) -->
+                    <div class="cd-stage">
+                      <div class="cd-turntable-chassis">
+                        
+                        <!-- The Physical CD Disc (Realistic Archived Engineering Media Disc) -->
+                        <div class="cd-disc" id="cd-disc" role="button" aria-label="Audio CD Disc: Click to Play or Pause">
+                          <!-- CD Outer Mirror / Grooves Ring with optical iridescence -->
+                          <div class="cd-grooves-ring"></div>
+                          
+                          <!-- Inner Metallic Mirror Band with technical etching -->
+                          <div class="cd-inner-mirror">
+                            <span class="cd-etching cd-etching-top">COMPACT DISC DIGITAL AUDIO</span>
+                            <span class="cd-etching cd-etching-bottom">SK-ARCHIVE // BE-03 // SYSTEM LOG</span>
+                          </div>
+
+                          <!-- Center Label Artwork (Displays track thumbnail) -->
+                          <div class="cd-artwork-hub">
+                            <img id="cd-artwork-img" class="cd-artwork-img" src="RAW VOCALS/BULLEYA_PAPON.jpg" alt="Track artwork" loading="eager">
+                            <div class="cd-artwork-overlay"></div>
+                          </div>
+
+                          <!-- Center Spindle Hole & Clamp Ring showing notebook surface -->
+                          <div class="cd-clamp-ring"></div>
+                          <div class="cd-spindle-hole"></div>
+                        </div>
+
+                        <!-- Optical Laser Read Head & Arm (Analog mechanical touch) -->
+                        <div class="cd-laser-arm" id="cd-laser-arm" aria-hidden="true">
+                          <div class="laser-arm-pivot"></div>
+                          <div class="laser-arm-rod"></div>
+                          <div class="laser-head">
+                            <div class="laser-lens"></div>
+                          </div>
+                        </div>
+
+                      </div>
                     </div>
-                    <h4 class="music-card-title">Guitar</h4>
-                    <p class="music-card-desc">Acoustic and rhythm guitar practice, establishing tactile chord pacing and hand-eye coordination.</p>
-                    <span class="music-card-stamp">SYS-LOG // BE-03-B</span>
+
+                    <!-- Metadata & Controls Console -->
+                    <div class="archive-deck-console">
+                      
+                      <!-- Track Identification Box -->
+                      <div class="track-ident-panel">
+                        <div class="track-ident-top-row">
+                          <span class="track-catalog-id" id="archive-catalog-id">ARCHIVE // AUDIO-01</span>
+                          <span class="track-counter" id="archive-track-counter">Track 01 / 10</span>
+                        </div>
+                        <div class="track-title-block">
+                          <h4 class="track-title-heading" id="archive-track-title">Bulleya</h4>
+                          <div class="track-artist-heading" id="archive-track-artist">Papon</div>
+                        </div>
+                        <div class="track-status-row">
+                          <span class="track-status-pill">
+                            STATUS: <strong id="archive-status-badge">READY</strong>
+                          </span>
+                          <span class="track-time-readout" id="archive-time-display">00:00 / 00:00</span>
+                        </div>
+                      </div>
+
+                      <!-- Monochrome Oscilloscope Audio Visualizer (Hidden when paused) -->
+                      <div class="archive-oscilloscope-container" id="archive-oscilloscope-container" aria-hidden="true">
+                        <div class="oscilloscope-label">SIGNAL MONITOR // REAL-TIME OSCILLOSCOPE</div>
+                        <canvas class="archive-oscilloscope-canvas" id="archive-oscilloscope-canvas" width="280" height="38"></canvas>
+                      </div>
+
+                      <!-- Archive-Style Progress Bar: [ ███████████░░░░░░░░░ ] -->
+                      <div class="archive-progress-container">
+                        <div class="progress-bar-header">
+                          <span class="progress-bar-label">TAPE POSITION</span>
+                          <span class="progress-percent" id="archive-percent-readout">0%</span>
+                        </div>
+                        <div class="archive-block-meter-interactive" id="archive-block-meter" role="slider" tabindex="0" aria-label="Tape progress block meter: click or drag to seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                          <span class="meter-bracket">[</span>
+                          <span class="meter-blocks" id="meter-blocks-fill">░░░░░░░░░░░░░░░░░░░░░░░░░░</span>
+                          <span class="meter-bracket">]</span>
+                        </div>
+                      </div>
+
+                      <!-- Controls Row: Navigation (⏮ PREV, ▶ PLAY, ⏭ NEXT) + ♡ Favorite -->
+                      <div class="archive-deck-controls">
+                        <div class="playback-btn-group">
+                          <!-- Previous Button -->
+                          <button type="button" class="btn archive-ctrl-btn" id="archive-btn-prev" aria-label="Previous track" title="Previous Track (Left Arrow)">
+                            <svg class="ctrl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                              <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                              <line x1="5" y1="19" x2="5" y2="5"></line>
+                            </svg>
+                            <span class="ctrl-text">PREV</span>
+                          </button>
+
+                          <!-- Play / Pause Button -->
+                          <button type="button" class="btn btn-primary archive-ctrl-btn play-pause-main" id="archive-btn-play" aria-label="Play audio" title="Play / Pause (Spacebar)">
+                            <svg class="ctrl-icon icon-play" id="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                              <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                            </svg>
+                            <svg class="ctrl-icon icon-pause" id="icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display: none;" aria-hidden="true">
+                              <rect x="6" y="4" width="4" height="16"></rect>
+                              <rect x="14" y="4" width="4" height="16"></rect>
+                            </svg>
+                            <span class="ctrl-text" id="archive-play-text">PLAY</span>
+                          </button>
+
+                          <!-- Next Button -->
+                          <button type="button" class="btn archive-ctrl-btn" id="archive-btn-next" aria-label="Next track" title="Next Track (Right Arrow)">
+                            <span class="ctrl-text">NEXT</span>
+                            <svg class="ctrl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                              <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                              <line x1="19" y1="5" x2="19" y2="19"></line>
+                            </svg>
+                          </button>
+                        </div>
+
+                        <!-- Favorite Button (♡ Favorite - LocalStorage only, no backend, no count) -->
+                        <button type="button" class="btn archive-ctrl-btn favorite-btn" id="archive-btn-fav" aria-label="Favorite this track" title="Favorite track">
+                          <span class="fav-heart-icon" id="fav-heart-icon" aria-hidden="true">♡</span>
+                          <span class="fav-label" id="archive-fav-text">Favorite</span>
+                        </button>
+                      </div>
+
+                    </div>
                   </div>
 
-                  <!-- CARD 03: MOUTH ORGAN -->
-                  <div class="music-card">
-                    <div class="blueprint-icon-container">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px;">
-                        <rect x="2" y="6" width="20" height="12" rx="2"></rect>
-                        <line x1="6" y1="6" x2="6" y2="18"></line>
-                        <line x1="10" y1="6" x2="10" y2="18"></line>
-                        <line x1="14" y1="6" x2="14" y2="18"></line>
-                        <line x1="18" y1="6" x2="18" y2="18"></line>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                      </svg>
+                  <!-- Archival Tape Deck Track Index (ARCHIVE INDEX) -->
+                  <div class="archive-tracklist-drawer">
+                    <div class="tracklist-header">
+                      <span class="tracklist-title">ARCHIVE INDEX</span>
+                      <span class="tracklist-hint">10 RECORDED SESSIONS</span>
                     </div>
-                    <h4 class="music-card-title">Mouth Organ</h4>
-                    <p class="music-card-desc">Harmonica melodies, mastering breath synchronization and quick acoustic note transposition.</p>
-                    <span class="music-card-stamp">SYS-LOG // BE-03-C</span>
+                    <div class="archive-tracklist-grid" id="archive-tracklist-items"></div>
                   </div>
 
                 </div>
