@@ -1,12 +1,12 @@
 /**
- * AUDIO ARCHIVE CD PLAYER CONTROLLER - "AN ENGINEER'S RESEARCH NOTEBOOK"
- * Section: BE-03 // AUDIO ARCHIVE
+ * MUSIC CORNER CD PLAYER CONTROLLER - "AN ENGINEER'S RESEARCH NOTEBOOK"
+ * Section: BE-03 // MUSIC CORNER
  * 
  * Features:
  * - Single lazy-loaded Audio instance
- * - Realistic CD rotation with freeze-on-pause angle preservation
+ * - Cross-browser CD rotation with pause-freeze angle preservation
  * - Monochrome oscilloscope audio visualizer (hidden when paused)
- * - Interactive archive progress block meter [ ████████░░░░░░░░ ]
+ * - Interactive tape progress block meter [ ████████░░░░░░░░ ]
  * - Favorite system (localStorage only, no backend, no count)
  * - Full playlist loop & auto-advance
  * - Accessible keyboard navigation (Spacebar, Left/Right arrows)
@@ -20,90 +20,90 @@
   // =========================================================================
   const ARCHIVE_TRACKS = [
     {
-      id: "audio-01",
-      catalogId: "ARCHIVE // AUDIO-01",
-      indexLabel: "AUDIO-01 Bulleya",
+      id: "session-01",
+      catalogId: "MUSIC CORNER // SESSION-01",
+      indexLabel: "SESSION 01: Bulleya",
       title: "Bulleya",
       artist: "Papon",
       thumbnail: "RAW VOCALS/BULLEYA_PAPON.jpg",
       audio: "RAW VOCALS/BULLEYA_PAPON.ogg"
     },
     {
-      id: "audio-02",
-      catalogId: "ARCHIVE // AUDIO-02",
-      indexLabel: "AUDIO-02 Chal Re Chal Re",
+      id: "session-02",
+      catalogId: "MUSIC CORNER // SESSION-02",
+      indexLabel: "SESSION 02: Chal Re Chal Re",
       title: "Chal Re Chal Re Waal × Kajre Ki Dhaar",
       artist: "Acoustic Session",
       thumbnail: "RAW VOCALS/Chalre chalre Waal X Kajre ki dhaar .png",
       audio: "RAW VOCALS/Chalre chalre Waal X Kajre ki dhaar.ogg"
     },
     {
-      id: "audio-03",
-      catalogId: "ARCHIVE // AUDIO-03",
-      indexLabel: "AUDIO-03 Hale-E-Dil",
+      id: "session-03",
+      catalogId: "MUSIC CORNER // SESSION-03",
+      indexLabel: "SESSION 03: Hale-E-Dil",
       title: "Hale-e-dil",
       artist: "Harshit Saxena",
       thumbnail: "RAW VOCALS/Hale-e-dilHARSHITSAXENA.jpg",
       audio: "RAW VOCALS/Hale-e-dilHARSHITSAXENA.ogg"
     },
     {
-      id: "audio-04",
-      catalogId: "ARCHIVE // AUDIO-04",
-      indexLabel: "AUDIO-04 Kaun Tujhe",
+      id: "session-04",
+      catalogId: "MUSIC CORNER // SESSION-04",
+      indexLabel: "SESSION 04: Kaun Tujhe",
       title: "Kaun Tujhe",
       artist: "Kishore Kumar",
       thumbnail: "RAW VOCALS/kaunTujhe Kishore Kumar.jpg",
       audio: "RAW VOCALS/kaunTujhe Kishore Kumar.ogg"
     },
     {
-      id: "audio-05",
-      catalogId: "ARCHIVE // AUDIO-05",
-      indexLabel: "AUDIO-05 Lukk Chup Na Jao Ji",
+      id: "session-05",
+      catalogId: "MUSIC CORNER // SESSION-05",
+      indexLabel: "SESSION 05: Lukk Chup Na Jao Ji",
       title: "Lukk Chup Na Jao Ji",
       artist: "Mame Khan",
       thumbnail: "RAW VOCALS/LUKK_CHUP_NA_JAOJI_mameKHAN.png",
       audio: "RAW VOCALS/LUKK_CHUP_NA_JAOJI_mameKHAN.ogg"
     },
     {
-      id: "audio-06",
-      catalogId: "ARCHIVE // AUDIO-06",
-      indexLabel: "AUDIO-06 Mann Mera",
+      id: "session-06",
+      catalogId: "MUSIC CORNER // SESSION-06",
+      indexLabel: "SESSION 06: Mann Mera",
       title: "Mann Mera",
       artist: "Gajendra Verma",
       thumbnail: "RAW VOCALS/MannMera_GajendraVerma.jpg",
       audio: "RAW VOCALS/MannMera_GajendraVerma.ogg"
     },
     {
-      id: "audio-07",
-      catalogId: "ARCHIVE // AUDIO-07",
-      indexLabel: "AUDIO-07 Meri Bheegi Bheegi Si",
+      id: "session-07",
+      catalogId: "MUSIC CORNER // SESSION-07",
+      indexLabel: "SESSION 07: Meri Bheegi Bheegi Si",
       title: "Meri Bheegi Bheegi Si",
       artist: "Sanjeev Kumar",
       thumbnail: "RAW VOCALS/Meri-Bheegi-Bheegi-Si-Sanjeev-Kumar.jpg",
       audio: "RAW VOCALS/Meri-Bheegi-Bheegi-Si-Sanjeev-Kumar.ogg"
     },
     {
-      id: "audio-08",
-      catalogId: "ARCHIVE // AUDIO-08",
-      indexLabel: "AUDIO-08 Paaro",
+      id: "session-08",
+      catalogId: "MUSIC CORNER // SESSION-08",
+      indexLabel: "SESSION 08: Paaro",
       title: "Paaro",
       artist: "Aditya Rikhari",
       thumbnail: "RAW VOCALS/Paaro-AdityaRikhari.jpg",
       audio: "RAW VOCALS/Paaro-AdityaRikhari.ogg"
     },
     {
-      id: "audio-09",
-      catalogId: "ARCHIVE // AUDIO-09",
-      indexLabel: "AUDIO-09 Tera Mera Rishta",
+      id: "session-09",
+      catalogId: "MUSIC CORNER // SESSION-09",
+      indexLabel: "SESSION 09: Tera Mera Rishta",
       title: "Tera Mera Rishta",
       artist: "Mustafa Zahid",
       thumbnail: "RAW VOCALS/TeraMeraRishta-MUSTAFAZAHID.jpg",
       audio: "RAW VOCALS/TeraMeraRishta-MUSTAFAZAHID.ogg"
     },
     {
-      id: "audio-10",
-      catalogId: "ARCHIVE // AUDIO-10",
-      indexLabel: "AUDIO-10 Teri Meri Kahani",
+      id: "session-10",
+      catalogId: "MUSIC CORNER // SESSION-10",
+      indexLabel: "SESSION 10: Teri Meri Kahani",
       title: "Teri Meri Kahani",
       artist: "Arijit Singh",
       thumbnail: "RAW VOCALS/teriMeriKahani_ARIJITSINGH.jfif",
@@ -130,14 +130,16 @@
 
     isFavorited(trackId) {
       const favs = this.getFavorites();
-      return favs.includes(trackId);
+      const legacyId = trackId.replace('session', 'audio');
+      return favs.includes(trackId) || favs.includes(legacyId);
     },
 
     toggleFavorite(trackId) {
       try {
         let favs = this.getFavorites();
-        if (favs.includes(trackId)) {
-          favs = favs.filter(id => id !== trackId);
+        const legacyId = trackId.replace('session', 'audio');
+        if (favs.includes(trackId) || favs.includes(legacyId)) {
+          favs = favs.filter(id => id !== trackId && id !== legacyId);
         } else {
           favs.push(trackId);
         }
@@ -247,7 +249,7 @@
       });
 
       this.audio.addEventListener('error', (e) => {
-        console.warn('[Audio Archive] Playback warning/fallback:', e);
+        console.warn('[Music Corner] Playback warning/fallback:', e);
         if (this.statusBadgeEl) this.statusBadgeEl.textContent = 'READY';
       });
     }
@@ -273,7 +275,7 @@
 
         this.isAudioCtxConnected = true;
       } catch (e) {
-        console.warn('[Audio Archive] Web Audio API initialization notice:', e);
+        console.warn('[Music Corner] Web Audio API initialization notice:', e);
       }
     }
 
@@ -436,7 +438,7 @@
           this.applyPlaybackUI(true);
           this.startOscilloscope();
         }).catch((err) => {
-          console.warn('[Audio Archive] Autoplay gesture needed:', err);
+          console.warn('[Music Corner] Autoplay gesture needed:', err);
           this.isPlaying = false;
           this.applyPlaybackUI(false);
           this.stopOscilloscope();
@@ -459,9 +461,13 @@
     applyPlaybackUI(playing) {
       if (this.cdDisc) {
         if (playing) {
-          this.cdDisc.classList.add('is-playing');
+          this.cdDisc.classList.add('rotating');
+          this.cdDisc.classList.remove('paused');
         } else {
-          this.cdDisc.classList.remove('is-playing');
+          // Pause rotation animation at current angle without resetting
+          if (this.cdDisc.classList.contains('rotating')) {
+            this.cdDisc.classList.add('paused');
+          }
         }
       }
 

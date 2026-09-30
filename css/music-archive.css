@@ -1,21 +1,18 @@
 /*
- * MUSIC ARCHIVE CD PLAYER COMPONENT - "AN ENGINEER'S RESEARCH NOTEBOOK"
- * Section: BE-03 Audio Archive
+ * MUSIC CORNER CD PLAYER COMPONENT - "AN ENGINEER'S RESEARCH NOTEBOOK"
+ * Section: BE-03 Music Corner
  * Theme: Archived Engineering Media Disc, Analog Oscilloscope, Notebook System-Log.
- * Strictly preserves the warm notebook palette, typewriter borders, and typography tokens.
+ * Inherits exact notebook paper grid from page without nested backgrounds.
  */
 
 /* ==========================================================================
-   1. MAIN ARCHIVE DECK CHASSIS
+   1. MAIN MUSIC CORNER DECK CHASSIS
    ========================================================================== */
 
 .music-archive-deck {
   position: relative;
-  background-color: var(--color-paper-light, #faf8f5);
-  background-image: 
-    linear-gradient(var(--color-paper-ruled, hsla(0, 0%, 45%, 0.24)) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-paper-ruled, hsla(0, 0%, 45%, 0.24)) 1px, transparent 1px);
-  background-size: 16px 16px;
+  background-color: transparent;
+  background-image: none;
   border: var(--border-width-thick, 2px) solid var(--color-ink-primary, #212121);
   border-radius: var(--radius-md, 4px);
   box-shadow: 3px 3px 0px var(--color-ink-primary, #212121);
@@ -63,7 +60,7 @@
   font-weight: var(--weight-bold, 700);
   letter-spacing: 0.06em;
   padding: 2px 8px;
-  background-color: var(--color-paper-base, #f6f3eb);
+  background-color: transparent;
   color: var(--color-ink-primary, #212121);
   border: 1px solid var(--color-ink-primary, #212121);
   border-radius: 2px;
@@ -87,7 +84,7 @@
   font-size: 11px;
   color: var(--color-ink-secondary, #616161);
   letter-spacing: 0.04em;
-  background-color: var(--color-paper-base, #f6f3eb);
+  background-color: transparent;
   padding: 2px 8px;
   border: 1px solid var(--border-color-ui, hsl(0, 0%, 75%));
   border-radius: 2px;
@@ -193,22 +190,40 @@
   z-index: 2;
   cursor: pointer;
 
-  /* Hardware-accelerated smooth rotation animation */
-  animation: cdSpin 8s linear infinite;
-  animation-play-state: paused;
+  /* Standards-compliant hardware-accelerated CD rotation across all browsers */
   will-change: transform;
-  transform: rotate(0deg);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-.cd-disc.is-playing {
-  animation-play-state: running;
+.cd-disc.rotating {
+  animation: spin 6s linear infinite;
+  -webkit-animation: spin 6s linear infinite;
 }
 
-@keyframes cdSpin {
+.cd-disc.paused {
+  animation-play-state: paused !important;
+  -webkit-animation-play-state: paused !important;
+}
+
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -254,8 +269,8 @@
 /* Metallic Inner Ring with Technical Etched Markings */
 .cd-inner-mirror {
   position: absolute;
-  width: 66%;
-  height: 66%;
+  width: 76%;
+  height: 76%;
   border-radius: 50%;
   border: 1px dashed rgba(0, 0, 0, 0.25);
   background: radial-gradient(circle at center, #ece6d8 35%, #cfc7b7 100%);
@@ -279,14 +294,14 @@
 }
 
 .cd-etching-top {
-  top: 4px;
+  top: 3px;
 }
 
 .cd-etching-bottom {
-  bottom: 4px;
+  bottom: 3px;
 }
 
-/* Center Label Artwork (Displays Track Thumbnail - 60% of CD diameter) */
+/* Center Label Artwork (Displays Track Thumbnail - roughly 60% of CD diameter) */
 .cd-artwork-hub {
   position: relative;
   width: 60%;
@@ -320,8 +335,8 @@
 /* Clear Spindle Clamp Ring & Center Hole */
 .cd-clamp-ring {
   position: absolute;
-  width: 20%;
-  height: 20%;
+  width: 18%;
+  height: 18%;
   border-radius: 50%;
   border: 1.5px solid rgba(0, 0, 0, 0.25);
   background: rgba(255, 255, 255, 0.3);
@@ -331,12 +346,12 @@
 
 .cd-spindle-hole {
   position: absolute;
-  width: 13%;
-  height: 13%;
+  width: 12%;
+  height: 12%;
   border-radius: 50%;
-  background-color: var(--color-paper-dark, #eee8db);
+  background-color: #1a1a1a;
   border: 1.5px solid var(--color-ink-primary, #212121);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.55);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
   pointer-events: none;
   z-index: 6;
 }
@@ -422,7 +437,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-md, 1rem);
-  background-color: var(--color-paper-light, #faf8f5);
+  background-color: transparent;
   border: 1px solid var(--border-color-ui, hsl(0, 0%, 75%));
   border-radius: var(--radius-sm, 2px);
   padding: var(--space-md, 1rem);
@@ -648,7 +663,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: var(--color-paper-light, #faf8f5);
+  background-color: transparent;
   color: var(--color-ink-primary, #212121);
   border-color: var(--color-ink-primary, #212121);
   transition: transform var(--transition-speed-fast, 0.15s) ease, 
@@ -663,6 +678,10 @@
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s ease;
 }
 
+.favorite-btn:hover {
+  background-color: hsla(0, 0%, 0%, 0.04);
+}
+
 .favorite-btn:hover .fav-heart-icon {
   color: var(--color-accent-red, hsl(354, 70%, 46%));
   transform: scale(1.15);
@@ -670,7 +689,7 @@
 
 .favorite-btn.is-favorited {
   border-color: var(--color-accent-red, hsl(354, 70%, 46%));
-  background-color: hsl(354, 70%, 97%);
+  background-color: hsla(354, 70%, 50%, 0.08);
   color: var(--color-accent-red, hsl(354, 70%, 46%));
 }
 
@@ -680,13 +699,14 @@
 }
 
 /* ==========================================================================
-   5. ARCHIVE PLAYLIST DRAWER (ARCHIVE INDEX)
+   5. RECORDED SESSIONS PLAYLIST DRAWER
    ========================================================================== */
 
 .archive-tracklist-drawer {
   border-top: 1.5px solid var(--border-color-ui, hsl(0, 0%, 75%));
   padding-top: var(--space-md, 1rem);
   margin-top: var(--space-md, 1rem);
+  background-color: transparent;
 }
 
 .tracklist-header {
@@ -722,7 +742,7 @@
   align-items: center;
   gap: 8px;
   padding: 6px 10px;
-  background-color: var(--color-paper-light, #faf8f5);
+  background-color: transparent;
   border: 1px solid var(--border-color-ui, hsl(0, 0%, 75%));
   border-radius: var(--radius-sm, 2px);
   cursor: pointer;
@@ -737,7 +757,7 @@
 }
 
 .tracklist-item:hover {
-  background-color: var(--color-paper-base, #f6f3eb);
+  background-color: hsla(0, 0%, 0%, 0.04);
   border-color: var(--color-ink-primary, #212121);
   transform: translateX(2px);
 }
@@ -748,7 +768,7 @@
 }
 
 .tracklist-item.is-active {
-  background-color: var(--color-paper-base, #f6f3eb);
+  background-color: hsla(0, 0%, 0%, 0.06);
   border: 1px solid var(--color-accent-blue, hsl(214, 60%, 42%));
   border-left: 3px solid var(--color-accent-blue, hsl(214, 60%, 42%));
   font-weight: var(--weight-bold, 700);
