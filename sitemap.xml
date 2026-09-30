@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://rsk807.github.io/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://rsk807.github.io/assets/images/my_image.jpg</image:loc>
+      <image:title>Sushant Kumar - Cybersecurity Engineer, AI &amp; IoT Researcher</image:title>
+      <image:caption>Sushant Kumar - Founder of TechDenLab and Cyber Security &amp; Digital Forensics Researcher at MIT-WPU</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rsk807.github.io/assets/images/sketch_helmet_transparent.png</image:loc>
+      <image:title>VACARS Smart Helmet Technical Blueprint Sketch</image:title>
+      <image:caption>Voice Activated Cognitive Assistant Riding System - IoT and AI Assisted Smart Helmet published in Springer Journal</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rsk807.github.io/assets/images/sketch_desk_transparent.png</image:loc>
+      <image:title>Engineering Research Desk Technical Sketch</image:title>
+      <image:caption>Systems architecture, digital forensics, and embedded engineering workbench</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rsk807.github.io/assets/images/omniscient.png</image:loc>
+      <image:title>Omniscient Digital Forensics Processing Flow</image:title>
+      <image:caption>Patented Automated Evidence Extraction &amp; Dynamic Cybercrime Investigation Platform (Patent ID: 202521077464)</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rsk807.github.io/assets/images/rakshanetra.png</image:loc>
+      <image:title>RakshaNetra Interception Flow Diagram</image:title>
+      <image:caption>Proactive Data Leakage Prevention and Client-Edge LLM Security Redaction Architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rsk807.github.io/assets/images/bidforge.png</image:loc>
+      <image:title>BidForge Multi-Agent Pipeline</image:title>
+      <image:caption>Autonomous multi-agent RFP parsing, semantic vector search, and proposal synthesis platform</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://rsk807.github.io/sk_logo_512x512.png</image:loc>
+      <image:title>Sushant Kumar Engineering Insignia</image:title>
+      <image:caption>Official monogram and engineering insignia of Sushant Kumar</image:caption>
+    </image:image>
   </url>
 </urlset>

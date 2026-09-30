@@ -394,7 +394,7 @@
       // Update CD Artwork
       if (this.cdArtworkImg) {
         this.cdArtworkImg.src = track.thumbnail;
-        this.cdArtworkImg.alt = `${track.title} artwork`;
+        this.cdArtworkImg.alt = `Sushant Kumar Music Corner - ${track.title} (${track.artist}) Acoustic Vocal Recording Artwork`;
       }
 
       // Reset progress

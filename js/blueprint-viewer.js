@@ -73,7 +73,9 @@ function initializeContainerMedia(container) {
     const img = document.createElement('img');
     img.className = 'blueprint-real-media';
     img.src = mediaSrc;
-    img.alt = container.querySelector('.blueprint-label')?.textContent || 'Blueprint Spec';
+    const blueprintLabel = container.querySelector('.blueprint-label')?.textContent?.trim() || 'Blueprint Spec';
+    const blueprintStamp = container.querySelector('.blueprint-stamp')?.textContent?.trim() || '';
+    img.alt = `${blueprintLabel}${blueprintStamp ? ' - ' + blueprintStamp : ''} - Technical Architecture Specification by Sushant Kumar`;
     img.loading = 'lazy';
     
     img.addEventListener('load', () => {

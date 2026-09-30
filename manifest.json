@@ -1,11 +1,14 @@
 {
-  "name": "Sushant Kumar - Engineering Notebook",
-  "short_name": "S.Kumar Notebook",
-  "description": "Personal Engineering Journal and Research Log of Sushant Kumar.",
+  "name": "Sushant Kumar — Engineering Dossier & Research Log",
+  "short_name": "Sushant Kumar",
+  "description": "Official engineering research dossier and portfolio of Sushant Kumar — Cyber Security Engineer, Digital Forensics Researcher, AI Systems Developer, and Founder of TechDenLab.",
   "start_url": "/index.html",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#faf8f5",
   "theme_color": "#faf8f5",
+  "categories": ["education", "technology", "portfolio"],
   "icons": [
     {
       "src": "sk_logo_16x16.png",
@@ -35,12 +38,14 @@
     {
       "src": "sk_logo_192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "sk_logo_512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

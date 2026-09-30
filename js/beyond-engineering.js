@@ -144,7 +144,7 @@ function lazyLoadSketches() {
     wrapper.innerHTML = `
       ${attachmentHtml}
       <div class="sketch-page-content" data-full="${src}">
-        <img src="${src}" alt="Notebook Sketch ${index + 1}" loading="lazy">
+        <img src="${src}" alt="Sushant Kumar Notebook Ideation Sketch ${index + 1} - Archival Technical and Design Concept Drawing" loading="lazy">
         <span class="sketch-spec-label">SKETCH-SPEC // REF: BE-01-${index + 1}</span>
       </div>
     `;
@@ -180,7 +180,7 @@ function lazyLoadSculptures() {
 
     wrapper.innerHTML = `
       <div class="image-frame" data-full="${src}">
-        <img src="${src}" alt="Clay Sculpture ${index + 1}" loading="lazy">
+        <img src="${src}" alt="Sushant Kumar Clay Sculpture Study ${index + 1} - Archival Handcrafted Studio Sculpture Specimen" loading="lazy">
         <div class="image-frame-caption">STUDIO REF // BE-02-${index + 1}</div>
       </div>
     `;
