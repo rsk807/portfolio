@@ -36,14 +36,40 @@ const server = http.createServer((req, res) => {
       res.end('404 Not Found');
       return;
     }
+
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
-    res.writeHead(200, {
-      'Content-Type': contentType,
-      'Access-Control-Allow-Origin': '*',
-      'Cache-Control': 'no-cache'
-    });
-    fs.createReadStream(filePath).pipe(res);
+    const totalSize = stats.size;
+    const range = req.headers.range;
+
+    if (range) {
+      // Support HTTP Range Requests (206 Partial Content) for smooth audio/video streaming & seeking
+      const parts = range.replace(/bytes=/, '').split('-');
+      const start = parseInt(parts[0], 10);
+      const end = parts[1] ? parseInt(parts[1], 10) : totalSize - 1;
+      const chunkSize = (end - start) + 1;
+
+      res.writeHead(206, {
+        'Content-Range': `bytes ${start}-${end}/${totalSize}`,
+        'Accept-Ranges': 'bytes',
+        'Content-Length': chunkSize,
+        'Content-Type': contentType,
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'Cache-Control': 'no-cache'
+      });
+      fs.createReadStream(filePath, { start, end }).pipe(res);
+    } else {
+      res.writeHead(200, {
+        'Content-Length': totalSize,
+        'Accept-Ranges': 'bytes',
+        'Content-Type': contentType,
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'Cache-Control': 'no-cache'
+      });
+      fs.createReadStream(filePath).pipe(res);
+    }
   });
 });
 
@@ -54,7 +80,7 @@ server.listen(PORT, () => {
 │ 🚀 Sushant Kumar Portfolio — Local Preview Server           │
 ├─────────────────────────────────────────────────────────────┤
 │ • Local URL:    ${url.padEnd(42)} │
-│ • Environment:  Node.js Native HTTP (Zero Dependencies)     │
+│ • Streaming:    HTTP 206 Partial Content Enabled (Audio/Vid)│
 │ • Press Ctrl+C in your terminal anytime to stop the server  │
 └─────────────────────────────────────────────────────────────┘
 `);

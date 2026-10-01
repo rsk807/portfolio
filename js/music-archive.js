@@ -238,8 +238,9 @@
 
     initAudio() {
       this.audio = new Audio();
-      this.audio.preload = 'metadata'; // Lazy load current track metadata only
-      this.audio.crossOrigin = 'anonymous';
+      this.audio.preload = 'auto'; // Buffer audio data for instant playback
+      this.audio.volume = 0.9;
+      // Note: do not set crossOrigin = 'anonymous' to prevent local/file protocol CORS playback failure
 
       this.audio.addEventListener('timeupdate', this.handleTimeUpdate);
       this.audio.addEventListener('ended', this.handleTrackEnded);
@@ -249,7 +250,7 @@
       });
 
       this.audio.addEventListener('error', (e) => {
-        console.warn('[Music Corner] Playback warning/fallback:', e);
+        console.warn('[Music Corner] Audio loading notice on track:', this.audio ? this.audio.src : '', e);
         if (this.statusBadgeEl) this.statusBadgeEl.textContent = 'READY';
       });
     }
@@ -260,14 +261,24 @@
     ensureAudioContext() {
       if (!this.audio || this.isAudioCtxConnected) return;
 
+      // When running via file:/// protocol, Web Audio MediaElementSource is muted by browser security policy.
+      // Use fallback visualizer instead of muting the audio element.
+      if (window.location.protocol === 'file:') {
+        this.useSyntheticVisualizer = true;
+        return;
+      }
+
       try {
         const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-        if (!AudioContextClass) return;
+        if (!AudioContextClass) {
+          this.useSyntheticVisualizer = true;
+          return;
+        }
 
         this.audioCtx = new AudioContextClass();
         this.analyser = this.audioCtx.createAnalyser();
-        this.analyser.fftSize = 512;
-        this.analyser.smoothingTimeConstant = 0.85;
+        this.analyser.fftSize = 256;
+        this.analyser.smoothingTimeConstant = 0.8;
 
         this.sourceNode = this.audioCtx.createMediaElementSource(this.audio);
         this.sourceNode.connect(this.analyser);
@@ -275,7 +286,8 @@
 
         this.isAudioCtxConnected = true;
       } catch (e) {
-        console.warn('[Music Corner] Web Audio API initialization notice:', e);
+        console.warn('[Music Corner] Web Audio API notice (falling back to direct audio output):', e);
+        this.useSyntheticVisualizer = true;
       }
     }
 
@@ -646,11 +658,7 @@
     }
 
     drawOscilloscope() {
-      if (!this.isPlaying || !this.analyser || !this.canvasCtx) return;
-
-      const bufferLength = this.analyser.fftSize;
-      const dataArray = new Uint8Array(bufferLength);
-      this.analyser.getByteTimeDomainData(dataArray);
+      if (!this.isPlaying || !this.canvasCtx) return;
 
       const canvas = this.oscilloscopeCanvas;
       const ctx = this.canvasCtx;
@@ -674,20 +682,49 @@
       ctx.strokeStyle = '#212121'; // Charcoal ink
       ctx.beginPath();
 
-      const sliceWidth = (width * 1.0) / bufferLength;
-      let x = 0;
+      let hasDrawn = false;
+      if (this.analyser && !this.useSyntheticVisualizer) {
+        const bufferLength = this.analyser.fftSize;
+        const dataArray = new Uint8Array(bufferLength);
+        this.analyser.getByteTimeDomainData(dataArray);
 
-      for (let i = 0; i < bufferLength; i++) {
-        const v = dataArray[i] / 128.0; // 0 to 2
-        const y = (v * height) / 2;
-
-        if (i === 0) {
-          ctx.moveTo(x, y);
-        } else {
-          ctx.lineTo(x, y);
+        // Check if there is actual audio signal
+        let isSilent = true;
+        for (let i = 0; i < bufferLength; i++) {
+          if (Math.abs(dataArray[i] - 128) > 2) {
+            isSilent = false;
+            break;
+          }
         }
 
-        x += sliceWidth;
+        if (!isSilent) {
+          const sliceWidth = (width * 1.0) / bufferLength;
+          let x = 0;
+          for (let i = 0; i < bufferLength; i++) {
+            const v = dataArray[i] / 128.0;
+            const y = (v * height) / 2;
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+            x += sliceWidth;
+          }
+          hasDrawn = true;
+        }
+      }
+
+      if (!hasDrawn) {
+        // Dynamic analog audio trace generated while playing
+        const t = performance.now() * 0.007;
+        const points = 40;
+        const sliceWidth = width / points;
+        let x = 0;
+        for (let i = 0; i <= points; i++) {
+          const w1 = Math.sin(t * 2.5 + i * 0.4) * 0.5;
+          const w2 = Math.cos(t * 1.6 + i * 0.25) * 0.35;
+          const y = (height / 2) + (w1 + w2) * (height * 0.3);
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+          x += sliceWidth;
+        }
       }
 
       ctx.lineTo(width, height / 2);
