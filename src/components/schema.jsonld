@@ -11,7 +11,7 @@
         "Sushant Kumar Research Log",
         "TechDenLab Founder Portfolio"
       ],
-      "description": "Official engineering research dossier and portfolio of Sushant Kumar — Cyber Security Engineer, Digital Forensics Researcher, AI Systems Developer, and Founder of TechDenLab.",
+      "description": "Official engineering research dossier and portfolio of Sushant Kumar - Cyber Security Engineer, Digital Forensics Researcher, AI Systems Developer, and Founder of TechDenLab.",
       "publisher": {
         "@id": "https://rsk807.github.io/#person"
       },
@@ -21,7 +21,7 @@
       "@type": "ProfilePage",
       "@id": "https://rsk807.github.io/#webpage",
       "url": "https://rsk807.github.io/",
-      "name": "Sushant Kumar — Cybersecurity Engineer, AI & IoT Researcher | Engineering Dossier",
+      "name": "Sushant Kumar - Cybersecurity Engineer, AI & IoT Researcher | Engineering Dossier",
       "isPartOf": {
         "@id": "https://rsk807.github.io/#website"
       },
@@ -184,7 +184,7 @@
       "@type": "ScholarlyArticle",
       "@id": "https://rsk807.github.io/#vacars-paper",
       "name": "VACARS: IoT + AI Assisted Smart Helmet System",
-      "headline": "VACARS: Voice Assisted Context Aware Response System — IoT and AI Assisted Smart Helmet for Rider Safety",
+      "headline": "VACARS: Voice Assisted Context Aware Response System - IoT and AI Assisted Smart Helmet for Rider Safety",
       "author": {
         "@id": "https://rsk807.github.io/#person"
       },
@@ -207,7 +207,7 @@
     {
       "@type": "ScholarlyArticle",
       "@id": "https://rsk807.github.io/#iccubea-paper",
-      "name": "Best IEEE Research Paper Award — ICCUBEA 2026",
+      "name": "Best IEEE Research Paper Award - ICCUBEA 2026",
       "headline": "An Early-Exit Hybrid Intrusion Detection Architecture for Resource-Constrained Environments",
       "author": {
         "@id": "https://rsk807.github.io/#person"

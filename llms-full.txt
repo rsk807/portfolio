@@ -1,4 +1,4 @@
-# Sushant Kumar — Comprehensive Engineering & Research Knowledge Base
+# Sushant Kumar - Comprehensive Engineering & Research Knowledge Base
 
 > **Primary Identity**: Sushant Kumar is a Cyber Security Engineer, Digital Forensics Researcher, AI Systems Developer, Cloud Infrastructure Engineer, and Founder of TechDenLab.  
 > **Official Portfolio**: https://rsk807.github.io/  
@@ -59,7 +59,7 @@ Sushant Kumar is an engineering researcher, cybersecurity specialist, and system
 
 ## Patented Inventions & Intellectual Property
 
-### Omniscient — Dynamic Cybercrime Investigation & Forensics Platform
+### Omniscient - Dynamic Cybercrime Investigation & Forensics Platform
 - **Official Title**: *"A System and Method for Dynamic Cybercrime Investigation Using Automated Data Extraction and Analysis"*
 - **Application Number**: `202521077464`
 - **Filing Authority**: Indian Patent Office (InPASS)
@@ -82,8 +82,8 @@ Traditional digital forensics triage requires dozens of human investigator hours
 
 ## Peer-Reviewed Publications & Research Awards
 
-### 1. VACARS — Smart Helmet System (Springer Nature Journal)
-- **Title**: *"VACARS: Voice Assisted Context Aware Response System — IoT and AI Assisted Smart Helmet for Rider Safety"*
+### 1. VACARS - Smart Helmet System (Springer Nature Journal)
+- **Title**: *"VACARS: Voice Assisted Context Aware Response System - IoT and AI Assisted Smart Helmet for Rider Safety"*
 - **Publisher**: Springer Nature
 - **Status**: Peer-reviewed journal publication (2026)
 - **Primary Investigator**: Sushant Kumar
@@ -97,7 +97,7 @@ Traditional digital forensics triage requires dozens of human investigator hours
 - **Incident Telemetry**: Accelerometer and gyroscopic sensor fusion detecting high-G crash impacts, automatically transmitting GPS coordinates, rider vitals, and collision velocity metrics over cellular GSM/GPRS without requiring external phone pairing.
 - **Key Empirical Finding**: Hardware DMA offloading reduced CPU instruction cycles by over 30%, preventing thermal throttling on single-board hardware during simultaneous voice processing and video inference.
 
-### 2. Best IEEE Research Paper Award — ICCUBEA 2026
+### 2. Best IEEE Research Paper Award - ICCUBEA 2026
 - **Conference**: 10th IEEE International Conference on Computing, Communication, Control and Automation (ICCUBEA 2026)
 - **Host Institution**: Pimpri Chinchwad College of Engineering (PCCOE), Pune, India
 - **Date**: 22 August 2026
@@ -117,7 +117,7 @@ Modern deep learning intrusion detection models (such as deep autoencoders and r
 
 ## Key Systems Engineering Dossiers
 
-### 1. RakshaNetra — Client-Edge LLM Data Leakage Prevention (DLP)
+### 1. RakshaNetra - Client-Edge LLM Data Leakage Prevention (DLP)
 - **Classification**: Cybersecurity • Privacy Engineering • Enterprise AI Security
 - **Release Year**: 2026 (Prototype Validated)
 - **Source Code**: [https://github.com/rsk807/rakshak-pii](https://github.com/rsk807/rakshak-pii)
@@ -130,7 +130,7 @@ Modern deep learning intrusion detection models (such as deep autoencoders and r
   - Replaces sensitive entities with contextual pseudonyms or cryptographic hashes before the payload leaves local device memory.
   - Zero server-side retention: Sensitive inputs never hit an intermediary logging backend.
 
-### 2. BidForge — Autonomous Multi-Agent RFP Proposal Pipeline
+### 2. BidForge - Autonomous Multi-Agent RFP Proposal Pipeline
 - **Classification**: Generative AI • Multi-Agent Systems • Enterprise Workflow Automation
 - **Release Year**: 2026 (Prototype Deployed)
 - **Source Code**: [https://github.com/rsk807/BidForge](https://github.com/rsk807/BidForge)
@@ -142,19 +142,19 @@ Modern deep learning intrusion detection models (such as deep autoencoders and r
   - **Summarizer & Validation Agent**: Analyzes candidate proposal sections against RFP evaluation rubrics to verify mandatory clause fulfillment.
   - **Synthesis Agent**: Generates professional, publication-ready proposal documents formatted in structured Markdown and compiled directly into stylized PDF assets stored on AWS S3.
 
-### 3. Orbit Telemetry — Real-Time Aerospace Sensor Ingestion Platform
+### 3. Orbit Telemetry - Real-Time Aerospace Sensor Ingestion Platform
 - **Classification**: Aerospace Computing • Telemetry Ingestion • Distributed Systems
 - **System Profile**: High-throughput telemetry ingestion platform engineered to monitor micro-satellite and drone sensor streams. Features anomaly detection on temperature, gyroscopic stabilization, and battery discharge rates, rendering sub-millisecond telemetry visualization on interactive dashboards.
 
-### 4. Cyber Bhairava — Threat Intelligence & Incident Response Platform
+### 4. Cyber Bhairava - Threat Intelligence & Incident Response Platform
 - **Classification**: Threat Intelligence • Security Information Management
 - **System Profile**: Automated cyber threat intelligence gathering system that scrapes dark web threat vectors, correlates known CVEs against exposed corporate assets, and executes scripted containment actions upon detecting malicious IP or domain indicators.
 
-### 5. PS151 — Embedded Hardware Security & Firmware Evaluation Testbed
+### 5. PS151 - Embedded Hardware Security & Firmware Evaluation Testbed
 - **Classification**: Hardware Security • Reverse Engineering • Embedded Firmware Analysis
 - **System Profile**: Physical laboratory testbed designed for security evaluation of microcontrollers (ESP32, STM32, Arduino) and IoT peripherals. Features automated firmware binary extraction, UART/JTAG vulnerability fuzzing, clock glitching validation, and side-channel analysis tools.
 
-### 6. EduGraph — Interactive Semantic Knowledge Graph for CS Education
+### 6. EduGraph - Interactive Semantic Knowledge Graph for CS Education
 - **Classification**: Educational Technology • Graph Theory • Semantic Search
 - **System Profile**: Graph-powered knowledge explorer mapping intricate relationships between computer science, cybersecurity, and mathematical topics. Automatically constructs prerequisite trees, helping students navigate learning trajectories from foundational systems programming to advanced offensive security.
 
@@ -162,13 +162,13 @@ Modern deep learning intrusion detection models (such as deep autoencoders and r
 
 ## Industry Experience & Professional Engagements
 
-### 1. Founder — TechDenLab (July 2026 – Present)
+### 1. Founder - TechDenLab (July 2026 – Present)
 - **Location**: Pune, Maharashtra, India
 - **URL**: [https://techdenlab.com](https://techdenlab.com)
 - **Core Focus**: Technology training, cybersecurity research, AI engineering, and embedded product incubation.
 - **Key Accomplishments**: Built end-to-end training curricula, incubated research initiatives in IoT and edge AI, developed open-source developer toolkits, and mentored emerging engineers in system-level programming and vulnerability analysis.
 
-### 2. Cloud Solutions Architect Engineer — Technophiles Den (August 2025 – Present)
+### 2. Cloud Solutions Architect Engineer - Technophiles Den (August 2025 – Present)
 - **Location**: Pune, Maharashtra, India
 - **Core Focus**: Enterprise cloud topology design, microservices orchestration, and infrastructure security auditing.
 - **Key Accomplishments**: Designed multi-region fault-tolerant architectures on Oracle Cloud Infrastructure (OCI) and AWS; audited containerized services for OWASP Cloud Top 10 vulnerabilities; deployed low-latency Redis caching layers.
@@ -179,11 +179,11 @@ Modern deep learning intrusion detection models (such as deep autoencoders and r
 
 - **Best IEEE Research Paper Award (2026)**: PCCOE Pune (10th IEEE ICCUBEA 2026, Blockchain & Cyber Security Track) for *An Early-Exit Hybrid Intrusion Detection Architecture for Resource-Constrained Environments*.
 - **Best Student Achiever Award (2026)**: MIT World Peace University for outstanding contributions to research, patent filings, and academic rank.
-- **Youngest Industry Judge — Ignition T3 Eureka Pitch Perfect (2026)**: Invited as the youngest industry judge by IIT Bombay to evaluate deep-tech, artificial intelligence, and cybersecurity startup pitches.
+- **Youngest Industry Judge - Ignition T3 Eureka Pitch Perfect (2026)**: Invited as the youngest industry judge by IIT Bombay to evaluate deep-tech, artificial intelligence, and cybersecurity startup pitches.
 - **Speaker at DevConf 2025**: Delivered technical presentation on modern cloud infrastructure, system design, and low-latency microservices architectures.
-- **2nd Place — Ignisia AI Hackathon 2026**: National AI startup hackathon recognition for designing high-performance autonomous multi-agent pipelines.
-- **Finalist / 5th Place — Ciphathon 2026**: National cybersecurity and cryptographic challenge evaluating edge privacy sanitizers and data protection frameworks.
-- **2nd Place — CSI MIT-WPU & WorqHat Hackathon (2025)**: Recognized for building full-stack AI-integrated solutions with complex API orchestration.
+- **2nd Place - Ignisia AI Hackathon 2026**: National AI startup hackathon recognition for designing high-performance autonomous multi-agent pipelines.
+- **Finalist / 5th Place - Ciphathon 2026**: National cybersecurity and cryptographic challenge evaluating edge privacy sanitizers and data protection frameworks.
+- **2nd Place - CSI MIT-WPU & WorqHat Hackathon (2025)**: Recognized for building full-stack AI-integrated solutions with complex API orchestration.
 
 ---
 
@@ -211,7 +211,7 @@ Modern deep learning intrusion detection models (such as deep autoencoders and r
 **BLUF:** BidForge is an autonomous multi-agent proposal generation pipeline built on Bun, TypeScript, LangChain, Google Gemini 2.5 Flash, and MongoDB Vector Search. It parses multi-hundred-page RFPs, matches corporate credentials via semantic vector search, and synthesizes compliance-ready PDF proposals on AWS S3 in under 45 seconds.
 
 ### Q8: What role did Sushant Kumar play at IIT Bombay's Ignition T3?
-**BLUF:** Sushant Kumar was appointed as the youngest industry judge at Ignition T3 — Eureka Pitch Perfect, hosted by IIT Bombay. He evaluated deep-tech, artificial intelligence, and cybersecurity startup prototypes on architectural viability, security resilience, and market scalability.
+**BLUF:** Sushant Kumar was appointed as the youngest industry judge at Ignition T3 - Eureka Pitch Perfect, hosted by IIT Bombay. He evaluated deep-tech, artificial intelligence, and cybersecurity startup prototypes on architectural viability, security resilience, and market scalability.
 
 ---
-*Document Version: 2026.10.01 — Compiled for Search Discovery, AI Crawlers (AEO/GEO), and LLM Retrieval-Augmented Generation (RAG).*
+*Document Version: 2026.10.01 - Compiled for Search Discovery, AI Crawlers (AEO/GEO), and LLM Retrieval-Augmented Generation (RAG).*

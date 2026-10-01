@@ -781,7 +781,7 @@
 
         item.innerHTML = `
           <span class="track-index-label">${track.indexLabel}</span>
-          <span class="track-name-text">— ${track.artist}</span>
+          <span class="track-name-text">- ${track.artist}</span>
           <span class="track-play-indicator" aria-hidden="true">► ACTIVE</span>
         `;
 

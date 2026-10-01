@@ -1,7 +1,7 @@
 {
   "name": "sushant-portfolio",
   "version": "2026.1.0",
-  "description": "An Engineer's Personal Research Notebook — Portfolio & Research Dossier of Sushant Kumar",
+  "description": "An Engineer's Personal Research Notebook - Portfolio & Research Dossier of Sushant Kumar",
   "private": true,
   "scripts": {
     "start": "node scripts/serve.js --open",

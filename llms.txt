@@ -5,7 +5,7 @@
 Sushant Kumar is an engineering researcher and systems builder based in Pune, Maharashtra, India. He combines low-level embedded hardware and network forensics with modern LLM orchestration and edge AI to construct high-reliability security architectures.
 
 ## Core Affiliations & Education
-- **Founder**: TechDenLab (https://techdenlab.com) — Engineering research and technology laboratory specializing in cybersecurity, AI systems development, cloud infrastructure, and intelligent embedded hardware.
+- **Founder**: TechDenLab (https://techdenlab.com) - Engineering research and technology laboratory specializing in cybersecurity, AI systems development, cloud infrastructure, and intelligent embedded hardware.
 - **Education**: Bachelor of Technology (B.Tech) in Computer Science & Engineering (Cyber Security & Digital Forensics) at MIT World Peace University (MIT-WPU), Pune, India.
   - Academic Performance: CGPA 9.16 / 10.0 (Class 10: 94.6%, Class 12: 94.6%).
 - **Industry Role**: Cloud Solutions Architect Engineer at Technophiles Den.
@@ -31,7 +31,7 @@ Sushant Kumar is an engineering researcher and systems builder based in Pune, Ma
 ## Honors & Awards
 - **Best IEEE Research Paper Award (2026)**: 10th IEEE ICCUBEA 2026 (PCCOE Pune, Blockchain & Cyber Security Track).
 - **Best Student Achiever Award (2026)**: MIT World Peace University (MIT-WPU) for excellence in academic performance, patent innovation, and cyber security research.
-- **Youngest Industry Judge (2026)**: Ignition T3 — Eureka Pitch Perfect, deep-tech and AI startup competition hosted by IIT Bombay.
+- **Youngest Industry Judge (2026)**: Ignition T3 - Eureka Pitch Perfect, deep-tech and AI startup competition hosted by IIT Bombay.
 - **DevConf 2025 Speaker**: Invited speaker on systems architecture and cloud infrastructure engineering.
 - **Ignisia AI Hackathon 2026**: 2nd Place nationally for multi-agent LLM systems engineering.
 - **Ciphathon 2026**: Finalist / 5th Place in national cybersecurity and privacy hackathon for edge redaction systems.

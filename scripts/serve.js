@@ -77,7 +77,7 @@ server.listen(PORT, () => {
   const url = `http://localhost:${PORT}/`;
   console.log(`
 ┌─────────────────────────────────────────────────────────────┐
-│ 🚀 Sushant Kumar Portfolio — Local Preview Server           │
+│ 🚀 Sushant Kumar Portfolio - Local Preview Server           │
 ├─────────────────────────────────────────────────────────────┤
 │ • Local URL:    ${url.padEnd(42)} │
 │ • Streaming:    HTTP 206 Partial Content Enabled (Audio/Vid)│

@@ -1,4 +1,4 @@
-# Sushant Kumar — Engineering Dossier & Personal Research Log
+# Sushant Kumar - Engineering Dossier & Personal Research Log
 
 [![Live Portfolio](https://img.shields.io/badge/Live%20Dossier-GitHub%20Pages-2ea44f?style=for-the-badge&logo=github)](https://rsk807.github.io/portfolio/)
 [![License](https://img.shields.io/badge/License-Proprietary%20%2F%20Personal-blue?style=for-the-badge)](LICENSE)
@@ -6,7 +6,7 @@
 [![SEO & AEO](https://img.shields.io/badge/SEO%20%2F%20AEO-Schema.org%20JSON--LD%20%2B%20llms.txt-purple?style=for-the-badge)](src/components/schema.jsonld)
 
 > **"Turning Ideas into Secure, Scalable and Meaningful Systems."**  
-> Official interactive engineering dossier, research logbook, and portfolio of **Sushant Kumar** — Cyber Security Engineer, Digital Forensics Researcher, AI Systems Developer, and Founder of **TechDenLab**.
+> Official interactive engineering dossier, research logbook, and portfolio of **Sushant Kumar** - Cyber Security Engineer, Digital Forensics Researcher, AI Systems Developer, and Founder of **TechDenLab**.
 
 ---
 
