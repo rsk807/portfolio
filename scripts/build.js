@@ -180,38 +180,78 @@ if (headHtml.includes('<!-- SCHEMA_PLACEHOLDER -->')) {
 }
 
 // 2C. Sequence of components and chapters to assemble
-const ASSEMBLY_MANIFEST = [
-  { type: 'component', dir: COMP_DIR, file: 'loader.html' },
-  { type: 'component', dir: COMP_DIR, file: 'spine-nav.html' },
-  { type: 'component', dir: COMP_DIR, file: 'header.html' },
-  { type: 'component', dir: COMP_DIR, file: 'drawer-nav.html' },
-  { type: 'component', dir: COMP_DIR, file: 'binder-open.html' },
-  { type: 'chapter',   dir: CHAP_DIR, file: '00-cover.html' },
-  { type: 'chapter',   dir: CHAP_DIR, file: '01-engineer.html' },
-  { type: 'chapter',   dir: CHAP_DIR, file: '02-beyond-eng.html' },
-  { type: 'chapter',   dir: CHAP_DIR, file: '03-case-files.html' },
-  { type: 'chapter',   dir: CHAP_DIR, file: '04-research.html' },
-  { type: 'chapter',   dir: CHAP_DIR, file: '05-experience.html' },
-  { type: 'chapter',   dir: CHAP_DIR, file: '06-expertise.html' },
-  { type: 'chapter',   dir: CHAP_DIR, file: '07-recognition.html' },
-  { type: 'chapter',   dir: CHAP_DIR, file: '08-contact.html' },
-  { type: 'component', dir: COMP_DIR, file: 'footer.html' },
-  { type: 'component', dir: COMP_DIR, file: 'binder-close.html' },
-  { type: 'component', dir: COMP_DIR, file: 'lightbox.html' }
+const PRE_BINDER_COMPONENTS = [
+  'loader.html',
+  'spine-nav.html',
+  'header.html',
+  'drawer-nav.html'
+];
+
+const CHAPTERS = [
+  '00-cover.html',
+  '01-engineer.html',
+  '02-beyond-eng.html',
+  '03-case-files.html',
+  '04-research.html',
+  '05-experience.html',
+  '06-expertise.html',
+  '07-recognition.html',
+  '08-contact.html'
 ];
 
 const assembledFragments = [headHtml];
 
-ASSEMBLY_MANIFEST.forEach(entry => {
-  const filePath = path.join(entry.dir, entry.file);
+// 1. Load Pre-binder UI elements
+PRE_BINDER_COMPONENTS.forEach(file => {
+  const filePath = path.join(COMP_DIR, file);
   if (!fs.existsSync(filePath)) {
-    console.error(`❌ Error: Required assembly file missing: ${filePath}`);
+    console.error(`❌ Error: Required component missing: ${filePath}`);
     process.exit(1);
   }
-  const fileContent = fs.readFileSync(filePath, 'utf8');
-  assembledFragments.push(fileContent);
-  console.log(`  ✓ Loaded [${entry.type.padEnd(9)}] ${entry.file}`);
+  assembledFragments.push(fs.readFileSync(filePath, 'utf8'));
+  console.log(`  ✓ Loaded [component] ${file}`);
 });
+
+// 2. Load all Chapters & Notebook Footer
+const chapterContents = [];
+CHAPTERS.forEach(file => {
+  const filePath = path.join(CHAP_DIR, file);
+  if (!fs.existsSync(filePath)) {
+    console.error(`❌ Error: Required chapter missing: ${filePath}`);
+    process.exit(1);
+  }
+  chapterContents.push(fs.readFileSync(filePath, 'utf8'));
+  console.log(`  ✓ Loaded [chapter  ] ${file}`);
+});
+
+const footerPath = path.join(COMP_DIR, 'footer.html');
+if (fs.existsSync(footerPath)) {
+  chapterContents.push(fs.readFileSync(footerPath, 'utf8'));
+  console.log(`  ✓ Loaded [component] footer.html`);
+}
+
+// 3. Ingest into unified binder.html
+const binderPath = path.join(COMP_DIR, 'binder.html');
+if (!fs.existsSync(binderPath)) {
+  console.error(`❌ Error: Required component missing: ${binderPath}`);
+  process.exit(1);
+}
+let binderHtml = fs.readFileSync(binderPath, 'utf8');
+const allChaptersHtml = chapterContents.join('\n\n');
+if (binderHtml.includes('<!-- NOTEBOOK_CONTENT_SLOT -->')) {
+  binderHtml = binderHtml.replace('<!-- NOTEBOOK_CONTENT_SLOT -->', allChaptersHtml);
+} else {
+  binderHtml = binderHtml + '\n\n' + allChaptersHtml;
+}
+assembledFragments.push(binderHtml);
+console.log(`  ✓ Loaded [component] binder.html (with all 9 chapters & footer unified)`);
+
+// 4. Load Post-binder elements (lightbox)
+const lightboxPath = path.join(COMP_DIR, 'lightbox.html');
+if (fs.existsSync(lightboxPath)) {
+  assembledFragments.push(fs.readFileSync(lightboxPath, 'utf8'));
+  console.log(`  ✓ Loaded [component] lightbox.html`);
+}
 
 const assembledHtml = assembledFragments.join('\n\n');
 const indexHtmlPath = path.join(ROOT_DIR, 'index.html');

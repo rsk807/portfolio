@@ -1,8 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const { exec } = require('child_process');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const ROOT = path.resolve(__dirname, '..');
 
 const MIME_TYPES = {
@@ -47,5 +48,22 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Local preview server running at http://localhost:${PORT}/`);
+  const url = `http://localhost:${PORT}/`;
+  console.log(`
+┌─────────────────────────────────────────────────────────────┐
+│ 🚀 Sushant Kumar Portfolio — Local Preview Server           │
+├─────────────────────────────────────────────────────────────┤
+│ • Local URL:    ${url.padEnd(42)} │
+│ • Environment:  Node.js Native HTTP (Zero Dependencies)     │
+│ • Press Ctrl+C in your terminal anytime to stop the server  │
+└─────────────────────────────────────────────────────────────┘
+`);
+
+  // Auto-open browser if requested or by default on start
+  if (process.argv.includes('--open')) {
+    const startCmd = process.platform === 'win32' ? `start ${url}` :
+                     process.platform === 'darwin' ? `open ${url}` :
+                     `xdg-open ${url}`;
+    exec(startCmd);
+  }
 });
