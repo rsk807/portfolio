@@ -1,89 +1,153 @@
-# Design System Manual: "An Engineer's Personal Research Notebook"
+# Sushant Kumar — Engineering Dossier & Personal Research Log
 
-This document establishes the official visual language, design system, coding standards, and interactive principles for the website. Every future page, section, or asset must adhere strictly to these guidelines to maintain a handcrafted, cohesive aesthetic.
+[![Live Portfolio](https://img.shields.io/badge/Live%20Dossier-GitHub%20Pages-2ea44f?style=for-the-badge&logo=github)](https://rsk807.github.io/portfolio/)
+[![License](https://img.shields.io/badge/License-Proprietary%20%2F%20Personal-blue?style=for-the-badge)](LICENSE)
+[![Architecture](https://img.shields.io/badge/Architecture-Modular%20HTML%20%2B%20Vanilla%20CSS%2FJS-orange?style=for-the-badge)](scripts/build.js)
+[![SEO & AEO](https://img.shields.io/badge/SEO%20%2F%20AEO-Schema.org%20JSON--LD%20%2B%20llms.txt-purple?style=for-the-badge)](src/components/schema.jsonld)
 
----
-
-## 📖 Design Concept
-**"An Engineer's Personal Research Notebook"**
-The interface mimics a physical engineering journal, lab logbook, or researcher's log. It communicates craftsmanship, meticulousness, and scientific curiosity.
-
-### 🚫 Core Constraints (What This is NOT)
-* **Not Cyberpunk / Not Terminal:** No green neon text on solid black screens, no scanlines, no pixel fonts, and no interactive Unix terminals.
-* **Not Futuristic:** No glowing borders, neon drop-shadows, canvas particles, webgl background loops, or fast flashing elements.
-* **No Stock Placeholders:** Every image must appear paper-clipped, taped, or framed like a Polaroid, using organic margins.
+> **"Turning Ideas into Secure, Scalable and Meaningful Systems."**  
+> Official interactive engineering dossier, research logbook, and portfolio of **Sushant Kumar** — Cyber Security Engineer, Digital Forensics Researcher, AI Systems Developer, and Founder of **TechDenLab**.
 
 ---
 
-## 🎨 Color System Tokens
-All CSS variables are declared in `css/variables.css`.
+## 🌐 Live Access
 
-| Variable | Token Name | Color Spec | Purpose |
-| :--- | :--- | :--- | :--- |
-| `--color-paper-light` | Page White | `hsl(43, 35%, 98%)` | Primary notebook page surface |
-| `--color-paper-base` | Warm Beige | `hsl(43, 30%, 96%)` | Outer notebook body / background accent |
-| `--color-paper-dark` | Desk Surface | `hsl(43, 20%, 91%)` | Ambient desk background surrounding binder |
-| `--color-ink-primary` | Charcoal Black | `hsl(0, 0%, 13%)` | Body headings, primary log text, main rules |
-| `--color-ink-secondary`| Graphite Gray | `hsl(0, 0%, 38%)` | Metadata, tags, layout boundaries, subtitles |
-| `--color-accent-blue` | Blue Ink | `hsl(214, 60%, 42%)` | Anchor links, tags, success states, signatures |
-| `--color-accent-red` | Red Pen | `hsl(354, 70%, 46%)` | Dates, highlights, alert boundaries, bookmarks |
-| `--color-accent-highlighter` | Yellow Marker | `hsla(54, 95%, 75%, 0.5)` | Highlighted inline text spans, custom warnings |
+| Platform | Deployment URL |
+| :--- | :--- |
+| **Primary (GitHub Pages)** | **[https://rsk807.github.io/portfolio/](https://rsk807.github.io/portfolio/)** |
+| **Alternative Mirror** | [https://portfolio-beta-plum-95.vercel.app](https://portfolio-beta-plum-95.vercel.app) |
 
 ---
 
-## ✍️ Typography Guidelines
+## 📖 Design Concept: The Engineer's Research Journal
 
-Imported Google Fonts must map to specific system roles:
+This portfolio departs completely from generic cookie-cutter developer sites. Instead, it meticulously recreates the tactile, analog experience of an **authentic engineering research journal**:
 
-1. **IBM Plex Mono** (`var(--font-notebook)`)
-   * **Role:** Headers (`H1`, `H2`, `H3`), metadata badges, notebook navigation tabs.
-   * **Rationale:** Clean, mechanical, high-legibility monospaced typeface that simulates typewriter records or ledger prints.
-2. **Inter** (`var(--font-sans)`)
-   * **Role:** Primary body paragraphs, tabular lists, text descriptions.
-   * **Rationale:** A clean sans-serif optimized for long-form reading comfort on digital screens.
-3. **JetBrains Mono** (`var(--font-mono)`)
-   * **Role:** Technical code blocks (`<pre>`, `<code>`), output panels, configuration specs.
-   * **Rationale:** Engineered for maximum clarity and structural layout consistency when displaying technical snippets.
-4. **Special Elite** (`var(--font-handwritten)`)
-   * **Role:** Date stamps, handwritten sidebar annotations, signed-off signatures.
-   * **Rationale:** Typewriter-wobble style font representing personal margins additions, ink markings, and handwriting.
+* 📓 **Twin-Loop Wire Binding & Graph Paper**: Faint 28px coordinate ruled/grid paper with red margin guides and twin-loop wire binding.
+* 📑 **Protruding Edge Tabs & Ribbon Bookmarks**: Color-coded right-edge notebook tabs for chapters 01–08 and swaying cloth bookmarks.
+* 📌 **Pinned Sticky Notes & Field Cards**: Handcrafted research snapshot notes with authentic pushpin graphics, subtle paper drop-shadows, and organic rotation jitter.
+* 🎨 **Interactive Beyond Engineering Accordion**: Archival sketchbook gallery, 3D sculpture studio, and katana swordsmanship drills with dynamic stamp drop physics (`OPENED`).
+* 💿 **Music Corner CD Player**: Fully custom-engineered analog CD turntable player with realistic optical disc groove reflection, mechanical laser read arm, real-time audio oscilloscope signal visualizer, HTTP 206 range streaming, and tape position meter.
+* 🛡️ **Archival Asset Protection**: Context-menu shields, drag suppression, dynamic lightbox watermarking, and toast notifications to safeguard intellectual property and creative assets.
 
 ---
 
-## 📐 Layout & Spacing Rules
+## 🏗️ Modular Architecture
 
-* **12-Column Responsive Grid (`.grid-12`):** Columns map dynamically based on screen sizing, defaulting to stacked columns on mobile viewports.
-* **Rule of 8px:** All paddings, margins, gutters, and structural heights must scale in increments of `8px` (`0.5rem`).
-* **Notebook Margins:** Page wraps must preserve the left binder margin space:
-  * Desktop: `padding-left: calc(var(--space-4xl) + var(--space-xl))` (gives room for spine and margins).
-  * Mobile: `padding-left: calc(var(--space-2xl) + var(--space-lg))`.
-* **Ruler Crease:** Do not place content over the left double margin line (`.notebook-page::before`). This line mimics the red margin line of lab pads.
+The codebase is split into isolated, maintainable partials compiled into a single production deliverable via a zero-dependency Node compiler:
+
+```
+portfolio/
+├── index.html                      # Production compiled bundle (generated)
+├── manifest.json                   # Web App Manifest
+├── robots.txt                      # 2026 AI Bot Crawling Directives
+├── sitemap.xml                     # XML Sitemap with Image Metadata
+├── llms.txt                        # Structured Markdown Summary for AI Engines
+├── llms-full.txt                   # Complete Deep Knowledge Graph for LLMs
+├── css/
+│   ├── bundle.css                  # Combined CSS bundle (generated)
+│   ├── bundle.min.css              # Minified CSS bundle for production
+│   ├── variables.css               # Design system tokens & CSS variables
+│   ├── base.css                    # Typography, reset, 12-column grid
+│   ├── navigation.css              # Slim sticky header, spine nav, drawer
+│   ├── cover.css                   # Chapter 00 responsive 4-quadrant layout
+│   ├── engineer.css                # Chapter 01 photo frame & sticky cluster
+│   ├── beyond-engineering.css      # Chapter 02 accordion & media layouts
+│   ├── case-files.css              # Chapter 03 blueprint cards & telemetry
+│   ├── music-archive.css           # BE-03 turntable CD chassis & oscilloscope
+│   ├── blueprint-viewer.css        # Archival lightbox overlay & watermark
+│   └── components.css              # Washi tapes, buttons, polaroids, clips
+├── js/
+│   ├── notebook.js                 # Notebook navigation, tabs & organic jitter
+│   ├── beyond-engineering.js       # Accordion state machine & stamp physics
+│   ├── beyond-assets.js            # Media catalog index
+│   ├── music-archive.js            # CD player, audio engine & oscilloscope
+│   └── blueprint-viewer.js         # Technical blueprint inspection lightbox
+├── src/
+│   ├── chapters/                   # 9 Autonomous Chapter Partials
+│   │   ├── 00-cover.html           # Chapter 00: Engineering Dossier Cover
+│   │   ├── 01-engineer.html        # Chapter 01: The Engineer
+│   │   ├── 02-beyond-eng.html      # Chapter 02: Beyond Engineering
+│   │   ├── 03-case-files.html      # Chapter 03: Engineering Case Files
+│   │   ├── 04-research.html        # Chapter 04: Research & Innovation
+│   │   ├── 05-experience.html      # Chapter 05: Professional Experience
+│   │   ├── 06-expertise.html       # Chapter 06: Technical Expertise
+│   │   ├── 07-recognition.html     # Chapter 07: Leadership & Honors
+│   │   └── 08-contact.html         # Chapter 08: Field Contact Memo Pad
+│   └── components/                 # Reusable Layout Primitives
+│       ├── head.html               # Head tags, meta, & schema placeholder
+│       ├── schema.jsonld           # 20KB Schema.org Graph (AEO/GEO/SEO)
+│       ├── loader.html             # Analog notebook loading screen
+│       ├── spine-nav.html          # Left spine bookmark bar
+│       ├── header.html             # Slim 48px sticky header
+│       ├── drawer-nav.html         # Mobile chapter index drawer
+│       ├── binder.html             # Outer notebook binder enclosure
+│       ├── footer.html             # Page number indicator
+│       └── lightbox.html           # Blueprint zoom/pan lightbox modal
+├── assets/                         # Optimized binary media
+│   ├── docs/                       # Sushant_Kumar_Resume.pdf
+│   ├── icons/                      # Logos & favicons
+│   ├── images/                     # Technical sketches & portraits
+│   └── field_notes/                # Sketches & sculptures
+├── raw_vocals/                     # Acoustic audio tracks & artwork
+└── scripts/
+    ├── build.js                    # Zero-dependency compiler & DOM ID validator
+    └── serve.js                    # Local preview server with HTTP 206 streaming
+```
 
 ---
 
-## 🛠️ Reusable Component Library
+## ⚡ Build System & Validation
 
-| Class Selector | Physical Object | Visual Description |
-| :--- | :--- | :--- |
-| `.notebook-binder` | Binder Ring Book | Border frame enclosing the paper stack, wire spine on the left. |
-| `.notebook-page` | Ruled Grid Page | Styled with faint grid lines (`var(--color-paper-ruled)`) and a red margin separator. |
-| `.btn` | Mechanical Button | Hard thick charcoal border, click shadow offset. |
-| `.paper-card` | Sheet Paper Overlay | Floating document cards, styled with subtle border and page lift. |
-| `.sticky-note` | Sticky Post-it | Rotated slightly (`transform: rotate`), yellow/blue/pink variations. |
-| `.washi-tape` | Frost Tape Strip | Semi-translucent tape used to clip corners or center elements. |
-| `.paper-clip` | Steel Paper Clip | Simulated wire paper clip anchored to the top of components. |
-| `.notebook-tab` | Document Index Tab | Index folders sticking out of the right page border to navigate sheets. |
-| `.bookmark-ribbon` | Red Marker Ribbon | Ribbon hanging from top binder edge. Hovering increases ribbon drop length. |
-| `.code-block` | Terminal Printout | Inset gray paper, monospaced text, with language labels. |
-| `.log-entry` | Scientific Record | Chronological item featuring a handwritten date and signed-off signature. |
-| `.image-frame` | Polaroid Photograph | Thick paper margin around images, held down with frosted corner tapes. |
-| `.badge` | Ink Rubber Stamp | Outline stamps representing log states (`Passed`, `Draft`, `Failed`). |
+The project uses a custom, zero-dependency Node compiler (`scripts/build.js`):
+
+1. **CSS Compilation**: Reads 11 stylesheets in dependency order, deduplicates `@import` declarations, and produces both `css/bundle.css` and a minified `css/bundle.min.css`.
+2. **Component Assembly**: Injects `schema.jsonld` into `head.html`, loads navigation components, stitches the 9 chapters into the notebook binder slot, and generates `index.html`.
+3. **Anchor Target Validation**: Scans all 23 anchor references (`href="#..."`) against the 86 declared DOM IDs to guarantee zero broken in-page navigation links.
+
+### Commands
+
+```powershell
+# Compile the entire project & validate DOM integrity
+node scripts/build.js
+# Or via npm
+npm run build
+
+# Start local server with HTTP 206 range streaming (auto-opens browser)
+node scripts/serve.js --open
+# Or via npm
+npm start
+```
 
 ---
 
-## 🔄 Interaction Principles
-Animations should feel subtle and tactile, as if interacting with objects on a desk:
-1. **Hover Elevation:** Hovering `.paper-card` or `.sticky-note` lifts them slightly (`transform: translateY(-2px)`) and expands shadows.
-2. **Page Swiping Transitions:** Switching tabs fades out opacity slightly and skews the page (`transform: skewY(-0.5deg)`) to mimic flipping a page.
-3. **Buttons:** Pressing active elements shifts them down and left by `1px` or `2px`, neutralizing the flat offset shadow for dynamic feedback.
-4. **Organic Randomization:** Elements placed by hand (e.g., sticky notes, photo corners, tapes) use `notebook.js` to randomize their rotation angles slightly upon DOM load.
+## 🔍 SEO, AEO & GEO Knowledge Graph
+
+Engineered for 2026 search engines, AI answer engines (Perplexity, ChatGPT, Claude, Gemini), and generative search overviews:
+
+* **Schema.org JSON-LD**: Comprehensive graph including `Person`, `WebSite`, `ProfilePage`, Indian Patent (`Patent`), Springer/IEEE papers (`ScholarlyArticle`), `EducationalOccupationalCredential`, `ItemList` (Awards), `FAQPage` (8 Q&As), and `BreadcrumbList` across all 9 chapters.
+* **`llms.txt` & `llms-full.txt`**: Standardized Markdown documentation detailing verified claims, metrics, academic performance (CGPA 9.16), publications, and project architectures for LLM crawlers.
+* **`robots.txt`**: Explicitly permits AI bots (`GPTBot`, `PerplexityBot`, `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `Meta-ExternalAgent`, `Cohere-ai`) to discover knowledge files.
+* **OpenGraph & Twitter Cards**: High-resolution preview image cards and semantic tags.
+
+---
+
+## 👤 Author Credentials
+
+* **Name**: Sushant Kumar
+* **Degree**: B.Tech in CSE (Cyber Security & Digital Forensics), MIT World Peace University (CGPA 9.16 / 10.0)
+* **Founder**: [TechDenLab](https://techdenlab.com)
+* **Cloud Solutions Architect Engineer**: Technophiles Den
+* **Patent**: Published Indian Patent (*Automated Emergency Vehicle Alert and Intelligent Traffic Coordination System*, Application No. 202521077464)
+* **Publications**:
+  * Springer Nature Journal (Applied Artificial Intelligence & Soft Computing)
+  * IEEE ICCUBEA 2026 Best Research Paper Award (PCCOE Pune)
+* **Profiles**:
+  * [GitHub: @rsk807](https://github.com/rsk807)
+  * [LinkedIn: sushant-kumar-csf](https://www.linkedin.com/in/sushant-kumar-csf/)
+
+---
+
+## 📄 License & Intellectual Property
+
+All technical blueprints, code samples, personal essays, sculpture models, and field note sketches are the proprietary intellectual property of **Sushant Kumar**. © 2026 Sushant Kumar. All rights reserved.
