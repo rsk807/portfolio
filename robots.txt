@@ -1,10 +1,13 @@
 # robots.txt for https://rsk807.github.io/
-# Allow standard web search crawlers and AI search/discovery agents
+# Optimized for Web Discovery, AI Engines (AEO/GEO), and LLM Retrieval Pipelines
 
 User-agent: *
 Allow: /
+Disallow: /field_notes/
+Disallow: /raw_vocals/
+Disallow: /RAW VOCALS/
 
-# Web Search Crawlers
+# Standard Web Search Crawlers
 User-agent: Googlebot
 Allow: /
 
@@ -22,6 +25,12 @@ Allow: /
 
 User-agent: YandexBot
 Allow: /
+
+# Private Assets & Media Scraper Restrictions
+User-agent: Googlebot-Image
+Disallow: /field_notes/
+Disallow: /raw_vocals/
+Disallow: /RAW VOCALS/
 
 # AI Search & LLM Retrieval Agents (AEO / GEO Optimization)
 User-agent: Google-Extended
@@ -63,4 +72,5 @@ Allow: /
 User-agent: Cohere-ai
 Allow: /
 
+# Canonical Sitemap Declaration
 Sitemap: https://rsk807.github.io/sitemap.xml

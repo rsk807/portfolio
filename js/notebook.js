@@ -11,32 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
  * Handles cover-specific details like dynamic dates and ribbon scrolling events.
  */
 function initCoverPage() {
-  // Dynamic Date Injection
-  const today = new Date();
-  
-  // Format for Ledger (e.g., 2026-07-01)
-  const yyyy = today.getFullYear();
-  let mm = today.getMonth() + 1; // Months start at 0
-  let dd = today.getDate();
-  if (dd < 10) dd = '0' + dd;
-  if (mm < 10) mm = '0' + mm;
-  const formattedLedgerDate = `${yyyy}-${mm}-${dd}`;
-
-  // Format for Page Header (e.g., JULY 2026)
-  const monthNames = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
-    "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
-  const formattedHeaderDate = `${monthNames[today.getMonth()]} ${yyyy}`;
-
-  const ledgerDateEl = document.getElementById('dynamic-date-ledger');
-  if (ledgerDateEl) {
-    ledgerDateEl.textContent = formattedLedgerDate;
-  }
-
-  const headerDateEl = document.getElementById('header-date');
-  if (headerDateEl) {
-    headerDateEl.textContent = formattedHeaderDate;
-  }
-
   // Ribbon click scrolling
   const scrollRibbon = document.getElementById('scroll-ribbon');
   if (scrollRibbon) {
@@ -115,7 +89,6 @@ function initNotebookTabs() {
       tab.classList.add('active');
 
       const tabTarget = tab.getAttribute('href') || tab.textContent.trim();
-      console.log(`[Notebook System] Navigating to log sheet: ${tabTarget}`);
       
       const page = document.querySelector('.notebook-page');
       if (page) {
@@ -135,7 +108,7 @@ function initNotebookTabs() {
  * Animates simulated hand-drawn ink underlines under active headings
  */
 function initInkUnderlines() {
-  const headers = document.querySelectorAll('.section-header');
+  const headers = document.querySelectorAll('.chapter-title, .case-file-title');
   
   headers.forEach(header => {
     header.addEventListener('mouseenter', () => {

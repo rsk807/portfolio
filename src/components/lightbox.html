@@ -1,0 +1,42 @@
+  <!-- Interactive Lightbox Modal -->
+  <div id="lightbox-overlay" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-label="Blueprint full resolution spec viewer">
+    <button id="lightbox-close" class="lightbox-close-btn" aria-label="Close image viewer">✕</button>
+    <div id="lightbox-container" class="lightbox-content-container">
+      <div id="lightbox-img-wrapper" class="lightbox-img-wrapper">
+        <img id="lightbox-image" src="" alt="High-resolution technical engineering specification blueprint and research diagram by Sushant Kumar" draggable="false">
+      </div>
+    </div>
+    <div class="lightbox-controls" role="toolbar" aria-label="Image viewer controls">
+      <!-- Rotation Controls -->
+      <button id="rotate-left" class="lightbox-ctrl-btn" title="Rotate Left 90° (Shift+R)" aria-label="Rotate Left 90 degrees">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+          <path d="M3 3v5h5"/>
+        </svg>
+      </button>
+      <button id="rotate-right" class="lightbox-ctrl-btn" title="Rotate Right 90° (R)" aria-label="Rotate Right 90 degrees">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12a9 9 0 1 1-9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+          <path d="M21 3v5h-5"/>
+        </svg>
+      </button>
+
+      <span class="lightbox-divider" aria-hidden="true"></span>
+
+      <!-- Zoom Controls -->
+      <button id="zoom-out" class="lightbox-ctrl-btn" title="Zoom Out (-)" aria-label="Zoom Out">−</button>
+      <span id="zoom-val" class="lightbox-zoom-level" aria-live="polite">100%</span>
+      <button id="zoom-in" class="lightbox-ctrl-btn" title="Zoom In (+)" aria-label="Zoom In">+</button>
+
+      <span class="lightbox-divider" aria-hidden="true"></span>
+
+      <!-- Fit Modes -->
+      <button id="fit-auto" class="lightbox-ctrl-btn lightbox-fit-btn active" title="Auto Detect Orientation (↕ Auto Fit)" aria-label="Auto detect orientation">↕ Auto</button>
+      <button id="fit-width" class="lightbox-ctrl-btn lightbox-fit-btn" title="Fit Width" aria-label="Fit to width">↔ Width</button>
+      <button id="fit-height" class="lightbox-ctrl-btn lightbox-fit-btn" title="Fit Height" aria-label="Fit to height">↕ Height</button>
+      <button id="fit-original" class="lightbox-ctrl-btn lightbox-fit-btn" title="Original 1:1 Resolution" aria-label="Original size">1:1</button>
+    </div>
+  </div>
+
+</body>
+</html>

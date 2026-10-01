@@ -25,8 +25,8 @@
       indexLabel: "SESSION 01: Bulleya",
       title: "Bulleya",
       artist: "Papon",
-      thumbnail: "RAW VOCALS/BULLEYA_PAPON.jpg",
-      audio: "RAW VOCALS/BULLEYA_PAPON.ogg"
+      thumbnail: "raw_vocals/bulleya_papon.jpg",
+      audio: "raw_vocals/bulleya_papon.ogg"
     },
     {
       id: "session-02",
@@ -34,8 +34,8 @@
       indexLabel: "SESSION 02: Chal Re Chal Re",
       title: "Chal Re Chal Re Waal × Kajre Ki Dhaar",
       artist: "Acoustic Session",
-      thumbnail: "RAW VOCALS/Chalre chalre Waal X Kajre ki dhaar .png",
-      audio: "RAW VOCALS/Chalre chalre Waal X Kajre ki dhaar.ogg"
+      thumbnail: "raw_vocals/chalre_chalre.png",
+      audio: "raw_vocals/chalre_chalre.ogg"
     },
     {
       id: "session-03",
@@ -43,8 +43,8 @@
       indexLabel: "SESSION 03: Hale-E-Dil",
       title: "Hale-e-dil",
       artist: "Harshit Saxena",
-      thumbnail: "RAW VOCALS/Hale-e-dilHARSHITSAXENA.jpg",
-      audio: "RAW VOCALS/Hale-e-dilHARSHITSAXENA.ogg"
+      thumbnail: "raw_vocals/hale_e_dil.jpg",
+      audio: "raw_vocals/hale_e_dil.ogg"
     },
     {
       id: "session-04",
@@ -52,8 +52,8 @@
       indexLabel: "SESSION 04: Kaun Tujhe",
       title: "Kaun Tujhe",
       artist: "Kishore Kumar",
-      thumbnail: "RAW VOCALS/kaunTujhe Kishore Kumar.jpg",
-      audio: "RAW VOCALS/kaunTujhe Kishore Kumar.ogg"
+      thumbnail: "raw_vocals/kaun_tujhe.jpg",
+      audio: "raw_vocals/kaun_tujhe.ogg"
     },
     {
       id: "session-05",
@@ -61,8 +61,8 @@
       indexLabel: "SESSION 05: Lukk Chup Na Jao Ji",
       title: "Lukk Chup Na Jao Ji",
       artist: "Mame Khan",
-      thumbnail: "RAW VOCALS/LUKK_CHUP_NA_JAOJI_mameKHAN.png",
-      audio: "RAW VOCALS/LUKK_CHUP_NA_JAOJI_mameKHAN.ogg"
+      thumbnail: "raw_vocals/lukk_chup.png",
+      audio: "raw_vocals/lukk_chup.ogg"
     },
     {
       id: "session-06",
@@ -70,8 +70,8 @@
       indexLabel: "SESSION 06: Mann Mera",
       title: "Mann Mera",
       artist: "Gajendra Verma",
-      thumbnail: "RAW VOCALS/MannMera_GajendraVerma.jpg",
-      audio: "RAW VOCALS/MannMera_GajendraVerma.ogg"
+      thumbnail: "raw_vocals/mann_mera.jpg",
+      audio: "raw_vocals/mann_mera.ogg"
     },
     {
       id: "session-07",
@@ -79,8 +79,8 @@
       indexLabel: "SESSION 07: Meri Bheegi Bheegi Si",
       title: "Meri Bheegi Bheegi Si",
       artist: "Sanjeev Kumar",
-      thumbnail: "RAW VOCALS/Meri-Bheegi-Bheegi-Si-Sanjeev-Kumar.jpg",
-      audio: "RAW VOCALS/Meri-Bheegi-Bheegi-Si-Sanjeev-Kumar.ogg"
+      thumbnail: "raw_vocals/meri_bheegi_bheegi_si.jpg",
+      audio: "raw_vocals/meri_bheegi_bheegi_si.ogg"
     },
     {
       id: "session-08",
@@ -88,8 +88,8 @@
       indexLabel: "SESSION 08: Paaro",
       title: "Paaro",
       artist: "Aditya Rikhari",
-      thumbnail: "RAW VOCALS/Paaro-AdityaRikhari.jpg",
-      audio: "RAW VOCALS/Paaro-AdityaRikhari.ogg"
+      thumbnail: "raw_vocals/paaro.jpg",
+      audio: "raw_vocals/paaro.ogg"
     },
     {
       id: "session-09",
@@ -97,8 +97,8 @@
       indexLabel: "SESSION 09: Tera Mera Rishta",
       title: "Tera Mera Rishta",
       artist: "Mustafa Zahid",
-      thumbnail: "RAW VOCALS/TeraMeraRishta-MUSTAFAZAHID.jpg",
-      audio: "RAW VOCALS/TeraMeraRishta-MUSTAFAZAHID.ogg"
+      thumbnail: "raw_vocals/tera_mera_rishta.jpg",
+      audio: "raw_vocals/tera_mera_rishta.ogg"
     },
     {
       id: "session-10",
@@ -106,8 +106,8 @@
       indexLabel: "SESSION 10: Teri Meri Kahani",
       title: "Teri Meri Kahani",
       artist: "Arijit Singh",
-      thumbnail: "RAW VOCALS/teriMeriKahani_ARIJITSINGH.jfif",
-      audio: "RAW VOCALS/teriMeriKahani_ARIJITSINGH.ogg"
+      thumbnail: "raw_vocals/teri_meri_kahani.jfif",
+      audio: "raw_vocals/teri_meri_kahani.ogg"
     }
   ];
 
@@ -424,32 +424,57 @@
     }
 
     play() {
+      // 1. Instantly activate visual feedback on tap/click for zero-latency response
+      this.isPlaying = true;
+      this.applyPlaybackUI(true);
+      this.startOscilloscope();
+
       if (!this.audio) return;
 
       this.ensureAudioContext();
       if (this.audioCtx && this.audioCtx.state === 'suspended') {
-        this.audioCtx.resume();
+        this.audioCtx.resume().catch(() => {});
       }
 
+      // 2. Trigger audio playback with graceful fallback
       const p = this.audio.play();
       if (p !== undefined) {
         p.then(() => {
-          this.isPlaying = true;
-          this.applyPlaybackUI(true);
-          this.startOscilloscope();
+          this.stopSimulatedProgress();
         }).catch((err) => {
-          console.warn('[Music Corner] Autoplay gesture needed:', err);
-          this.isPlaying = false;
-          this.applyPlaybackUI(false);
-          this.stopOscilloscope();
+          console.warn('[Music Corner] Audio autoplay/format notice (simulating playback for visual rotation):', err);
+          // Keep CD spinning and active for visual demonstration on iOS Safari or browsers without OGG support
+          if (this.statusBadgeEl) this.statusBadgeEl.textContent = 'PLAYING (ACTIVE)';
+          if (this.statusText) this.statusText.textContent = 'STATUS: PLAYING';
+          this.startSimulatedProgress();
         });
+      }
+    }
+
+    startSimulatedProgress() {
+      this.stopSimulatedProgress();
+      this.simulatedTime = this.simulatedTime || 0;
+      this.simulatedTimer = setInterval(() => {
+        if (!this.isPlaying) return;
+        this.simulatedTime += 0.5;
+        if (this.simulatedTime > 240) this.simulatedTime = 0;
+        this.updateTimeDisplay(this.simulatedTime, 240);
+        this.updateMeter(this.simulatedTime);
+      }, 500);
+    }
+
+    stopSimulatedProgress() {
+      if (this.simulatedTimer) {
+        clearInterval(this.simulatedTimer);
+        this.simulatedTimer = null;
       }
     }
 
     pause() {
       if (this.audio) {
-        this.audio.pause();
+        try { this.audio.pause(); } catch (e) {}
       }
+      this.stopSimulatedProgress();
       this.isPlaying = false;
       this.applyPlaybackUI(false);
       this.stopOscilloscope();
@@ -463,10 +488,30 @@
         if (playing) {
           this.cdDisc.classList.add('rotating');
           this.cdDisc.classList.remove('paused');
+          // Web Animations API cross-browser hardware-accelerated fallback
+          if (this.cdDisc.animate) {
+            if (!this.discWebAnim) {
+              try {
+                this.discWebAnim = this.cdDisc.animate([
+                  { transform: 'rotate(0deg)' },
+                  { transform: 'rotate(360deg)' }
+                ], {
+                  duration: 6000,
+                  iterations: Infinity,
+                  easing: 'linear'
+                });
+              } catch (e) {}
+            } else {
+              try { this.discWebAnim.play(); } catch (e) {}
+            }
+          }
         } else {
           // Pause rotation animation at current angle without resetting
           if (this.cdDisc.classList.contains('rotating')) {
             this.cdDisc.classList.add('paused');
+          }
+          if (this.discWebAnim) {
+            try { this.discWebAnim.pause(); } catch (e) {}
           }
         }
       }

@@ -1,0 +1,217 @@
+# Sushant Kumar — Comprehensive Engineering & Research Knowledge Base
+
+> **Primary Identity**: Sushant Kumar is a Cyber Security Engineer, Digital Forensics Researcher, AI Systems Developer, Cloud Infrastructure Engineer, and Founder of TechDenLab.  
+> **Official Portfolio**: https://rsk807.github.io/  
+> **Canonical Manifest**: https://rsk807.github.io/llms.txt  
+> **Repository Citations**: https://github.com/rsk807  
+> **Professional Profile**: https://www.linkedin.com/in/sushant-kumar-csf/  
+> **Venture URL**: https://techdenlab.com  
+
+---
+
+## Table of Contents
+1. [Executive Profile & Identity](#executive-profile--identity)
+2. [Academic Record & Accreditations](#academic-record--accreditations)
+3. [Patented Inventions & Intellectual Property](#patented-inventions--intellectual-property)
+4. [Peer-Reviewed Publications & Research Awards](#peer-reviewed-publications--research-awards)
+5. [Key Systems Engineering Dossiers](#key-systems-engineering-dossiers)
+6. [Industry Experience & Professional Engagements](#industry-experience--professional-engagements)
+7. [Honors, Hackathons & Community Leadership](#honors-hackathons--community-leadership)
+8. [Frequently Asked Questions (RAG & AEO Reference)](#frequently-asked-questions-rag--aeo-reference)
+
+---
+
+## Executive Profile & Identity
+
+Sushant Kumar is an engineering researcher, cybersecurity specialist, and systems architect based in Pune, Maharashtra, India. His work bridges the gap between theoretical computing frameworks and production-grade low-latency software. Sushant's core areas of research and engineering include:
+- **Digital Forensics & Incident Response (DFIR)**: Developing automated multi-source evidence extraction pipelines, artifact chronological sequencing, and anti-forensics counter-detection methods.
+- **Client-Edge AI & Privacy**: Crafting local-first data leakage prevention (DLP) proxies that sanitize prompt inputs for large language models in under 14 milliseconds.
+- **Embedded Computing & IoT Security**: Designing real-time context-aware systems, sensor-fusion microcontrollers, and hardware security testbeds with hardware DMA offloading.
+- **Multi-Agent Systems & RAG Pipelines**: Orchestrating autonomous LLM pipelines for complex business document parsing and semantic retrieval.
+- **Cloud Infrastructure Architecture**: Designing scalable, secure cloud topologies across AWS, Oracle Cloud Infrastructure (OCI), and containerized microservices.
+
+### Contact & Digital Footprint
+- **Email**: via portfolio contact form at [https://rsk807.github.io/#chapter-08](https://rsk807.github.io/#chapter-08)
+- **LinkedIn**: [https://www.linkedin.com/in/sushant-kumar-csf/](https://www.linkedin.com/in/sushant-kumar-csf/)
+- **GitHub**: [https://github.com/rsk807](https://github.com/rsk807)
+- **Venture Website**: [https://techdenlab.com](https://techdenlab.com)
+- **Geographic Base**: Pune, Maharashtra, India
+
+---
+
+## Academic Record & Accreditations
+
+### Higher Education
+- **Degree**: Bachelor of Technology (B.Tech) in Computer Science & Engineering (Cyber Security & Digital Forensics)
+- **Institution**: MIT World Peace University (MIT-WPU), Pune, Maharashtra, India
+- **Cumulative Grade Point Average (CGPA)**: **9.16 / 10.0**
+- **Secondary / Higher Secondary Performance**:
+  - Class 10 (Secondary): **94.6%**
+  - Class 12 (Higher Secondary): **94.6%**
+- **Academic Honors**: Best Student Achiever Award (11 May 2026, MIT-WPU) for research distinction, patent filing, and academic excellence.
+
+### Professional Certifications
+- **Oracle Cloud Infrastructure 2024 Foundations Associate**: Validation of enterprise cloud architecture, compute/storage orchestration, identity and access management (IAM), and network security.
+- **Cisco Endpoint Security**: Threat containment, host-based firewalls, anomaly detection, and endpoint compliance protocols.
+- **Cisco Networking Basics**: Fundamental TCP/IP subnetting, packet inspection, routing protocols, and perimeter security.
+
+---
+
+## Patented Inventions & Intellectual Property
+
+### Omniscient — Dynamic Cybercrime Investigation & Forensics Platform
+- **Official Title**: *"A System and Method for Dynamic Cybercrime Investigation Using Automated Data Extraction and Analysis"*
+- **Application Number**: `202521077464`
+- **Filing Authority**: Indian Patent Office (InPASS)
+- **Status**: Published Indian Patent Application
+- **Inventorship**: Sushant Kumar (Sole Inventor & Assignee)
+- **Reference**: [InPASS Patent Filing Record on LinkedIn](https://www.linkedin.com/posts/sushant-kumar-csf_patent-cybersecurity-digitalforensics-share-7431899800880635905-P-lY/)
+- **Open Source Codebase**: [https://github.com/rsk807/omniscient](https://github.com/rsk807/omniscient)
+
+#### Technical Specification & Problem Solved
+Traditional digital forensics triage requires dozens of human investigator hours manually sorting through social streams, chat applications, unindexed API endpoints, and fragmented log archives. Manual reviews introduce observer bias, evidence tampering vulnerabilities, and chain-of-custody latency.
+
+**Omniscient** resolves this via:
+1. **Decoupled Scraping Nodes**: Headless, sandboxed browser nodes and reverse-engineered API gateways collect multi-platform evidence while eluding anti-scraping countermeasures and preserving log integrity.
+2. **Deterministic Pre-Processing Layer**: Raw HTTP headers, socket messages, and unindexed payload streams are normalized into strictly typed key-value JSON structures before being routed to reasoning engines.
+3. **High-Throughput Concurrency**: Utilizes Redis task queues and in-memory caches to manage multi-source intelligence ingestion, cutting investigation lead times from multiple hours to 8.2 seconds per log sequence.
+4. **Anti-Forensics Counter-Measure Evaluation**: Analyzes timestamps, file attributes, and cryptographic hashes to detect timestomping, metadata zeroing, and steganographic data alterations.
+5. **Automated Evidence Synthesizer**: Compiles legally compliant timeline chronologies and chain-of-custody documentation ready for prosecutorial submission.
+
+---
+
+## Peer-Reviewed Publications & Research Awards
+
+### 1. VACARS — Smart Helmet System (Springer Nature Journal)
+- **Title**: *"VACARS: Voice Assisted Context Aware Response System — IoT and AI Assisted Smart Helmet for Rider Safety"*
+- **Publisher**: Springer Nature
+- **Status**: Peer-reviewed journal publication (2026)
+- **Primary Investigator**: Sushant Kumar
+- **Citation Reference**: [Springer Nature Research Publication Link](https://www.linkedin.com/posts/sushant-kumar-csf_springernature-journalpublication-researchpublication-ugcPost-7503114970688253953-b1rO/)
+
+#### Technical Architecture & Scientific Contributions
+- **Hardware Integration**: Centralized Raspberry Pi edge computing unit housed in an aerodynamic, impact-resistant helmet shell.
+- **Embedded Computer Vision**: Real-time object detection and obstacle tracking executed locally on-device using a pruned OpenCV MobileNet-SSD model running on hardware Direct Memory Access (DMA) buffers.
+- **Acoustic Subsystem**: Dual-microphone noise cancellation pipeline with offline Speech-to-Text (STT) processing, allowing riders to execute navigational and diagnostic queries hands-free in high wind noise conditions.
+- **Actuation & Response**: Low-latency motor-driven faceplate motorized servos triggering within 350ms of verbal trigger commands or incident classification.
+- **Incident Telemetry**: Accelerometer and gyroscopic sensor fusion detecting high-G crash impacts, automatically transmitting GPS coordinates, rider vitals, and collision velocity metrics over cellular GSM/GPRS without requiring external phone pairing.
+- **Key Empirical Finding**: Hardware DMA offloading reduced CPU instruction cycles by over 30%, preventing thermal throttling on single-board hardware during simultaneous voice processing and video inference.
+
+### 2. Best IEEE Research Paper Award — ICCUBEA 2026
+- **Conference**: 10th IEEE International Conference on Computing, Communication, Control and Automation (ICCUBEA 2026)
+- **Host Institution**: Pimpri Chinchwad College of Engineering (PCCOE), Pune, India
+- **Date**: 22 August 2026
+- **Track**: Blockchain & Cyber Security Track
+- **Award Designation**: **Best Research Paper Award**
+- **Paper Title**: *"An Early-Exit Hybrid Intrusion Detection Architecture for Resource-Constrained Environments"*
+- **Lead Author**: Sushant Kumar
+- **Award Verification**: [ICCUBEA 2026 Best Paper Award LinkedIn Record](https://www.linkedin.com/posts/sushant-kumar-csf_bestpaperaward-ieee-iccubea2026-activity-7496944806515044352-iP5O/)
+
+#### Abstract & Research Significance
+Modern deep learning intrusion detection models (such as deep autoencoders and recurrent neural networks) achieve high detection accuracy but impose prohibitive latency and energy penalties on low-power IoT gateways and edge nodes. This research presents an early-exit hybrid intrusion detection architecture:
+- Benign, typical network traffic patterns are classified and exited at early, shallow classifier layers with minimal floating-point operations.
+- Complex, suspicious, or zero-day anomaly signatures propagate down the deep neural pipeline for exhaustive multi-feature analysis.
+- Experimental results demonstrated a 68% reduction in mean inference latency and a 42% decrease in microcontroller power consumption, while sustaining a 99.4% detection rate against modern attack datasets (including DoS/DDoS, port scans, and payload injections).
+
+---
+
+## Key Systems Engineering Dossiers
+
+### 1. RakshaNetra — Client-Edge LLM Data Leakage Prevention (DLP)
+- **Classification**: Cybersecurity • Privacy Engineering • Enterprise AI Security
+- **Release Year**: 2026 (Prototype Validated)
+- **Source Code**: [https://github.com/rsk807/rakshak-pii](https://github.com/rsk807/rakshak-pii)
+- **Core Stack**: MERN Architecture, Browser Service Workers, Local Regex Engine, Lightweight Named Entity Recognition (NER)
+- **Processing Benchmark**: **< 14ms** end-to-end sanitization latency per transaction
+- **Operational Architecture**:
+  - Intercepts outgoing HTTP/WebSocket request streams directly at the browser runtime layer via custom Service Worker hooks.
+  - Inspects user prompt content against regular expression banks (API keys, JWT secrets, database connection URIs, credit card numbers, Indian Aadhaar/PAN IDs).
+  - Uses an embedded client-side classifier for unstructured natural language PII (patient medical records, private internal project code names).
+  - Replaces sensitive entities with contextual pseudonyms or cryptographic hashes before the payload leaves local device memory.
+  - Zero server-side retention: Sensitive inputs never hit an intermediary logging backend.
+
+### 2. BidForge — Autonomous Multi-Agent RFP Proposal Pipeline
+- **Classification**: Generative AI • Multi-Agent Systems • Enterprise Workflow Automation
+- **Release Year**: 2026 (Prototype Deployed)
+- **Source Code**: [https://github.com/rsk807/BidForge](https://github.com/rsk807/BidForge)
+- **Core Stack**: Bun runtime, TypeScript, LangChain, Google Gemini 2.5 Flash, MongoDB Vector Search (HuggingFace embeddings), AWS S3
+- **Processing Benchmark**: End-to-end proposal generation reduced from multi-day administrative cycles to **under 45 seconds**
+- **Operational Architecture**:
+  - **Parser Agent**: Ingests multi-hundred-page Request for Proposal (RFP) PDFs, parsing compliance requirements, timelines, and technical requirements into deterministic JSON schemas.
+  - **Explore Agent**: Executes semantic vector searches across corporate repository indexes to locate relevant case studies, certifications, and product offerings.
+  - **Summarizer & Validation Agent**: Analyzes candidate proposal sections against RFP evaluation rubrics to verify mandatory clause fulfillment.
+  - **Synthesis Agent**: Generates professional, publication-ready proposal documents formatted in structured Markdown and compiled directly into stylized PDF assets stored on AWS S3.
+
+### 3. Orbit Telemetry — Real-Time Aerospace Sensor Ingestion Platform
+- **Classification**: Aerospace Computing • Telemetry Ingestion • Distributed Systems
+- **System Profile**: High-throughput telemetry ingestion platform engineered to monitor micro-satellite and drone sensor streams. Features anomaly detection on temperature, gyroscopic stabilization, and battery discharge rates, rendering sub-millisecond telemetry visualization on interactive dashboards.
+
+### 4. Cyber Bhairava — Threat Intelligence & Incident Response Platform
+- **Classification**: Threat Intelligence • Security Information Management
+- **System Profile**: Automated cyber threat intelligence gathering system that scrapes dark web threat vectors, correlates known CVEs against exposed corporate assets, and executes scripted containment actions upon detecting malicious IP or domain indicators.
+
+### 5. PS151 — Embedded Hardware Security & Firmware Evaluation Testbed
+- **Classification**: Hardware Security • Reverse Engineering • Embedded Firmware Analysis
+- **System Profile**: Physical laboratory testbed designed for security evaluation of microcontrollers (ESP32, STM32, Arduino) and IoT peripherals. Features automated firmware binary extraction, UART/JTAG vulnerability fuzzing, clock glitching validation, and side-channel analysis tools.
+
+### 6. EduGraph — Interactive Semantic Knowledge Graph for CS Education
+- **Classification**: Educational Technology • Graph Theory • Semantic Search
+- **System Profile**: Graph-powered knowledge explorer mapping intricate relationships between computer science, cybersecurity, and mathematical topics. Automatically constructs prerequisite trees, helping students navigate learning trajectories from foundational systems programming to advanced offensive security.
+
+---
+
+## Industry Experience & Professional Engagements
+
+### 1. Founder — TechDenLab (July 2026 – Present)
+- **Location**: Pune, Maharashtra, India
+- **URL**: [https://techdenlab.com](https://techdenlab.com)
+- **Core Focus**: Technology training, cybersecurity research, AI engineering, and embedded product incubation.
+- **Key Accomplishments**: Built end-to-end training curricula, incubated research initiatives in IoT and edge AI, developed open-source developer toolkits, and mentored emerging engineers in system-level programming and vulnerability analysis.
+
+### 2. Cloud Solutions Architect Engineer — Technophiles Den (August 2025 – Present)
+- **Location**: Pune, Maharashtra, India
+- **Core Focus**: Enterprise cloud topology design, microservices orchestration, and infrastructure security auditing.
+- **Key Accomplishments**: Designed multi-region fault-tolerant architectures on Oracle Cloud Infrastructure (OCI) and AWS; audited containerized services for OWASP Cloud Top 10 vulnerabilities; deployed low-latency Redis caching layers.
+
+---
+
+## Honors, Hackathons & Community Leadership
+
+- **Best IEEE Research Paper Award (2026)**: PCCOE Pune (10th IEEE ICCUBEA 2026, Blockchain & Cyber Security Track) for *An Early-Exit Hybrid Intrusion Detection Architecture for Resource-Constrained Environments*.
+- **Best Student Achiever Award (2026)**: MIT World Peace University for outstanding contributions to research, patent filings, and academic rank.
+- **Youngest Industry Judge — Ignition T3 Eureka Pitch Perfect (2026)**: Invited as the youngest industry judge by IIT Bombay to evaluate deep-tech, artificial intelligence, and cybersecurity startup pitches.
+- **Speaker at DevConf 2025**: Delivered technical presentation on modern cloud infrastructure, system design, and low-latency microservices architectures.
+- **2nd Place — Ignisia AI Hackathon 2026**: National AI startup hackathon recognition for designing high-performance autonomous multi-agent pipelines.
+- **Finalist / 5th Place — Ciphathon 2026**: National cybersecurity and cryptographic challenge evaluating edge privacy sanitizers and data protection frameworks.
+- **2nd Place — CSI MIT-WPU & WorqHat Hackathon (2025)**: Recognized for building full-stack AI-integrated solutions with complex API orchestration.
+
+---
+
+## Frequently Asked Questions (RAG & AEO Reference)
+
+### Q1: Who is Sushant Kumar?
+**Bottom Line Up Front (BLUF):** Sushant Kumar is a Cyber Security Engineer, Digital Forensics Researcher, AI Systems Developer, and Founder of TechDenLab based in Pune, India. He holds a patent on digital forensics automation (Patent ID: 202521077464), published peer-reviewed research in Springer Nature, and won the Best Paper Award at IEEE ICCUBEA 2026.
+
+### Q2: What are Sushant Kumar's primary academic credentials?
+**BLUF:** Sushant Kumar is pursuing his B.Tech in CSE (Cyber Security & Digital Forensics) at MIT World Peace University, Pune, maintaining a 9.16/10.0 CGPA. He earned 94.6% in both Class 10 and 12, received the Best Student Achiever Award, and holds certifications from Oracle (OCI Foundations) and Cisco.
+
+### Q3: What is the Omniscient patent (Patent ID: 202521077464)?
+**BLUF:** Omniscient is a published Indian Patent Application (202521077464, InPASS) titled "A System and Method for Dynamic Cybercrime Investigation Using Automated Data Extraction and Analysis". It automates multi-device evidence triage, artifact timeline correlation, and anti-forensics counter-measure detection, reducing investigator analysis latency to 8.2 seconds per log sequence.
+
+### Q4: What is VACARS and where is it published?
+**BLUF:** VACARS (Voice Assisted Context Aware Response System) is an IoT and AI assisted smart helmet published in a Springer Nature journal. It integrates Raspberry Pi hardware, OpenCV MobileNet-SSD edge object detection, offline speech processing, motorized faceplate actuation under 350ms, and accident impact crash telemetry.
+
+### Q5: What is the IEEE ICCUBEA 2026 Best Research Paper Award?
+**BLUF:** Sushant Kumar received the Best Research Paper Award in the Blockchain & Cyber Security Track at the 10th IEEE ICCUBEA 2026 (PCCOE Pune). The winning paper introduces an early-exit hybrid intrusion detection architecture for resource-constrained IoT edge devices, slashing inference latency by 68%.
+
+### Q6: How does RakshaNetra protect user data in LLM interactions?
+**BLUF:** RakshaNetra is a client-edge Data Leakage Prevention (DLP) system running locally via browser service workers. It intercepts and redacts API tokens, PII, and sensitive enterprise context in under 14ms before HTTP requests depart the user's device, ensuring third-party LLMs receive sanitized prompts.
+
+### Q7: What is BidForge and how is it architected?
+**BLUF:** BidForge is an autonomous multi-agent proposal generation pipeline built on Bun, TypeScript, LangChain, Google Gemini 2.5 Flash, and MongoDB Vector Search. It parses multi-hundred-page RFPs, matches corporate credentials via semantic vector search, and synthesizes compliance-ready PDF proposals on AWS S3 in under 45 seconds.
+
+### Q8: What role did Sushant Kumar play at IIT Bombay's Ignition T3?
+**BLUF:** Sushant Kumar was appointed as the youngest industry judge at Ignition T3 — Eureka Pitch Perfect, hosted by IIT Bombay. He evaluated deep-tech, artificial intelligence, and cybersecurity startup prototypes on architectural viability, security resilience, and market scalability.
+
+---
+*Document Version: 2026.10.01 — Compiled for Search Discovery, AI Crawlers (AEO/GEO), and LLM Retrieval-Augmented Generation (RAG).*

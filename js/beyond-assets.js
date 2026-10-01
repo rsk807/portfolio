@@ -1,19 +1,19 @@
 const BEYOND_ASSETS = {
   sketches: [
-    "WhatsApp Image 2026-07-01 at 7.35.47 PM.jpeg",
-    "WhatsApp Image 2026-07-01 at 7.35.48 PM.jpeg",
-    "WhatsApp Image 2026-07-01 at 7.40.10 PM (1).jpeg",
-    "WhatsApp Image 2026-07-01 at 7.40.10 PM.jpeg",
-    "WhatsApp Image 2026-07-01 at 7.40.41 PM.jpeg"
+    "sketch_01.jpeg",
+    "sketch_02.jpeg",
+    "sketch_03.jpeg",
+    "sketch_04.jpeg",
+    "sketch_05.jpeg"
   ],
   sculptures: [
-    "WhatsApp Image 2026-07-01 at 7.40.10 PM (1).jpeg",
-    "WhatsApp Image 2026-07-01 at 7.40.10 PM.jpeg",
-    "WhatsApp Image 2026-07-01 at 7.40.11 PM (1).jpeg",
-    "WhatsApp Image 2026-07-01 at 7.40.11 PM.jpeg"
+    "sculpture_01.jpeg",
+    "sculpture_02.jpeg",
+    "sculpture_03.jpeg",
+    "sculpture_04.jpeg"
   ],
   videos: [
-    "WhatsApp Video 2026-07-01 at 8.11.09 PM.mp4"
+    "swordsman_drill.mp4"
   ]
 };
 

@@ -191,16 +191,16 @@
   cursor: pointer;
 
   /* Standards-compliant hardware-accelerated CD rotation across all browsers */
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
   will-change: transform;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
 .cd-disc.rotating {
-  animation: spin 6s linear infinite;
-  -webkit-animation: spin 6s linear infinite;
+  animation: spin 6s linear infinite !important;
+  -webkit-animation: spin 6s linear infinite !important;
 }
 
 .cd-disc.paused {
@@ -209,22 +209,20 @@
 }
 
 @keyframes spin {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
 
 @-webkit-keyframes spin {
-  from {
+  0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
   }
-  to {
+  100% {
     -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
   }
 }
 
@@ -835,8 +833,9 @@
   }
 
   .cd-turntable-chassis {
-    width: clamp(230px, 68vw, 290px);
-    height: clamp(230px, 68vw, 290px);
+    width: clamp(190px, 68vw, 280px);
+    height: clamp(190px, 68vw, 280px);
+    max-width: 100%;
     margin: 0 auto;
   }
 

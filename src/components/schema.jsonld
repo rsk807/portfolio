@@ -1,0 +1,534 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://rsk807.github.io/#website",
+      "url": "https://rsk807.github.io/",
+      "name": "Sushant Kumar Portfolio",
+      "alternateName": [
+        "Sushant Kumar Engineering Dossier",
+        "Sushant Kumar Research Log",
+        "TechDenLab Founder Portfolio"
+      ],
+      "description": "Official engineering research dossier and portfolio of Sushant Kumar — Cyber Security Engineer, Digital Forensics Researcher, AI Systems Developer, and Founder of TechDenLab.",
+      "publisher": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://rsk807.github.io/#webpage",
+      "url": "https://rsk807.github.io/",
+      "name": "Sushant Kumar — Cybersecurity Engineer, AI & IoT Researcher | Engineering Dossier",
+      "isPartOf": {
+        "@id": "https://rsk807.github.io/#website"
+      },
+      "about": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "mainEntity": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "description": "Engineering research dossier documenting projects, patents, peer-reviewed publications, awards, and systems architecture by Sushant Kumar.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Cover Page",
+            "item": "https://rsk807.github.io/#chapter-00"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "The Engineer",
+            "item": "https://rsk807.github.io/#chapter-01"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Beyond Engineering",
+            "item": "https://rsk807.github.io/#chapter-02"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Case Files",
+            "item": "https://rsk807.github.io/#chapter-03"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Research & Innovation",
+            "item": "https://rsk807.github.io/#chapter-04"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "Professional Experience",
+            "item": "https://rsk807.github.io/#chapter-05"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "name": "Technical Expertise",
+            "item": "https://rsk807.github.io/#chapter-06"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "name": "Leadership & Recognition",
+            "item": "https://rsk807.github.io/#chapter-07"
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "name": "Contact Memo",
+            "item": "https://rsk807.github.io/#chapter-08"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://rsk807.github.io/#person",
+      "name": "Sushant Kumar",
+      "givenName": "Sushant",
+      "familyName": "Kumar",
+      "gender": "Male",
+      "url": "https://rsk807.github.io/",
+      "image": "https://rsk807.github.io/assets/images/my_image.jpg",
+      "jobTitle": [
+        "Cyber Security Engineer",
+        "Digital Forensics Researcher",
+        "AI Systems Developer",
+        "Cloud Infrastructure Engineer",
+        "Founder"
+      ],
+      "worksFor": {
+        "@id": "https://techdenlab.com/#organization"
+      },
+      "founder": {
+        "@id": "https://techdenlab.com/#organization"
+      },
+      "alumniOf": {
+        "@id": "https://rsk807.github.io/#mit-wpu"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Pune, Maharashtra, India",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Pune",
+          "addressRegion": "Maharashtra",
+          "addressCountry": "India"
+        }
+      },
+      "sameAs": [
+        "https://github.com/rsk807",
+        "https://www.linkedin.com/in/sushant-kumar-csf/",
+        "https://techdenlab.com"
+      ],
+      "knowsAbout": [
+        "Cybersecurity",
+        "Digital Forensics & Incident Response (DFIR)",
+        "Artificial Intelligence & Machine Learning",
+        "Edge AI & Embedded Computing",
+        "Internet of Things (IoT)",
+        "Cloud Infrastructure Architecture",
+        "Intrusion Detection Systems (IDS)",
+        "Reverse Engineering",
+        "Data Leakage Prevention (DLP)",
+        "Multi-Agent AI Systems"
+      ],
+      "award": [
+        "Best IEEE Research Paper Award (ICCUBEA 2026, PCCOE Pune)",
+        "Best Student Achiever Award (MIT World Peace University)",
+        "Youngest Industry Judge (Ignition T3 - Eureka Pitch Perfect, IIT Bombay)",
+        "Speaker at DevConf 2025",
+        "2nd Place - Ignisia AI Hackathon 2026",
+        "5th Place / Finalist - Ciphathon 2026",
+        "2nd Place - CSI MIT-WPU & WorqHat Hackathon"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://techdenlab.com/#organization",
+      "name": "TechDenLab",
+      "url": "https://techdenlab.com",
+      "logo": "https://rsk807.github.io/assets/icons/sk_logo_512x512.png",
+      "founder": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "description": "Engineering research and technology laboratory specializing in cybersecurity, AI systems development, cloud infrastructure, and intelligent embedded hardware.",
+      "sameAs": [
+        "https://techdenlab.com"
+      ]
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://rsk807.github.io/#mit-wpu",
+      "name": "MIT World Peace University (MIT-WPU)",
+      "url": "https://mitwpu.edu.in",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "India"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://rsk807.github.io/#vacars-paper",
+      "name": "VACARS: IoT + AI Assisted Smart Helmet System",
+      "headline": "VACARS: Voice Assisted Context Aware Response System — IoT and AI Assisted Smart Helmet for Rider Safety",
+      "author": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Springer Nature",
+        "url": "https://link.springer.com"
+      },
+      "description": "Authored peer-reviewed research detailing context-aware embedded speech processing, integrating MobileNet object detection and accident telemetry into an intelligent motorcycle helmet.",
+      "about": [
+        "Internet of Things",
+        "Edge AI",
+        "Automotive Safety",
+        "Embedded Systems",
+        "Telemetry"
+      ],
+      "url": "https://www.linkedin.com/posts/sushant-kumar-csf_springernature-journalpublication-researchpublication-ugcPost-7503114970688253953-b1rO/",
+      "sameAs": "https://www.linkedin.com/posts/sushant-kumar-csf_springernature-journalpublication-researchpublication-ugcPost-7503114970688253953-b1rO/"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://rsk807.github.io/#iccubea-paper",
+      "name": "Best IEEE Research Paper Award — ICCUBEA 2026",
+      "headline": "An Early-Exit Hybrid Intrusion Detection Architecture for Resource-Constrained Environments",
+      "author": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "description": "Awarded Best Paper in the Blockchain & Cyber Security Track at the 10th IEEE International Conference on Computing, Communication, Control and Automation (ICCUBEA 2026), PCCOE Pune.",
+      "publication": {
+        "@type": "PublicationEvent",
+        "name": "10th IEEE International Conference on Computing, Communication, Control and Automation (ICCUBEA 2026)",
+        "startDate": "2026-08-22",
+        "location": {
+          "@type": "Place",
+          "name": "Pimpri Chinchwad College of Engineering (PCCOE)",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Pune",
+            "addressRegion": "Maharashtra",
+            "addressCountry": "India"
+          }
+        }
+      },
+      "award": "Best Paper Award (Blockchain & Cyber Security Track)",
+      "url": "https://www.linkedin.com/posts/sushant-kumar-csf_bestpaperaward-ieee-iccubea2026-activity-7496944806515044352-iP5O/",
+      "sameAs": "https://www.linkedin.com/posts/sushant-kumar-csf_bestpaperaward-ieee-iccubea2026-activity-7496944806515044352-iP5O/"
+    },
+    {
+      "@type": [
+        "CreativeWork",
+        "Patent"
+      ],
+      "@id": "https://rsk807.github.io/#omniscient-patent",
+      "name": "Omniscient: Digital Forensics & Cybercrime Investigation Platform",
+      "headline": "A System and Method for Dynamic Cybercrime Investigation Using Automated Data Extraction and Analysis",
+      "patentNumber": "202521077464",
+      "inventor": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "assignee": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "description": "Patented digital forensics triage platform that automates multi-device evidence extraction, artifact timeline sequencing, and anti-forensics counter-measure evaluation.",
+      "issuingAuthority": "Indian Patent Office (InPASS)",
+      "url": "https://www.linkedin.com/posts/sushant-kumar-csf_patent-cybersecurity-digitalforensics-share-7431899800880635905-P-lY/",
+      "sameAs": "https://www.linkedin.com/posts/sushant-kumar-csf_patent-cybersecurity-digitalforensics-share-7431899800880635905-P-lY/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://rsk807.github.io/#vacars",
+      "name": "VACARS (Voice Assisted Context Aware Response System)",
+      "creator": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Embedded Linux / Raspberry Pi OS",
+      "description": "IoT and AI assisted smart helmet system with edge accident detection, vital telemetry monitoring, ambient noise cancellation, and automated emergency alert dispatch.",
+      "keywords": [
+        "IoT",
+        "Edge AI",
+        "Smart Helmet",
+        "Rider Safety",
+        "MobileNet-SSD",
+        "Telemetry",
+        "Springer Journal"
+      ],
+      "citation": {
+        "@id": "https://rsk807.github.io/#vacars-paper"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://rsk807.github.io/#omniscient-app",
+      "name": "Omniscient",
+      "creator": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Cross-platform",
+      "description": "Digital Forensics & Cybercrime Investigation Platform formulated for dynamic automated evidence extraction, timeline correlation, and anti-forensic detection.",
+      "keywords": [
+        "Digital Forensics",
+        "Cybercrime Investigation",
+        "Evidence Extraction",
+        "Artifact Timeline",
+        "Patent 202521077464"
+      ],
+      "citation": {
+        "@id": "https://rsk807.github.io/#omniscient-patent"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://rsk807.github.io/#rakshanetra",
+      "name": "RakshaNetra",
+      "creator": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Browser / WebExtension",
+      "description": "Proactive client-edge Data Leakage Prevention (DLP) system for LLMs, sanitizing sensitive enterprise parameters and PII in under 14ms prior to API relaying.",
+      "keywords": [
+        "DLP",
+        "Data Leakage Prevention",
+        "LLM Security",
+        "PII Redaction",
+        "Edge AI"
+      ],
+      "url": "https://github.com/rsk807/rakshak-pii"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://rsk807.github.io/#bidforge",
+      "name": "BidForge",
+      "creator": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Cloud / Node.js / Bun",
+      "description": "Autonomous multi-agent enterprise proposal compilation pipeline using vector semantic search and multi-agent coordination.",
+      "keywords": [
+        "Multi-Agent AI",
+        "LangChain",
+        "Vector Semantic Search",
+        "Enterprise AI",
+        "Bun",
+        "Gemini"
+      ],
+      "url": "https://github.com/rsk807/BidForge"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://rsk807.github.io/#orbit-telemetry",
+      "name": "Orbit Telemetry",
+      "creator": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "applicationCategory": "EngineeringApplication",
+      "operatingSystem": "Cross-platform",
+      "description": "Real-time telemetry monitoring and aerospace sensor data ingestion platform designed for high-frequency tracking and anomaly detection.",
+      "keywords": [
+        "Telemetry",
+        "Orbital Tracking",
+        "Sensor Ingestion",
+        "Real-Time Systems",
+        "IoT"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://rsk807.github.io/#cyber-bhairava",
+      "name": "Cyber Bhairava",
+      "creator": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Linux / Cross-platform",
+      "description": "Comprehensive cybersecurity threat intelligence, vulnerability assessment, and digital incident response platform.",
+      "keywords": [
+        "Cybersecurity",
+        "Threat Intelligence",
+        "Vulnerability Assessment",
+        "Incident Response"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://rsk807.github.io/#ps151",
+      "name": "PS151",
+      "creator": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "applicationCategory": "EngineeringApplication",
+      "operatingSystem": "Embedded Firmware / Microcontroller",
+      "description": "Embedded hardware security and firmware evaluation testbed engineered for mission-critical physical computing systems.",
+      "keywords": [
+        "Hardware Security",
+        "Embedded Systems",
+        "Firmware Analysis",
+        "Microcontrollers"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://rsk807.github.io/#edugraph",
+      "name": "EduGraph",
+      "creator": {
+        "@id": "https://rsk807.github.io/#person"
+      },
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web / Cross-platform",
+      "description": "Interactive semantic knowledge graph platform designed for educational curriculum mapping, prerequisite pathing, and conceptual mastery in computer science.",
+      "keywords": [
+        "Knowledge Graph",
+        "Education Technology",
+        "Cybersecurity Education",
+        "Curriculum Mapping"
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://rsk807.github.io/#awards",
+      "name": "Awards, Recognitions and Honors of Sushant Kumar",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Best IEEE Research Paper Award - ICCUBEA 2026 (PCCOE Pune)",
+          "description": "Awarded Best Paper in Blockchain & Cyber Security Track at 10th IEEE ICCUBEA 2026.",
+          "url": "https://www.linkedin.com/posts/sushant-kumar-csf_bestpaperaward-ieee-iccubea2026-activity-7496944806515044352-iP5O/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Best Student Achiever Award - MIT World Peace University",
+          "description": "Recognized for academic excellence, patent innovation, and cyber security research contributions.",
+          "url": "https://www.linkedin.com/posts/sushant-kumar-csf_mitwpu-cybersecurity-research-activity-7459613284804202497-ZlaP"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Youngest Industry Judge - Ignition T3 - Eureka Pitch Perfect (IIT Bombay)",
+          "description": "Served as youngest industry judge for deep-tech, cyber security, and AI startups hosted by IIT Bombay.",
+          "url": "https://www.linkedin.com/posts/sushant-kumar-csf_ignitiont3-eurekapitchperfect-iitbombay-activity-7502584534014529536-_B4J"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "DevConf 2025 Speaker",
+          "description": "Technical conference speaker on modern infrastructure, systems architecture, and engineering principles.",
+          "url": "https://youtu.be/rSsRnHpn0qo?si=ixs2PUd3SGGAPUR9"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Ignisia 2026 - 2nd Place",
+          "description": "Secured 2nd place in national AI startup hackathon developing intelligent agent solutions.",
+          "url": "https://www.linkedin.com/posts/sushant-kumar-csf_hackathon-ai-startup-activity-7446916765680439296-LAry"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Ciphathon 2026 - Finalist / 5th Place",
+          "description": "National cybersecurity and privacy hackathon finalist building edge redaction models.",
+          "url": "https://www.linkedin.com/posts/sushant-kumar-csf_cybersecurity-privacy-hackathon-activity-7444030092298625024-P_z1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "2nd Place - CSI MIT WPU and WorqHat",
+          "description": "Recognized for AI innovation and systems integration at CSI hackathon.",
+          "url": "https://www.linkedin.com/posts/sushant-kumar-csf_hackathon-ai-innovation-activity-7291368674861486081-T5C0"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://rsk807.github.io/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is Sushant Kumar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sushant Kumar is a Cyber Security Engineer, Digital Forensics Researcher, AI Systems Developer, and Founder of TechDenLab in Pune, India. Studying at MIT-WPU (CGPA 9.16), he specializes in IoT security, edge intelligence, cybercrime investigation automation, and cloud infrastructure architectures."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is TechDenLab?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TechDenLab is an engineering research and technology laboratory founded by Sushant Kumar. It specializes in developing secure embedded IoT hardware, client-edge AI privacy models, cloud infrastructure architectures, and automated digital forensics tools."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the VACARS smart helmet system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VACARS (Voice Assisted Context Aware Response System) is an IoT and AI assisted smart helmet published in a Springer Nature journal. It integrates Raspberry Pi hardware, MobileNet-SSD edge obstacle detection, offline speech recognition, 350ms motorized faceplate actuation, and real-time accident crash telemetry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Omniscient digital forensics patent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Omniscient is a published Indian Patent Application (ID: 202521077464, Indian Patent Office InPASS) titled 'A System and Method for Dynamic Cybercrime Investigation Using Automated Data Extraction and Analysis'. It automates multi-device evidence extraction, artifact timeline sequencing, and anti-forensic detection in 8.2 seconds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What research has Sushant Kumar published?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sushant Kumar published research in a Springer Nature journal on the VACARS smart helmet, and won the Best IEEE Research Paper Award at ICCUBEA 2026 (PCCOE Pune, Blockchain & Cyber Security Track) for his early-exit hybrid intrusion detection architecture."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is RakshaNetra and how does it protect LLM privacy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RakshaNetra is a proactive client-edge Data Leakage Prevention (DLP) system for LLMs. Running via browser service workers, it intercepts, evaluates, and redacts sensitive enterprise tokens, PII, and credentials in under 14ms prior to API transmission, eliminating third-party data leaks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is BidForge and how does it operate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BidForge is an autonomous multi-agent proposal generation pipeline built on Bun, TypeScript, LangChain, Google Gemini 2.5 Flash, and MongoDB vector search. It ingests complex RFP documents, matches compliance specifications, and synthesizes publication-grade PDF proposals on AWS S3 in under 45 seconds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What major awards and honors has Sushant Kumar received?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sushant Kumar's honors include the Best IEEE Research Paper Award (ICCUBEA 2026), MIT-WPU Best Student Achiever Award, serving as Youngest Industry Judge at IIT Bombay's Ignition T3 Eureka Pitch Perfect, DevConf 2025 Speaker, 2nd Place at Ignisia AI 2026, and Ciphathon 2026 Finalist."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -666,3 +666,76 @@
     text-align: left;
   }
 }
+
+/* ==========================================
+   ASSET PROTECTION & CODE HARDENING
+   ========================================== */
+.protected-asset, .protected-asset img, .protected-asset video,
+.sketch-page-content img, .image-frame img, .swordsman-video,
+.blueprint-real-media, .cd-disc {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+/* Transparent Shield Layer to block long-press & context menu */
+.asset-shield {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: transparent;
+  pointer-events: auto;
+}
+/* Protection toast notice */
+.protection-notice {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--color-ink-primary, #222);
+  color: var(--color-paper-light, #faf8f5);
+  font-family: var(--font-notebook, monospace);
+  font-size: 0.75rem;
+  padding: 8px 14px;
+  border-left: 3px solid var(--color-accent-red, #c0392b);
+  border-radius: 2px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 99999;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+.protection-notice.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lightbox Watermark */
+.lightbox-watermark {
+  position: absolute;
+  top: var(--space-lg, 24px);
+  left: var(--space-lg, 24px);
+  color: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-notebook, 'IBM Plex Mono', monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 10001;
+}
+
+@media (max-width: 768px) {
+  .lightbox-watermark {
+    top: var(--space-md, 16px);
+    left: var(--space-md, 16px);
+    font-size: 0.65rem;
+    max-width: calc(100vw - 80px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+

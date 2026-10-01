@@ -1,0 +1,45 @@
+# Sushant Kumar
+
+> Cyber Security Engineer, Digital Forensics Researcher, AI Systems Developer, and Founder of TechDenLab. Specializing in IoT security, edge artificial intelligence, automated digital forensics, intrusion detection architectures, and secure cloud infrastructure.
+
+Sushant Kumar is an engineering researcher and systems builder based in Pune, Maharashtra, India. He combines low-level embedded hardware and network forensics with modern LLM orchestration and edge AI to construct high-reliability security architectures.
+
+## Core Affiliations & Education
+- **Founder**: TechDenLab (https://techdenlab.com) — Engineering research and technology laboratory specializing in cybersecurity, AI systems development, cloud infrastructure, and intelligent embedded hardware.
+- **Education**: Bachelor of Technology (B.Tech) in Computer Science & Engineering (Cyber Security & Digital Forensics) at MIT World Peace University (MIT-WPU), Pune, India.
+  - Academic Performance: CGPA 9.16 / 10.0 (Class 10: 94.6%, Class 12: 94.6%).
+- **Industry Role**: Cloud Solutions Architect Engineer at Technophiles Den.
+
+## Verified Innovations & Peer-Reviewed Publications
+- [Omniscient: Digital Forensics & Cybercrime Investigation Platform](https://www.linkedin.com/posts/sushant-kumar-csf_patent-cybersecurity-digitalforensics-share-7431899800880635905-P-lY/): Patented automated evidence extraction, artifact timeline sequencing, and anti-forensic triage platform.
+  - **Patent Status**: Published Indian Patent Application (ID: 202521077464, Indian Patent Office InPASS).
+  - **Invention Title**: "A System and Method for Dynamic Cybercrime Investigation Using Automated Data Extraction and Analysis".
+- [VACARS: Voice Assisted Context Aware Response System](https://www.linkedin.com/posts/sushant-kumar-csf_springernature-journalpublication-researchpublication-ugcPost-7503114970688253953-b1rO/): IoT and AI assisted smart helmet system for rider safety, edge accident detection, and context-aware speech processing.
+  - **Publication**: Published in a Springer Nature journal.
+  - **Key Tech**: Raspberry Pi, OpenCV MobileNet-SSD edge object detection, offline STT, low-latency motor-driven faceplate actuation (<350ms), DMA frame buffer offloading.
+- [ICCUBEA 2026 Best IEEE Research Paper Award](https://www.linkedin.com/posts/sushant-kumar-csf_bestpaperaward-ieee-iccubea2026-activity-7496944806515044352-iP5O/): Awarded Best Paper in the Blockchain & Cyber Security Track at the 10th IEEE International Conference on Computing, Communication, Control and Automation (ICCUBEA 2026), PCCOE Pune.
+  - **Paper Title**: "An Early-Exit Hybrid Intrusion Detection Architecture for Resource-Constrained Environments".
+
+## Key Engineering Projects
+- [RakshaNetra](https://github.com/rsk807/rakshak-pii): Proactive client-edge Data Leakage Prevention (DLP) system for LLM integrations. Sanitizes enterprise tokens, credentials, and PII in under 14ms prior to API transmission via browser service worker proxy hooks.
+- [BidForge](https://github.com/rsk807/BidForge): Autonomous multi-agent Request for Proposal (RFP) parsing and bidding proposal generation pipeline. Built with Bun, TypeScript, LangChain, Google Gemini 2.5 Flash, and MongoDB vector semantic search.
+- **Orbit Telemetry**: High-frequency aerospace sensor ingestion and telemetry monitoring system built for orbital tracking and real-time anomaly detection.
+- **Cyber Bhairava**: Threat intelligence, vulnerability assessment, and digital forensics incident response platform.
+- **PS151**: Embedded hardware security and firmware evaluation testbed engineered for mission-critical physical computing systems.
+- **EduGraph**: Interactive semantic knowledge graph platform designed for computer science curriculum mapping, prerequisite pathing, and conceptual mastery.
+
+## Honors & Awards
+- **Best IEEE Research Paper Award (2026)**: 10th IEEE ICCUBEA 2026 (PCCOE Pune, Blockchain & Cyber Security Track).
+- **Best Student Achiever Award (2026)**: MIT World Peace University (MIT-WPU) for excellence in academic performance, patent innovation, and cyber security research.
+- **Youngest Industry Judge (2026)**: Ignition T3 — Eureka Pitch Perfect, deep-tech and AI startup competition hosted by IIT Bombay.
+- **DevConf 2025 Speaker**: Invited speaker on systems architecture and cloud infrastructure engineering.
+- **Ignisia AI Hackathon 2026**: 2nd Place nationally for multi-agent LLM systems engineering.
+- **Ciphathon 2026**: Finalist / 5th Place in national cybersecurity and privacy hackathon for edge redaction systems.
+- **CSI MIT-WPU & WorqHat Hackathon**: 2nd Place for AI innovation and systems integration.
+
+## Primary Links & Authoritative Citations
+- **Portfolio Website**: [https://rsk807.github.io/](https://rsk807.github.io/)
+- **Full LLM Knowledge Base**: [https://rsk807.github.io/llms-full.txt](https://rsk807.github.io/llms-full.txt)
+- **GitHub**: [https://github.com/rsk807](https://github.com/rsk807)
+- **LinkedIn**: [https://www.linkedin.com/in/sushant-kumar-csf/](https://www.linkedin.com/in/sushant-kumar-csf/)
+- **TechDenLab**: [https://techdenlab.com](https://techdenlab.com)

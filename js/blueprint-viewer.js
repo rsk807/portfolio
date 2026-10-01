@@ -7,7 +7,51 @@
 document.addEventListener('DOMContentLoaded', () => {
   initBlueprintMedia();
   initLightbox();
+  initAssetProtection();
 });
+
+window.PROTECTED_SELECTOR = window.PROTECTED_SELECTOR || '.protected-asset, .sketch-page-content, .image-frame, .blueprint-sketch-placeholder, .cd-disc, .swordsman-video, .blueprint-video-frame, .blueprint-real-media';
+
+/**
+ * Displays a stylish archival protection toast when casual asset downloads or context menus are attempted.
+ */
+function showProtectionNotice() {
+  let notice = document.querySelector('.protection-notice');
+  if (!notice) {
+    notice = document.createElement('div');
+    notice.className = 'protection-notice';
+    notice.setAttribute('role', 'status');
+    notice.setAttribute('aria-live', 'polite');
+    notice.textContent = '🔒 Archival Record: Direct download is restricted. Official engineering inquiries: see Contact Memo.';
+    document.body.appendChild(notice);
+  }
+  if (window._protectionNoticeTimer) {
+    clearTimeout(window._protectionNoticeTimer);
+  }
+  notice.classList.remove('show');
+  void notice.offsetWidth;
+  notice.classList.add('show');
+  window._protectionNoticeTimer = setTimeout(() => {
+    notice.classList.remove('show');
+  }, 2800);
+}
+window.showProtectionNotice = window.showProtectionNotice || showProtectionNotice;
+
+/**
+ * Attaches right-click context menu interceptors for protected archival media.
+ */
+function initAssetProtection() {
+  if (window._assetProtectionInitialized) return;
+  window._assetProtectionInitialized = true;
+
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target && e.target.closest && e.target.closest(window.PROTECTED_SELECTOR)) {
+      e.preventDefault();
+      (window.showProtectionNotice || showProtectionNotice)();
+    }
+  }, { capture: true });
+}
+window.initAssetProtection = window.initAssetProtection || initAssetProtection;
 
 /**
  * Initializes and lazy-loads project blueprints and media components.
@@ -43,10 +87,15 @@ function initializeContainerMedia(container) {
   if (mediaType === 'video') {
     // Generate Video element
     const video = document.createElement('video');
-    video.className = 'blueprint-real-media';
+    video.className = 'blueprint-real-media protected-asset';
     video.src = mediaSrc;
     video.loop = true;
     video.playsInline = true;
+    video.draggable = false;
+    video.setAttribute('draggable', 'false');
+    video.setAttribute('controlsList', 'nodownload nofullscreen noremoteplayback');
+    video.setAttribute('disablePictureInPicture', '');
+    video.disablePictureInPicture = true;
     
     // Read user mute preferences
     const isMuted = sessionStorage.getItem('vacars_muted') !== 'false';
@@ -71,12 +120,14 @@ function initializeContainerMedia(container) {
   } else {
     // Generate Image element
     const img = document.createElement('img');
-    img.className = 'blueprint-real-media';
+    img.className = 'blueprint-real-media protected-asset';
     img.src = mediaSrc;
     const blueprintLabel = container.querySelector('.blueprint-label')?.textContent?.trim() || 'Blueprint Spec';
     const blueprintStamp = container.querySelector('.blueprint-stamp')?.textContent?.trim() || '';
     img.alt = `${blueprintLabel}${blueprintStamp ? ' - ' + blueprintStamp : ''} - Technical Architecture Specification by Sushant Kumar`;
     img.loading = 'lazy';
+    img.draggable = false;
+    img.setAttribute('draggable', 'false');
     
     img.addEventListener('load', () => {
       skeleton.classList.add('fade-out');
@@ -375,6 +426,19 @@ function initLightbox() {
   const fitOriginalBtn = document.getElementById('fit-original');
   
   if (!overlay || !closeBtn || !image || !imgWrapper) return;
+  
+  // Protect lightbox image element against direct downloads
+  image.draggable = false;
+  image.setAttribute('draggable', 'false');
+  image.classList.add('protected-asset');
+
+  // Inject unobtrusive watermark in the corner if not already present
+  if (!overlay.querySelector('.lightbox-watermark')) {
+    const watermark = document.createElement('div');
+    watermark.className = 'lightbox-watermark';
+    watermark.textContent = '© Sushant Kumar • Confidential Engineering Log';
+    overlay.appendChild(watermark);
+  }
   
   window.openLightbox = function(src) {
     image.src = src;

@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://rsk807.github.io/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -37,9 +37,15 @@
       <image:caption>Autonomous multi-agent RFP parsing, semantic vector search, and proposal synthesis platform</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://rsk807.github.io/sk_logo_512x512.png</image:loc>
+      <image:loc>https://rsk807.github.io/assets/icons/sk_logo_512x512.png</image:loc>
       <image:title>Sushant Kumar Engineering Insignia</image:title>
       <image:caption>Official monogram and engineering insignia of Sushant Kumar</image:caption>
     </image:image>
+  </url>
+  <url>
+    <loc>https://rsk807.github.io/design-system.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

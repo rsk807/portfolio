@@ -1,7 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
   initBeyondInteractiveAccordion();
   initBeyondLightboxArrows();
+  initAssetProtection();
 });
+
+window.PROTECTED_SELECTOR = window.PROTECTED_SELECTOR || '.protected-asset, .sketch-page-content, .image-frame, .blueprint-sketch-placeholder, .cd-disc, .swordsman-video, .blueprint-video-frame, .blueprint-real-media';
+
+/**
+ * Displays a stylish archival protection toast when casual asset downloads or context menus are attempted.
+ */
+function showProtectionNotice() {
+  let notice = document.querySelector('.protection-notice');
+  if (!notice) {
+    notice = document.createElement('div');
+    notice.className = 'protection-notice';
+    notice.setAttribute('role', 'status');
+    notice.setAttribute('aria-live', 'polite');
+    notice.textContent = '🔒 Archival Record: Direct download is restricted. Official engineering inquiries: see Contact Memo.';
+    document.body.appendChild(notice);
+  }
+  if (window._protectionNoticeTimer) {
+    clearTimeout(window._protectionNoticeTimer);
+  }
+  notice.classList.remove('show');
+  void notice.offsetWidth;
+  notice.classList.add('show');
+  window._protectionNoticeTimer = setTimeout(() => {
+    notice.classList.remove('show');
+  }, 2800);
+}
+window.showProtectionNotice = window.showProtectionNotice || showProtectionNotice;
+
+/**
+ * Attaches right-click context menu interceptors for protected archival media.
+ */
+function initAssetProtection() {
+  if (window._assetProtectionInitialized) return;
+  window._assetProtectionInitialized = true;
+
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target && e.target.closest && e.target.closest(window.PROTECTED_SELECTOR)) {
+      e.preventDefault();
+      (window.showProtectionNotice || showProtectionNotice)();
+    }
+  }, { capture: true });
+}
+window.initAssetProtection = window.initAssetProtection || initAssetProtection;
 
 // Archive loaded state machine to prevent duplicate dynamic DOM injection
 const loadedArchives = {
@@ -143,8 +187,8 @@ function lazyLoadSketches() {
 
     wrapper.innerHTML = `
       ${attachmentHtml}
-      <div class="sketch-page-content" data-full="${src}">
-        <img src="${src}" alt="Sushant Kumar Notebook Ideation Sketch ${index + 1} - Archival Technical and Design Concept Drawing" loading="lazy">
+      <div class="sketch-page-content protected-asset" data-full="${src}">
+        <img src="${src}" alt="Sushant Kumar Notebook Ideation Sketch ${index + 1} - Archival Technical and Design Concept Drawing" loading="lazy" draggable="false" class="protected-asset">
         <span class="sketch-spec-label">SKETCH-SPEC // REF: BE-01-${index + 1}</span>
       </div>
     `;
@@ -179,8 +223,8 @@ function lazyLoadSculptures() {
     wrapper.style.transform = `rotate(${angle}deg)`;
 
     wrapper.innerHTML = `
-      <div class="image-frame" data-full="${src}">
-        <img src="${src}" alt="Sushant Kumar Clay Sculpture Study ${index + 1} - Archival Handcrafted Studio Sculpture Specimen" loading="lazy">
+      <div class="image-frame protected-asset" data-full="${src}">
+        <img src="${src}" alt="Sushant Kumar Clay Sculpture Study ${index + 1} - Archival Handcrafted Studio Sculpture Specimen" loading="lazy" draggable="false" class="protected-asset">
         <div class="image-frame-caption">STUDIO REF // BE-02-${index + 1}</div>
       </div>
     `;
@@ -222,8 +266,8 @@ function mountSwordsmanVideo() {
   wrapper.className = 'video-frame-wrapper fade-slide-up-in';
 
   wrapper.innerHTML = `
-    <div class="blueprint-video-frame">
-      <video class="swordsman-video" src="${src}" loop muted playsinline preload="metadata" webkit-playsinline></video>
+    <div class="blueprint-video-frame protected-asset">
+      <video class="swordsman-video protected-asset" src="${src}" loop muted playsinline preload="metadata" webkit-playsinline draggable="false" controlsList="nodownload nofullscreen noremoteplayback" disablePictureInPicture></video>
       <div class="video-overlay-controls">
         <button class="video-control-btn play-pause-btn" aria-label="Play/Pause">
           <svg class="control-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -246,6 +290,11 @@ function mountSwordsmanVideo() {
 
   // Setup control listeners
   const video = wrapper.querySelector('.swordsman-video');
+  video.draggable = false;
+  video.setAttribute('draggable', 'false');
+  video.setAttribute('controlsList', 'nodownload nofullscreen noremoteplayback');
+  video.setAttribute('disablePictureInPicture', '');
+  video.disablePictureInPicture = true;
   const playPauseBtn = wrapper.querySelector('.play-pause-btn');
   const muteBtn = wrapper.querySelector('.mute-btn');
   const fullscreenBtn = wrapper.querySelector('.fullscreen-btn');
@@ -351,6 +400,14 @@ function initBeyondLightboxArrows() {
     const image = document.getElementById('lightbox-image');
     if (!image || !image.src || !window.BEYOND_ASSETS) return;
 
+    // Ensure watermark is present in overlay
+    if (!overlay.querySelector('.lightbox-watermark')) {
+      const watermark = document.createElement('div');
+      watermark.className = 'lightbox-watermark';
+      watermark.textContent = '© Sushant Kumar • Confidential Engineering Log';
+      overlay.appendChild(watermark);
+    }
+
     // Build lists of full urls
     const sketches = BEYOND_ASSETS.sketches.map(s => `field_notes/recent_sketches/${s}`);
     const sculptures = BEYOND_ASSETS.sculptures.map(s => `field_notes/Sculptures_Youngerself/${s}`);
@@ -366,10 +423,16 @@ function initBeyondLightboxArrows() {
     if (e.key === 'ArrowRight') {
       const nextIndex = (index + 1) % allMedia.length;
       image.src = allMedia[nextIndex];
+      image.draggable = false;
+      image.setAttribute('draggable', 'false');
+      image.classList.add('protected-asset');
       resetLightboxZoom();
     } else if (e.key === 'ArrowLeft') {
       const prevIndex = (index - 1 + allMedia.length) % allMedia.length;
       image.src = allMedia[prevIndex];
+      image.draggable = false;
+      image.setAttribute('draggable', 'false');
+      image.classList.add('protected-asset');
       resetLightboxZoom();
     }
   });

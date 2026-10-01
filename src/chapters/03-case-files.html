@@ -1,0 +1,695 @@
+
+        <!-- ==========================================
+             CHAPTER 03: ENGINEERING CASE FILES (Page 028)
+             ========================================== -->
+        <section id="chapter-03" class="notebook-chapter-section" data-chapter="03" data-title="Case Files" data-page-num="028" style="position: relative;">
+          
+          <header class="chapter-header">
+            <div class="chapter-number">Chapter 03</div>
+            <h2 class="chapter-title">Engineering Case Files</h2>
+            <p class="chapter-subtitle">Documented systems, experiments, research, and production work.</p>
+            <div class="chapter-divider"></div>
+          </header>
+
+          <!-- ==========================================
+               CASE FILE 001 // OMNISCIENT
+               ========================================== -->
+          <article class="case-file-block" id="omniscient-app">
+            <span id="omniscient" class="visually-hidden" aria-hidden="true"></span>
+            <span class="handwritten-annotation-ch2" style="top: 10px; right: 20px; transform: rotate(-3deg);" aria-hidden="true">Patent Published</span>
+            
+            <div class="case-file-label">Case File 001</div>
+            <h3 class="case-file-title">Omniscient — Digital Forensics &amp; Cybercrime Investigation Platform <span class="badge badge-blue" style="margin-left: var(--space-sm); vertical-align: middle; font-size: 0.7rem; padding: 2px 6px;">PATENT PUBLISHED</span></h3>
+
+            <!-- Metadata Sheet -->
+            <div class="case-metadata-grid">
+              <div class="case-meta-item">
+                <span class="case-meta-key">Classification</span>
+                <span class="case-meta-val">Digital Forensics &amp; Cybercrime Investigation</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Status</span>
+                <span class="case-meta-val" style="color: var(--color-accent-blue); font-weight: bold;">Patent Published</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Patent ID</span>
+                <span class="case-meta-val">202521077464</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Authority</span>
+                <span class="case-meta-val">Indian Patent Office (InPASS)</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Publication</span>
+                <span class="case-meta-val"><a href="https://www.linkedin.com/posts/sushant-kumar-csf_patent-cybersecurity-digitalforensics-share-7431899800880635905-P-lY/" target="_blank" rel="noopener noreferrer">PATENT RECORD →</a></span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Source</span>
+                <span class="case-meta-val"><a href="https://github.com/rsk807/omniscient" target="_blank" rel="noopener noreferrer">Explore Omniscient</a></span>
+              </div>
+            </div>
+
+            <!-- Investigation Details -->
+            <div class="grid-12">
+              <div class="col-8">
+                
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Question</h4>
+                  <p class="case-investigation-body">
+                    How can digital forensics analysts automate intelligence extraction from fragmented social channels and API responses without exhausting manual investigation hours?
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Background</h4>
+                  <p class="case-investigation-body">
+                    Cyber intelligence extraction involves navigating massive API structures, rate-limiting, and noisy user streams. Solving this is vital to drastically reducing the time spent by digital forensics investigators when hunting operational threat vectors.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Objective</h4>
+                  <p class="case-investigation-body">
+                    To build a digital forensics platform leveraging LLMs and API reverse engineering to parse channels and extract actionable threat intelligence.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Approach</h4>
+                  <p class="case-investigation-body">
+                    Decoupled architecture separating web scraping and reverse-engineered API gateways from LLM reasoning components. Rather than querying models on raw noise, we pre-process headers and structure JSON datasets to optimize token usage.
+                  </p>
+                </div>
+
+                <!-- Dedicated Patent Publication Section -->
+                <div class="case-investigation-section" style="border-left: 3px solid var(--color-accent-blue); padding-left: var(--space-md); margin-top: var(--space-md); background-color: var(--color-paper-light); padding-top: var(--space-xs); padding-bottom: var(--space-xs); border-radius: var(--radius-sm);">
+                  <h4 class="case-investigation-title" style="margin-bottom: var(--space-xs);">PATENT PUBLICATION</h4>
+                  <p class="case-investigation-body" style="margin-bottom: var(--space-2xs);">
+                    <strong>Title:</strong> A System and Method for Dynamic Cybercrime Investigation Using Automated Data Extraction and Analysis
+                  </p>
+                  <p class="case-investigation-body" style="margin-bottom: var(--space-2xs);">
+                    <strong>Patent ID:</strong> 202521077464 &nbsp;|&nbsp; <strong>Status:</strong> <span style="color: var(--color-accent-blue); font-weight: bold;">Published</span> (Published Indian Patent Application)
+                  </p>
+                  <p class="case-investigation-body" style="margin-bottom: var(--space-2xs);">
+                    <strong>Publication Authority:</strong> Indian Patent Office (InPASS)
+                  </p>
+                  <p class="case-investigation-body" style="margin-bottom: 0;">
+                    <strong>Reference:</strong> <a href="https://www.linkedin.com/posts/sushant-kumar-csf_patent-cybersecurity-digitalforensics-share-7431899800880635905-P-lY/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent-blue); font-weight: var(--weight-semibold); text-decoration: underline;">[ View Patent Publication ]</a>
+                  </p>
+                </div>
+
+              </div>
+
+              <!-- Tech Spec side panel -->
+              <div class="col-4">
+                <div class="stack-spec-card">
+                  <div class="stack-spec-title">System Specs</div>
+                  <ul class="stack-spec-list">
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Language</span>
+                      <span class="stack-spec-item-val">Python</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">AI Agent</span>
+                      <span class="stack-spec-item-val">LLM APIs</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Scraping</span>
+                      <span class="stack-spec-item-val">API Reverse Eng</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Cache</span>
+                      <span class="stack-spec-item-val">Redis</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Patent</span>
+                      <span class="stack-spec-item-val" style="color: var(--color-accent-blue); font-weight: bold;">Published InPASS</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blueprint sketch -->
+            <div class="blueprint-sketch-placeholder interactive-blueprint" data-media-type="image" data-media-src="assets/images/omniscient.png">
+              <div class="blueprint-skeleton"></div>
+              <div class="blueprint-media-frame"></div>
+              <div class="blueprint-grid-overlay">
+                <span class="blueprint-label">Omniscient Forensics Processing Flow</span>
+                <span class="blueprint-sublabel">[ API Gateways ] ➔ [ Data Sanitization Block ] ➔ [ LLM Inference Engine ] ➔ [ Forensic Report ]</span>
+                <span class="blueprint-stamp">DIAGRAM REF: SK-OMS-01 // PATENT PUBLISHED</span>
+              </div>
+              <div class="blueprint-hover-hint">Click to Zoom Spec</div>
+            </div>
+
+            <!-- Decisions, Results, Lessons -->
+            <div class="grid-12">
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Design Decisions // Trade-offs</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary);">
+                  We chose sandboxed headless scraping nodes rather than high-resource browsers to prevent detection and tracebacks during automated runs. Concurrency queues managed via Redis ensured that investigator time is reduced from hours to single-digit minutes.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Lessons Learned</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary); margin-bottom: 0;">
+                  LLM hallucinations on raw data dumps are mitigated by structuring raw scraped arrays into strict key-value JSON formats prior to model execution.
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-md" style="font-family: var(--font-handwritten); color: var(--color-accent-blue);">
+              * Field note: Forensics data parser latency minimized to 8.2s per log sequence. Published Indian Patent Application (ID: 202521077464).
+            </p>
+          </article>
+
+          <!-- ==========================================
+               CASE FILE 002 // RAKSHANETRA
+               ========================================== -->
+          <article class="case-file-block" id="rakshanetra">
+            <span class="handwritten-annotation-ch2" style="top: 10px; right: 20px; transform: rotate(-1deg);" aria-hidden="true">Edge Sanitizer</span>
+            
+            <div class="case-file-label">Case File 002</div>
+            <h3 class="case-file-title">RakshaNetra — Proactive Data Leakage Prevention for LLMs</h3>
+
+            <!-- Metadata Sheet -->
+            <div class="case-metadata-grid">
+              <div class="case-meta-item">
+                <span class="case-meta-key">Classification</span>
+                <span class="case-meta-val">Cybersecurity + Privacy + Enterprise</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Status</span>
+                <span class="case-meta-val" style="color: var(--color-accent-blue);">Prototype Validated</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Year</span>
+                <span class="case-meta-val">2026</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Execution Edge</span>
+                <span class="case-meta-val">Local Browser Proxy</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Source</span>
+                <span class="case-meta-val"><a href="https://github.com/rsk807/rakshak-pii" target="_blank">Explore RakshaNetra</a></span>
+              </div>
+            </div>
+
+            <!-- Investigation Details -->
+            <div class="grid-12">
+              <div class="col-8">
+                
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Question</h4>
+                  <p class="case-investigation-body">
+                    How do we prevent sensitive enterprise metrics, API tokens, and user credentials from leaking to public LLM endpoints through web browsers and API relays?
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Background</h4>
+                  <p class="case-investigation-body">
+                    Organizations deploying third-party generative models risk exposing intellectual property. Sanitization must occur at the client edge prior to packet transmission.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Objective</h4>
+                  <p class="case-investigation-body">
+                    Build a local-first browser interception proxy that redacts sensitive text patterns and images in real-time.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Approach</h4>
+                  <p class="case-investigation-body">
+                    Client-side interception via service workers and browser proxy layers. Intercepts user prompts, processes them through local lightweight patterns, and sanitizes data.
+                  </p>
+                </div>
+
+              </div>
+
+              <!-- Tech Spec side panel -->
+              <div class="col-4">
+                <div class="stack-spec-card">
+                  <div class="stack-spec-title">System Specs</div>
+                  <ul class="stack-spec-list">
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Stack</span>
+                      <span class="stack-spec-item-val">MERN</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Proxy Core</span>
+                      <span class="stack-spec-item-val">Service Workers</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Redaction</span>
+                      <span class="stack-spec-item-val">Regex &amp; Local Model</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">DB</span>
+                      <span class="stack-spec-item-val">MongoDB</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blueprint sketch -->
+            <div class="blueprint-sketch-placeholder interactive-blueprint" data-media-type="image" data-media-src="assets/images/rakshanetra.png">
+              <div class="blueprint-skeleton"></div>
+              <div class="blueprint-media-frame"></div>
+              <div class="blueprint-grid-overlay">
+                <span class="blueprint-label">RakshaNetra Interception Flow</span>
+                <span class="blueprint-sublabel">[ User Input ] ➔ [ Service Worker Hook ] ➔ [ Local Regex / Classifier ] ➔ [ API Request ]</span>
+                <span class="blueprint-stamp">DIAGRAM REF: SK-RKN-02</span>
+              </div>
+              <div class="blueprint-hover-hint">Click to Zoom Spec</div>
+            </div>
+
+            <!-- Decisions, Results, Lessons -->
+            <div class="grid-12">
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Design Decisions // Trade-offs</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary);">
+                  Prompts are sanitized entirely inside sandboxed JS workers before packet serialization. No data is stored outside local memory to prevent interception. Highly optimized redaction patterns run in under 14ms.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Lessons Learned</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary); margin-bottom: 0;">
+                  Regular expressions are highly efficient for structured tokens (API keys), but machine learning classifiers are required to redact unstructured natural language details.
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-md" style="font-family: var(--font-handwritten); color: var(--color-accent-blue);">
+              * Field note: Local redaction sanitizes sensitive inputs under 14ms latency.
+            </p>
+          </article>
+
+          <!-- ==========================================
+               CASE FILE 003 // BIDFORGE
+               ========================================== -->
+          <article class="case-file-block" id="bidforge">
+            <span class="handwritten-annotation-ch2" style="top: 10px; right: 20px; transform: rotate(1deg);" aria-hidden="true">Multi-Agent</span>
+            
+            <div class="case-file-label">Case File 003</div>
+            <h3 class="case-file-title">BidForge — Automated RFP Multi-Agent System</h3>
+
+            <!-- Metadata Sheet -->
+            <div class="case-metadata-grid">
+              <div class="case-meta-item">
+                <span class="case-meta-key">Classification</span>
+                <span class="case-meta-val">LLM + Multi-Agent Automation</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Status</span>
+                <span class="case-meta-val" style="color: var(--color-accent-blue);">Prototype Deployed</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Year</span>
+                <span class="case-meta-val">2026</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Engine Core</span>
+                <span class="case-meta-val">LangChain / Gemini 2.5</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Source</span>
+                <span class="case-meta-val"><a href="https://github.com/rsk807/BidForge" target="_blank">Explore BidForge</a></span>
+              </div>
+            </div>
+
+            <!-- Investigation Details -->
+            <div class="grid-12">
+              <div class="col-8">
+                
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Question</h4>
+                  <p class="case-investigation-body">
+                    How can organizations accelerate massive RFP (Request for Proposal) analysis and generate precise, contextually aligned bidding documents without hours of manual compilation?
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Background</h4>
+                  <p class="case-investigation-body">
+                    RFP processing involves digesting thousands of requirements and semantic cross-referencing against product lists, leading to high administrative latencies.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Objective</h4>
+                  <p class="case-investigation-body">
+                    Architect a multi-agent AI system automating requirements exploration, inventory matching, and document synthesis.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Approach</h4>
+                  <p class="case-investigation-body">
+                    Pipeline separating analysis into modular steps: Parse, Explore, Summarize, and Generate. Employs LangChain and Gemini 2.5 Flash agents combined with vector index matching.
+                  </p>
+                </div>
+
+              </div>
+
+              <!-- Tech Spec side panel -->
+              <div class="col-4">
+                <div class="stack-spec-card">
+                  <div class="stack-spec-title">System Specs</div>
+                  <ul class="stack-spec-list">
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Engine</span>
+                      <span class="stack-spec-item-val">Bun / TypeScript</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Agents</span>
+                      <span class="stack-spec-item-val">LangChain / Gemini</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Retrieval</span>
+                      <span class="stack-spec-item-val">MongoDB Vector</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Storage</span>
+                      <span class="stack-spec-item-val">AWS S3</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blueprint sketch -->
+            <div class="blueprint-sketch-placeholder interactive-blueprint" data-media-type="image" data-media-src="assets/images/bidforge.png">
+              <div class="blueprint-skeleton"></div>
+              <div class="blueprint-media-frame"></div>
+              <div class="blueprint-grid-overlay">
+                <span class="blueprint-label">BidForge Multi-Agent Pipeline</span>
+                <span class="blueprint-sublabel">[ RFP Inputs ] ➔ [ Parse / Explore Agents ] ➔ [ Vector Semantic Search ] ➔ [ AWS S3 PDF Generation ]</span>
+                <span class="blueprint-stamp">DIAGRAM REF: SK-BDF-03</span>
+              </div>
+              <div class="blueprint-hover-hint">Click to Zoom Spec</div>
+            </div>
+
+            <!-- Decisions, Results, Lessons -->
+            <div class="grid-12">
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Design Decisions // Trade-offs</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary);">
+                  Utilized Bun's native TS execution and asynchronous multi-agent orchestration to reduce proposal generation times from days to single-digit minutes. Vector search uses HuggingFace embeddings inside MongoDB.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Lessons Learned</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary); margin-bottom: 0;">
+                  Multi-agent coordination requires strict JSON response format schemas; unconstrained LLM answers will break the downstream compilation pipelines.
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-md" style="font-family: var(--font-handwritten); color: var(--color-accent-blue);">
+              * Result: RFP analysis processing latency reduced to under 45 seconds.
+            </p>
+          </article>
+
+          <!-- ==========================================
+               CASE FILE 004 // VACARS
+               ========================================== -->
+          <article class="case-file-block" id="vacars">
+            <span class="handwritten-annotation-ch2" style="top: 10px; right: 20px; transform: rotate(2deg);" aria-hidden="true">Springer Journal Publication</span>
+            
+            <div class="case-file-label">Case File 004</div>
+            <h3 class="case-file-title">VACARS — Voice Assisted Context Aware Response System <span class="badge badge-blue" style="margin-left: var(--space-sm); vertical-align: middle; font-size: 0.7rem; padding: 2px 6px;">SPRINGER JOURNAL</span></h3>
+
+            <!-- Metadata Sheet -->
+            <div class="case-metadata-grid">
+              <div class="case-meta-item">
+                <span class="case-meta-key">Classification</span>
+                <span class="case-meta-val">IoT + AI Assisted Smart Helmet System</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Status</span>
+                <span class="case-meta-val" style="color: var(--color-accent-blue); font-weight: bold;">Published in a Springer Journal</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Publication</span>
+                <span class="case-meta-val">Springer Journal Publication</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">View Publication</span>
+                <span class="case-meta-val"><a href="https://www.linkedin.com/posts/sushant-kumar-csf_springernature-journalpublication-researchpublication-ugcPost-7503114970688253953-b1rO/" target="_blank" rel="noopener noreferrer">Springer Journal Article ↗</a></span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Year</span>
+                <span class="case-meta-val">2026</span>
+              </div>
+              <div class="case-meta-item">
+                <span class="case-meta-key">Source</span>
+                <span class="case-meta-val"><a href="https://www.linkedin.com/posts/sushant-kumar-csf_springernature-journalpublication-researchpublication-ugcPost-7503114970688253953-b1rO/" target="_blank" rel="noopener noreferrer">Explore VACARS</a></span>
+              </div>
+            </div>
+
+            <!-- Investigation Details -->
+            <div class="grid-12">
+              <div class="col-8">
+                
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Project Overview</h4>
+                  <p class="case-investigation-body">
+                    VACARS (Voice Assisted Context Aware Response System) is an IoT + AI assisted smart helmet system engineered to deliver context-aware heads-up assistance, environmental awareness, and real-time obstacle recognition without dependence on high-latency cloud relays.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Technologies</h4>
+                  <p class="case-investigation-body">
+                    Engineered using Raspberry Pi, offline speech recognition engines, OpenCV MobileNet-SSD edge object detection, Python / C++ thread pools, and low-latency motor-driven faceplate actuators.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Architecture</h4>
+                  <p class="case-investigation-body">
+                    Decoupled concurrent architecture balancing sensory inputs, edge acoustic processing, and video frame inference. Offloads continuous frame buffers to hardware-level DMA buffers to sustain real-time processing threads without thermal throttling.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section">
+                  <h4 class="case-investigation-title">Research Impact</h4>
+                  <p class="case-investigation-body">
+                    VACARS was published in a Springer Journal, establishing empirical metrics for edge AI inference stability and hands-free rider safety loops in safety-critical vehicle environments.
+                  </p>
+                </div>
+
+                <div class="case-investigation-section" style="border-left: 3px solid var(--color-accent-blue); padding-left: var(--space-md); margin-top: var(--space-md);">
+                  <h4 class="case-investigation-title" style="margin-bottom: var(--space-xs);">Publication Record</h4>
+                  <p class="case-investigation-body" style="margin-bottom: var(--space-2xs);">
+                    <strong>Publication:</strong> Springer Journal Publication
+                  </p>
+                  <p class="case-investigation-body" style="margin-bottom: 0;">
+                    <strong>View Publication:</strong> <a href="https://www.linkedin.com/posts/sushant-kumar-csf_springernature-journalpublication-researchpublication-ugcPost-7503114970688253953-b1rO/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent-blue); text-decoration: underline; font-weight: var(--weight-medium);">Springer Journal Publication ↗</a>
+                  </p>
+                </div>
+
+              </div>
+
+              <!-- Tech Spec side panel -->
+              <div class="col-4">
+                <div class="stack-spec-card">
+                  <div class="stack-spec-title">System Specs</div>
+                  <ul class="stack-spec-list">
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Hardware</span>
+                      <span class="stack-spec-item-val">Raspberry Pi</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Languages</span>
+                      <span class="stack-spec-item-val">Python / C++</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">CV Engine</span>
+                      <span class="stack-spec-item-val">OpenCV MobileNet</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Voice</span>
+                      <span class="stack-spec-item-val">Offline STT</span>
+                    </li>
+                    <li class="stack-spec-item">
+                      <span class="stack-spec-item-key">Journal</span>
+                      <span class="stack-spec-item-val" style="color: var(--color-accent-blue); font-weight: bold;">Springer Journal</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blueprint sketch -->
+            <div class="blueprint-sketch-placeholder interactive-blueprint" data-media-type="video" data-media-src="assets/images/vacars.mp4">
+              <div class="blueprint-skeleton"></div>
+              <div class="blueprint-media-frame"></div>
+              <div class="blueprint-grid-overlay">
+                <span class="blueprint-label">VACARS Edge Interface Diagram</span>
+                <span class="blueprint-sublabel">[ Audio Inputs ] ➔ [ Threads Balance Pool ] ➔ [ MobileNet-SSD Frames ] ➔ [ Actuators Drive ]</span>
+                <span class="blueprint-stamp">DIAGRAM REF: SK-VAC-04 // SPRINGER JOURNAL</span>
+              </div>
+            </div>
+
+            <!-- Decisions, Results, Lessons -->
+            <div class="grid-12">
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Design Decisions // Trade-offs</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary);">
+                  Component-oriented modular layout separating voice handlers from physical motor actuators. Real-time frames are offloaded to hardware-level DMA buffers to sustain real-time processing threads without thermal throttling.
+                </p>
+              </div>
+              <div class="col-6">
+                <h4 style="font-family: var(--font-notebook); font-size: var(--font-size-sm); color: var(--color-ink-primary); margin-bottom: var(--space-xs);">Lessons Learned</h4>
+                <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary); margin-bottom: 0;">
+                  DMA frame offloading is critical when combining multi-modal networks on single-board hardware, reducing CPU cycles by over 30%.
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-md" style="font-family: var(--font-handwritten); color: var(--color-accent-blue);">
+              * Prototype confirmed: Voice-actuated faceplate triggers motors under 350ms. VACARS was published in a Springer Journal.
+            </p>
+          </article>
+
+        
+          <!-- ==========================================
+               ADDITIONAL SYSTEMS TESTBEDS & CASE FILES
+               ========================================== -->
+          <div style="margin-top: var(--space-3xl); padding-top: var(--space-2xl); border-top: 2px solid var(--color-ink-primary);">
+            <div class="case-file-label">Systems &amp; Research Index</div>
+            <h3 class="case-file-title" style="margin-bottom: var(--space-md);">Specialized Engineering Systems &amp; Testbeds</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-ink-secondary); margin-bottom: var(--space-xl);">
+              Documented architectural testbeds, telemetry ingest engines, and specialized cyber-physical computing prototypes developed across laboratory investigations.
+            </p>
+
+            <div class="grid-12" style="gap: var(--space-xl);">
+              <!-- Orbit Telemetry -->
+              <div class="col-6">
+                <article class="field-assignment-card" id="orbit-telemetry" style="margin-top: 0; height: 100%;">
+                  <div class="field-assignment-header">
+                    <div>
+                      <span class="field-assignment-ref">Case File 005 // Systems Telemetry</span>
+                      <h4 class="field-assignment-title">Orbit Telemetry</h4>
+                      <span class="field-assignment-company">Real-Time Ingestion &amp; Orbital Tracking Platform</span>
+                    </div>
+                    <span class="badge badge-blue">ACTIVE</span>
+                  </div>
+                  <div class="field-assignment-section">
+                    <h5 class="field-assignment-sec-title">System Focus</h5>
+                    <p class="field-assignment-sec-body">
+                      Real-time telemetry monitoring and aerospace sensor data ingestion platform designed for high-frequency tracking, signal stream normalization, and algorithmic anomaly detection.
+                    </p>
+                  </div>
+                  <div class="case-metadata-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 0; padding: var(--space-sm); font-size: var(--font-size-xs);">
+                    <div class="case-meta-item">
+                      <span class="case-meta-key">Architecture</span>
+                      <span class="case-meta-val" style="font-size: var(--font-size-xs);">Stream Ingestion / IoT</span>
+                    </div>
+                    <div class="case-meta-item">
+                      <span class="case-meta-key">Domain</span>
+                      <span class="case-meta-val" style="font-size: var(--font-size-xs);">Telemetry &amp; Orbitals</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Cyber Bhairava -->
+              <div class="col-6">
+                <article class="field-assignment-card" id="cyber-bhairava" style="margin-top: 0; height: 100%;">
+                  <div class="field-assignment-header">
+                    <div>
+                      <span class="field-assignment-ref">Case File 006 // Threat Intelligence</span>
+                      <h4 class="field-assignment-title">Cyber Bhairava</h4>
+                      <span class="field-assignment-company">Cybersecurity Threat Intel &amp; Incident Response</span>
+                    </div>
+                    <span class="badge badge-blue">SEC-OPS</span>
+                  </div>
+                  <div class="field-assignment-section">
+                    <h5 class="field-assignment-sec-title">System Focus</h5>
+                    <p class="field-assignment-sec-body">
+                      Comprehensive cybersecurity threat intelligence, automated vulnerability assessment, and digital incident response platform engineered for proactive adversarial reconnaissance and perimeter defense.
+                    </p>
+                  </div>
+                  <div class="case-metadata-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 0; padding: var(--space-sm); font-size: var(--font-size-xs);">
+                    <div class="case-meta-item">
+                      <span class="case-meta-key">Architecture</span>
+                      <span class="case-meta-val" style="font-size: var(--font-size-xs);">Threat Intel Engine</span>
+                    </div>
+                    <div class="case-meta-item">
+                      <span class="case-meta-key">Target</span>
+                      <span class="case-meta-val" style="font-size: var(--font-size-xs);">Linux / Enterprise</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- PS151 -->
+              <div class="col-6">
+                <article class="field-assignment-card" id="ps151" style="margin-top: 0; height: 100%;">
+                  <div class="field-assignment-header">
+                    <div>
+                      <span class="field-assignment-ref">Case File 007 // Hardware Security</span>
+                      <h4 class="field-assignment-title">PS151</h4>
+                      <span class="field-assignment-company">Hardware Security &amp; Firmware Evaluation Testbed</span>
+                    </div>
+                    <span class="badge badge-blue">EMBEDDED</span>
+                  </div>
+                  <div class="field-assignment-section">
+                    <h5 class="field-assignment-sec-title">System Focus</h5>
+                    <p class="field-assignment-sec-body">
+                      Embedded hardware security and firmware evaluation testbed engineered for mission-critical physical computing systems, testing signal integrity, side-channel resilience, and fault tolerance.
+                    </p>
+                  </div>
+                  <div class="case-metadata-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 0; padding: var(--space-sm); font-size: var(--font-size-xs);">
+                    <div class="case-meta-item">
+                      <span class="case-meta-key">Platform</span>
+                      <span class="case-meta-val" style="font-size: var(--font-size-xs);">Microcontroller / PCB</span>
+                    </div>
+                    <div class="case-meta-item">
+                      <span class="case-meta-key">Testing</span>
+                      <span class="case-meta-val" style="font-size: var(--font-size-xs);">Firmware &amp; Faults</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- EduGraph -->
+              <div class="col-6">
+                <article class="field-assignment-card" id="edugraph" style="margin-top: 0; height: 100%;">
+                  <div class="field-assignment-header">
+                    <div>
+                      <span class="field-assignment-ref">Case File 008 // Knowledge Graphs</span>
+                      <h4 class="field-assignment-title">EduGraph</h4>
+                      <span class="field-assignment-company">Interactive Semantic Knowledge Graph System</span>
+                    </div>
+                    <span class="badge badge-blue">WEB / AI</span>
+                  </div>
+                  <div class="field-assignment-section">
+                    <h5 class="field-assignment-sec-title">System Focus</h5>
+                    <p class="field-assignment-sec-body">
+                      Interactive semantic knowledge graph platform designed for educational curriculum mapping, prerequisite pathing, and conceptual mastery in computer science and cybersecurity education.
+                    </p>
+                  </div>
+                  <div class="case-metadata-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 0; padding: var(--space-sm); font-size: var(--font-size-xs);">
+                    <div class="case-meta-item">
+                      <span class="case-meta-key">Graph Model</span>
+                      <span class="case-meta-val" style="font-size: var(--font-size-xs);">Semantic Knowledge DAG</span>
+                    </div>
+                    <div class="case-meta-item">
+                      <span class="case-meta-key">Application</span>
+                      <span class="case-meta-val" style="font-size: var(--font-size-xs);">Curriculum &amp; Learning</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+        </section>
