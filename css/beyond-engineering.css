@@ -163,6 +163,7 @@
 .beyond-section {
   margin: 0;
   transition: margin 0.5s ease-in-out;
+  scroll-margin-top: 60px;
 }
 
 .beyond-section.archive-section-expanded {
@@ -646,12 +647,26 @@
 }
 
 @media (max-width: 600px) {
+  .beyond-section.archive-section-expanded {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-lg);
+    padding-top: var(--space-md);
+  }
+  .beyond-index-card {
+    margin-bottom: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+  }
+  .beyond-intro-block {
+    margin-bottom: var(--space-sm);
+  }
   .sketches-archive-container,
   .sculptures-container,
   .music-cards-grid,
   .videos-container {
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
   }
   .sketch-page-wrapper:nth-child(even) {
     margin-top: 0;

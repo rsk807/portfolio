@@ -233,7 +233,7 @@
 }
 
 .note-color-paper {
-  background-color: var(--color-paper-light);
+  background-color: var(--color-sticky-pink);
 }
 
 /* Internal Note Typography */
@@ -349,8 +349,37 @@
 
 @media (max-width: 640px) {
   .sticky-cluster-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-sm);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .pinned-sticky-note {
+    min-height: 120px;
+    padding: 14px 8px 8px 8px;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .pinned-note-header {
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+  }
+  .pinned-note-cat {
+    font-size: 0.68rem;
+  }
+  .pinned-note-archival {
+    font-size: 0.58rem;
+  }
+  .pinned-note-bold {
+    font-size: 0.72rem;
+  }
+  .pinned-note-sub, .pinned-note-meta {
+    font-size: 0.65rem;
+  }
+  .score-key, .score-val {
+    font-size: 0.68rem;
+  }
+  .pinned-bullet-list li {
+    font-size: 0.65rem;
+    line-height: 1.3;
   }
   .note-rot-1, .note-rot-2, .note-rot-3, .note-rot-4, .note-rot-5, .note-rot-6 {
     transform: none;
@@ -358,15 +387,30 @@
   }
 }
 
+@media (max-width: 400px) {
+  .sticky-cluster-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
 /* Transitions layout note at bottom */
 .transition-log-note {
   font-family: var(--font-handwritten);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   color: var(--color-ink-secondary);
   text-align: center;
-  padding: var(--space-xl) var(--space-md);
-  margin-top: var(--space-3xl);
+  padding: var(--space-md) var(--space-sm);
+  margin-top: var(--space-xl);
   border-top: 1px dashed var(--border-color-ui);
+}
+
+@media (max-width: 768px) {
+  .transition-log-note {
+    margin-top: var(--space-md);
+    padding: var(--space-sm) var(--space-xs);
+    font-size: var(--font-size-xs);
+  }
 }
 
 /* Mobile/Tablet overrides */

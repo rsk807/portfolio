@@ -263,9 +263,9 @@
    SECTION CHAPTER HEADER DESIGN
    ========================================== */
 .chapter-header {
-  margin-top: var(--space-4xl);
-  margin-bottom: var(--space-2xl);
-  padding-top: var(--space-2xl);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-lg);
+  padding-top: var(--space-lg);
   border-top: 1px dashed var(--border-color-ui);
 }
 
@@ -307,9 +307,9 @@
    PAGE NUMBER DISPLAY IN FOOTER
    ========================================== */
 .notebook-footer {
-  margin-top: var(--space-4xl);
+  margin-top: var(--space-2xl);
   border-top: 1px dashed var(--border-color-ui);
-  padding-top: var(--space-lg);
+  padding-top: var(--space-md);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -467,24 +467,81 @@
 
 @media (max-width: 768px) {
   .slim-sticky-header {
-    height: auto;
-    padding: var(--space-sm) var(--space-md);
-    flex-wrap: wrap;
-    gap: var(--space-sm);
+    height: 48px;
+    padding: 0 var(--space-sm);
+    flex-wrap: nowrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: var(--space-xs);
+  }
+
+  .header-title {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    gap: 6px !important;
+  }
+
+  .header-attribution,
+  .header-separator,
+  .header-title .header-sep-1,
+  .header-title .header-sep-2 {
+    display: none !important;
+  }
+
+  .header-title > span:last-child {
+    display: none !important; /* Hide "Research Log" on mobile */
+  }
+
+  .header-active-chapter {
+    display: none;
   }
 
   .header-actions {
-    width: 100%;
-    justify-content: space-between;
-    border-top: 1px dashed var(--border-color-ui);
-    padding-top: var(--space-xs);
+    width: auto;
+    border-top: none;
+    padding-top: 0;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .header-icon-link {
+    display: none;
+  }
+
+  .paper-toggle-btn {
+    font-size: 10px;
+    padding: 2px 4px;
   }
 
   .mobile-menu-toggle {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 11px;
+    padding: 3px 7px;
+    font-weight: var(--weight-bold);
+    background-color: var(--color-paper-base);
   }
 
   .notebook-bookmarks-aside {
     display: none;
+  }
+
+  .chapter-header {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+    padding-top: var(--space-md);
+  }
+
+  .notebook-footer {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-sm);
+  }
+
+  .notebook-binder {
+    overflow: hidden !important;
+    max-width: 100%;
   }
 }

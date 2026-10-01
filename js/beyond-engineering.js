@@ -140,10 +140,12 @@ function expandArchiveSection(id, sectionEl, activeRow) {
     mountSwordsmanVideo();
   }
 
-  // Smoothly scroll to target opened section
+  // Smoothly scroll to top of target opened section with sticky header offset
   setTimeout(() => {
-    sectionEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }, 180);
+    const yOffset = -58;
+    const y = sectionEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+  }, 200);
 }
 
 /**
