@@ -208,7 +208,7 @@
       "@type": "ScholarlyArticle",
       "@id": "https://rsk807.github.io/#iccubea-paper",
       "name": "Published at IEEE - Best Research Paper Award (ICCUBEA 2026)",
-      "headline": "An Early-Exit Hybrid Intrusion Detection Architecture for Resource-Constrained Environments",
+      "headline": "An Early-Exit Hybrid Intrusion Detection Architecture for Resource-Constrained IoT Edge Devices",
       "author": {
         "@id": "https://rsk807.github.io/#person"
       },
