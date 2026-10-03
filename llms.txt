@@ -17,7 +17,7 @@ Sushant Kumar is an engineering researcher and systems builder based in Pune, Ma
 - [VACARS: Voice Assisted Context Aware Response System](https://www.linkedin.com/posts/sushant-kumar-csf_springernature-journalpublication-researchpublication-ugcPost-7503114970688253953-b1rO/): IoT and AI assisted smart helmet system for rider safety, edge accident detection, and context-aware speech processing.
   - **Publication**: Published in a Springer Nature journal.
   - **Key Tech**: Raspberry Pi, OpenCV MobileNet-SSD edge object detection, offline STT, low-latency motor-driven faceplate actuation (<350ms), DMA frame buffer offloading.
-- [ICCUBEA 2026 Best IEEE Research Paper Award](https://www.linkedin.com/posts/sushant-kumar-csf_bestpaperaward-ieee-iccubea2026-activity-7496944806515044352-iP5O/): Awarded Best Paper in the Blockchain & Cyber Security Track at the 10th IEEE International Conference on Computing, Communication, Control and Automation (ICCUBEA 2026), PCCOE Pune.
+- [Published at IEEE: ICCUBEA 2026 Best IEEE Research Paper](https://www.linkedin.com/posts/sushant-kumar-csf_ieee-ieeexplore-researchpublication-ugcPost-7512045429791006720-PpMR/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEwt36UBHP9xMU48Ix12BI_1ajW_kaZUZ7k): Published in IEEE Xplore; Awarded Best Paper in the Blockchain & Cyber Security Track at the 10th IEEE International Conference on Computing, Communication, Control and Automation (ICCUBEA 2026), PCCOE Pune.
   - **Paper Title**: "An Early-Exit Hybrid Intrusion Detection Architecture for Resource-Constrained Environments".
 
 ## Key Engineering Projects

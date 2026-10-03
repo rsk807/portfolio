@@ -207,12 +207,12 @@
     {
       "@type": "ScholarlyArticle",
       "@id": "https://rsk807.github.io/#iccubea-paper",
-      "name": "Best IEEE Research Paper Award - ICCUBEA 2026",
+      "name": "Published at IEEE - Best Research Paper Award (ICCUBEA 2026)",
       "headline": "An Early-Exit Hybrid Intrusion Detection Architecture for Resource-Constrained Environments",
       "author": {
         "@id": "https://rsk807.github.io/#person"
       },
-      "description": "Awarded Best Paper in the Blockchain & Cyber Security Track at the 10th IEEE International Conference on Computing, Communication, Control and Automation (ICCUBEA 2026), PCCOE Pune.",
+      "description": "Awarded Best Paper in the Blockchain & Cyber Security Track at the 10th IEEE International Conference on Computing, Communication, Control and Automation (ICCUBEA 2026), PCCOE Pune. Published in IEEE Xplore.",
       "publication": {
         "@type": "PublicationEvent",
         "name": "10th IEEE International Conference on Computing, Communication, Control and Automation (ICCUBEA 2026)",
@@ -229,8 +229,11 @@
         }
       },
       "award": "Best Paper Award (Blockchain & Cyber Security Track)",
-      "url": "https://www.linkedin.com/posts/sushant-kumar-csf_bestpaperaward-ieee-iccubea2026-activity-7496944806515044352-iP5O/",
-      "sameAs": "https://www.linkedin.com/posts/sushant-kumar-csf_bestpaperaward-ieee-iccubea2026-activity-7496944806515044352-iP5O/"
+      "url": "https://www.linkedin.com/posts/sushant-kumar-csf_ieee-ieeexplore-researchpublication-ugcPost-7512045429791006720-PpMR/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEwt36UBHP9xMU48Ix12BI_1ajW_kaZUZ7k",
+      "sameAs": [
+        "https://www.linkedin.com/posts/sushant-kumar-csf_ieee-ieeexplore-researchpublication-ugcPost-7512045429791006720-PpMR/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEwt36UBHP9xMU48Ix12BI_1ajW_kaZUZ7k",
+        "https://www.linkedin.com/posts/sushant-kumar-csf_bestpaperaward-ieee-iccubea2026-activity-7496944806515044352-iP5O/"
+      ]
     },
     {
       "@type": [
@@ -343,9 +346,9 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Best IEEE Research Paper Award - ICCUBEA 2026 (PCCOE Pune)",
-          "description": "Awarded Best Paper in Blockchain & Cyber Security Track at 10th IEEE ICCUBEA 2026.",
-          "url": "https://www.linkedin.com/posts/sushant-kumar-csf_bestpaperaward-ieee-iccubea2026-activity-7496944806515044352-iP5O/"
+          "name": "Published at IEEE - Best Research Paper Award (ICCUBEA 2026, PCCOE Pune)",
+          "description": "Awarded Best Paper in Blockchain & Cyber Security Track at 10th IEEE ICCUBEA 2026; published in IEEE Xplore.",
+          "url": "https://www.linkedin.com/posts/sushant-kumar-csf_ieee-ieeexplore-researchpublication-ugcPost-7512045429791006720-PpMR/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEwt36UBHP9xMU48Ix12BI_1ajW_kaZUZ7k"
         },
         {
           "@type": "ListItem",
@@ -432,7 +435,7 @@
           "name": "What research has Sushant Kumar published?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sushant Kumar published research in a Springer Nature journal on the VACARS smart helmet, and won the Best IEEE Research Paper Award at ICCUBEA 2026 (PCCOE Pune, Blockchain & Cyber Security Track) for his early-exit hybrid intrusion detection architecture."
+            "text": "Sushant Kumar published research in a Springer Nature journal on the VACARS smart helmet, and published research in IEEE Xplore after winning the Best IEEE Research Paper Award at ICCUBEA 2026 (PCCOE Pune, Blockchain & Cyber Security Track) for his early-exit hybrid intrusion detection architecture."
           }
         },
         {

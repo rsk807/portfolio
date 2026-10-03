@@ -97,7 +97,7 @@ Traditional digital forensics triage requires dozens of human investigator hours
 - **Incident Telemetry**: Accelerometer and gyroscopic sensor fusion detecting high-G crash impacts, automatically transmitting GPS coordinates, rider vitals, and collision velocity metrics over cellular GSM/GPRS without requiring external phone pairing.
 - **Key Empirical Finding**: Hardware DMA offloading reduced CPU instruction cycles by over 30%, preventing thermal throttling on single-board hardware during simultaneous voice processing and video inference.
 
-### 2. Best IEEE Research Paper Award - ICCUBEA 2026
+### 2. Published at IEEE: Best Research Paper Award - ICCUBEA 2026
 - **Conference**: 10th IEEE International Conference on Computing, Communication, Control and Automation (ICCUBEA 2026)
 - **Host Institution**: Pimpri Chinchwad College of Engineering (PCCOE), Pune, India
 - **Date**: 22 August 2026
@@ -105,6 +105,7 @@ Traditional digital forensics triage requires dozens of human investigator hours
 - **Award Designation**: **Best Research Paper Award**
 - **Paper Title**: *"An Early-Exit Hybrid Intrusion Detection Architecture for Resource-Constrained Environments"*
 - **Lead Author**: Sushant Kumar
+- **IEEE Publication Link**: [IEEE Xplore Publication Announcement](https://www.linkedin.com/posts/sushant-kumar-csf_ieee-ieeexplore-researchpublication-ugcPost-7512045429791006720-PpMR/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEwt36UBHP9xMU48Ix12BI_1ajW_kaZUZ7k)
 - **Award Verification**: [ICCUBEA 2026 Best Paper Award LinkedIn Record](https://www.linkedin.com/posts/sushant-kumar-csf_bestpaperaward-ieee-iccubea2026-activity-7496944806515044352-iP5O/)
 
 #### Abstract & Research Significance
