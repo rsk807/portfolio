@@ -181,9 +181,9 @@ function lazyLoadSketches() {
 
     // Attach masking tape or clips
     let attachmentHtml = '';
-    if (index === 0 || index === 3) {
+    if (index % 3 === 0) {
       attachmentHtml = `<div class="paper-clip-mini" aria-hidden="true"></div>`;
-    } else if (index === 1 || index === 4) {
+    } else if (index % 3 === 1) {
       attachmentHtml = `<div class="washi-tape-mini" aria-hidden="true"></div>`;
     }
 

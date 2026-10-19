@@ -4,7 +4,11 @@ const BEYOND_ASSETS = {
     "sketch_02.jpeg",
     "sketch_03.jpeg",
     "sketch_04.jpeg",
-    "sketch_05.jpeg"
+    "sketch_05.jpeg",
+    "sketch_06.jpeg",
+    "sketch_07.jpeg",
+    "sketch_08.jpeg",
+    "sketch_09.jpeg"
   ],
   sculptures: [
     "sculpture_01.jpeg",
