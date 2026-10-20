@@ -51,6 +51,8 @@ Sushant Kumar is an engineering researcher, cybersecurity specialist, and system
 - **Academic Honors**: Best Student Achiever Award (11 May 2026, MIT-WPU) for research distinction, patent filing, and academic excellence.
 
 ### Professional Certifications
+- **AWS Certified Machine Learning Engineer – Associate**: Official Amazon Web Services credential validating machine learning data preparation, modeling, operationalization, monitoring, and security. Verified via Credly: [https://www.credly.com/badges/ce744cf7-a97a-43f7-badd-535e494cafea/public_url](https://www.credly.com/badges/ce744cf7-a97a-43f7-badd-535e494cafea/public_url)
+- **AWS Certified Developer – Associate**: Official Amazon Web Services credential validating application life-cycle management, AWS service APIs, CLI, SDKs, containers, and automated CI/CD deployments. Verified via Credly: [https://www.credly.com/badges/f8e39ec7-ff61-4b47-8114-8b34324ce8c6/public_url](https://www.credly.com/badges/f8e39ec7-ff61-4b47-8114-8b34324ce8c6/public_url)
 - **Oracle Cloud Infrastructure 2024 Foundations Associate**: Validation of enterprise cloud architecture, compute/storage orchestration, identity and access management (IAM), and network security.
 - **Cisco Endpoint Security**: Threat containment, host-based firewalls, anomaly detection, and endpoint compliance protocols.
 - **Cisco Networking Basics**: Fundamental TCP/IP subnetting, packet inspection, routing protocols, and perimeter security.

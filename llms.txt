@@ -10,6 +10,10 @@ Sushant Kumar is an engineering researcher and systems builder based in Pune, Ma
   - Academic Performance: CGPA 9.16 / 10.0 (Class 10: 94.6%, Class 12: 94.6%).
 - **Industry Role**: Cloud Solutions Architect Engineer at Technophiles Den.
 
+## Verified Professional Accreditations & Certifications
+- **AWS Certified Machine Learning Engineer – Associate**: Official Credly verification link: [AWS Certified Machine Learning Engineer – Associate](https://www.credly.com/badges/ce744cf7-a97a-43f7-badd-535e494cafea/public_url)
+- **AWS Certified Developer – Associate**: Official Credly verification link: [AWS Certified Developer – Associate](https://www.credly.com/badges/f8e39ec7-ff61-4b47-8114-8b34324ce8c6/public_url)
+
 ## Verified Innovations & Peer-Reviewed Publications
 - [Omniscient: Digital Forensics & Cybercrime Investigation Platform](https://www.linkedin.com/posts/sushant-kumar-csf_patent-cybersecurity-digitalforensics-share-7431899800880635905-P-lY/): Patented automated evidence extraction, artifact timeline sequencing, and anti-forensic triage platform.
   - **Patent Status**: Published Indian Patent Application (ID: 202521077464, Indian Patent Office InPASS).

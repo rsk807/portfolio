@@ -1,4 +1,4 @@
-# Sushant Kumar - Engineering Dossier & Personal Research Log
+# Sushant Kumar | Engineering Dossier & Personal Research Log
 
 [![Live Portfolio](https://img.shields.io/badge/Live%20Dossier-GitHub%20Pages-2ea44f?style=for-the-badge&logo=github)](https://rsk807.github.io/portfolio/)
 [![License](https://img.shields.io/badge/License-Proprietary%20%2F%20Personal-blue?style=for-the-badge)](LICENSE)
@@ -12,10 +12,32 @@
 
 ## 🌐 Live Access
 
-| Platform | Deployment URL |
+| Platform | Production URL |
 | :--- | :--- |
-| **Primary (GitHub Pages)** | **[https://rsk807.github.io/portfolio/](https://rsk807.github.io/portfolio/)** |
-| **Alternative Mirror** | [https://portfolio-beta-plum-95.vercel.app](https://portfolio-beta-plum-95.vercel.app) |
+| **Canonical Deployment (GitHub Pages)** | **[https://rsk807.github.io/portfolio/](https://rsk807.github.io/portfolio/)** |
+
+---
+
+## 🏆 Verified AWS Certifications
+
+The portfolio features verified Amazon Web Services accreditations with official Credly verification records:
+
+| Certification | Level | Verification Transcript |
+| :--- | :--- | :--- |
+| **AWS Certified Machine Learning Engineer – Associate** | Associate | [Verify on Credly ↗](https://www.credly.com/badges/ce744cf7-a97a-43f7-badd-535e494cafea/public_url) |
+| **AWS Certified Developer – Associate** | Associate | [Verify on Credly ↗](https://www.credly.com/badges/f8e39ec7-ff61-4b47-8114-8b34324ce8c6/public_url) |
+
+---
+
+## 💻 Technology Stack
+
+Verified zero-dependency frontend architecture engineered for speed, privacy, and archival permanence:
+
+* **Core Structure**: Semantic HTML5 with modular component and chapter partials.
+* **Styling**: Vanilla CSS3 with custom properties / design tokens (`variables.css`), responsive 12-column grid, paper lift physics, and print/reduced-motion considerations.
+* **Logic**: Vanilla JavaScript (ES6+) for tab navigation, audio synthesis, blueprint lightbox zooming, and interactive state machines.
+* **Build System**: Custom zero-dependency Node.js compiler (`scripts/build.js`) for CSS concatenation/minification, HTML component assembly, and internal DOM anchor target validation.
+* **Development Server**: Native Node.js HTTP preview server (`scripts/serve.js`) supporting HTTP 206 partial content range requests for audio/video streaming.
 
 ---
 
@@ -26,24 +48,23 @@ This portfolio departs completely from generic cookie-cutter developer sites. In
 * 📓 **Twin-Loop Wire Binding & Graph Paper**: Faint 28px coordinate ruled/grid paper with red margin guides and twin-loop wire binding.
 * 📑 **Protruding Edge Tabs & Ribbon Bookmarks**: Color-coded right-edge notebook tabs for chapters 01–08 and swaying cloth bookmarks.
 * 📌 **Pinned Sticky Notes & Field Cards**: Handcrafted research snapshot notes with authentic pushpin graphics, subtle paper drop-shadows, and organic rotation jitter.
+* 🏷️ **AWS Accreditations Specimen Strip**: Compact horizontal credential strip in Chapter 01 featuring official AWS badge artwork with direct Credly verification transcripts.
 * 🎨 **Interactive Beyond Engineering Accordion**: Archival sketchbook gallery, 3D sculpture studio, and katana swordsmanship drills with dynamic stamp drop physics (`OPENED`).
 * 💿 **Music Corner CD Player**: Fully custom-engineered analog CD turntable player with realistic optical disc groove reflection, mechanical laser read arm, real-time audio oscilloscope signal visualizer, HTTP 206 range streaming, and tape position meter.
 * 🛡️ **Archival Asset Protection**: Context-menu shields, drag suppression, dynamic lightbox watermarking, and toast notifications to safeguard intellectual property and creative assets.
 
 ---
 
-## 🏗️ Modular Architecture
-
-The codebase is split into isolated, maintainable partials compiled into a single production deliverable via a zero-dependency Node compiler:
+## 🏗️ Modular Architecture & Repository Structure
 
 ```
 portfolio/
-├── index.html                      # Production compiled bundle (generated)
+├── index.html                      # Production compiled bundle (compiled deliverable)
 ├── manifest.json                   # Web App Manifest
-├── robots.txt                      # 2026 AI Bot Crawling Directives
-├── sitemap.xml                     # XML Sitemap with Image Metadata
-├── llms.txt                        # Structured Markdown Summary for AI Engines
-├── llms-full.txt                   # Complete Deep Knowledge Graph for LLMs
+├── robots.txt                      # Search crawler & AI Bot crawling directives
+├── sitemap.xml                     # XML Sitemap with image metadata & AWS badges
+├── llms.txt                        # Structured Markdown summary for AI Answer Engines
+├── llms-full.txt                   # Deep knowledge graph for LLM retrieval pipelines
 ├── css/
 │   ├── bundle.css                  # Combined CSS bundle (generated)
 │   ├── bundle.min.css              # Minified CSS bundle for production
@@ -51,7 +72,7 @@ portfolio/
 │   ├── base.css                    # Typography, reset, 12-column grid
 │   ├── navigation.css              # Slim sticky header, spine nav, drawer
 │   ├── cover.css                   # Chapter 00 responsive 4-quadrant layout
-│   ├── engineer.css                # Chapter 01 photo frame & sticky cluster
+│   ├── engineer.css                # Chapter 01 photo frame, sticky cluster & AWS cert strip
 │   ├── beyond-engineering.css      # Chapter 02 accordion & media layouts
 │   ├── case-files.css              # Chapter 03 blueprint cards & telemetry
 │   ├── music-archive.css           # BE-03 turntable CD chassis & oscilloscope
@@ -66,7 +87,7 @@ portfolio/
 ├── src/
 │   ├── chapters/                   # 9 Autonomous Chapter Partials
 │   │   ├── 00-cover.html           # Chapter 00: Engineering Dossier Cover
-│   │   ├── 01-engineer.html        # Chapter 01: The Engineer
+│   │   ├── 01-engineer.html        # Chapter 01: The Engineer & AWS Accreditations
 │   │   ├── 02-beyond-eng.html      # Chapter 02: Beyond Engineering
 │   │   ├── 03-case-files.html      # Chapter 03: Engineering Case Files
 │   │   ├── 04-research.html        # Chapter 04: Research & Innovation
@@ -76,7 +97,7 @@ portfolio/
 │   │   └── 08-contact.html         # Chapter 08: Field Contact Memo Pad
 │   └── components/                 # Reusable Layout Primitives
 │       ├── head.html               # Head tags, meta, & schema placeholder
-│       ├── schema.jsonld           # 20KB Schema.org Graph (AEO/GEO/SEO)
+│       ├── schema.jsonld           # Comprehensive Schema.org Graph (AEO/GEO/SEO)
 │       ├── loader.html             # Analog notebook loading screen
 │       ├── spine-nav.html          # Left spine bookmark bar
 │       ├── header.html             # Slim 48px sticky header
@@ -87,7 +108,9 @@ portfolio/
 ├── assets/                         # Optimized binary media
 │   ├── docs/                       # Sushant_Kumar_Resume.pdf
 │   ├── icons/                      # Logos & favicons
-│   ├── images/                     # Technical sketches & portraits
+│   ├── images/                     # Official AWS badges, technical sketches & portraits
+│   │   ├── aws-certified-machine-learning-engineer-associate.png
+│   │   └── aws-certified-developer-associate.png
 │   └── field_notes/                # Sketches & sculptures
 ├── raw_vocals/                     # Acoustic audio tracks & artwork
 └── scripts/
@@ -101,11 +124,11 @@ portfolio/
 
 The project uses a custom, zero-dependency Node compiler (`scripts/build.js`):
 
-1. **CSS Compilation**: Reads 11 stylesheets in dependency order, deduplicates `@import` declarations, and produces both `css/bundle.css` and a minified `css/bundle.min.css`.
+1. **CSS Compilation**: Reads 11 modular stylesheets in dependency order, deduplicates `@import` declarations, and produces both `css/bundle.css` and minified `css/bundle.min.css`.
 2. **Component Assembly**: Injects `schema.jsonld` into `head.html`, loads navigation components, stitches the 9 chapters into the notebook binder slot, and generates `index.html`.
-3. **Anchor Target Validation**: Scans all 23 anchor references (`href="#..."`) against the 86 declared DOM IDs to guarantee zero broken in-page navigation links.
+3. **Anchor Target Validation**: Scans all anchor references (`href="#..."`) against declared DOM element IDs to guarantee zero broken in-page navigation links.
 
-### Commands
+### Development Commands
 
 ```powershell
 # Compile the entire project & validate DOM integrity
@@ -113,7 +136,10 @@ node scripts/build.js
 # Or via npm
 npm run build
 
-# Start local server with HTTP 206 range streaming (auto-opens browser)
+# Run automated tests (build & anchor integrity audit)
+npm test
+
+# Start local preview server with HTTP 206 range streaming (auto-opens browser)
 node scripts/serve.js --open
 # Or via npm
 npm start
@@ -123,25 +149,28 @@ npm start
 
 ## 🔍 SEO, AEO & GEO Knowledge Graph
 
-Engineered for 2026 search engines, AI answer engines (Perplexity, ChatGPT, Claude, Gemini), and generative search overviews:
+Engineered for modern search engines, AI answer engines (Perplexity, ChatGPT, Claude, Gemini), and generative search overviews:
 
-* **Schema.org JSON-LD**: Comprehensive graph including `Person`, `WebSite`, `ProfilePage`, Indian Patent (`Patent`), Springer/IEEE papers (`ScholarlyArticle`), `EducationalOccupationalCredential`, `ItemList` (Awards), `FAQPage` (8 Q&As), and `BreadcrumbList` across all 9 chapters.
-* **`llms.txt` & `llms-full.txt`**: Standardized Markdown documentation detailing verified claims, metrics, academic performance (CGPA 9.16), publications, and project architectures for LLM crawlers.
+* **Schema.org JSON-LD**: Comprehensive graph including `Person`, `WebSite`, `ProfilePage`, Indian Patent (`Patent`), Springer/IEEE papers (`ScholarlyArticle`), `EducationalOccupationalCredential` (AWS certifications), `ItemList` (Awards), `FAQPage` (9 Q&As), and `BreadcrumbList` across all 9 chapters.
+* **`llms.txt` & `llms-full.txt`**: Standardized Markdown documentation detailing verified claims, metrics, academic performance (CGPA 9.16), AWS credentials, publications, and project architectures for LLM crawlers.
 * **`robots.txt`**: Explicitly permits AI bots (`GPTBot`, `PerplexityBot`, `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `Meta-ExternalAgent`, `Cohere-ai`) to discover knowledge files.
 * **OpenGraph & Twitter Cards**: High-resolution preview image cards and semantic tags.
 
 ---
 
-## 👤 Author Credentials
+## 👤 Maintainer & Author Credentials
 
 * **Name**: Sushant Kumar
 * **Degree**: B.Tech in CSE (Cyber Security & Digital Forensics), MIT World Peace University (CGPA 9.16 / 10.0)
 * **Founder**: [TechDenLab](https://techdenlab.com)
 * **Cloud Solutions Architect Engineer**: Technophiles Den
-* **Patent**: Published Indian Patent (*Automated Emergency Vehicle Alert and Intelligent Traffic Coordination System*, Application No. 202521077464)
+* **AWS Certifications**:
+  * [AWS Certified Machine Learning Engineer – Associate](https://www.credly.com/badges/ce744cf7-a97a-43f7-badd-535e494cafea/public_url)
+  * [AWS Certified Developer – Associate](https://www.credly.com/badges/f8e39ec7-ff61-4b47-8114-8b34324ce8c6/public_url)
+* **Patent**: Published Indian Patent (*A System and Method for Dynamic Cybercrime Investigation Using Automated Data Extraction and Analysis*, Application No. 202521077464)
 * **Publications**:
-  * Springer Nature Journal (Applied Artificial Intelligence & Soft Computing)
-  * IEEE ICCUBEA 2026 Best Research Paper Award (PCCOE Pune)
+  * Springer Nature Journal (VACARS: IoT + AI Assisted Smart Helmet System)
+  * IEEE ICCUBEA 2026 Best Research Paper Award (PCCOE Pune, Blockchain & Cyber Security Track)
 * **Profiles**:
   * [GitHub: @rsk807](https://github.com/rsk807)
   * [LinkedIn: sushant-kumar-csf](https://www.linkedin.com/in/sushant-kumar-csf/)

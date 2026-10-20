@@ -21,7 +21,7 @@
       "@type": "ProfilePage",
       "@id": "https://rsk807.github.io/#webpage",
       "url": "https://rsk807.github.io/",
-      "name": "Sushant Kumar - Cybersecurity Engineer, AI & IoT Researcher | Engineering Dossier",
+      "name": "Sushant Kumar | AI, Cloud & Cybersecurity Engineer",
       "isPartOf": {
         "@id": "https://rsk807.github.io/#website"
       },
@@ -105,6 +105,7 @@
         "Cyber Security Engineer",
         "Digital Forensics Researcher",
         "AI Systems Developer",
+        "Cloud Solutions Architect Engineer",
         "Cloud Infrastructure Engineer",
         "Founder"
       ],
@@ -117,6 +118,28 @@
       "alumniOf": {
         "@id": "https://rsk807.github.io/#mit-wpu"
       },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "AWS Certified Machine Learning Engineer – Associate",
+          "credentialCategory": "certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Amazon Web Services Training and Certification"
+          },
+          "url": "https://www.credly.com/badges/ce744cf7-a97a-43f7-badd-535e494cafea/public_url"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "AWS Certified Developer – Associate",
+          "credentialCategory": "certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Amazon Web Services Training and Certification"
+          },
+          "url": "https://www.credly.com/badges/f8e39ec7-ff61-4b47-8114-8b34324ce8c6/public_url"
+        }
+      ],
       "homeLocation": {
         "@type": "Place",
         "name": "Pune, Maharashtra, India",
@@ -136,6 +159,8 @@
         "Cybersecurity",
         "Digital Forensics & Incident Response (DFIR)",
         "Artificial Intelligence & Machine Learning",
+        "AWS Cloud Engineering",
+        "Cloud Architecture",
         "Edge AI & Embedded Computing",
         "Internet of Things (IoT)",
         "Cloud Infrastructure Architecture",
@@ -460,6 +485,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Sushant Kumar's honors include the Best IEEE Research Paper Award (ICCUBEA 2026), MIT-WPU Best Student Achiever Award, serving as Youngest Industry Judge at IIT Bombay's Ignition T3 Eureka Pitch Perfect, DevConf 2025 Speaker, 2nd Place at Ignisia AI 2026, and Ciphathon 2026 Finalist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What AWS certifications does Sushant Kumar hold?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sushant Kumar holds two verified AWS Associate certifications: AWS Certified Machine Learning Engineer – Associate and AWS Certified Developer – Associate, both accredited through Amazon Web Services and verified via official Credly transcripts."
           }
         }
       ]

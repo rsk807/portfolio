@@ -2861,6 +2861,182 @@ img, video, canvas, svg {
   border-bottom-color: var(--color-accent-red);
 }
 
+/* ==========================================
+   AWS CERTIFICATIONS STRIP (COMPACT SPECIMEN STRIP)
+   ========================================== */
+.aws-cert-strip {
+  margin-top: calc(-1 * var(--space-md));
+  margin-bottom: var(--space-md);
+  padding: 8px 12px 10px 12px;
+  background-color: var(--color-paper-light);
+  border: 1px solid var(--border-color-ui);
+  border-radius: 2px;
+  box-shadow: var(--shadow-flat);
+  position: relative;
+}
+
+.aws-cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.15);
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.aws-cert-header-left {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+}
+
+.aws-cert-tag {
+  font-family: var(--font-notebook);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  color: var(--color-accent-blue);
+  letter-spacing: 0.06em;
+}
+
+.aws-cert-archival {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--color-ink-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.aws-cert-credly-badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--color-ink-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 1px 6px;
+  border-radius: 2px;
+  background-color: var(--color-paper-base);
+}
+
+.aws-cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.aws-cert-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background-color: var(--color-paper-base);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-left: 3px solid var(--color-accent-blue);
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--color-ink-primary);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform var(--transition-speed-fast) ease, 
+              box-shadow var(--transition-speed-fast) ease, 
+              border-color var(--transition-speed-fast) ease,
+              background-color var(--transition-speed-fast) ease;
+}
+
+.aws-cert-card:hover {
+  background-color: #ffffff;
+  border-color: var(--color-accent-blue);
+  border-left-color: var(--color-accent-red);
+  box-shadow: var(--shadow-lift-sm);
+  transform: translateY(-1.5px);
+}
+
+.aws-cert-card:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 2px;
+}
+
+.aws-cert-badge-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.aws-cert-badge-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+.aws-cert-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.aws-cert-cat {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-ink-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.aws-cert-title {
+  font-family: var(--font-notebook);
+  font-size: 0.78rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-ink-primary);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 1px 0;
+}
+
+.aws-cert-action {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--color-accent-blue);
+  letter-spacing: 0.02em;
+  transition: color var(--transition-speed-fast) ease;
+}
+
+.aws-cert-card:hover .aws-cert-action {
+  color: var(--color-accent-red);
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .aws-cert-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .aws-cert-strip {
+    margin-top: 0;
+  }
+  .aws-cert-card {
+    padding: 8px 10px;
+  }
+  .aws-cert-title {
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aws-cert-card {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
 /* Tablet & Mobile responsive */
 @media (max-width: 1024px) {
   .sticky-cluster-grid {
