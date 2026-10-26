@@ -16,7 +16,7 @@
   'use strict';
 
   // =========================================================================
-  // 1. DATA SPECIFICATION: 10 RECORDED SESSIONS
+  // 1. DATA SPECIFICATION: 11 RECORDED SESSIONS
   // =========================================================================
   const ARCHIVE_TRACKS = [
     {
@@ -94,16 +94,25 @@
     {
       id: "session-09",
       catalogId: "MUSIC CORNER // SESSION-09",
-      indexLabel: "SESSION 09: Tera Mera Rishta",
+      indexLabel: "SESSION 09: Papa Meri Jaan",
+      title: "Papa Meri Jaan",
+      artist: "Sonu Nigam",
+      thumbnail: "raw_vocals/Papa-Meri-Jaan-From-ANIMAL-SonuNigam.jpg",
+      audio: "raw_vocals/papa-meri-jaan-sonu-nigam.ogg"
+    },
+    {
+      id: "session-10",
+      catalogId: "MUSIC CORNER // SESSION-10",
+      indexLabel: "SESSION 10: Tera Mera Rishta",
       title: "Tera Mera Rishta",
       artist: "Mustafa Zahid",
       thumbnail: "raw_vocals/tera_mera_rishta.jpg",
       audio: "raw_vocals/tera_mera_rishta.ogg"
     },
     {
-      id: "session-10",
-      catalogId: "MUSIC CORNER // SESSION-10",
-      indexLabel: "SESSION 10: Teri Meri Kahani",
+      id: "session-11",
+      catalogId: "MUSIC CORNER // SESSION-11",
+      indexLabel: "SESSION 11: Teri Meri Kahani",
       title: "Teri Meri Kahani",
       artist: "Arijit Singh",
       thumbnail: "raw_vocals/teri_meri_kahani.jfif",
